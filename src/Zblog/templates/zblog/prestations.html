@@ -1,0 +1,120 @@
+{extends 'zblog/base.html'}
+
+{block header_scripts}
+{include 'zblog/webfonts.html'}
+{/block}
+
+{block beforeContent}{include 'zblog/inc/freetest.html'}{/block}
+
+{block body}
+<div class="clearfix fauxColumn fauxColumn2ColFirst240">
+	<div class="w240 floatLeft">
+		<div class="font26 sansRounded caps">prestations</div>
+		<div class="font26 orange sansRounded caps">comment pouvons nous vous aider ?</div>
+		<a href="{url 'contact'}" title="Lien vers la page de contact"	class="inlineBlock classicButton">Demandez un devis gratuit</a>
+	</div>
+	<div class="w720 floatLeft">
+		<div class="noPlainBorderLeftIfBorderImage plainBorderLeft">
+			<div class="pad18pxl">
+				<div class="classicBorderBottom marg18pxb">
+					<img src="{mediaurl '/img/prestations/splash.jpg'}" class="classicImgBorder" />
+					<h1 class="font19 marg0tb">la performance de votre site internet impacte votre business
+						<span class="orange">revenus publicitaires, transformations, expérience utilisateur, bande passante</span></h1>
+				</div>
+			</div>
+
+			<div class="clearfix center serif font14">
+				<div class="floatLeft w180">
+					<div class="pad18pxlr">
+						<img src="{mediaurl '/img/prestations/1.png'}" />
+						<p class="marg0b">Le temps de chargement de vos pages augmente constamment ?</p>
+					</div>
+				</div>
+				<div class="floatLeft w180">
+					<div class="classicBorderLeft pad18pxlr">
+						<img src="{mediaurl '/img/prestations/2.png'}" />
+						<p class="marg0b">Tout a pourtant l'air bien configuré au niveau de vos serveurs !</p>
+					</div>
+				</div>
+				<div class="floatLeft w180">
+					<div class="classicBorderLeft pad18pxlr">
+						<img src="{mediaurl '/img/prestations/3.png'}" />
+						<p class="marg0b">Vous souhaitez alors savoir pourquoi votre site est lent et comment y remédier</p>
+					</div>
+				</div>
+				<div class="floatLeft w180">
+					<div class="classicBorderLeft pad18pxlr">
+						<img src="{mediaurl '/img/prestations/4.png'}" />
+						<p class="marg0b">Nous pouvons auditer, analyser et optimiser votre site web</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="classicBorderTop pad18pxt marg18pxt marg18pxl"></div>
+
+			<div class="clearfix font14">
+				<div class="floatLeft w360">
+					<div class="pad18pxl">
+						<div class="pad18pxl">
+							<h1 class="marg0tb">Audit & Analyse
+								<span class="orange">Pourquoi votre site est-il lent ?</span></h1>
+							<ul class="marg0p5em">
+								<li>Nous évaluons la performance de votre site par rapport à vos concurrents selon la connexion des internautes</li>
+								<li>Plus qu'un test automatisé notre audit vous permettra d'obtenir une liste d'optimisations classées par ordre d'importance</li>
+								<li>Chaque optimisation est accompagnée d'un fichier test qui représente votre future page optimisée</li>
+								<li>Nous réalisons des vidéos comparatives des temps de chargement pour valider nos conseils et pages tests</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="floatLeft w360">
+					<div class="classicBorderLeft pad18pxl">
+						<h1 class="marg0tb">Optimisation & développement
+							<span class="orange">Accélerez votre site, maintenant !</span></h1>
+						<ul class="marg0p5em">
+							<li>Selon la complexité de votre projet et vos besoins nous pouvons installer des solutions clés en main ou bien
+							réaliser des développements spécifiques</li>
+							<li>Nous vous aidons dans le développement et la mise en place d'optimisations pour votre site web:
+								<ul class="marg0tb">
+									<li>minification</li>
+									<li>optimisation d'images</li>
+									<li>compression</li>
+									<li>cache</li>
+									<li>sprites css</li>
+									<li>data uris & mhtml</li>
+									<li>optimisations javascript & jquery</li>
+									<li>optimisations de code php</li>
+								</ul>
+							</li>
+							<li>Mais aussi dans n'importe quel domaine suivant : html, css, javascript, php, sql ...</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="classicBorderTop pad8pxtb marg8pxt marg18pxl">
+				<a href="{url 'contact'}" title="Lien vers la page de contact" class="classicButton">Demandez un devis gratuit</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="marg18pxt classicBorderTop pad18pxt clearfix sansRounded caps">
+	<div class="w240 floatLeft">
+		<span class="font26">derniers clients</span>
+	</div>
+	<div class="w720 floatLeft">
+		<div class="classicBorderLeft pad18pxl">
+			<ul class="resetList font13">
+				<li>ma-bimbo.com <span class="orange">réduction de 44% de la bande passante</span></li>
+				<li>mappy.com <span class="orange">optimiser un portail grand public</span></li>
+				<li>footmercato.net <span class="orange">audit complet d'un site web 100% foot</span></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+	{/block}
+
+	{block footer}
+	{include 'zblog/inc/footer-normal.html'}
+	{/block}

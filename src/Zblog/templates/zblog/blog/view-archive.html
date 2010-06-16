@@ -1,0 +1,41 @@
+{extends 'zblog/blog/base.html'}
+{block leftCol}
+<h1 class="marg0t classicBorderBottom marg18pxb font24">Archives du mois de {$month_name} {$year}</h1>
+<ul class="font14">
+	{foreach $posts as $post}
+	<li><a href="{url 'blog_post', strtolower($post.title)}"
+		   title="Voir le billet {$post.title}">{$post.title}</a> -
+		<span class="orange">{$post.post_date|date:"%d/%m/%Y"}</span></li>
+	{/foreach}
+</ul>
+
+{include 'zblog/blog/back-next-links.html'}
+
+<div class="clearfix classicBorderTop marg8pxt">
+	<div class="w180 floatLeft"><div class="pad8pxr breakwords">
+			<h1 class="marg0 lineHeight1"><span class="font24">Réactions</span></h1>
+		</div>
+	</div>
+	<div class="w600 floatLeft">
+		<div class="pad18pxlr textContent">
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+				{if $cfg_debug === true}
+					var disqus_developer = 1;
+				{/if}
+
+				{literal}
+				(function() {
+					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					dsq.src = 'http://zeroload.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				})();
+			</script>
+			<noscript>Les commentaires sont visibles uniquement avec javascript activé, bienvenue dans une nouvelle ère ! :(</noscript>
+					{/literal}
+		</div>
+	</div>
+</div>
+
+{/block}
+

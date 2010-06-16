@@ -1,0 +1,45 @@
+{extends 'zblog/blog/base.html'}
+
+{block leftCol}
+
+{if $show_title == true}
+<h1 class="marg0t font24 classicBorderBottom marg18pxb">{$page_title}</h1>
+{/if}
+<div>
+{if $posts && count($posts) > 0}
+				{foreach $posts as $key => $post}
+<article class="article block clearfix marg8pxb pad18pxb">
+	<div class="floatLeft w180">
+		<time class="right block marg4pxb font24 lineHeight1 orange sansRounded">{$post.post_date|date:"%d/%m/%Y"}</time>
+		<img src="{if $post.image !== ''} {mediaurl '/img/blog/posts/'~$post.image}{else}{mediaurl '/img/blog/posts/default.jpg'}{/if}"
+			 class="classicImgBorder" />
+		<div class="tags lineHeight1 pad2pxb textContent">
+			{tags $post.tags}
+		</div>
+	</div>
+	<div class="w600 floatLeft">
+		<div class="pad18pxl">
+			<h1 class="pad4pxb marg4pxb lineHeight1 classicBorderBottom marg90r marg0t">
+				{comments_permalink $post}
+				<a href="{url 'blog_post', strtolower($post.title)}"
+				   title="Voir le billet {$post.title}" class="font24">{$post.title}</a>
+			</h1>
+			<div class="pad18pxr font14">
+				{$post.summary|markdown|safe}
+			</div>
+			<a href="{url 'blog_post', strtolower($post.title)}"
+			   title="Voir le billet {$post.title}" class="inlineBlock classicButton">lire la suite</a>
+		</div>
+	</div>
+</article>
+				{/foreach}
+			{/if}
+</div>
+
+			{include 'zblog/blog/back-next-links.html'}
+
+			{/block}
+
+			{block rightCol}
+
+			{/block}

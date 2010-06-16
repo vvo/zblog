@@ -1,0 +1,72 @@
+/* 
+    Document   : homepage
+    Created on : 14 avr. 2010, 11:00:01
+    Author     : vincent
+    Description:
+       css of the homepage
+*/
+.borderimage #slider {
+	margin-bottom:-4px;
+	position:relative;
+	z-index:10;
+}
+
+#slider {
+	margin-top: -18px;
+}
+
+#imgAudit {
+	position:relative;
+	top:-8px;
+}
+
+#sliderMenu {
+	position:absolute;
+	bottom:1px;
+	left:1px;
+}
+
+#sliderMenu a {
+	display:inline-block;
+	text-align: center;
+	border:none;
+	width:30px;
+	height:30px;
+	line-height:30px;
+}
+
+.rgba.borderradius #sliderMenu a {
+	-moz-border-radius:30px;
+	-webkit-border-radius:30px;
+	border-radius:30px;
+	margin-right:-3px;
+	background:rgba(255, 228, 0, .6);
+}
+
+.rgba.borderradius  #sliderMenu a:hover {
+	background:rgba(255, 228, 0, .8);
+}
+
+.rgba.borderradius  #sliderMenu a.selected {
+	background:rgba(255, 228, 0, 1);
+}
+
+.sliderLink {
+	border-left:1px solid #bea700;
+	background:url(../../img/homepage/stats.png) bottom left no-repeat;
+}
+
+/**
+slider images
+*/
+#slide1 {
+	background:url(../../img/homepage/slide4.jpg) no-repeat;
+}
+
+#slide2 {
+	background:url(../../img/homepage/slide5.jpg) no-repeat;
+}
+
+#slide3 {
+	background:url(../../img/homepage/slide3.jpg) no-repeat;
+}

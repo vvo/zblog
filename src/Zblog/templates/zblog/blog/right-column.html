@@ -1,0 +1,20 @@
+<h1 class="font24 marg0 lineHeight1 classicBorderBottom">derniers articles</h1>
+
+{foreach $last_posts as $post}
+<div class="classicBorderBottom textContent pad8pxb marg8pxb lineHeight1p2">
+	<span class="orange sansRounded">{$post.post_date|date: "%d/%m"}</span>
+	<a href="{url 'blog_post', strtolower($post.title)}">{$post.title}</a>
+</div>
+{/foreach}
+
+{*
+<h1 class="marg0t classicBorderBottom pad4pxb marg8pxb font24 lineHeight1">Derniers commentaires</h1>
+<div id="recentcomments" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/zeroload/recent_comments_widget.js?num_items=3&hide_avatars=0&avatar_size=24&excerpt_length=200"></script></div>
+*}
+
+<h1 class="marg0t classicBorderBottom pad4pxb marg8pxb font24 lineHeight1">@vvoyer</h1>
+<div id="twitter_div" class="textContent breakwords lineHeight1p2"></div>
+
+<span class="block classicBorderTop pad8pxt center">
+	<a href="http://twitter.com/vvoyer" class="classicButton font10">follow me</a>
+</span>

@@ -1,0 +1,73 @@
+{extends 'zblog/blog/base.html'}
+
+{block leftCol}
+
+<div class="clearfix">
+	<div class="clearfix relative classicBorderBottom floatLeft w560 h70">
+		<time class="w140 floatLeft block font24 lineHeight1 orange sansRounded">
+			{$post.post_date|date:"%d/%m/%Y"}
+		</time>
+		<div class="floatLeft w420">
+			<h1 class="marg0 font24 lineHeight1">{$post.title}</h1>
+			<div class="tags pad2pxb lineHeight1 textContent absolute posBottom">
+				{tags $post.tags}
+			</div>
+		</div>
+	</div>
+	<div class="w220 floatLeft">
+		<div class="w180 centerBlock">
+			<div class="classicImgBorder h70 oHidden">
+				<img src="{if $post.image !== ''} {mediaurl '/img/blog/posts/'~$post.image}{else}{mediaurl '/img/blog/posts/default.jpg'}{/if}" />
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div class="marg8pxt pad18pxr textContent font16">
+	{$post.content|markdown|safe}
+</div>
+
+{include 'zblog/blog/back-next-links.html'}
+
+<div class="classicBorderTop pad8pxt" id="comments">
+	<div class="fauxColumn fauxColumn2ColFirst180">
+
+		<div class="clearfix">
+			<div class="w180 floatLeft"><div class="pad8pxr breakwords">
+					<h1 class="marg0 lineHeight1"><span class="font24">Réactions</span>
+					{comments_permalink $post}</h1>
+				</div>
+			</div>
+			<div class="w600 floatLeft">
+				<div class="pad18pxlr textContent">
+					<div id="disqus_thread"></div>
+					
+					<script type="text/javascript">
+						{if $cfg_debug === true}
+							var disqus_developer = 1;
+							var disqus_identifier = "{cfg 'disqus_prefix'}DEV-"+{$post.id};
+						{else}
+							var disqus_identifier = "{cfg 'disqus_prefix'}"+{$post.id};
+						{/if}
+
+						{literal}
+						/**
+						 * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+						 */
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.defer = true;
+							dsq.src = 'http://zeroload.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+					<noscript>Les commentaires sont visibles uniquement avec javascript activé, bienvenue dans une nouvelle ère ! :(</noscript>
+					{/literal}
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+{/block}

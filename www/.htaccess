@@ -1,0 +1,29 @@
+# does this really works ? it seems fonts doesn't have specific mime types
+Addtype font/opentype .otf
+Addtype font/truetype .ttf
+Addtype font/woff .woff
+
+ExpiresActive On
+ExpiresDefault "access plus 6 months"
+#ExpiresByType text/html "access plus 10 minutes"
+ExpiresByType text/html "now"
+ExpiresByType application/atom+xml "access plus 30 minutes"
+
+<IfModule mod_deflate.c>
+    # Insert filter
+    SetOutputFilter DEFLATE
+
+    # Don't compress images, htc, woff, they all are already compressed
+    SetEnvIfNoCase Request_URI \
+    \.(?:gif|jpe?g|png|htc|woff)$ no-gzip dont-vary
+</IfModule>
+
+RewriteEngine on
+# without ending $ it will allow zeroload.net.local, how handyy .. :)
+RewriteCond %{HTTP_HOST} !^zeroload\.net
+RewriteRule (.*) http://zeroload.net/$1 [R=301,L]
+
+# then all requests goes to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) index.php/$1 [L,QSA]

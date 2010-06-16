@@ -1,0 +1,155 @@
+/* 
+    Document   : blog
+    Created on : 27 avr. 2010
+    Author     : vincent
+    Description:
+       css of the blog
+*/
+
+#searchbar {
+	height:29px;
+}
+
+#rssIcon {
+	width:37px;
+	height:37px;
+	background:url(../../img/blog/rss.png);
+	position:relative;
+	top:-6px;
+}
+
+.day li {
+	float:left;
+	width:59px;  /* -1px border */
+}
+
+.borderimage .day li {
+	width:56px; /* -4px part of border */
+}
+
+.article:nth-child(even) .w600 {
+	width:599px !important; /* let the border visible, in the background*/
+}
+
+.article:nth-child(even) {
+	background:#e5cd00;
+}
+
+.borderimage .article:nth-child(even) {
+	margin-right:1px;
+}
+
+.borderimage #brevesWrapper.plainBorderLeft {
+	border:0;
+}
+
+#twitter_update_list li:nth-child(even) {
+	background:#e5cd00;
+}
+
+/**
+DISQUS
+*/
+#dsq-new-post > h3 {
+	display:none !important
+}
+
+#dsq-comments-title h3 {
+	font-size:182%;
+	margin:0 0 .5em 0;
+	line-height:1;
+}
+
+.dsq-thread-settings {
+	border-color:#000 !important;
+}
+
+.dsq-pagination, .dsq-request-user-info {
+	background:url(../../img/border-horizontal.png) repeat-x !important;
+}
+
+.dsq-pagination {
+	background-position: top center !important;
+}
+
+.dsq-request-user-info {
+	background-position: bottom center !important;
+}
+
+#dsq-comments-title, .dsq-like, .dsq-sharing-options,
+.dsq-options, .dsq-media-link, .dsq-pagination {
+	display:none !important
+}
+
+.dsq-login-buttons {
+	background:none !important;
+	margin-bottom: 0 !important;
+	padding:.5em !important;
+}
+
+.dsq-dropdown-menu > li:first-child, .dsq-dropdown-menu > li:last-child{
+	display:none !important;
+}
+
+.dsq-input-wrapper, .dsq-button, .dsq-textarea-wrapper {
+	-moz-border-radius:0 !important;
+	-webkit-border-radius:0 !important;
+	border-radius:0 !important;
+}
+
+.dsq-button {
+	font-weight: normal !important;
+}
+
+ .dsq-button, .dsq-button-small {
+	font-family: 'LithoAntique', 'Times New Roman';
+	-moz-border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
+	-webkit-border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
+	border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
+	border-width: 6px 17px 6px 5px  !important;
+	background:transparent  !important;
+	padding:.1em  !important;
+	text-transform:uppercase  !important;
+	cursor:pointer  !important; /* for buttons */
+	color:#ffe400 !important; /* important for links */
+}
+
+/*
+Number of comments
+*/
+.commentsCount {
+	position:relative;
+	top:3px;
+	vertical-align:top;
+	display:inline-block;
+	height:1em;
+	overflow:hidden;
+	width:3em;
+	padding:0.1em 0 0.1em 0.5em;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+
+.article:nth-child(odd) .commentsCount {
+	background-color:#e5cd00
+}
+
+.article:nth-child(even) .commentsCount {
+	background-color:#ffe400
+}
+
+.commentsCount:before {
+	content:url("../../img/blog/comments-2.png")" ";
+}
+
+.currentBullet {
+	position:absolute;
+	top:-2px;
+	right:-2px;
+}
+
+/*.activeCmonth:after, .activeCday:after {
+	content:"<sup><strong>.</strong></sup>"
+}
+*/

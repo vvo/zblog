@@ -1,0 +1,59 @@
+{extends 'zblog/base.html'}
+
+{block header_scripts}
+{include 'zblog/webfonts.html'}
+{/block}
+
+{block beforeContent}{include 'zblog/inc/freetest.html'}{/block}
+
+{block body}
+<div class="relative fauxColumn fauxColumn2ColFirst240">
+	<div class="clearfix">
+		<div class="w240 floatLeft">
+			<div class="font26 sansRounded caps">à propos...</div>
+			<div class="font26 orange sansRounded caps">tkitoa?</div>
+			<a href="{url 'contact'}" title="Lien vers la page de contact" class="inlineBlock classicButton">Contactez-nous</a>
+		</div>
+		<div class="w480 floatLeft">
+			<div class="noPlainBorderLeftIfBorderImage plainBorderLeft">
+				<div class="marg8pxb pad18pxlr classicBorderRight">
+					<h1 class="classicBorderBottom font19 marg0tb">Vincent Voyer
+						<span class="orange">deux V pour la vvictoire!</span></h1>
+					<p>Après avoir rejoins the university of connecticut and technologies for copy/paste degree
+					of science, vincent a repris son métier favori : éleveur de coach de piscine</p>
+					<p>Vous souhaitez en savoir plus ? achetez son livre : comment j'ai élevé des coachs de piscine
+					pendant 25 ans sans savoir qu'ils était des canards</p>
+					<p>Il écrit aussi fréquemment pour la gazette des développeurs débile (DD®) de springfield
+					massachussets technologie and associates</p>
+					<p>Ses mentors sont aussi nombreux qu'idiots c'est pourquoi nous ne les citons pas ici (qui veut
+					un mentor menthe ?©)</p>
+					<p>Ce site web a été directement réalisé à l'aide du logiciel cerveau pourri beta 1, il utilise
+						des technologies, comme tout autre site web. La liste de ces technologies est disponible
+					sur l'interweb, rubrique bananes et kiwis</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<img src="{mediaurl '/img/moi.jpg'}" id="maface" />
+
+</div>
+
+<div class="marg18pxt classicBorderTop pad18pxt clearfix">
+	<div class="w240 floatLeft sansRounded caps">
+		<span class="font26">coordonnées</span>
+	</div>
+	<div class="w720 floatLeft">
+		<div class="classicBorderLeft pad18pxl textContent">
+			<div>email : <a href="bla">info@zeroload.net</a></div>
+			<div>skype : <a href="bla">vvoyer</a></div>
+			<div>téléphone : 06/13/92/69/96</div>
+		</div>
+	</div>
+</div>
+
+{/block}
+
+{block footer}
+{include 'zblog/inc/footer-normal.html'}
+{/block}

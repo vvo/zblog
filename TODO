@@ -1,0 +1,71 @@
+https://addons.mozilla.org/fr/firefox/search?q=seo&cat=all
+
+problème FOUC sur font-face : problème de modernizr, bug posté sur github
+chercher ce qui provoque fouc : utiliser webfont loader quand disponible
+
+Avant mise en prod :
+flux atom, tester, avec images aussi
+tester IE6-7-8 chrome safari opera
+créer projet git avec ignore du config pour récupération sur la prod facilement
+remove all threads from disqus
+
+proteger admin
+
+Warning :
+attention aux important!
+DEVIS GRATUIT à annoncer aux endroits stratégiques
+rédaction articles, reprendre idées google docs
+remodelage texte homepage, contact, a propos, prestations
+remodelage puces homepage slider
+bulle twitter -> lien vers twitter
+performance ! tester intégration webo
+cache !
+méthode google pour inclusion fonts / méthode maison (création css à la volée avec labJS ou requireJS)
+Pourquoi on envoit connection close au php ? problème pluf, retenter une explication sur les forums
+
+plus tard :
+year archive
+merge pagination calculations between tag and blog page
+commentaires sur archives de l'année
+recherche
+test en ligne
+twitter affichage homepage messages
+
+Idées :
+site test web site speedup alexa top 100
+avec le top 1 million : general statistics on site performance
+écrire un bugzilla avec mes tests sur les deux fontes quand on utilise uppercase entre firefox et safari
+
+inscription
+web worker club
+lacantine
+webrankinfo
+stackoverflow
+webmaster club
+codeur
+sites américains freelance
+
+faire des liens vers zeroload.net
+
+compte twitter
+
+tenter de monter sur développeur web paris, développeur javascript, développeur web
+
+vincent-voyer.fr : fermer et tout déplacer sur zeroload.net, faire une rédirection 301 depuis la page développeur jquery, laisser ouvert le chat (avec avertissement), fermer tout le reste
+
+http://www.google.com/local/add/lookup?hl=fr&gl=FR
+
+afficher calendrier disponibilité
+
+serveur statique nodejs qui utilise cssembed et génère des fichiers en cache à partir de ce qui est demandé dans l'uri
+cssembed inside
+script nodejs qui trouve tous les js/css et créé des versions optimisées (tout simple pour l'instant)
+améliorations :
+groupes
+
+
+experiences avec moz gradient, au clic souris on fait des jolis ronds qui grandissent etc..
+
+page de test d'un post dans design normal
+
+webmaster tools

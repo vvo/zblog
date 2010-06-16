@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /blog/page/*
+Disallow: /blog/tag/*/page/*
+Disallow: /blog/day/*

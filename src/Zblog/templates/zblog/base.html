@@ -1,0 +1,62 @@
+{* will store debug value for project in $debug *}
+{cfg 'debug', false, false}
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+	<head>
+		<title>Zeroload : {$page_title}</title>
+		<meta charset="utf-8">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		{cssbooster "static/css/yui,static/css/library,static/css/template"}
+		
+		{block header_scripts}{/block}
+	</head>
+	<body class="serif" id="top">
+		<div id="container">
+			<div class="centerBlock w960">
+				<header id="header" class="block relative">
+					<a id="logo" class="block absolute" href="{url 'Zblog_Views::main'}" title="accueil">
+						<!-- Standard mode cause images to have odd bottom margin see http://www.quirksmode.org/css/quirksmode.html -->
+						<img src="{mediaurl '/img/logo.png'}" alt="zeroload" class="block" />
+					</a>
+
+					<nav id="menu" class="block classicBorderTop pad8pxt sansRounded font15 caps">
+						<div class="floatRight">
+							<a href="{url 'homepage'}" title="Accueil du site" class="first relative">accueil</a>
+							<a href="{url 'services'}" class="classicBorderLeft" title="Découvrez nos services d'optimisation du temps de chargement de vos pages">prestations</a>
+							<a href="{url 'blog_homepage'}" class="classicBorderLeft" title="Lisez notre blog performance & développement web">blog</a>
+							<a href="{url 'about'}" class="classicBorderLeft" title="Qui est aux commandes de Zeroload ?">à propos</a>
+							<a href="{url 'contact'}" class="classicBorderLeft" title="Contactez-nous pour obtenir un devis gratuit !">contact</a>
+						</div>
+					</nav>
+				</header>
+
+				{block beforeContent}{/block}
+
+				<div id="content" class="classicBorderTop marg8pxt pad18pxt">
+					{block body}{/block}
+				</div>
+
+				<footer id="footer" class="classicBorderTop marg18pxt block pad8pxt">
+					{block footer}{/block}
+				</footer>
+			</div>
+		</div>
+
+		<div class="clearLeft"></div>
+
+		{jsbooster "static/js/modernizr-1.5.js, static/js/jquery, static/js/slider.js"}
+
+		{block footer_scripts}{/block}
+	</body>
+</html>
+
+<!-- Where websites goes N20 (lien fast & furious) -->
+<!-- give some boost to your pages -->
+<!-- free your servers from heavy load, save the planet -->
+<!-- performance : the green effect ! -->
+<!-- optimisation du temps de chargement -->

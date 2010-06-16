@@ -1,0 +1,6 @@
+.DS_Store
+*~
+*.swp
+www/CSS-JS-Booster
+cache/*
+www/compiler.jar

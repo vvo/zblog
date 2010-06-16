@@ -1,0 +1,183 @@
+/*
+    Document   : homepage
+    Created on : 14 avr. 2010, 11:00:01
+    Author     : vincent
+    Description:
+       common css for all pages
+*/
+
+.sansRounded {font-family: 'FrankfurterComMedium', 'Comic Sans Ms';/* font-size-adjust:0.472*/}
+.serif {font-family: 'LithoAntique', 'Times New Roman';}
+
+html {background:#ffe400}
+
+/*html {
+	background: black url("gradient-bg.png") repeat-y left;
+	-o-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	background: -moz-linear-gradient(
+		left,
+		#D1BB00,
+		#ffe400 15%,
+		#ffe400 85%,
+		#D1BB00
+	);
+	background: -webkit-gradient(
+		linear,
+		left top, right top,
+		from(#D1BB00),
+		to(#D1BB00),
+		color-stop(0.1, #ffe400),
+		color-stop(0.9, #ffe400)
+	);
+}*/
+
+body {overflow-y:scroll}
+
+#container {}
+
+#header {
+	height:46px;
+	padding-top:44px;
+}
+
+#logo {
+	width:82px;
+	height:83px;
+	left:0;
+	bottom:0;
+}
+
+#footer {}
+
+/**
+Menu
+*/
+#menu {margin-left:80px}
+
+#menu a {
+	display:block;
+	float:left;
+	text-align:center;
+	width:119px; /* -1px border */
+	line-height:34px;
+}
+
+#menu .first {border:none}
+
+/*#menu a:active {
+	position:relative;
+	bottom:-2px;
+}*/
+
+/* specific rules when using border-image */
+.borderimage #menu {
+	position:relative;
+	top:-5px;
+}
+
+.borderimage #menu a {
+	width:116px; /* -4px part of border */
+}
+
+.borderimage #menu .first {
+	border-left:9px solid transparent;
+	-moz-border-image:none;
+	-webkit-border-image:none;
+}
+/**
+end menu
+*/
+
+/**
+freetest bar, firefox sucks on submits, shared accross multiple pages
+* Very very strange behavior with borderimage and buttons..
+*/
+.borderimage .classicButtonFix {
+	height:35px;
+	margin-top:-5px;
+	width:80%;
+	padding-bottom:1px;
+}
+
+
+
+/**
+Headings
+*/
+/*h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}*/
+
+h1, h2, h3 {
+	font-family: 'FrankfurterComMedium';
+	font-weight:normal;
+	text-transform: uppercase;
+}
+
+h1, h2, h3 {
+	font-size:100%;
+}
+
+#twitter {
+	background:url(../../img/twitter.png) no-repeat;
+	height:37px;
+}
+
+#twitterLink {
+	left:54px;
+	top:9px;
+	opacity:.2;
+}
+
+#gotoTop:before {
+	content:url(../../img/top.png)" ";
+}
+
+/**
+Content Links
+*/
+a {text-decoration: none}
+a:link {color: #000;}
+a:visited {color: #000;}
+a:hover {color:#d7c000}
+a:active {text-shadow: 0 1px 0 #fef28f}
+
+.textContent a:link {border-bottom:1px dotted #000}
+.textContent a:visited {color:#827400;border-bottom:1px dotted #827400;}
+.textContent a:hover {border:none}
+
+/**
+prestations
+*/
+.borderimage .fauxColumn2ColFirst240.fauxColumn {
+	background-position:235px 0;
+}
+
+.borderimage .fauxColumn2ColFirst180.fauxColumn {
+	background-position:175px 0;
+}
+
+.borderimage .fauxColumn2ColFirst780.fauxColumn {
+	background-position:775px 0;
+}
+
+.borderimage .noPlainBorderLeftIfBorderImage.plainBorderLeft {
+	border:0;
+}
+
+#maface {
+	display:block;
+	position:absolute;
+	right:0;
+	bottom:-8px;
+}
+
+ul ul li {
+	list-style:circle;
+}
+
+#fonttest {
+	display:none !important;
+}
