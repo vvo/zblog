@@ -6,9 +6,9 @@ Y a t il vraiment un intérêt de passer d'un chargement de page de 4 secondes �
 
 Article:
 
-Le but de l'article est d'apporter quelques éléments de réponses sur ces questions :
+Le but de cet article est d'apporter quelques éléments de réponses sur ces questions :
 
-Quel est l'intérêt d'optimiser les pages web(s) ?
+Quel est l'**intérêt d'optimiser** les pages web(s) ?
 
 Pourquoi optimiser des temps de chargement de l'ordre de la seconde pour gagner quelques secondes ou millisecondes alors qu'en moyenne les [Français
 surfent pendant 1 heure 20 par jour](http://www.mediametrie.fr/internet/communiques/annee-internet-2009-propulsion-dans-l-ere-du-temps-reel.php?id=220) ?
@@ -17,13 +17,15 @@ Attention aux mesures de temps
 ---
 Les mesures de temps de chargement doivent être faites selon les **types de connexion internet** de vos clients.
 Un internaute avec un adsl 18 méga et une latence de 35ms aura chargé votre page en entier pendant qu'un autre internaute
-connecté à un adsl 6 méga avec la télévision internet allumée et 80ms de latence n'aura pas encore votre feuille de style css...
+connecté à un adsl 6 méga avec la télévision internet allumée et 100ms de latence n'aura pas encore votre 5 ème feuille de style css...
 
 Pourtant l'internaute à la connexion lente était peut-être votre prochain client, votre prochaine transformation ? Vous ne le saurez
 jamais car les 120 éléments qui composent votre page d'accueil l'auront vite dégouté et il ira faire ses courses sur Amazon la prochaine fois.
 
 Il est donc fortement recommandé de bien faire attention lors de vos tests de temps de chargement, vous devez **simuler les
 conditions d'accès à internet** de vos clients.
+
+Sachez qu'en France, la moyenne est de 3,4 méga au [dernier trimestre 2009](http://www.akamai.com/dl/whitepapers/Akamai_State_Internet_Q4_2009.pdf).
 
 Le temps de chargement modifie l'expérience utilisateur
 ---
