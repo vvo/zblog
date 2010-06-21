@@ -22,7 +22,16 @@ class Zblog_Views {
 	}
 
 	public function about($request, $match) {
-		$context = new Pluf_Template_Context(array('page_title' => 'Développeur web paris'));
+		Pluf::loadFunction('Pluf_Text_MarkDown_parse');
+		$tpl_path = Pluf::f('template_folders');
+		$tpl_path = realpath($tpl_path[0]);
+		$text = Pluf_Text_MarkDown_parse(file_get_contents($tpl_path.'/zblog/a-propos.md'));
+		$context = new Pluf_Template_Context(
+				array(
+					'page_title' => 'Développeur web paris',
+					'text' => $text
+					)
+		);
 		$tmpl = new Pluf_Template('zblog/a-propos.html');
 		return new Pluf_HTTP_Response($tmpl->render($context));
 	}

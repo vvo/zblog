@@ -5,7 +5,7 @@ function Zblog_Migrations_Install_setup($params='') {
 	$user = new Pluf_User();
 	$user->login = 'admin';
 	$user->administrator = 1;
-	$user->setPassword(Pluf::f('admin_password'));
+	$user->setPassword(Pluf::f('joerginp'));
 
 	$db = Pluf::db();
 	$schema = new Pluf_DB_Schema($db);

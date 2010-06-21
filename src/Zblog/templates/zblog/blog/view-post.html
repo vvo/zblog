@@ -4,11 +4,11 @@
 
 <div class="clearfix">
 	<div class="clearfix relative classicBorderBottom floatLeft w560 h70">
-		<time class="w140 floatLeft block font24 lineHeight1 orange sansRounded">
+		<time class="w140 floatLeft block font18 lineHeight1 orange sansRounded">
 			{$post.post_date|date:"%d/%m/%Y"}
 		</time>
 		<div class="floatLeft w420">
-			<h1 class="marg0 font24 lineHeight1">{$post.title}</h1>
+			<h1 class="marg0 font18 lineHeight1">{$post.title}</h1>
 			<div class="tags pad2pxb lineHeight1 textContent absolute posBottom">
 				{tags $post.tags}
 			</div>
@@ -24,7 +24,7 @@
 
 </div>
 
-<div class="marg8pxt pad18pxr textContent font16">
+<div class="marg8pxt pad18pxr textContent" id="article_content">
 	{$post.content|markdown|safe}
 </div>
 
@@ -35,7 +35,7 @@
 
 		<div class="clearfix">
 			<div class="w180 floatLeft"><div class="pad8pxr breakwords">
-					<h1 class="marg0 lineHeight1"><span class="font24">Réactions</span>
+					<h1 class="marg0 lineHeight1"><span class="font18">Réactions</span>
 					{comments_permalink $post}</h1>
 				</div>
 			</div>

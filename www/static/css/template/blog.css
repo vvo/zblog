@@ -149,6 +149,17 @@ Number of comments
 	right:-2px;
 }
 
+#article_content img {border:1px solid #ac9500}
+
+#article_content h2 {
+	font-size: 138.5%;
+}
+
+#article_content p, #article_content ul {
+	font-size: 108%;
+}
+
+
 /*.activeCmonth:after, .activeCday:after {
 	content:"<sup><strong>.</strong></sup>"
 }

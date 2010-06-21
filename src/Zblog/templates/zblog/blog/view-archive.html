@@ -1,6 +1,6 @@
 {extends 'zblog/blog/base.html'}
 {block leftCol}
-<h1 class="marg0t classicBorderBottom marg18pxb font24">Archives du mois de {$month_name} {$year}</h1>
+<h1 class="marg0t classicBorderBottom marg18pxb font18">Archives du mois de {$month_name} {$year}</h1>
 <ul class="font14">
 	{foreach $posts as $post}
 	<li><a href="{url 'blog_post', strtolower($post.title)}"
@@ -13,7 +13,7 @@
 
 <div class="clearfix classicBorderTop marg8pxt">
 	<div class="w180 floatLeft"><div class="pad8pxr breakwords">
-			<h1 class="marg0 lineHeight1"><span class="font24">Réactions</span></h1>
+			<h1 class="marg0 lineHeight1"><span class="font18">Réactions</span></h1>
 		</div>
 	</div>
 	<div class="w600 floatLeft">

@@ -52,6 +52,7 @@ $cfg['mimetype'] = 'text/html';
 $cfg['template_modifiers'] = array(
       'markdown' => 'Pluf_Text_MarkDown_parse'
 );
+
 $cfg['template_tags'] = array(
 		'jsmin' => 'Zblog_Template_Jsmin',
 		'url' => 'Pluf_Template_Tag_Url',
@@ -60,7 +61,8 @@ $cfg['template_tags'] = array(
 		'tags' => 'Zblog_Template_Tags',
 		'cssbooster' => 'Zblog_Template_Booster_Css',
 		'jsbooster' => 'Zblog_Template_Booster_Js',
-		'comments_permalink' => 'Zblog_Template_DisqusComments'
+		'comments_permalink' => 'Zblog_Template_DisqusComments',
+//		'markdown'			=> 'Zblog_Template_Markdown'
 );
 
 // what cache to use ?
