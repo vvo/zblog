@@ -1,6 +1,7 @@
 {extends 'zblog/base.html'}
 
 {block header_scripts}
+
 {include 'zblog/webfonts.html'}
 {/block}
 
@@ -26,8 +27,14 @@
 			</div>
 		</div>
 	</div>
+	<div id="maface">
+		<img src="{mediaurl '/img/moi.jpg'}" alt="Moi avec un joli polo" title="Bouge ta souris de mon nez !" />
+		<br/>
+		<a class="linkedin-profileinsider-popup" href="http://www.linkedin.com/in/vvoyer">Vincent Voyer</a>
+		<br/>
 
-	<img src="{mediaurl '/img/moi.jpg'}" id="maface" />
+	</div>
+	
 
 </div>
 
@@ -45,6 +52,8 @@
 </div>
 
 {/block}
+
+{block footer_scripts}<script defer="defer" async="async" type="text/javascript" src="http://www.linkedin.com/js/public-profile/widget-os.js"></script>{/block}
 
 {block footer}
 {include 'zblog/inc/footer-normal.html'}
