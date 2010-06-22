@@ -150,6 +150,7 @@ Margins
 */
 .marg8pxt {margin-top:8px}
 .marg8pxb {margin-bottom:8px}
+.marg8pxtb {margin-top:8px;margin-bottom:8px}
 .marg8pxr {margin-right:8px}
 .marg4pxb {margin-bottom:4px}
 .marg4pxr {margin-right:4px}
@@ -233,9 +234,17 @@ forms
 	padding:.15em .2em .05em .2em;
 	text-transform:uppercase;
 	cursor:pointer; /* for buttons */
-	color:#ffe400 !important; /* important for links */
 }
-a.classicButton:active {text-shadow:none;}
+.classicButton:link, .classicButton:visited, .classicButton {
+	color:#ffe400; /* important for links */
+}
+.classicButton:hover {
+	color: #d7c000;
+}
+a.classicButton:active {
+	position:relative;
+	bottom:-2px;
+}
 
 /**
 Borders : this could be lazy loaded as this is not mandatory for the website to work ! :)

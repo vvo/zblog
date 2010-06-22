@@ -71,3 +71,43 @@ page de test d'un post dans design normal
 webmaster tools
 
 bug modernizr fontface detection quand modernizr dans body ?
+
+css js booster : does not work in a symbolic link env
+css js booster : http://zoompf.com/blog/2009/12/the-challenge-of-dynamically-generating-static-content
+
+règle de redirection pour appeler un "vrai" fichier css sur l'url ?
+
+programme d'optimisation css et javascript avec nodejs à exécuter avant la mise en prod
+
+calendrier : mettre en cache un calendrier spécifique pour jour/mois/année dans le cache fichier et récupérer la donnée ensuite
+actuellement pour chaque page on recalcule le calendrier du jour
+
+slider qui bouge tout seul
+
+ERIC :
+homepage
+boutons fonds jaunes = fond noir + liseré
+boutons flèches avec dégradé : bof
+custom
+prestations :
+lineheight1 a gauche
+fond jaune partout pour les images
+
+a propos:
+photo flash bofbof
+resynthétiser
+
+contact:
+
+blog:
+commentaires nombre sur page article = manque le fond
+point mal positionné sous ie safari chrome
+
+favicon a réessayer
+
+police en 13 pour le menu
+
+DESIGNED BY ERIC LE TUTOUR
+
+underline safari différent FF
+

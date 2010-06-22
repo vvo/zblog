@@ -28,7 +28,7 @@ class Zblog_Views {
 		$text = Pluf_Text_MarkDown_parse(file_get_contents($tpl_path.'/zblog/a-propos.md'));
 		$context = new Pluf_Template_Context(
 				array(
-					'page_title' => 'Développeur web paris',
+					'page_title' => 'à propos',
 					'text' => $text
 					)
 		);

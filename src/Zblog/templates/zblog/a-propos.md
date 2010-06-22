@@ -1,36 +1,23 @@
-Zeroload est l'entreprise créée par Vincent Voyer, développeur web spécialisé en performance web (performance technique).
+Zeroload est l'entreprise créée par Vincent Voyer,
+développeur web spécialisé en performance web (performance technique).
 
-Expérience
+Services
+----
+Zeroload aide les entreprises du web dans leurs démarches d'optimisation des pages web. Nous analysons, priorisons et
+développons avec vous les solutions qui feront de votre site web un site rapide et fiable.
 
-Titulaire d'une
-[licence pro informatique et logiciels libre](http://www.info.univ-angers.fr/info/enseignement/proglicproinfo.html "Programme de la licence")
-, j'ai commencé à travailler en entreprise en **2006** en réalisant un CMS pour la gestion des projets de chercheurs au LCPC, [toujours utilisé](http://or.lcpc.fr) excusez les couleurs
-je suis __légerement__ (et certains jours, **lourdement**) [daltonien](http://upload.wikimedia.org/wikipedia/commons/c/c3/Ishihara_11.PNG "Vous voyez quelque chose ? Moi rien.") !
+N'hésitez pas à [nous contacter](/contact) si :
 
-Quelques mois plus tard je deviens **formateur** pour la société [Dawan](http://dawan.fr) dans les domaines du web : sql, html, css, javascript, administration linux.
+* votre site "rame"
+* votre bande passante explose
+* votre base de données est surchargée
+* vous avez trop de javascript, trop de css
+* ...
 
-Fin 2007, attiré par les entreprises innovantes du web j'ai eu l'opportunité de rejoindre la très récente société
-web-expect en tant que premier salarié (ils sont une vingtaine maintenant), renommée [beemoov](http://beemoov.com)
-(un nom de mon invention ...), éditrice de [jeux en ligne sur navigateur](http://fr.wikipedia.org/wiki/Jeu_sur_navigateur_internet).
+L'entreprise
+----
+Vincent Voyer a créé Zeroload début 2010 après avoir travaillé pendant plusieurs années sur des sites web
+ à fort traffic.
 
-Avec le jeu phare de la société, [ma-bimbo](http://ma-bimbo.com)
-j'ai pu faire mes armes sur un site web 100% ajax **très fréquenté** (15 000-20 0000 joueurs connectés lors des pics d'audience)
-et ainsi développer des compétences spécifiques à la performance web ainsi qu'à l'administration de serveurs linux.
-
-Après être devenu responsable technique chez Beemoov, j'ai souhaité une nouvelle expérience web à l'opposé de l'esprit startup.
-
-En 2009, j'ai eu la chance de rejoindre la société [Mappy](http://fr.mappy.com) éditrice du site historique du même nom.
-
-Rapidement devenu **Mr Performance** au sein de l'équipe web j'ai optimisé autant que possible l'affichage progressif
-de la page d'accueil du portail où atterissent 95% des visiteurs.
-
-Ces expériences m'ont prouvé que la performance web était un domaine dans lequel je devais m'investir d'avantage
-**c'est ce que j'ai fait en créeant Zeroload**.
-
-Un dernier mot ? J'ai créé mes premiers sites web il [y a plus de 10 ans](http://web.archive.org/web/20000903014704/www.citeweb.net/thesimpsons/).
-
-A cette époque là tout le monde lisait [HTML4 pour le web](http://sitb-images-eu.amazon.com/Qffs+v35lepI5FBRx2nce9joVa3ohbj+k0MAfdj+NenJyrILEjYkwsN+Ms0XcqiS),
-l'éditeur phare c'était notepad (le vrai) et en vacances on avait pas d'ordinateur portable
-alors j'écrivais mon code html sur du brouillon que je recopiais ensuite à la maison (véridique).
-
-Moi __geek__ ? Non, **fou de web**.
+Pour en savoir plus à son sujet,
+[lisez l'article du blog](/blog/vincent%20voyer,%20d%C3%A9veloppeur%20web%20paris/ "développeur web paris").

@@ -24,7 +24,7 @@
 						<img src="{mediaurl '/img/logo.png'}" alt="zeroload" class="block" />
 					</a>
 
-					<nav id="menu" class="block classicBorderTop pad8pxt sansRounded font15 caps">
+					<nav id="menu" class="block classicBorderTop pad8pxt sansRounded font13 caps">
 						<div class="floatRight">
 							<a href="{url 'homepage'}" title="Accueil du site" class="first relative">accueil</a>
 							<a href="{url 'services'}" class="classicBorderLeft" title="Découvrez nos services d'optimisation du temps de chargement de vos pages">prestations</a>
@@ -49,12 +49,12 @@
 
 		<div class="clearLeft"></div>
 
-		{jsbooster "static/js/modernizr-1.5.js, static/js/jquery, static/js/slider.js"}
+		{jsbooster "static/js/modernizr-1.5.js,static/js/jquery,static/js/slider.js,static/js/latest-tweets.js"}
 
 		{block footer_scripts}{/block}
 		{if $cfg_debug !== true}
 		<script type="text/javascript">
-{literal}
+		{literal}
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-12667483-1']);
 		  _gaq.push(['_setDomainName', '.zeroload.net']);

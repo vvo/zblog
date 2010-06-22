@@ -66,10 +66,10 @@ Menu
 
 #menu .first {border:none}
 
-/*#menu a:active {
+#menu a:active {
 	position:relative;
 	bottom:-2px;
-}*/
+}
 
 /* specific rules when using border-image */
 .borderimage #menu {
@@ -93,6 +93,7 @@ end menu
 /**
 freetest bar, firefox sucks on submits, shared accross multiple pages
 * Very very strange behavior with borderimage and buttons..
+this is confirmed to be a firefox bug so do not try to get rid of it, firefox mac only
 */
 .borderimage .classicButtonFix {
 	height:35px;
@@ -142,11 +143,20 @@ a {text-decoration: none}
 a:link {color: #000;}
 a:visited {color: #000;}
 a:hover {color:#d7c000}
-a:active {text-shadow: 0 1px 0 #fef28f}
+a:active {text-shadow: 0 2px 0 #fef28f}
 
 .textContent a:link {border-bottom:1px dotted #000}
 .textContent a:visited {color:#827400;border-bottom:1px dotted #827400;}
 .textContent a:hover {border:none}
+
+.textContent h2 {
+	font-size: 138.5%;
+	margin:.5em 0;
+}
+
+.textContent p, .textContent ul {
+	font-size: 108%;
+}
 
 /**
 prestations

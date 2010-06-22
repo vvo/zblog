@@ -129,9 +129,6 @@ Number of comments
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
-}
-
-.article:nth-child(odd) .commentsCount {
 	background-color:#e5cd00
 }
 
@@ -150,15 +147,6 @@ Number of comments
 }
 
 #article_content img {border:1px solid #ac9500}
-
-#article_content h2 {
-	font-size: 138.5%;
-}
-
-#article_content p, #article_content ul {
-	font-size: 108%;
-}
-
 
 /*.activeCmonth:after, .activeCday:after {
 	content:"<sup><strong>.</strong></sup>"
