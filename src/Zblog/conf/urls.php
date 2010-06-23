@@ -52,14 +52,14 @@ $ctl[] = array('regex' => '#^/blog/feed.xml$#',
 		'name' => 'blog_feed',
 		'method' => 'atom_feed');
 
-$ctl[] = array('regex' => '#^/blog/tag/([0-9a-zA-Z_\-]+)$#',
+$ctl[] = array('regex' => '#^/blog/tag/(.+)/$#',
 		'priority' => 4,
 		'base' => Pluf::f('zblog_base'),
 		'model' => 'Zblog_Blog',
 		'name' => 'blog_tag',
 		'method' => 'view_by_tag');
 
-$ctl[] = array('regex' => '#^/blog/tag/([0-9a-zA-Z_\-]+)/page/(\d+)/$#',
+$ctl[] = array('regex' => '#^/blog/tag/(.+)/page/(\d+)/$#',
 		'priority' => 4,
 		'base' => Pluf::f('zblog_base'),
 		'model' => 'Zblog_Blog',

@@ -8,6 +8,7 @@
 			normalClass = 'yellow',
 			$loader = $('.loader'),
 			timer,
+			timer2,
 			nextLink,
 			timelapse = 2500,
 			nbSlides = $liens.length;
@@ -30,8 +31,15 @@
 			return false;
 		});
 
+		timer2 = setTimeout(function(){
+			$loader.fadeOut(function(){
+				$(this).remove();
+			});
+		}, 2500);
+
 		$(window).load(function(){
 			$loader.fadeOut(function(){
+				clearTimeout(timer2);
 				$(this).remove();
 			});
 		});
