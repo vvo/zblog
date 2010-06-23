@@ -1,5 +1,6 @@
 /* closure compiler compatible */
-function twitterCallback2(twitters) {
+(function(){
+	var twitterCallback2 = function(twitters) {
   var statusHTML = [];
   for (var i=0; i<twitters.length; i++){
     var username = twitters[i]['user']['screen_name'];
@@ -19,6 +20,7 @@ function twitterCallback2(twitters) {
 	}
   }
   document.getElementById('twitter_div').innerHTML = statusHTML.join('');
-}
+};
 
 window['twitterCallback2'] = twitterCallback2;
+})();

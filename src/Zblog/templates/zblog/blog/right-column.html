@@ -3,7 +3,7 @@
 {foreach $last_posts as $post}
 <div class="classicBorderBottom textContent pad8pxb marg8pxb lineHeight1p2">
 	<span class="orange sansRounded">{$post.post_date|date: "%d/%m"}</span>
-	<a href="{url 'blog_post', strtolower($post.title)}">{$post.title}</a>
+	<a href="{url 'blog_post', rawurlencode(strtolower($post.title))}">{$post.title}</a>
 </div>
 {/foreach}
 

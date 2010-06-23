@@ -4,22 +4,13 @@ problème FOUC sur font-face : problème de modernizr, bug posté sur github
 chercher ce qui provoque fouc : utiliser webfont loader quand disponible
 
 Avant mise en prod :
-flux atom, tester, avec images aussi
 tester IE6-7-8 chrome safari opera
 créer projet git avec ignore du config pour récupération sur la prod facilement
 remove all threads from disqus
 
 proteger admin
 
-Warning :
-attention aux important!
-DEVIS GRATUIT à annoncer aux endroits stratégiques
-rédaction articles, reprendre idées google docs
-remodelage texte homepage, contact, a propos, prestations
-remodelage puces homepage slider
 bulle twitter -> lien vers twitter
-performance ! tester intégration webo
-cache !
 méthode google pour inclusion fonts / méthode maison (création css à la volée avec labJS ou requireJS)
 Pourquoi on envoit connection close au php ? problème pluf, retenter une explication sur les forums
 
@@ -82,32 +73,10 @@ programme d'optimisation css et javascript avec nodejs à exécuter avant la mis
 calendrier : mettre en cache un calendrier spécifique pour jour/mois/année dans le cache fichier et récupérer la donnée ensuite
 actuellement pour chaque page on recalcule le calendrier du jour
 
-slider qui bouge tout seul
-
-ERIC :
-homepage
-boutons fonds jaunes = fond noir + liseré
-boutons flèches avec dégradé : bof
-custom
-prestations :
-lineheight1 a gauche
-fond jaune partout pour les images
-
-a propos:
-photo flash bofbof
-resynthétiser
-
-contact:
-
-blog:
-commentaires nombre sur page article = manque le fond
 point mal positionné sous ie safari chrome
 
 favicon a réessayer
 
-police en 13 pour le menu
-
-DESIGNED BY ERIC LE TUTOUR
-
 underline safari différent FF
 
+corriger les <times>

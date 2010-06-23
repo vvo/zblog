@@ -8,6 +8,7 @@
 
 .sansRounded {font-family: 'FrankfurterComMedium', 'Comic Sans Ms';/* font-size-adjust:0.472*/}
 .serif {font-family: 'LithoAntique', 'Times New Roman';}
+.arial {font-family: Arial, Helvetica, sans-serif;}
 
 html {background:#ffe400}
 
@@ -66,10 +67,6 @@ Menu
 
 #menu .first {border:none}
 
-#menu a:active {
-	position:relative;
-	bottom:-2px;
-}
 
 /* specific rules when using border-image */
 .borderimage #menu {
@@ -151,11 +148,15 @@ a:active {text-shadow: 0 2px 0 #fef28f}
 
 .textContent h2 {
 	font-size: 138.5%;
-	margin:.5em 0;
+	margin:.25em 0;
 }
 
 .textContent p, .textContent ul {
 	font-size: 108%;
+}
+
+.textContent p {
+	margin-bottom:.5em;
 }
 
 /**

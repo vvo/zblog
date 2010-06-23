@@ -7,42 +7,54 @@
 
 {block body}
 <div id="slider" class="sansRounded relative h185">
-	<div id="sliderMenu" class="font18">
+	<div id="slides" class="lineHeight1">
+		
+		<div class="loader h185 absolute posTop posLeft bgYellow w630 z5"></div>
+
+		<div class="wrapper">
+			<div id="slide1" class="h185 absolute posTop posLeft w960">
+				<img src="{mediaurl '/img/homepage/slide4.jpg'}" alt="" />
+				<span class="block w330 absolute posTop posRight">
+					<span class="block sliderLink h185 pad15pxl caps">
+						<span class="block font22 pad15pxt">accélérer votre site web :</span>
+						<span class="block font39">nos solutions</span>
+						<a href="{url 'services'}"
+						   title="Optimisez le temps de chargement de votre site web, maintenant !"
+						   class="font14 inlineBlock classicButton serif">cliquez pour plus d'informations</a>
+					</span>
+				</span>
+			</div>
+
+			<div id="slide2" class="h185 hide absolute posTop posLeft w960">
+				<img src="{mediaurl '/img/homepage/slide5.jpg'}" alt="" />
+				<span class="block w330 absolute posTop posRight">
+					<span class="block sliderLink h185 pad15pxl caps">
+						<span class="block font20 pad15pxt">pourquoi optimiser le temps</span>
+						<span class="block font34">de chargement ?</span>
+						<a href="{url 'blog_post', rawurlencode(strtolower('pourquoi optimiser le temps de chargement de vos pages'))}"
+						   class="font14 inlineBlock classicButton serif">cliquez pour lire l'article</a>
+					</span>
+				</span>
+			</div>
+
+			<div id="slide3" class="h185 hide absolute posTop posLeft w960">
+				<img src="{mediaurl '/img/homepage/slide3.jpg'}" alt="" />
+				<span class="block w330 absolute posTop posRight">
+					<span class="block sliderLink h185 pad15pxl caps">
+						<span class="block font22 pad15pxt">ouverture du site web</span>
+						<span class="block font50">zeroload</span>
+						<a href="{url 'blog_post', rawurlencode(strtolower('ouverture de zeroload.net'))}"
+						   class="font14 inlineBlock classicButton serif">cliquez pour lire l'article</a>
+					</span>
+				</span>
+			</div>
+		</div>
+	</div>
+	
+	<div id="sliderMenu" class="font15">
 		<a href="#slide1" class="yellow">1</a>
 		<a href="#slide2" class="yellow">2</a>
 		<a href="#slide3" class="yellow">3</a>
-	</div>
-
-	<div id="slides" class="lineHeight1">
-		<div id="slide1" href="link" class="h185">
-			<span class="block w330 absolute posTop posRight">
-				<span class="block sliderLink h185 pad15pxl caps">
-					<span class="block font22 pad15pxt">accélérer votre site web :</span>
-					<span class="block font39">nos solutions</span>
-					<a href="{url 'services'}" title="Optimisez le temps de chargement de votre site web, maintenant !" class="font20 inlineBlock classicButton serif">+ d'infos</a>
-				</span>
-			</span>
-		</div>
-
-		<div id="slide2" href="link" class="h185 hide">
-			<span class="block w330 absolute posTop posRight">
-				<span class="block sliderLink h185 pad15pxl caps">
-					<span class="block font20 pad15pxt">pourquoi optimiser le temps</span>
-					<span class="block font34">de chargement ?</span>
-					<a href="{url 'blog_post', 'pourquoi optimiser le temps de chargement de vos pages'}" class="font20 inlineBlock classicButton serif">lire l'article</a>
-				</span>
-			</span>
-		</div>
-
-		<div id="slide3" href="link" class="h185 hide">
-			<span class="block w330 absolute posTop posRight">
-				<span class="block sliderLink h185 pad15pxl caps">
-					<span class="block font22 pad15pxt">ouverture du site web</span>
-					<span class="block font50">zeroload</span>
-					<a href="{url 'blog_post', 'ouverture de zeroload.net'}" class="font20 inlineBlock classicButton serif">lire l'article</a>
-				</span>
-			</span>
-		</div>
 	</div>
 </div>
 
@@ -51,11 +63,11 @@
 		<div class="pad18pxr">
 			<h1 class="marg0 font18">Votre site est lent ?</h1>
 			<ul class="font14 marg0 marg1eml lineHeight18px">
-				<li>Votre page d'accueil <strong>rame</strong></li>
-				<li>Certaines zones de votre site mettent 10 secondes (ou plus) à charger</li>
-				<li>Vos clients <strong>râlent</strong> parfois car votre site est instable</li>
-				<li>Vos scripts, feuilles de styles et images sont trop nombreux et trops lourds</li>
-				<li>Plusieurs régions du site restent souvent ignorées par les visiteurs</li>
+				<li>Votre page d'accueil <strong>rame</strong>.</li>
+				<li>Certaines zones de votre site mettent entre 5 & 10 secondes (ou plus) à charger.</li>
+				<li>Vos clients <strong>se plaignent</strong> de l'instabilité de votre site.</li>
+				<li>Les éléments (scripts, feuilles de styles, images ...) sont trop nombreux et trops lourds.</li>
+				<li>Plusieurs régions du site restent souvent ignorées par les visiteurs.</li>
 			</ul>
 		</div>
 	</div>
@@ -63,23 +75,22 @@
 		<div class="classicBorderLeft pad18pxl">
 			<h1 class="marg0 font18">Faites-le optimiser ! ...</h1>
 			<ul class="font14 marg0 marg1eml lineHeight18px">
-				<li>Nous pouvons <strong>optimiser le temps de chargement</strong> de vos pages ...</li>
-				<li>... Tout en réduisant la charge de vos serveurs et la bande passante utilisée</li>
+				<li>Nous pouvons <strong>optimiser le temps de chargement</strong> de vos pages...</li>
+				<li>...tout en réduisant la charge de vos serveurs et la bande passante utilisée.</li>
 				<li>Nous vous conseillons dans l'optimisation de votre site et installons les
-				solutions nécessaires</li>
-				<li>Gzip, cache, bande passante, minification, aggrégation, optimisation d'images ...</li>
+				solutions nécessaires.</li>
+				<li>Gzip, cache, bande passante, minification, agrégation, optimisation d'images,...</li>
 			</ul>
 		</div>
 	</div>
 	<div class="w360 floatLeft">
 		<div class="classicBorderLeft pad18pxl">
-			<h1 class="marg0 font18">... Et augmentez vos revenus</h1>
+			<h1 class="marg0 font18">...et augmentez vos revenus</h1>
 			<ul class="font14 marg0 marg1eml lineHeight18px">
-				<!--<li>Optimiser le temps de chargement des pages n'est pas seulement un hobby pour développeurs curieux</li>-->
-				<li>La rapidité de votre site web impactera le nombre de ventes (ou de transformations) que vous réaliserez</li>
-				<li>Exemple, la page d'accueil de firefox : <strong>2s en moins = 60 million de téléchargements en +</strong> <a href="http://blog.mozilla.com/metrics/2010/04/05/firefox-page-load-speed-%E2%80%93-part-ii/" title="Lien vers le billet officiel de mozilla">chaque année</a></li>
-				<li>Le temps de chargement influe aussi désormais sur <a href="http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html" title="Lien vers l'article officiel de google">votre positionnement dans google</a></li>
-				<li><a href="{url 'contact'}">Contactez-nous</a> pour plus d'informations</li>
+				<li>La rapidité de votre site web impactera le nombre de ventes (ou de transformations) que vous réaliserez.</li>
+				<li>Exemple : la page d'accueil de firefox : <strong>2s en moins = 60 millions de téléchargements en +</strong> <a href="http://blog.mozilla.com/metrics/2010/04/05/firefox-page-load-speed-%E2%80%93-part-ii/" title="Lien vers le billet officiel de Mozilla">chaque année</a>.</li>
+				<li>Le temps de chargement influe aussi désormais légèrement sur <a href="http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html" title="Lien vers l'article officiel de google">votre positionnement dans Google</a>.</li>
+				<li><a href="{url 'contact'}">Contactez-nous</a> pour plus d'informations !</li>
 			</ul>
 		</div>
 	</div>
@@ -88,15 +99,15 @@
 
 {block footer}
 <div  style="opacity:.1">
-<div class="floatLeft w240" id="imgAudit">
-	<img src="{mediaurl '/img/homepage/audit-mappy.png'}" />
-</div>
-<div class="floatLeft w360">
-	<div class="pad18pxl">
-		<div class="font15 sansRounded caps block lineHeight1">étude de cas : Mappy.com</div>
-		<div class="font14">Comment optimiser un site grand public</div>
+	<div class="floatLeft w240" id="imgAudit">
+		<img src="{mediaurl '/img/homepage/audit-mappy.png'}" />
 	</div>
-</div>
+	<div class="floatLeft w360">
+		<div class="pad18pxl">
+			<div class="font15 sansRounded caps block lineHeight1">étude de cas : Mappy.com</div>
+			<div class="font14">Comment optimiser un site grand public</div>
+		</div>
+	</div>
 </div>
 <div class="font09 caps sansRounded">
 	{include 'zblog/inc/footer-right.html'}

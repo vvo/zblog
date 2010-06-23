@@ -17,8 +17,6 @@
 				{* handle future months *}
 			<li{if $month_id > $current_month} class="lightOrange"{/if}>
 				<span class="relative">
-					{* always show the current month *}
-				{if $current_month && $current_month == $month_id}<span class="currentBullet black">•</span>{/if}
 				{* handle active month *}
 					{if $month.nb_posts !== null}
 						{assign $month_pad = str_pad($month_id, 2, '0', STR_PAD_LEFT)}
@@ -31,6 +29,8 @@
 					{else}
 						{$month.name}
 					{/if}
+						{* always show the current month *}
+				{if $current_month && $current_month == $month_id}<sup class="arial absolute currentBullet black">•</sup>{/if}
 					</span>
 		</li>
 			{/foreach}
@@ -41,19 +41,24 @@
 			{* days list *}
 			{foreach $days as $day_id => $day}
 				{assign $day_pad = str_pad($day_id, 2, '0', STR_PAD_LEFT)}
+				{if $current_day && $current_day == $day_id}
+					{assign $current_bullet = '<sup class="floatRight absolute currentBullet arial black">•</sup>'}
+				{else}
+					{assign $current_bullet = ''}
+				{/if}
+
 		<li class="classicBorderLeft{if $current_day && $day_id > $current_day} lightOrange{/if}">
 			<span class="relative">
-				{* always show the current day *}
-				{if $current_day && $current_day == $day_id}<span class="currentBullet black">•</span>{/if}
 			{if $A_day == $day_id}<span class="activeAday">{/if}
 					{if isset($day->nb_posts)}
 			<a href="{url 'blog_day', array($A_year, $A_month, $day_pad)}"
 			   title="Billets du {$day_pad}/{$A_month}/{$A_year}"
 			   {* handle asked day *}
-			   {if $A_day == $day_id} class="active"{/if}>{$day_pad}</a>
+			   {if $A_day == $day_id} class="active"{/if}>{$day_pad}{$current_bullet|safe}</a>
 					{else}
-						{$day_pad}
+						{$day_pad}{$current_bullet|safe}
 					{/if}
+			{if $A_day == $day_id}</span>{/if}
 			</span>
 		</li>
 			{/foreach}

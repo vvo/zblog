@@ -1,10 +1,21 @@
 (function(window, undefined){
 
 	$(function(){
-		var $liens = $('#sliderMenu a'),
-			$slides = $('#slides > div'),
+		var $slider = $('#slider'),
+			$liens = $('#sliderMenu a'),
+			$slides = $('#slides .wrapper > div'),
 			selectedClasses = 'selected black',
-			normalClass = 'yellow';
+			normalClass = 'yellow',
+			$loader = $('.loader'),
+			timer,
+			nextLink,
+			timelapse = 2500,
+			nbSlides = $liens.length;
+
+		$slider.bind('mouseenter', function(){
+			clearTimeout(timer);
+			$slider.unbind('mouseenter');
+		});
 
 		$liens.click(function(e){
 			var slideNumber = $liens.index(this);
@@ -13,10 +24,27 @@
 				.addClass(selectedClasses)
 				.siblings().removeClass(selectedClasses)
 				.addClass(normalClass);
-			$slides.eq(slideNumber).show().siblings().hide();
+
+			$slides.eq(slideNumber).fadeIn().siblings().fadeOut();
 			this.blur();
 			return false;
-		}).eq(0).trigger('click');
+		});
+
+		$(window).load(function(){
+			$loader.fadeOut(function(){
+				$(this).remove();
+			});
+		});
+
+		nextLink = function(i) {
+			$liens.eq(i).trigger('click');
+			timer = setTimeout(function(){
+				nextLink((i < (nbSlides-1) ? i+1 : 0));
+			}, timelapse);
+		}
+
+		nextLink(0);
+
 	});
 
 })(this);

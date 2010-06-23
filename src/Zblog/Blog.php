@@ -64,12 +64,12 @@ class Zblog_Blog {
 		// Z for GMT
 		if($prev_post != null) {
 			$prev_link = array("text" => $prev_post->title,
-					"href" => Pluf_HTTP_URL_urlForView('blog_post', strtolower($prev_post->title)));
+					"href" => Pluf_HTTP_URL_urlForView('blog_post', rawurlencode(strtolower($prev_post->title))));
 		}
 
 		if($next_post != null) {
 			$next_link = array("text" => $next_post->title,
-					"href" => Pluf_HTTP_URL_urlForView('blog_post', strtolower($next_post->title)));
+					"href" => Pluf_HTTP_URL_urlForView('blog_post', rawurlencode(strtolower($next_post->title))));
 		}
 
 		// control if post exists then 404

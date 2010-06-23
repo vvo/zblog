@@ -99,19 +99,23 @@ DISQUS
 
 .dsq-button {
 	font-weight: normal !important;
+	background: #000 !important;
 }
 
  .dsq-button, .dsq-button-small {
 	font-family: 'LithoAntique', 'Times New Roman';
-	-moz-border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
-	-webkit-border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
-	border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
-	border-width: 6px 17px 6px 5px  !important;
-	background:transparent  !important;
 	padding:.1em  !important;
 	text-transform:uppercase  !important;
 	cursor:pointer  !important; /* for buttons */
 	color:#ffe400 !important; /* important for links */
+}
+
+.borderimage .dsq-button {
+	background:transparent  !important;
+	-moz-border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
+	-webkit-border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
+	border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
+	border-width: 6px 17px 6px 5px  !important;
 }
 
 /*
@@ -141,14 +145,7 @@ Number of comments
 }
 
 .currentBullet {
-	position:absolute;
-	top:-2px;
-	right:-2px;
+	top:0;
 }
 
 #article_content img {border:1px solid #ac9500}
-
-/*.activeCmonth:after, .activeCday:after {
-	content:"<sup><strong>.</strong></sup>"
-}
-*/

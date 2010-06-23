@@ -14,7 +14,7 @@ Prestations
 ------------------
 Notre activité principale est d'**aider les entreprises à accélérer l'affichage de leurs sites internet**.
 
-Lorsque vos revenus dépendent de votre site web, que vous ayez 10 000, 100 000, ou 1 million de visiteurs par jour, si votre site est lent, trop lent alors vous pouvez être certain de **perdre des ventes**.
+Lorsque vos revenus dépendent de votre site web, que vous ayez 10 000, 100 000, ou un million de visiteurs par jour, si votre site est lent, trop lent alors vous pouvez être certain de **perdre des ventes**.
 
 ![http://www.flickr.com/photos/eyesplash/4332397307/](/static/img/blog/posts/01-01.jpg "L'optimisations d'images est un de nos domaines favoris !")
 
@@ -55,23 +55,29 @@ Et enfin quelques indépendants :
 
 Pourquoi le thème de la performance web ?
 -----------------------------
-Premièrement en tant que **développeur web curieux et passionné**, je suis intéressé par la performance en général, de même qu'un pilote de course aime aller toujours plus vite j'apprécie lorsqu'une application fonctionne comme prévu et est plus rapide qu'avant.
+Mes deux dernières expériences professionnelles m'ont amené à travailler sur plusieurs sites web à fort trafic.
 
-De plus, mes deux dernières expériences professionnelles m'ont amené à travailler sur plusieurs sites web à fort trafic.
+Lors de ces expériences j'étais reponsable de la performance web front-end sur des sites
+comme [ma-bimbo.com](http://ma-bimbo.com "Site web du jeu en ligne ma-bimbo") ou
+[mappy.com](http://mappy.com "Site web de la société Mappy") tous deux classés dans le **top 200 des sites français** (source alexa.com).
 
-Lors de ces expériences j'étais en charge de la performance web front-end sur des sites comme [ma-bimbo.com](http://ma-bimbo.com "Site web du jeu en ligne ma-bimbo") ou [mappy.com](http://mappy.com "Site web de la société Mappy") tous deux classés dans le **top 200 des sites français** (source alexa.com).
+Enfin la performance web requiert un **panel de compétences** que j'ai pu acquérir tout au long de ces 10 années d'apprentissage du web.
+En [start-up](http://beemoov.com "Site web de la société Beemoov") par exemple où je devais m'occuper non seulement
+ du code mais aussi des machines, comprendre parfaitement le concept client-serveur et les bonnes pratiques
+à adopter pour réaliser des applications web ajax performantes qui savent monter en charge.
 
-Enfin la performance web requiert un **panel de compétences** que j'ai pu acquérir de par mes expériences. En [start-up](http://beemoov.com "Site web de la société Beemoov") par exemple où je devais m'occuper non seulement du code mais aussi des machines et comprendre dans son ensemble le concept client-serveur et les bonnes pratiques à adopter pour réaliser des applications web ajax performantes.
+Ce blog et l'idée de création d'une activité centrée sur la performance des sites internet ont étés largement
+inspirés par des sites webs de référence comme ceux d'[Éric Daspet](http://performance.survol.fr),
+[Steve Souders](http://stevesouders.com/), [Patrick Meenan](http://blog.patrickmeenan.com/) et [Stoyan Stefanov](http://www.phpied.com/).
 
-Ce blog et l'idée de création d'une activité centrée sur la performance des sites internet ont étés largement inspirés par des sites webs de référence en la matière comme ceux d'[Éric Daspet](http://performance.survol.fr), [Steve Souders](http://stevesouders.com/), [Patrick Meenan](http://blog.patrickmeenan.com/) et [Stoyan Stefanov](http://www.phpied.com/).
-
-Si vous souhaitez en savoir plus et comprendre pourquoi il est important pour vous d'optimiser le temps de chargement de vos pages, suivez le [fil rss](http://zeroload.net/feed.xml) ou [contactez-nous](http://zeroload.net/contact)
- dès maintenant.
+Si vous souhaitez en savoir plus et comprendre pourquoi il est important pour vous d'optimiser le temps de chargement de vos pages,
+suivez le [fil rss](http://zeroload.net/feed.xml) ou [contactez-nous](http://zeroload.net/contact) dès maintenant.
 
 Hormis la performance web, quels autres services sont proposés ?
 ----------------------------------------------------------------
 La performance web est une **spécification** d'un domaine plus large : le développement web.
 
-Nous proposons donc des services en matière d'intégration html css compatible multi navigateurs, développements javascript et jquery, débug intense javascript et css...
+Nous proposons donc des services en matière d'intégration html css compatible multi navigateurs,
+développements javascript et jquery, débug intense javascript et css...
 
 N'hésitez pas à [nous contacter](http://zeroload.net/contact) pour vos développements spécifiques.
