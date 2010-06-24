@@ -12,7 +12,7 @@ N'hésitez pas à [nous contacter](/contact) si :
 * votre bande passante explose
 * votre base de données est surchargée
 * vous avez trop de Javascript, trop de Css
-* vos images sont trops lourdes et trop nombreuses
+* vos images sont trop lourdes et trop nombreuses
 * ou tout autre problème lié à la performance, la vitesse ou l'optimisation de votre site web.
 
 L'entreprise
