@@ -10,7 +10,7 @@ Pluf::loadFunction('Pluf_Shortcuts_GetFormForModel');
 class Zblog_Views {
 
 	public function main($request, $match) {
-		$context = new Pluf_Template_Context(array('page_title' => 'développement web front-end et performance'));
+		$context = new Pluf_Template_Context(array('page_title' => 'Réduisez le temps de chargement, gagnez de nouveaux clients'));
 		$tmpl = new Pluf_Template('zblog/homepage.html');
 		return new Pluf_HTTP_Response($tmpl->render($context));
 	}

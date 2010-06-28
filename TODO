@@ -1,7 +1,13 @@
 https://addons.mozilla.org/fr/firefox/search?q=seo&cat=all
 
+descriptions sur toutes les pages avec un header spécifique
+
+méthode de déploiement sans écraser les fichiers de config etc... avec mise a jour d'un symlink
+
 problème FOUC sur font-face : problème de modernizr, bug posté sur github
 chercher ce qui provoque fouc : utiliser webfont loader quand disponible
+
+se positionner sur les mots "performance web" essayer de les coller un peu plus partout
 
 Avant mise en prod :
 tester IE6-7-8 chrome safari opera
@@ -86,3 +92,9 @@ mettre en cache la procédure jsmin ...
 jarter jsmin latest tweets puisque déjà dans les js
 
 faire du adwords
+
+FOOTMERCATO Pierre-Marie Papineschi : papineschi@gmail.com (mettre le pdf sur le site web ?)
+MAPPY
+
+
+harmoniser gestion coordonnées entre contact contact-sent et a propos
