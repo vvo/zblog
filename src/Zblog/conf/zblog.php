@@ -2,8 +2,8 @@
 $cfg = array();
 
 // when debug is off, there's a cache of 30 minutes on each pages
-//$cfg['debug'] = true;
-$cfg['debug'] = false;
+$cfg['debug'] = true;
+//$cfg['debug'] = false;
 
 // language settings
 $cfg['time_zone'] = 'Europe/Paris';
