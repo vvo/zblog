@@ -24,6 +24,15 @@ mise en place outil déploiement PASOK :
 	cd /home/sites/zblog_releases
 	git clone git@zeroload.indefero.net:zeroload/zblog.git AAAAMMJJ-HHMMSS
 
+	# fichiers config
+	rm AAAAMMJJ-HHMMSS/src/Zblog/conf/zblog.php
+	cp /home/sites/configs/zblog/zblog.php AAAAMMJJ-HHMMSS/src/Zblog/conf/
+	rm AAAAMMJJ-HHMMSS/www/path.php
+	cp /home/sites/configs/zblog/path.php AAAAMMJJ-HHMMSS/www/
+
+	lien symbolique de www/compiler.jar vers /home/sites/compiler.jar
+	lien symbolique /home/sites/zblog/www/static/markitup vers /home/sites/markitup
+
 	# cache fichiers
 	sudo rm AAAAMMJJ-HHMMSS/cache -rf
 	mkdir AAAAMMJJ-HHMMSS/cache
@@ -35,16 +44,8 @@ mise en place outil déploiement PASOK :
 	mkdir AAAAMMJJ-HHMMSS/www/CSS-JS-Booster/cache
 	sudo chown www-data AAAAMMJJ-HHMMSS/www/CSS-JS-Booster/cache
 
-	# fichiers config
-	rm AAAAMMJJ-HHMMSS/src/Zblog/conf/zblog.php
-	cp /home/sites/configs/zblog/zblog-bdd.php AAAAMMJJ-HHMMSS/src/Zblog/conf/
-	mv AAAAMMJJ-HHMMSS/src/Zblog/conf/zblog-prod.php-dist AAAAMMJJ-HHMMSS/src/Zblog/conf/zblog.php
++sudo sans password
 
-	rm AAAAMMJJ-HHMMSS/www/path.php
-	mv AAAAMMJJ-HHMMSS/www/path-prod.php-dist AAAAMMJJ-HHMMSS/www/path.php
-
-	lien symbolique de www/compiler.jar vers /home/sites/compiler.jar
-	lien symbolique /home/sites/zblog/www/static/markitup vers /home/sites/markitup
 création rep
 Résumé interventions : PASOK
 	FOOTMERCATO Pierre-Marie Papineschi : papineschi@gmail.com (mettre le pdf sur le site web ?) PASOK

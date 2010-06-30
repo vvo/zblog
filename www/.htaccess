@@ -21,6 +21,7 @@ ExpiresByType application/atom+xml "access plus 30 minutes"
 RewriteEngine on
 # without ending $ it will allow zeroload.net.local, how handyy .. :)
 RewriteCond %{HTTP_HOST} !^zeroload\.net
+RewriteCond %{HTTP_HOST} !^betawtf.zeroload\.net
 RewriteRule (.*) http://zeroload.net/$1 [R=301,L]
 
 # then all requests goes to index.php
