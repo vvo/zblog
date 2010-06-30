@@ -3,3 +3,4 @@ Disallow: /blog/page/*
 Disallow: /blog/tag/*/page/*
 Disallow: /blog/day/*
 Disallow: *_test/
+Disallow: *_test/*

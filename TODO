@@ -1,100 +1,71 @@
-https://addons.mozilla.org/fr/firefox/search?q=seo&cat=all
-
-descriptions sur toutes les pages avec un header spécifique
-
-méthode de déploiement sans écraser les fichiers de config etc... avec mise a jour d'un symlink
-
-problème FOUC sur font-face : problème de modernizr, bug posté sur github
-chercher ce qui provoque fouc : utiliser webfont loader quand disponible
-
-se positionner sur les mots "performance web" essayer de les coller un peu plus partout
-
-Avant mise en prod :
-tester IE6-7-8 chrome safari opera
-créer projet git avec ignore du config pour récupération sur la prod facilement
-remove all threads from disqus
-
-proteger admin
-
-bulle twitter -> lien vers twitter
-méthode google pour inclusion fonts / méthode maison (création css à la volée avec labJS ou requireJS)
-Pourquoi on envoit connection close au php ? problème pluf, retenter une explication sur les forums
-
-plus tard :
-year archive
-merge pagination calculations between tag and blog page
-commentaires sur archives de l'année
-recherche
-test en ligne
-twitter affichage homepage messages
-
-Idées :
-site test web site speedup alexa top 100
-avec le top 1 million : general statistics on site performance
-écrire un bugzilla avec mes tests sur les deux fontes quand on utilise uppercase entre firefox et safari
-
-inscription
-web worker club
-lacantine
-webrankinfo
-stackoverflow
-webmaster club
-codeur
-sites américains freelance
-
-faire des liens vers zeroload.net
-
-compte twitter
-
-tenter de monter sur développeur web paris, développeur javascript, développeur web
-
-vincent-voyer.fr : fermer et tout déplacer sur zeroload.net, faire une rédirection 301 depuis la page développeur jquery, laisser ouvert le chat (avec avertissement), fermer tout le reste
-
-http://www.google.com/local/add/lookup?hl=fr&gl=FR
-
-afficher calendrier disponibilité
-
-serveur statique nodejs qui utilise cssembed et génère des fichiers en cache à partir de ce qui est demandé dans l'uri
-cssembed inside
-script nodejs qui trouve tous les js/css et créé des versions optimisées (tout simple pour l'instant)
-améliorations :
-groupes
-
-
-experiences avec moz gradient, au clic souris on fait des jolis ronds qui grandissent etc..
+TODO TODAY :
+installer webpagetest sur pc OK
+webpagetest.org annonce twitter OK
+	annonce blog zeroload OK
+installer auto admin OK
+harmoniser gestion coordonnées entre contact contact-sent et a propos OK
+installer méthode de déploiement avec fabric PASOK
+mise en place outil déploiement PASOK :
+	mise en place déploiement js et css data uris et mhtml PASOK
+	méthode de déploiement sans écraser les fichiers de config etc... avec mise a jour d'un symlink
+	créer fichier zlbog.php-dist et fichier path.php-dist
+	ajouter zblog.php dans ignore (faire un rm avant si besoin)
+	ajouter path.php dans ignore
+Résumé interventions : PASOK
+	FOOTMERCATO Pierre-Marie Papineschi : papineschi@gmail.com (mettre le pdf sur le site web ?) PASOK
+	MAPPY PASOK
+	Ma-bimbo.com PASOK
+billet soirée web perf PASOK
+tester feuilles de styles annexes PASOK
+corriger derniers bugs PASOK
 
 page de test d'un post dans design normal
 
-webmaster tools
+Plus tard :
+descriptions sur toutes les pages avec un header spécifique PASOK
+tester IE6 PASOK
+incorporer la bulle twitter PASOK
+incorporer la recherche PASOK
+incorporer le test PASOK
+bulle twitter -> lien vers twitter PASOK
+year archive PASOK
+merge pagination calculations between tag and blog page PASOK
+commentaires sur archives de l'année PASOK
 
-bug modernizr fontface detection quand modernizr dans body ?
-
-css js booster : does not work in a symbolic link env
-css js booster : http://zoompf.com/blog/2009/12/the-challenge-of-dynamically-generating-static-content
-
-règle de redirection pour appeler un "vrai" fichier css sur l'url ?
-
-programme d'optimisation css et javascript avec nodejs à exécuter avant la mise en prod
+Idées / divers :
+méthode google pour inclusion fonts / méthode maison (création css à la volée avec labJS ou requireJS)
+Pourquoi on envoit connection close au php ? problème pluf, retenter une explication sur les forums
+site test web site speedup alexa top 100
+	on optimize directement avec webo site speedup la plupart des gros sites web
+	on calcule combien on gagne avec webpagetest.org api
+	avec le top 1 million : general statistics on site performance
+écrire un bugzilla avec mes tests sur les deux fontes quand on utilise uppercase entre firefox et safari PASOK
+problème FOUC sur font-face : problème de modernizr, bug posté sur github PASOK
+	(chercher ce qui provoque fouc : utiliser webfont loader quand disponible) PASOK
+	modifié modernizr en attendant
+se positionner sur les mots "performance web" essayer de les coller un peu plus partout PASOK
 
 calendrier : mettre en cache un calendrier spécifique pour jour/mois/année dans le cache fichier et récupérer la donnée ensuite
-actuellement pour chaque page on recalcule le calendrier du jour
+actuellement pour chaque page on recalcule le calendrier du jour PASOK
 
-point mal positionné sous ie safari chrome
+installer une extension SEO PASOK
+https://addons.mozilla.org/fr/firefox/search?q=seo&cat=all
+tenter de monter sur développeur web paris, développeur javascript, développeur web
+vincent-voyer.fr : fermer et tout déplacer sur zeroload.net, faire une rédirection 301 depuis la page développeur jquery, laisser ouvert le chat (avec avertissement), fermer tout le reste
+afficher calendrier disponibilité
 
+script nodejs qui trouve tous les js/css et créé des versions optimisées (tout simple pour l'instant)
+	programme nodejs pour optimiser les css et js avec des paramètres de configuration de groupes
+	génération data uris
+	génération mhtml
+	cssembed?
+	optimisation d'images
+
+experiences avec moz gradient, au clic souris on fait des jolis ronds qui grandissent etc..
+
+css js booster : does not work in a symbolic link env
 favicon a réessayer
 
-underline safari différent FF
+urls avec et sans / a faire fonctionner ...
 
-pourquoi ça a planté ?
-tester lorsque le cache s'arrête
-mettre en cache la procédure jsmin ...
-
-jarter jsmin latest tweets puisque déjà dans les js
-
-faire du adwords
-
-FOOTMERCATO Pierre-Marie Papineschi : papineschi@gmail.com (mettre le pdf sur le site web ?)
-MAPPY
-
-
-harmoniser gestion coordonnées entre contact contact-sent et a propos
+bouton répondre sur les commentaires
