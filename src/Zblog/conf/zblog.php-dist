@@ -18,7 +18,7 @@ $cfg['mail_to'] = 'vincent@zeroload.net';
 $cfg['zblog_statics'] = '/static';
 $cfg['url_media'] = '/static';
 
-$cfg['admin_password'] = 'joerginp';
+$cfg['admin_password'] = 'yourpassword';
 
 $cfg['tmp_folder'] = '/tmp';
 
@@ -27,7 +27,7 @@ $cfg['middleware_classes'] = array('Pluf_Middleware_Debug');
 
 // database configuration
 $cfg['db_login'] = 'vincent';
-$cfg['db_password'] = 'joerginp';
+$cfg['db_password'] = '';
 $cfg['db_server'] = 'localhost';
 $cfg['db_database'] = 'zblog';
 $cfg['db_table_prefix'] = '';
@@ -35,8 +35,9 @@ $cfg['db_version'] = '';
 $cfg['db_engine'] = 'MySQL';
 
 
-// i use disqus for the comments
-$cfg['disqus_prefix'] = 'ZL-COMMENTS-PROD-';
+// i use disqus for the comments, you must specify a unique name
+//$cfg['disqus_prefix'] = 'ZL-COMMENTS-PROD-';
+$cfg['disqus_prefix'] = 'what-you-want';
 
 
 // when running on MAC, you need this ..
@@ -67,7 +68,7 @@ $cfg['template_tags'] = array(
 
 // what cache to use ?
 $cfg['cache_engine'] = 'Pluf_Cache_File';
-$cfg['cache_timeout'] = 100000;
+$cfg['cache_timeout'] = 7200;
 
 $cfg['cache_file_folder'] = realpath(dirname(__FILE__).'/../../../cache');
 
