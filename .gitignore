@@ -6,3 +6,4 @@ cache/*
 www/compiler.jar
 src/Zblog/conf/zblog.php
 www/path.php
+www/static/markitup
