@@ -2,7 +2,8 @@ TODO TODAY :
 installer webpagetest sur pc OK
 webpagetest.org annonce twitter OK
 	annonce blog zeroload OK
-installer auto admin OK
+	billet soirée web perf OK
+installer auto admin en prod OK
 harmoniser gestion coordonnées entre contact contact-sent et a propos OK
 installer méthode de déploiement avec fabric PASOK
 mise en place outil déploiement PASOK :
@@ -11,11 +12,46 @@ mise en place outil déploiement PASOK :
 	créer fichier zlbog.php-dist et fichier path.php-dist
 	ajouter zblog.php dans ignore (faire un rm avant si besoin)
 	ajouter path.php dans ignore
+
+	mkdir /home/sites/configs
+	mkdir /home/sites/configs/zblog
+	création fichier zlobg-bdd.php dans /home/sites/configs/zblog
+	création fichier zblog-local.php-dist
+	création fichier zblog-prod.php-dist
+		inclure zblog-bdd.php
+
+	sauvegarder AAAAMMJJ-HHMMSS
+	cd /home/sites/zblog_releases
+	git clone git@zeroload.indefero.net:zeroload/zblog.git AAAAMMJJ-HHMMSS
+
+	# cache fichiers
+	sudo rm AAAAMMJJ-HHMMSS/cache -rf
+	mkdir AAAAMMJJ-HHMMSS/cache
+	sudo chown www-data AAAAMMJJ-HHMMSS/cache
+
+	# CSS-JS-Booster + cache
+	cp /home/sites/zblog/www/CSS-JS-Booster AAAAMMJJ-HHMMSS/www/ -R
+	sudo rm AAAAMMJJ-HHMMSS/www/CSS-JS-Booster/cache
+	mkdir AAAAMMJJ-HHMMSS/www/CSS-JS-Booster/cache
+	sudo chown www-data AAAAMMJJ-HHMMSS/www/CSS-JS-Booster/cache
+
+	# fichiers config
+	rm AAAAMMJJ-HHMMSS/src/Zblog/conf/zblog.php
+	cp /home/sites/configs/zblog/zblog-bdd.php AAAAMMJJ-HHMMSS/src/Zblog/conf/
+	mv AAAAMMJJ-HHMMSS/src/Zblog/conf/zblog-prod.php-dist AAAAMMJJ-HHMMSS/src/Zblog/conf/zblog.php
+
+	rm AAAAMMJJ-HHMMSS/www/path.php
+	mv AAAAMMJJ-HHMMSS/www/path-prod.php-dist AAAAMMJJ-HHMMSS/www/path.php
+
+	lien symbolique de www/compiler.jar vers /home/sites/compiler.jar
+	lien symbolique /home/sites/zblog/www/static/markitup vers /home/sites/markitup
+création rep
 Résumé interventions : PASOK
 	FOOTMERCATO Pierre-Marie Papineschi : papineschi@gmail.com (mettre le pdf sur le site web ?) PASOK
 	MAPPY PASOK
 	Ma-bimbo.com PASOK
-billet soirée web perf PASOK
+Billet technologie zeroload PASOK
+
 tester feuilles de styles annexes PASOK
 corriger derniers bugs PASOK
 
@@ -69,3 +105,5 @@ favicon a réessayer
 urls avec et sans / a faire fonctionner ...
 
 bouton répondre sur les commentaires
+
+mettre à jour le slider

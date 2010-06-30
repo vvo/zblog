@@ -1,17 +1,10 @@
 <?php
-$path_to_Pluf = realpath(dirname(__FILE__).'/../../pluf/src');
-$path_to_CSSJSBooster = realpath(dirname(__FILE__).'/../www/CSS-JS-Booster');
-// admin specified because we want to use it and be installed when we start the website but this is not mandatory to have it here
-$path_to_Admin = realpath(dirname(__FILE__).'/../../admin/src');
-$path_to_Zblog = realpath(dirname(__FILE__).'/../src');
-
-set_include_path(get_include_path().
-		PATH_SEPARATOR.$path_to_Pluf.PATH_SEPARATOR.$path_to_Zblog
-		.PATH_SEPARATOR.$path_to_Admin.PATH_SEPARATOR.$path_to_CSSJSBooster);
-
+require dirname(__FILE__).'/path.php';
 require 'Pluf.php';
 
-Pluf::start($path_to_Zblog.'/Zblog/conf/zblog.php');
+// Where is your configuration file?
+define('ADMIN_CONFIG_FILE', $path_to_Zblog.'/Zblog/conf/zblog.php');
+Pluf::start(ADMIN_CONFIG_FILE);
 
 if (count($_POST) === 0 && Pluf::f('debug') === false) {
 	$cache = Pluf_Cache::factory();
