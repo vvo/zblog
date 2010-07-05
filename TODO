@@ -1,55 +1,8 @@
-TODO TODAY :
-installer webpagetest sur pc OK
-webpagetest.org annonce twitter OK
-	annonce blog zeroload OK
-	billet soirée web perf OK
-installer auto admin en prod OK
-harmoniser gestion coordonnées entre contact contact-sent et a propos OK
-installer méthode de déploiement avec fabric PASOK
-mise en place outil déploiement PASOK :
-	mise en place déploiement js et css data uris et mhtml PASOK
-	méthode de déploiement sans écraser les fichiers de config etc... avec mise a jour d'un symlink
-	créer fichier zlbog.php-dist et fichier path.php-dist
-	ajouter zblog.php dans ignore (faire un rm avant si besoin)
-	ajouter path.php dans ignore
-
-	mkdir /home/sites/configs
-	mkdir /home/sites/configs/zblog
-	création fichier zlobg-bdd.php dans /home/sites/configs/zblog
-	création fichier zblog-local.php-dist
-	création fichier zblog-prod.php-dist
-		inclure zblog-bdd.php
-
-	sauvegarder AAAAMMJJ-HHMMSS
-	cd /home/sites/zblog_releases
-	git clone git@zeroload.indefero.net:zeroload/zblog.git AAAAMMJJ-HHMMSS
-
-	# fichiers config
-	rm AAAAMMJJ-HHMMSS/src/Zblog/conf/zblog.php
-	cp /home/sites/configs/zblog/zblog.php AAAAMMJJ-HHMMSS/src/Zblog/conf/
-	rm AAAAMMJJ-HHMMSS/www/path.php
-	cp /home/sites/configs/zblog/path.php AAAAMMJJ-HHMMSS/www/
-
-	lien symbolique de www/compiler.jar vers /home/sites/compiler.jar
-	lien symbolique /home/sites/zblog/www/static/markitup vers /home/sites/markitup
-
-	# cache fichiers
-	sudo rm AAAAMMJJ-HHMMSS/cache -rf
-	mkdir AAAAMMJJ-HHMMSS/cache
-	sudo chown www-data AAAAMMJJ-HHMMSS/cache
-
-	# CSS-JS-Booster + cache
-	cp /home/sites/zblog/www/CSS-JS-Booster AAAAMMJJ-HHMMSS/www/ -R
-	sudo rm AAAAMMJJ-HHMMSS/www/CSS-JS-Booster/cache
-	mkdir AAAAMMJJ-HHMMSS/www/CSS-JS-Booster/cache
-	sudo chown www-data AAAAMMJJ-HHMMSS/www/CSS-JS-Booster/cache
-
-+sudo sans password
-
-création rep
+TODO :
+augmenter la taille de police de base pour le blog : 116%
 Résumé interventions : PASOK
 	FOOTMERCATO Pierre-Marie Papineschi : papineschi@gmail.com (mettre le pdf sur le site web ?) PASOK
-	MAPPY PASOK
+	MAPPY PASOK, en cours
 	Ma-bimbo.com PASOK
 Billet technologie zeroload PASOK
 
@@ -70,6 +23,7 @@ merge pagination calculations between tag and blog page PASOK
 commentaires sur archives de l'année PASOK
 
 Idées / divers :
+mise en place déploiement js et css data uris et mhtml PASOK, EN ATTENTE
 méthode google pour inclusion fonts / méthode maison (création css à la volée avec labJS ou requireJS)
 Pourquoi on envoit connection close au php ? problème pluf, retenter une explication sur les forums
 site test web site speedup alexa top 100
@@ -108,3 +62,15 @@ urls avec et sans / a faire fonctionner ...
 bouton répondre sur les commentaires
 
 mettre à jour le slider
+
+liens delicious
+
+Markdown extras ?
+
+site en anglais sauf le blog ?
+
+traduction automatique google
+
+installer méthode de déploiement avec fabric PASOK (plus tard)
+
+expliquer méthode développement avec virtualbox

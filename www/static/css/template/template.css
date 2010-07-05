@@ -146,12 +146,19 @@ a:active {text-shadow: 0 2px 0 #fef28f}
 .textContent a:visited {color:#827400;border-bottom:1px dotted #827400;}
 .textContent a:hover {border:none}
 
-.textContent h2 {
-	font-size: 138.5%;
-	margin:.25em 0;
+.textContent h1, .textContent h2 {
+	margin:.5em 0;
 }
 
-.textContent p, .textContent ul {
+.textContent h1 {
+	font-size: 153.9%;
+}
+
+.textContent h2 {
+	font-size: 138.5%;
+}
+
+.textContent p, .textContent ul, .textContent ol {
 	font-size: 108%;
 }
 
@@ -189,6 +196,7 @@ ul ul li {
 	list-style:circle;
 }
 
+/* modernizr */
 #fonttest {
 	display:none !important;
 }
