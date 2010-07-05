@@ -74,3 +74,13 @@ traduction automatique google
 installer méthode de déploiement avec fabric PASOK (plus tard)
 
 expliquer méthode développement avec virtualbox
+
+
+installer petit système navigation article
+
+nettoyer les CSS
+
+attention à l'utilisation resetList non sémantique
+
+modifier navigation pour l'inclure comme sur quirksmode a droite du contenu toujours collé et par dessus le reste
+ajouter un lien vers top, harmoniser JS

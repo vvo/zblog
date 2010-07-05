@@ -146,16 +146,23 @@ a:active {text-shadow: 0 2px 0 #fef28f}
 .textContent a:visited {color:#827400;border-bottom:1px dotted #827400;}
 .textContent a:hover {border:none}
 
-.textContent h1, .textContent h2 {
+.textContent h1, .textContent h2, .textContent h3 {
 	margin:.5em 0;
 }
 
 .textContent h1 {
 	font-size: 153.9%;
+	text-indent:.5em;
 }
 
 .textContent h2 {
 	font-size: 138.5%;
+	text-indent: 1em;
+}
+
+.textContent h3 {
+	font-size: 123.1%;
+	text-indent: 2em;
 }
 
 .textContent p, .textContent ul, .textContent ol {

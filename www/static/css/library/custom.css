@@ -203,6 +203,7 @@ Paddings
 .pad15pxl {padding-left:15px}
 .pad15pxt {padding-top:15px}
 .pad90r {padding-right:90px}
+.pad0 {padding:0}
 
 /**
 backgrounds
@@ -383,4 +384,8 @@ Colors
 
 .breakwords {
 	word-wrap:break-word;
+}
+
+.pointer {
+	cursor:pointer;
 }
