@@ -84,3 +84,5 @@ $db->esc génère des ? pour les ' sur dedibox
 mettre à jour css-js-booster
 
 virer les <span class="block"
+
+tester async + defer en prod avec dernier css js booster

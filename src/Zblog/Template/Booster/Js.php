@@ -23,13 +23,13 @@ class Zblog_Template_Booster_Js extends Pluf_Template_Tag {
 					foreach ($files as $file) {
 						$file = str_replace($_SERVER['DOCUMENT_ROOT'], '', $file);
 						echo "\n";
-						echo '<script async defer type="text/javascript" src="'.$file.'"></script>';
+						echo '<script defer type="text/javascript" src="'.$file.'"></script>';
 					}
 				} else {
 					if (is_file($source)) {
 						echo "\n";
 						$source = str_replace($_SERVER['DOCUMENT_ROOT'], '', $source);
-						echo '<script async defer type="text/javascript" src="'.$source.'"></script>';
+						echo '<script defer type="text/javascript" src="'.$source.'"></script>';
 					}
 				}
 
