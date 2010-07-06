@@ -14,48 +14,81 @@
 
 		<div class="wrapper">
 			<div id="slide1" class="h185 absolute posTop posLeft w960">
-				<img src="{mediaurl '/img/homepage/slide4.jpg'}" alt="" />
-				<span class="block w330 absolute posTop posRight">
-					<span class="block sliderLink h185 pad15pxl caps">
-						<span class="block font22 pad15pxt">accélérer votre site web :</span>
-						<span class="block font39">nos solutions</span>
-						<a href="{url 'services'}"
+				<img src="{mediaurl '/img/homepage/slide-mappy-1.jpg'}" alt="Optimiser un site grand public" />
+
+				<a href="http://www.flickr.com/photos/bonniewoodson/3088343336/"
+				   class="block absolute posLeft flickr_credits serif font11">
+					photo : http://www.flickr.com/photos/bonniewoodson/3088343336/
+				</a>
+
+				<div class="w330 absolute posTop posRight">
+					<div class="sliderLink h185 pad15pxl caps">
+						<div class="font19 pad15pxt">optimiser un site grand public :</div>
+						<div class="font50">mappy.com</div>
+						<a href="{url 'blog_post', 'mappy.com%2C%20optimiser%20un%20site%20grand%20public%20%3A%20analyse'}"
 						   title="Optimisez le temps de chargement de votre site web, maintenant !"
-						   class="font14 inlineBlock classicButton serif">cliquez pour plus d'informations</a>
-					</span>
-				</span>
+						   class="font14 inlineBlock classicButton serif">cliquez pour lire l'article</a>
+					</div>
+				</div>
 			</div>
 
 			<div id="slide2" class="h185 hide absolute posTop posLeft w960">
-				<img src="{mediaurl '/img/homepage/slide5.jpg'}" alt="" />
-				<span class="block w330 absolute posTop posRight">
-					<span class="block sliderLink h185 pad15pxl caps">
-						<span class="block font20 pad15pxt">pourquoi optimiser le temps</span>
-						<span class="block font34">de chargement ?</span>
-						<a href="{url 'blog_post', rawurlencode(strtolower('pourquoi optimiser le temps de chargement de vos pages'))}"
-						   class="font14 inlineBlock classicButton serif">cliquez pour lire l'article</a>
-					</span>
-				</span>
+				
+				<img src="{mediaurl '/img/homepage/slide4.jpg'}" alt="Zeroload accélère vos sites web" />
+
+				<a href="http://www.flickr.com/photos/viernest/3380560365"
+				   class="block absolute posLeft flickr_credits serif font11">
+					photo : http://www.flickr.com/photos/viernest/3380560365
+				</a>
+
+				<div class="w330 absolute posTop posRight">
+					<div class="sliderLink h185 pad15pxl caps">
+						<div class="font22 pad15pxt">accélérer votre site web :</div>
+						<div class="font39">nos solutions</div>
+						<a href="{url 'services'}"
+						   title="Optimisez le temps de chargement de votre site web, maintenant !"
+						   class="font14 inlineBlock classicButton serif">cliquez pour plus d'informations</a>
+					</div>
+				</div>
 			</div>
 
 			<div id="slide3" class="h185 hide absolute posTop posLeft w960">
-				<img src="{mediaurl '/img/homepage/slide3.jpg'}" alt="" />
-				<span class="block w330 absolute posTop posRight">
-					<span class="block sliderLink h185 pad15pxl caps">
-						<span class="block font22 pad15pxt">ouverture du site web</span>
-						<span class="block font50">zeroload</span>
+				<img src="{mediaurl '/img/homepage/slide5.jpg'}" alt="Quels bénéfices pour la performance web ?" />
+				<div class="w330 absolute posTop posRight">
+					<div class="sliderLink h185 pad15pxl caps">
+						<div class="font20 pad15pxt">pourquoi optimiser le temps</div>
+						<div class="font34">de chargement ?</div>
+						<a href="{url 'blog_post', rawurlencode(strtolower('pourquoi optimiser le temps de chargement de vos pages'))}"
+						   class="font14 inlineBlock classicButton serif">cliquez pour lire l'article</a>
+					</div>
+				</div>
+			</div>
+
+			<div id="slide4" class="h185 hide absolute posTop posLeft w960">
+				<img src="{mediaurl '/img/homepage/slide3.jpg'}" alt="Ouverture du site de la société Zeroload" />
+
+				<a href="http://www.flickr.com/photos/23912576@N05/3873663872/"
+				   class="block absolute posLeft flickr_credits serif font11">
+					photo : http://www.flickr.com/photos/23912576@N05/3873663872/
+				</a>
+
+				<div class="w330 absolute posTop posRight">
+					<div class="sliderLink h185 pad15pxl caps">
+						<div class="font22 pad15pxt">ouverture du site web</div>
+						<div class="font50">zeroload</div>
 						<a href="{url 'blog_post', rawurlencode(strtolower('ouverture de zeroload.net'))}"
 						   class="font14 inlineBlock classicButton serif">cliquez pour lire l'article</a>
-					</span>
-				</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	
 	<div id="sliderMenu" class="font15">
-		<a href="#slide1" class="yellow">1</a>
+		<a href="#slide1">1</a>
 		<a href="#slide2" class="yellow">2</a>
 		<a href="#slide3" class="yellow">3</a>
+		<a href="#slide4" class="yellow">4</a>
 	</div>
 </div>
 
@@ -99,14 +132,18 @@
 {/block}
 
 {block footer}
-<div style="opacity:.1">
+<div>
 	<div class="floatLeft w240" id="imgAudit">
 		<img src="{mediaurl '/img/homepage/audit-mappy.png'}" />
 	</div>
 	<div class="floatLeft w360">
 		<div class="pad18pxl">
-			<div class="font15 sansRounded caps block lineHeight1">étude de cas : Mappy.com</div>
-			<div class="font14">Comment optimiser un site grand public</div>
+			<a class="block" 
+			   href="{url 'blog_post', 'mappy.com%2C%20optimiser%20un%20site%20grand%20public%20%3A%20analyse'}"
+			   title="Découvrez comment nous avons optimisé la performance web de Mappy">
+			<span class="block font15 sansRounded caps block lineHeight1">étude de cas : Mappy.com</span>
+			<span class="block font14">Comment optimiser un site grand public</span>
+			</a>
 		</div>
 	</div>
 </div>

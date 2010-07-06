@@ -108,9 +108,10 @@ DISQUS
 	text-transform:uppercase  !important;
 	cursor:pointer  !important; /* for buttons */
 	color:#ffe400 !important; /* important for links */
+	background: #000;
 }
 
-.borderimage .dsq-button {
+.borderimage .dsq-button, .borderimage .dsq-button-small {
 	background:transparent  !important;
 	-moz-border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
 	-webkit-border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
@@ -165,4 +166,8 @@ Number of comments
 .hide_nav {
 	height:11px;
 	overflow:hidden;
+}
+
+#blogContent .textContent p, #blogContent .textContent ul, #blogContent .textContent ol {
+	font-size:116%;
 }

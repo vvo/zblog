@@ -2,8 +2,9 @@ TODO :
 augmenter la taille de police de base pour le blog : 116%
 Résumé interventions : PASOK
 	FOOTMERCATO Pierre-Marie Papineschi : papineschi@gmail.com (mettre le pdf sur le site web ?) PASOK
-	MAPPY PASOK, en cours
+	MAPPY PASOK, en cours 1/2 ok
 	Ma-bimbo.com PASOK
+Billet installation webpagetest.org
 Billet technologie zeroload PASOK
 
 tester feuilles de styles annexes PASOK
@@ -12,7 +13,6 @@ corriger derniers bugs PASOK
 page de test d'un post dans design normal
 
 Plus tard :
-descriptions sur toutes les pages avec un header spécifique PASOK
 tester IE6 PASOK
 incorporer la bulle twitter PASOK
 incorporer la recherche PASOK
@@ -34,14 +34,12 @@ site test web site speedup alexa top 100
 problème FOUC sur font-face : problème de modernizr, bug posté sur github PASOK
 	(chercher ce qui provoque fouc : utiliser webfont loader quand disponible) PASOK
 	modifié modernizr en attendant
-se positionner sur les mots "performance web" essayer de les coller un peu plus partout PASOK
 
 calendrier : mettre en cache un calendrier spécifique pour jour/mois/année dans le cache fichier et récupérer la donnée ensuite
 actuellement pour chaque page on recalcule le calendrier du jour PASOK
 
 installer une extension SEO PASOK
 https://addons.mozilla.org/fr/firefox/search?q=seo&cat=all
-tenter de monter sur développeur web paris, développeur javascript, développeur web
 vincent-voyer.fr : fermer et tout déplacer sur zeroload.net, faire une rédirection 301 depuis la page développeur jquery, laisser ouvert le chat (avec avertissement), fermer tout le reste
 afficher calendrier disponibilité
 
@@ -55,13 +53,6 @@ script nodejs qui trouve tous les js/css et créé des versions optimisées (tou
 experiences avec moz gradient, au clic souris on fait des jolis ronds qui grandissent etc..
 
 css js booster : does not work in a symbolic link env
-favicon a réessayer
-
-urls avec et sans / a faire fonctionner ...
-
-bouton répondre sur les commentaires
-
-mettre à jour le slider
 
 liens delicious
 
@@ -87,8 +78,9 @@ ajouter un lien vers top, harmoniser JS
 
 ajouter le lien vers l'article mappy depuis la homepage
 
-problème avec ' dans url ... %27 regex ... ?
-
+problème avec ' dans url ...
 $db->esc génère des ? pour les ' sur dedibox
 
-si betawtf.zeroload.net alors disqus dev & disqus id différent
+mettre à jour css-js-booster
+
+virer les <span class="block"
