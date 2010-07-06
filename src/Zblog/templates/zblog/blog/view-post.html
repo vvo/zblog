@@ -45,7 +45,7 @@
 					<div id="disqus_thread"></div>
 					
 					<script type="text/javascript">
-						{if $cfg_debug === true || $is_beta === true}
+						{if $cfg_debug === true || $cfg_is_beta === true}
 							var disqus_developer = 1;
 							var disqus_identifier = "{cfg 'disqus_prefix'}DEV-"+{$post.id};
 						{else}
