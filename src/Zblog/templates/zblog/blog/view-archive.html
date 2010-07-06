@@ -20,8 +20,11 @@
 		<div class="pad18pxlr textContent">
 			<div id="disqus_thread"></div>
 			<script type="text/javascript">
-				{if $cfg_debug === true}
+				{if $cfg_debug === true || $is_beta === true}
 					var disqus_developer = 1;
+				{else}
+					{assign $month_pad = str_pad($month, 2, '0', STR_PAD_LEFT)}
+					var disqus_url = "http://zeroload.net/blog/month/{$year}/{$month_pad}/";
 				{/if}
 
 				{literal}

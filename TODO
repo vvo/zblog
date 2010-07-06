@@ -84,3 +84,11 @@ attention à l'utilisation resetList non sémantique
 
 modifier navigation pour l'inclure comme sur quirksmode a droite du contenu toujours collé et par dessus le reste
 ajouter un lien vers top, harmoniser JS
+
+ajouter le lien vers l'article mappy depuis la homepage
+
+problème avec ' dans url ... %27 regex ... ?
+
+$db->esc génère des ? pour les ' sur dedibox
+
+si betawtf.zeroload.net alors disqus dev & disqus id différent

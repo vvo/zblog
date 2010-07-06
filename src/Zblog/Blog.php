@@ -185,6 +185,7 @@ class Zblog_Blog {
 						'next_link' => (object) $next_link,
 						'month_name'=> $month_name,
 						'year' => $year,
+						'month' => $month,
 						'calendar' => $calendar)
 		);
 

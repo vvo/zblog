@@ -45,10 +45,11 @@
 					<div id="disqus_thread"></div>
 					
 					<script type="text/javascript">
-						{if $cfg_debug === true}
+						{if $cfg_debug === true || $is_beta === true}
 							var disqus_developer = 1;
 							var disqus_identifier = "{cfg 'disqus_prefix'}DEV-"+{$post.id};
 						{else}
+							var disqus_url = "http://zeroload.net{url 'blog_post', rawurlencode(strtolower($post.title))}";
 							var disqus_identifier = "{cfg 'disqus_prefix'}"+{$post.id};
 						{/if}
 

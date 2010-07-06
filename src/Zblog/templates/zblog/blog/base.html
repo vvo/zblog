@@ -49,8 +49,14 @@ http://www.pluf.org/doc/template.html#link12*}
 
 {block footer_scripts}
 <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/zeroload.json?callback=twitterCallback2&amp;count=5" async defer></script>
-{literal}
+
 <script type="text/javascript">
+	{if $cfg_debug === true || $is_beta === true}
+	var disqus_developer = 1;
+	{/if}
+
+	{literal}
+
 	(function() {
 		var links = document.getElementsByTagName('a');
 		var query = '?';

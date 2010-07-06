@@ -5,6 +5,9 @@ $cfg = array();
 $cfg['debug'] = true;
 //$cfg['debug'] = false;
 
+// we need to know if we're on the beta website when displaying disqus comments
+$cfg['is_beta'] = (strpos($_SERVER['SERVER_NAME'], 'betawtf.zeroload') === false ? false : true);
+
 // language settings
 $cfg['time_zone'] = 'Europe/Paris';
 $cfg['languages'] = array('fr');
