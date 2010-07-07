@@ -1,16 +1,44 @@
 TODO :
-augmenter la taille de police de base pour le blog : 116%
-Résumé interventions : PASOK
-	FOOTMERCATO Pierre-Marie Papineschi : papineschi@gmail.com (mettre le pdf sur le site web ?) PASOK
 	MAPPY PASOK, en cours 1/2 ok
-	Ma-bimbo.com PASOK
-Billet installation webpagetest.org
-Billet technologie zeroload PASOK
+	page de test d'un post dans design normal même si draft => écriture des posts directement en prod
 
+	FOOTMERCATO Pierre-Marie Papineschi : papineschi@gmail.com (mettre le pdf sur le site web ?) PASOK
+	Ma-bimbo.com PASOK
+	Billet installation webpagetest.org
+	Billet technologie zeroload PASOK
+	Billet expliquer méthode développement avec virtualbox
+
+	problème avec ' dans url ...
+	$db->esc génère des ? pour les ' sur dedibox
+
+	méthode google pour inclusion fonts / méthode maison (création css à la volée avec labJS ou requireJS)
+
+	mettre à jour css-js-booster
+
+	virer les <span class="block"
+
+	rediriger /feed.xml vers /blog/feed.xml
+
+vérifier mise a jour js ...
+
+async ne conserve pas l'orde d'éxecution, solution pour lancer le gros javascript en asynchrone :
+ajouter les scripts twitter-json et delicious-json directement dans une classe en fonction de l'url ?
+=> possibilité d'utiliser async + defer partout
+
+installer petit système navigation article
+modifier navigation pour l'inclure comme sur quirksmode a droite du contenu toujours collé et par dessus le reste
+ajouter un lien vers top, harmoniser JS
+
+calendrier : mettre en cache un calendrier spécifique pour jour/mois/année dans le cache fichier et récupérer la donnée ensuite
+actuellement pour chaque page on recalcule le calendrier du jour PASOK
+
+nettoyer les CSS, utiliser extension
 tester feuilles de styles annexes PASOK
 corriger derniers bugs PASOK
 
-page de test d'un post dans design normal
+afficher calendrier disponibilité
+
+
 
 Plus tard :
 tester IE6 PASOK
@@ -21,10 +49,12 @@ bulle twitter -> lien vers twitter PASOK
 year archive PASOK
 merge pagination calculations between tag and blog page PASOK
 commentaires sur archives de l'année PASOK
+Markdown extras ?
+Traductions en anglais, automatique ou manuel ?
 
 Idées / divers :
 mise en place déploiement js et css data uris et mhtml PASOK, EN ATTENTE
-méthode google pour inclusion fonts / méthode maison (création css à la volée avec labJS ou requireJS)
+
 Pourquoi on envoit connection close au php ? problème pluf, retenter une explication sur les forums
 site test web site speedup alexa top 100
 	on optimize directement avec webo site speedup la plupart des gros sites web
@@ -35,13 +65,9 @@ problème FOUC sur font-face : problème de modernizr, bug posté sur github PAS
 	(chercher ce qui provoque fouc : utiliser webfont loader quand disponible) PASOK
 	modifié modernizr en attendant
 
-calendrier : mettre en cache un calendrier spécifique pour jour/mois/année dans le cache fichier et récupérer la donnée ensuite
-actuellement pour chaque page on recalcule le calendrier du jour PASOK
-
 installer une extension SEO PASOK
 https://addons.mozilla.org/fr/firefox/search?q=seo&cat=all
 vincent-voyer.fr : fermer et tout déplacer sur zeroload.net, faire une rédirection 301 depuis la page développeur jquery, laisser ouvert le chat (avec avertissement), fermer tout le reste
-afficher calendrier disponibilité
 
 script nodejs qui trouve tous les js/css et créé des versions optimisées (tout simple pour l'instant)
 	programme nodejs pour optimiser les css et js avec des paramètres de configuration de groupes
@@ -54,35 +80,5 @@ experiences avec moz gradient, au clic souris on fait des jolis ronds qui grandi
 
 css js booster : does not work in a symbolic link env
 
-liens delicious
-
-Markdown extras ?
-
-site en anglais sauf le blog ?
-
-traduction automatique google
-
-installer méthode de déploiement avec fabric PASOK (plus tard)
-
-expliquer méthode développement avec virtualbox
-
-
-installer petit système navigation article
-
-nettoyer les CSS
-
 attention à l'utilisation resetList non sémantique
 
-modifier navigation pour l'inclure comme sur quirksmode a droite du contenu toujours collé et par dessus le reste
-ajouter un lien vers top, harmoniser JS
-
-ajouter le lien vers l'article mappy depuis la homepage
-
-problème avec ' dans url ...
-$db->esc génère des ? pour les ' sur dedibox
-
-mettre à jour css-js-booster
-
-virer les <span class="block"
-
-tester async + defer en prod avec dernier css js booster
