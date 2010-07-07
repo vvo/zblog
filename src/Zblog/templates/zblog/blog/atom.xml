@@ -1,7 +1,12 @@
 {* n'oubliez pas si vous avez des espaces dans vos urls, d'utiliser escurl ou rawurlencode *}
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns='http://www.w3.org/2005/Atom'
+      xml:base='http://zeroload.net/blog/feed.xml'
+      xml:lang='en'>
+
 	<title>Zeroload, blog performance et développement web</title>
-	<link rel="self" href="{url 'blog_feed'}" />
+	<link href="./" />
+	<link rel="self" href="" />
+	<link rel="alternate" type="text/html" href="http://zeroload.net/blog/" />
 	<updated>{$now}</updated>
 	<author>
 		<name>Vincent Voyer</name>
@@ -14,7 +19,7 @@
 
 	{foreach $posts as $post}
 	<entry>
-		<id>http://zeroload.net{url 'blog_post', strtolower(rawurlencode($post.title))}</id>
+		<id>tag:zeroload.net,{$post->post_date|date:"%Y-%m-%d"}:/blog/{$post->post_date|date:"%Y%m%d%H%M%S"}</id>
 		<title>{$post.title}</title>
 		<updated>{$post.atom_date}</updated>
 		<author>

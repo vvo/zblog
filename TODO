@@ -82,3 +82,6 @@ css js booster : does not work in a symbolic link env
 
 attention à l'utilisation resetList non sémantique
 
+deploy-prod et deploy-beta
+
+deploy-prod avec paramètre = lien symbolique et vidage cache pluf

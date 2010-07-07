@@ -19,12 +19,14 @@ ExpiresByType application/atom+xml "access plus 30 minutes"
 
     # Don't compress images, htc, woff, they all are already compressed
     SetEnvIfNoCase Request_URI \
-    \.(?:gif|jpe?g|png|htc|woff)$ no-gzip dont-vary
+    \.(?:gif|jpe?g|png|htc|woff|ogv|mp4|webm)$ no-gzip dont-vary
 </IfModule>
 
 RewriteEngine on
 
 RewriteRule ^blog/blalblablalba\ ééé\ lol/$ http://zeroload.net/blog/mappy.com,\ optimiser\ un\ site\ grand\ public\ :\ analyse/ [R=301,L]
+RewriteRule ^feed.xml$ /blog/feed.xml [R=301,L]
+RewriteRule ^feed$ /blog/feed.xml [R=301,L]
 
 # without ending $ it will allow zeroload.net.local, how handyy .. :)
 RewriteCond %{HTTP_HOST} !^zeroload\.net
