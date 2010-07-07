@@ -37,14 +37,6 @@ class Zblog_Form_Widget_MarkitupInput extends Pluf_Form_Widget
     {
         $defaults = array('cols' => '70',
                           'rows' => '20');
-//        $config = array('tinymce_url', 'mode', 'theme', 'include_tinymce');
-//        foreach ($config as $cfg) {
-//            if (isset($attrs[$cfg])) {
-//                $this->$cfg = $attrs[$cfg];
-//                unset($attrs[$cfg]);
-//            }
-//        }
-//
         $this->attrs = array_merge($defaults, $attrs);
     }
 
@@ -59,41 +51,9 @@ class Zblog_Form_Widget_MarkitupInput extends Pluf_Form_Widget
     public function render($name, $value, $extra_attrs=array())
     {
         if ($value === null) $value = '';
-//        $extra_config = '';
-//        if (isset($this->attrs['editor_config'])) {
-//            $_ec = $this->attrs['editor_config'];
-//            unset($this->attrs['editor_config']);
-//            $_st = array();
-//            foreach ($_ec as $key=>$val) {
-//                if (is_bool($val)) {
-//                    if ($val) {
-//                        $_st[] = $key.' : true';
-//                    } else {
-//                        $_st[] = $key.' : false';
-//                    }
-//                } else {
-//                    $_st[] = $key.' : "'.$val.'"';
-//                }
-//            }
-//            if ($_st) {
-//                $extra_config = ",\n".implode(",\n", $_st);
-//            }
-//        }
 
-        $final_attrs = $this->buildAttrs(array('name' => $name),
+		$final_attrs = $this->buildAttrs(array('name' => $name),
                                          $extra_attrs);
-
-        // The special include for tinyMCE
-//        $out = '';
-//        if ($this->include_tinymce) {
-//            $out .= '<script language="javascript" type="text/javascript" src="'.$this->tinymce_url.'"></script>'."\n";
-//        }
-//        $out .='<script language="javascript" type="text/javascript">
-//	tinyMCE.init({
-//		mode : "'.$this->mode.'",
-//		theme : "'.$this->theme.'"'.$extra_config.'
-//	});
-//</script>';
 
 		$out = '<link rel="stylesheet" type="text/css" href="'.$this->markitup_css.'" />
 <link rel="stylesheet" type="text/css" href="'.$this->markitup_set_css.'" />
