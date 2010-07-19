@@ -60,10 +60,6 @@
 	background:rgba(255, 228, 0, 1);
 }
 
-#sliderMenu a:active {
-	text-shadow:none;
-}
-
 .sliderLink {
 	background:url(../../img/homepage/stats.png) bottom left no-repeat;
 }
@@ -72,8 +68,4 @@
 	background-image:url(../../img/ajax-loader.gif);
 	background-repeat:no-repeat;
 	background-position:center center;
-}
-
-.flickr_credits {
-	bottom: -15px;
 }

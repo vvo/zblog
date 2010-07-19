@@ -6,7 +6,7 @@
        common css for all pages
 */
 
-.sansRounded {font-family: 'FrankfurterComMedium', 'Comic Sans Ms';/* font-size-adjust:0.472*/}
+.sansRounded {font-family: 'FrankfurterComMedium', 'Comic Sans Ms';/* font-size-adjust:0.472*/letter-spacing:.03em}
 .serif {font-family: 'LithoAntique', 'Times New Roman';}
 .arial {font-family: Arial, Helvetica, sans-serif;}
 
@@ -36,52 +36,20 @@ html {background:#ffe400}
 
 body {overflow-y:scroll}
 
-#container {}
-
-#header {
-	height:46px;
-	padding-top:44px;
-}
-
-#logo {
-	width:82px;
-	height:83px;
-	left:0;
-	bottom:0;
-}
-
-#footer {}
-
 /**
 Menu
 */
-#menu {margin-left:80px}
-
 #menu a {
 	display:block;
 	float:left;
 	text-align:center;
 	width:119px; /* -1px border */
 	line-height:34px;
+	color:#ff0;
 }
 
-#menu .first {border:none}
-
-
-/* specific rules when using border-image */
-.borderimage #menu {
-	position:relative;
-	top:-5px;
-}
-
-.borderimage #menu a {
-	width:116px; /* -4px part of border */
-}
-
-.borderimage #menu .first {
-	border-left:9px solid transparent;
-	-moz-border-image:none;
-	-webkit-border-image:none;
+#menu .first {
+	border-left:1px solid transparent;
 }
 /**
 end menu
@@ -98,8 +66,6 @@ this is confirmed to be a firefox bug so do not try to get rid of it, firefox ma
 	width:80%;
 	padding-bottom:1px;
 }
-
-
 
 /**
 Headings
@@ -139,11 +105,11 @@ Content Links
 a {text-decoration: none}
 a:link {color: #000;}
 a:visited {color: #000;}
-a:hover {color:#d7c000}
-a:active {text-shadow: 0 2px 0 #fef28f}
+a:hover {color: #e8d600}
+/*a:active {text-shadow: 0 2px 0 #fef28f}*/
 
-.textContent a:link {border-bottom:1px dotted #000}
-.textContent a:visited {color:#827400;border-bottom:1px dotted #827400;}
+.textContent a:link {color:#d7c000;border-bottom:1px dotted #d7c000}
+.textContent a:visited {color:#aaa;border-bottom:1px dotted #aaa;}
 .textContent a:hover {border:none}
 
 .textContent h1, .textContent h2, .textContent h3 {

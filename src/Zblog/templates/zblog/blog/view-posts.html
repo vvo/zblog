@@ -10,7 +10,7 @@
 				{foreach $posts as $key => $post}
 <article class="article block clearfix marg8pxb pad18pxb">
 	<div class="floatLeft w180">
-		<time class="right block marg4pxb font18 lineHeight1 orange sansRounded"
+		<time class="right block marg4pxb font18 lineHeight1 gray sansRounded"
 			  datetime="{$post.post_date|date:"%s"|time:DateTime::W3C}">{$post.post_date|date:"%d/%m/%Y"}</time>
 		<img src="{if $post.image !== ''} {mediaurl '/img/blog/posts/'~$post.image}{else}{mediaurl '/img/blog/posts/default.jpg'}{/if}"
 			 class="classicImgBorder" />

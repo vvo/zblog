@@ -111,6 +111,7 @@ Z-index
 Blocks heights
 */
 .h70 {height:70px}
+.h100 {height:100px}
 .h250 {height:250px}
 .h200 {height:200px}
 .h165 {height:165px}
@@ -198,6 +199,7 @@ Paddings
 .pad18pxr {padding-right:18px}
 .pad2pxtb {padding-top:2px;padding-bottom:2px}
 .pad4px {padding:4px}
+.pad4pxtb {padding-top:4px;padding-bottom:4px}
 .pad4pxl {padding-left:4px}
 .pad4pxlr {padding-left:4px;padding-right:4px}
 .pad15pxl {padding-left:15px}
@@ -210,31 +212,33 @@ backgrounds
 */
 .bgYellow {background-color: #ffe400}
 .bgLightOrange {background-color:#e5cd00}
+.bgBlack {background-color:#000}
+.bgPureYellow {background:#ff0}
+.bgWhite {background:#fff}
+.bgNearWhite {background:#F8F8F8}
 
 /**
 forms
 */
-.classicInput {background-color:#e5cd00;border:1px solid #000;padding:2px 4px}
+.classicInput {background-color:#f2f2f2;border:1px solid #000;padding:2px 4px}
 .classicInput.w240 {width:230px !important}
 .classicButton {
 	padding:.15em .2em .05em .2em;
 	text-transform:uppercase;
-	background: #000;
+	background: #ff0;
 	cursor:pointer; /* for buttons */
+	color:#000;
 }
 
 .classicButton:hover {
-	background: #d7c000;
+	background: #ff7;
 }
 
-.classicButton:link, .classicButton:visited, .classicButton {
-	color:#ffe400; /* important for links */
-}
-.classicButton:hover {
-	color:#ffe400;
-}
-.classicButton:active {
-	text-shadow:none;
+/* sometimes buttons are in .textContent divs that makes them behave like classic links, they're not ! */
+.textContent .classicButton:link, .textContent .classicButton:visited, .textContent .classicButton:hover,
+.classicButton:link, .classicButton:visited, .classicButton:hover {
+	 /* important for links */
+	 color:#000;
 }
 
 .borderimage .classicButton, .borderimage .classicButton:hover {
@@ -242,26 +246,26 @@ forms
 }
 
 .borderimage .classicButton {
-	-moz-border-image: url("../../img/border-arrow-right.png") 6 17 6 5;
-	-webkit-border-image: url("../../img/border-arrow-right.png") 6 17 6 5;
-	border-image: url("../../img/border-arrow-right.png") 6 17 6 5;
+	-moz-border-image: url("../../img/border-arrow-right_v2.png") 6 17 6 6;
+	-webkit-border-image: url("../../img/border-arrow-right_v2.png") 6 17 6 6;
+	border-image: url("../../img/border-arrow-right_v2.png") 6 17 6 6;
 	border-width: 6px 17px 6px 5px;
 }
 .borderimage .classicButton:hover {
-	-moz-border-image: url("../../img/border-arrow-right-hover.png") 6 17 6 5;
-	-webkit-border-image: url("../../img/border-arrow-right-hover.png") 6 17 6 5;
-	border-image: url("../../img/border-arrow-right-hover.png") 6 17 6 5;
+	-moz-border-image: url("../../img/border-arrow-right-hover_v2.png") 6 17 6 6;
+	-webkit-border-image: url("../../img/border-arrow-right-hover_v2.png") 6 17 6 6;
+	border-image: url("../../img/border-arrow-right-hover_v2.png") 6 17 6 6;
 }
 .borderimage .classicButton.arrowLeft {
-	-moz-border-image: url("../../img/border-arrow-left.png") 6 5 6 17;
-	-webkit-border-image: url("../../img/border-arrow-left.png") 6 5 6 17;
-	border-image: url("../../img/border-arrow-left.png") 6 5 6 17;
+	-moz-border-image: url("../../img/border-arrow-left_v2.png") 6 6 6 17;
+	-webkit-border-image: url("../../img/border-arrow-left_v2.png") 6 6 6 17;
+	border-image: url("../../img/border-arrow-left_v2.png") 6 6 6 17;
 	border-width: 6px 5px 6px 17px;
 }
 .borderimage .classicButton.arrowLeft:hover {
-	-moz-border-image: url("../../img/border-arrow-left-hover.png") 6 5 6 17;
-	-webkit-border-image: url("../../img/border-arrow-left-hover.png") 6 5 6 17;
-	border-image: url("../../img/border-arrow-left-hover.png") 6 5 6 17;
+	-moz-border-image: url("../../img/border-arrow-left-hover_v2.png") 6 6 6 17;
+	-webkit-border-image: url("../../img/border-arrow-left-hover_v2.png") 6 6 6 17;
+	border-image: url("../../img/border-arrow-left-hover_v2.png") 6 6 6 17;
 }
 
 /*a.classicButton:active {
@@ -272,6 +276,8 @@ forms
 /**
 Borders : this could be lazy loaded as this is not mandatory for the website to work ! :)
 */
+.classicBorderLeftYellow {border-left:1px solid #ff0}
+
 .classicBorderTop {border-top:1px solid #000}
 .classicBorderBottom {border-bottom:1px solid #000}
 .classicBorderLeft {border-left:1px solid #000}
@@ -352,9 +358,9 @@ Borders : this could be lazy loaded as this is not mandatory for the website to 
 Shadows
 */
 .classicShadow {
-	-moz-box-shadow:0 0 4px #605600;
-	-webkit-box-shadow:0 0 4px #605600;
-	box-shadow:0 0 4px #605600;
+	-moz-box-shadow:0 0 4px #aaa;
+	-webkit-box-shadow:0 0 4px #aaa;
+	box-shadow:0 0 4px #aaa;
 }
 
 /**
@@ -368,7 +374,10 @@ Colors
 .black, a.black, a:link.black, a:visited.black, a:hover.black, a:active.black {color:#000;}
 .yellow, a.yellow, a:link.yellow, a:visited.yellow, a:hover.yellow, a:active.yellow {color:#ffe400}
 .orange, a.orange, a:link.orange, a:visited.orange, a:hover.orange, a:active.orange {color:#d7c000}
+.gray, a.gray, a:link.gray, a:visited.gray, a:hover.gray, a:active.gray {color:#cfcfcf}
+.lightGray, a.lightGray, a:link.lightGray, a:visited.lightGray, a:hover.lightGray, a:active.lightGray {color:#f2f2f2}
 .lightOrange, a.lightOrange, a:link.lightOrange, a:visited.lightOrange, a:hover.lightOrange, a:active.lightOrange {color:#f5db00}
+.orangev2, a.orangev2, a:link.orangev2, a:visited.orangev2, a:hover.orangev2, a:active.orangev2 {color: #e8d600}
 
 .resetList {margin:0}
 .resetList li {list-style: none}
@@ -379,7 +388,7 @@ Colors
 }
 
 .active, .active:visited, .active:link {
-	color:blue;
+	color:#d7c000;
 }
 
 .breakwords {

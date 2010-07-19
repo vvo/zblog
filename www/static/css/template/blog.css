@@ -13,7 +13,7 @@
 #rssIcon {
 	width:37px;
 	height:37px;
-	background:url(../../img/blog/rss.png);
+	background:url(../../img/blog/rss_v2.png);
 	position:relative;
 	top:-6px;
 }
@@ -32,7 +32,7 @@
 }
 
 .article:nth-child(even) {
-	background:#e5cd00;
+	background:#f2f2f2; /* .lightGray */
 }
 
 .borderimage .article:nth-child(even) {
@@ -41,10 +41,6 @@
 
 .borderimage #brevesWrapper.plainBorderLeft {
 	border:0;
-}
-
-#twitter_update_list li:nth-child(even) {
-	background:#e5cd00;
 }
 
 /**
@@ -131,15 +127,15 @@ Number of comments
 	overflow:hidden;
 	width:3em;
 	padding:0.1em 0 0.1em 0.5em;
-	-moz-border-radius:5px;
+/*	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
-	background-color:#e5cd00
+	background-color:#e5cd00*/
 }
 
-.article:nth-child(even) .commentsCount {
+/*.article:nth-child(even) .commentsCount {
 	background-color:#ffe400
-}
+}*/
 
 .commentsCount:before {
 	content:url("../../img/blog/comments-2.png")" ";

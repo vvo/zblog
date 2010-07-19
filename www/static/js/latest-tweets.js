@@ -14,7 +14,7 @@
 	var when_date = when.getDate();
 	var when_month = when.getMonth();
 
-    statusHTML.push('<div><a class="font12 orange sansRounded" href="http://twitter.com/'+username+'/statuses/'+twitters[i]['id']+'">'+(when_date < 10 ? '0'+when_date : when_date)+'/'+(when_month < 9 ? '0'+(when_month+1) : when_month+1)+'</a> <span class="font13">'+status+'</span></div>');
+    statusHTML.push('<div><a class="font12 gray sansRounded" href="http://twitter.com/'+username+'/statuses/'+twitters[i]['id']+'">'+(when_date < 10 ? '0'+when_date : when_date)+'/'+(when_month < 9 ? '0'+(when_month+1) : when_month+1)+'</a> <span class="font13 textContent">'+status+'</span></div>');
 	if (i < twitters.length - 1) {
 		statusHTML.push('<div class="classicBorderTop pad8pxt marg8pxt"></div>');
 	}

@@ -2,7 +2,7 @@
 
 {foreach $last_posts as $post}
 <div class="classicBorderBottom textContent pad8pxb marg8pxb lineHeight1p2">
-	<span class="orange sansRounded">{$post.post_date|date: "%d/%m"}</span>
+	<span class="gray sansRounded">{$post.post_date|date: "%d/%m"}</span>
 	<a href="{url 'blog_post', rawurlencode(strtolower($post.title))}">{$post.title}</a>
 </div>
 {/foreach}
@@ -13,9 +13,9 @@
 *}
 
 <h1 class="marg0t classicBorderBottom pad4pxb marg8pxb font18 lineHeight1">@zeroload</h1>
-<div id="twitter_div" class="textContent breakwords lineHeight1p2"></div>
+<div id="twitter_div" class="breakwords lineHeight1p2"></div>
 
-<div class="classicBorderTop pad8pxt center">
+<div class="classicBorderTop pad8pxt right">
 	<a href="http://twitter.com/zeroload" class="classicButton font10">follow me</a>
 </div>
 
@@ -23,6 +23,6 @@
 <div class="classicBorderTop"></div>
 <div id="delicious_div"></div>
 
-<div class="pad4pxt center">
+<div class="pad4pxt right">
 	<a href="http://delicious.com/network?add=wouaren" class="classicButton font10">add me</a>
 </div>

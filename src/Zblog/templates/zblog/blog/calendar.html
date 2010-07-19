@@ -8,14 +8,14 @@
 	</div>
 	<div class="w120 floatLeft">
 	{* months list, two columns *}
-		<ul class="classicBorderLeft resetList font15 month orange pad18pxl">
+		<ul class="classicBorderLeft resetList font15 month gray pad18pxl">
 			{foreach $months as $month_id => $month}
 				{if $month_id === 7}
-		</ul></div><div class="w180 floatLeft"><ul class="classicBorderLeft resetList font15 month orange pad18pxl">
+		</ul></div><div class="w180 floatLeft"><ul class="classicBorderLeft resetList font15 month gray pad18pxl">
 				{/if}
 
 				{* handle future months *}
-			<li{if $month_id > $current_month} class="lightOrange"{/if}>
+			<li{if $month_id > $current_month} class="lightGray"{/if}>
 				<span class="relative">
 				{* handle active month *}
 					{if $month.nb_posts !== null}
@@ -37,7 +37,7 @@
 	</ul>
 </div>
 <div class="w480 floatLeft">
-	<ul class="resetList font28 center lineHeight1 day orange">
+	<ul class="resetList font28 center lineHeight1 day gray">
 			{* days list *}
 			{foreach $days as $day_id => $day}
 				{assign $day_pad = str_pad($day_id, 2, '0', STR_PAD_LEFT)}
@@ -47,7 +47,7 @@
 					{assign $current_bullet = ''}
 				{/if}
 
-		<li class="classicBorderLeft{if $current_day && $day_id > $current_day} lightOrange{/if}">
+		<li class="classicBorderLeft{if $current_day && $day_id > $current_day} lightGray{/if}">
 			<span class="relative">
 			{if $A_day == $day_id}<span class="activeAday">{/if}
 					{if isset($day->nb_posts)}
