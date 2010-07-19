@@ -25,7 +25,7 @@
 				<a href="{url 'blog_post', rawurlencode(strtolower($post.title))}"
 				   title="Voir le billet {$post.title}" class="font18">{$post.title}</a>
 			</h1>
-			<div class="pad18pxr font14 textContent">
+			<div class="pad18pxr textContent">
 				{$post.summary|markdown|safe}
 			</div>
 			<a href="{url 'blog_post', rawurlencode(strtolower($post.title))}"

@@ -10,8 +10,6 @@
 .serif {font-family: Arial, Helvetica, sans-serif;}
 /*.arial {font-family: Arial, Helvetica, sans-serif;}*/
 
-html {background:#ffe400}
-
 /*html {
 	background: black url("gradient-bg.png") repeat-y left;
 	-o-background-size: 100% 100%;
@@ -35,6 +33,12 @@ html {background:#ffe400}
 }*/
 
 body {overflow-y:scroll}
+
+#header {
+	-moz-box-shadow: 0 1px 0 #797979, 0 2px 0 #8e8e8e, 0 3px 0 #a2a2a2, 0 4px 0 #c5c5c5, 0 5px 0 #d3d3d3;
+	-webkit-box-shadow: 0 1px 0 #797979, 0 2px 0 #8e8e8e, 0 3px 0 #a2a2a2, 0 4px 0 #c5c5c5, 0 5px 0 #d3d3d3;
+	box-shadow: 0 1px 0 #797979, 0 2px 0 #8e8e8e, 0 3px 0 #a2a2a2, 0 4px 0 #c5c5c5, 0 5px 0 #d3d3d3;
+}
 
 /**
 Menu
@@ -103,12 +107,12 @@ h1, h2, h3 {
 Content Links
 */
 a {text-decoration: none}
-a:link {color: #000;}
+a:link {color: #555;}
 a:visited {color: #000;}
 a:hover {color: #e8d600}
 /*a:active {text-shadow: 0 2px 0 #fef28f}*/
 
-.textContent a:link {color:#d7c000;border-bottom:1px dotted #d7c000}
+.textContent a:link {border-bottom:1px dotted #555}
 .textContent a:visited {color:#aaa;border-bottom:1px dotted #aaa;}
 .textContent a:hover {border:none}
 
@@ -131,9 +135,9 @@ a:hover {color: #e8d600}
 	text-indent: 2em;
 }
 
-.textContent p, .textContent ul, .textContent ol {
+/*.textContent p, .textContent ul, .textContent ol {
 	font-size: 108%;
-}
+}*/
 
 .textContent p {
 	margin-bottom:.5em;

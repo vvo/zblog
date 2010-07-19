@@ -164,6 +164,6 @@ Number of comments
 	overflow:hidden;
 }
 
-#blogContent .textContent p, #blogContent .textContent ul, #blogContent .textContent ol {
-	font-size:116%;
-}
+/*#blogContent .textContent p, #blogContent .textContent ul, #blogContent .textContent ol {
+	font-size:108%;
+}*/

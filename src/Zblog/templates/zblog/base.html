@@ -2,7 +2,7 @@
 {cfg 'debug', false, false}
 {cfg 'is_beta', false, false}
 <!DOCTYPE html>
-<html lang="fr" class="no-js">
+<html lang="fr" class="bgDarkGrey no-js">
 	<head>
 		<title>Zeroload : {$page_title}</title>
 		<meta charset="utf-8">
@@ -16,7 +16,7 @@
 		
 		{block header_scripts}{/block}
 	</head>
-	<body class="serif bgNearWhite" id="top">
+	<body class="serif" id="top">
 		<div id="container">
 
 			<header id="header" class="block bgBlack">
@@ -45,11 +45,13 @@
 					<br/><a href="#" class="black" onclick="$('.serif').css('font-family', 'Arial');return false">arial</a>
 			</div>-->
 
-			<div class="centerBlock w960 pad4pxt pad18pxlr pad18pxb">
+<!--			<div class="centerBlock w960 pad4pxt pad18pxlr pad18pxb">-->
+			<div class="centerBlock w960 pad4pxt pad18pxb">
 
 				{block beforeContent}{/block}
 
-				<div id="content" class="classicBorderTop marg8pxt pad18pxt">
+<!--				<div id="content" class="marg8pxt pad18pxt">-->
+				<div id="content" class="pad8pxt">
 					{block body}{/block}
 				</div>
 

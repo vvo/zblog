@@ -31,6 +31,7 @@ Text
 .lineHeight21px {line-height: 21px}
 .lineHeight25px {line-height:25px}
 .lineHeight18px {line-height:18px}
+.lineHeight16px {line-height:16px}
 .lineHeight12px {line-height:12px}
 
 /**
@@ -218,6 +219,7 @@ backgrounds
 .bgNearWhite {background-color:#F8F8F8}
 .bgGray {background-color:#cfcfcf}
 .bgLightGray {background-color:#f2f2f2}
+.bgDarkGrey {background-color:#e6e6e6}
 
 /**
 forms
@@ -384,6 +386,10 @@ Colors
 
 .resetList {margin:0}
 .resetList li {list-style: none}
+
+.arrowList li {
+	list-style: url('../../img/homepage/list-arrow.png');
+}
 
 .borderimage .fauxColumn {
 	background-image:url(../../img/border-vertical.png);
