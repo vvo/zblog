@@ -6,7 +6,7 @@
        common css for all pages
 */
 
-.sansRounded {font-family: 'FrankfurterComMedium', 'Comic Sans Ms';/* font-size-adjust:0.472*/letter-spacing:.03em}
+.sansRounded {font-family: 'FrankfurterComMedium', 'Comic Sans Ms';/* font-size-adjust:0.472*/}
 .serif {font-family: 'LithoAntique', 'Times New Roman';}
 .arial {font-family: Arial, Helvetica, sans-serif;}
 
