@@ -7,8 +7,8 @@
 */
 
 .sansRounded {font-family: 'FrankfurterComMedium', 'Comic Sans Ms';/* font-size-adjust:0.472*/}
-.serif {font-family: 'LithoAntique', 'Times New Roman';}
-.arial {font-family: Arial, Helvetica, sans-serif;}
+.serif {font-family: Arial, Helvetica, sans-serif;}
+/*.arial {font-family: Arial, Helvetica, sans-serif;}*/
 
 html {background:#ffe400}
 

@@ -213,9 +213,11 @@ backgrounds
 .bgYellow {background-color: #ffe400}
 .bgLightOrange {background-color:#e5cd00}
 .bgBlack {background-color:#000}
-.bgPureYellow {background:#ff0}
-.bgWhite {background:#fff}
-.bgNearWhite {background:#F8F8F8}
+.bgPureYellow {background-color:#ff0}
+.bgWhite {background-color:#fff}
+.bgNearWhite {background-color:#F8F8F8}
+.bgGray {background-color:#cfcfcf}
+.bgLightGray {background-color:#f2f2f2}
 
 /**
 forms

@@ -3,20 +3,30 @@
 	$(function(){
 		var $slider = $('#slider'),
 			$liens = $('#sliderMenu a'),
-			$slides = $('#slides .wrapper > div'),
+			$slides = $('#slides > .wrapper > div'),
 			selectedClasses = 'selected black',
 			normalClass = 'yellow',
 			$loader = $('.loader'),
-			timer,
-			timer2,
+			timer, /* next slide */
+			timer2, /* load event OR 2500ms */
+			timer3, /* mouseleave / enter */
 			nextLink,
+			currentSlide = 0,
 			timelapse = 2500,
 			nbSlides = $liens.length;
 
 		$slider.bind('mouseenter', function(){
+			clearTimeout(timer3);
 			clearTimeout(timer);
-			$slider.unbind('mouseenter');
+			$slides.eq(currentSlide).stop(true, true).show().siblings().hide();
 		});
+
+		$slider.bind('mouseleave', function() {
+			timer3 = setTimeout(function(){
+				nextLink((currentSlide < (nbSlides-1) ? currentSlide+1 : 0));
+			}, 200);
+		});
+
 
 		$liens.click(function(e){
 			var slideNumber = $liens.index(this);
@@ -45,13 +55,14 @@
 		});
 
 		nextLink = function(i) {
+			currentSlide = i;
 			$liens.eq(i).trigger('click');
 			timer = setTimeout(function(){
 				nextLink((i < (nbSlides-1) ? i+1 : 0));
 			}, timelapse);
 		}
 
-		nextLink(0);
+		nextLink(currentSlide);
 
 	});
 
