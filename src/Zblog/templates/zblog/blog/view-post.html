@@ -18,14 +18,14 @@
 	<div class="w220 floatLeft">
 		<div class="w180 centerBlock">
 			<div class="classicImgBorder h70 oHidden">
-				<img src="{if $post.image !== ''} {mediaurl '/img/blog/posts/'~$post.image}{else}{mediaurl '/img/blog/posts/default.jpg'}{/if}" />
+				<img src="{if $post.image !== ''} {mediaurl '/img/blog/posts/'~$post.image}{else}{mediaurl '/img/blog/posts/default_v2.jpg'}{/if}" />
 			</div>
 		</div>
 	</div>
 
 </div>
 
-<div class="marg8pxt pad18pxr textContent" id="article_content">
+<div class="marg8pxt pad18pxr textContent shadow_links" id="article_content">
 	{$post.content|markdown|safe}
 </div>
 

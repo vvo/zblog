@@ -2,7 +2,7 @@
 {cfg 'debug', false, false}
 {cfg 'is_beta', false, false}
 <!DOCTYPE html>
-<html lang="fr" class="bgDarkGrey no-js">
+<html lang="fr" class="bgLightGray no-js">
 	<head>
 		<title>Zeroload : {$page_title}</title>
 		<meta charset="utf-8">
@@ -16,19 +16,18 @@
 		
 		{block header_scripts}{/block}
 	</head>
-	<body class="serif" id="top">
+	<body id="top">
 		<div id="container">
 
 			<header id="header" class="block bgBlack">
 				<div class="relative centerBlock w960 h100">
 
-					<a id="logo" class="absolute posBottom posLeft block" href="{url 'Zblog_Views::main'}" title="accueil">
-<!--						<img src="{mediaurl '/img/logo.png'}" alt="zeroload : développeur freelance et performance web" class="block" />-->
+					<a id="logo" class="absolute posLeft block" href="{url 'Zblog_Views::main'}" title="accueil">
 						<img src="{mediaurl '/img/logo_v2.png'}" alt="zeroload : développeur freelance et performance web" width="60" height="55" />
 						<!-- Standard (inline) mode cause images to have odd bottom margin see http://www.quirksmode.org/css/quirksmode.html -->
 					</a>
 
-					<nav id="menu" class="letterSpace0p07em block absolute posBottom posRight sansRounded font12 caps">
+					<nav id="menu" class="letterSpace0p08em block absolute posBottom posRight sansRounded font12 caps">
 							<a href="{url 'homepage'}" title="Accueil du site" class="first relative">accueil</a>
 							<a href="{url 'services'}" class="classicBorderLeftYellow" title="Découvrez nos services d'optimisation du temps de chargement de vos pages">prestations</a>
 							<a href="{url 'blog_homepage'}" class="classicBorderLeftYellow" title="Lisez notre blog performance & développement web">blog</a>
@@ -39,18 +38,10 @@
 				</div>
 			</header>
 
-<!--			<div class="absolute posTop posLeft bgLightOrange">
-			<a href="#" class="black" onclick="$('.serif').css('font-family', 'LithoAntique');return false">original</a>
-					<br/><a href="#" class="black" onclick="$('.serif').css('font-family', 'Georgia');return false">georgia</a>
-					<br/><a href="#" class="black" onclick="$('.serif').css('font-family', 'Arial');return false">arial</a>
-			</div>-->
-
-<!--			<div class="centerBlock w960 pad4pxt pad18pxlr pad18pxb">-->
 			<div class="centerBlock w960 pad4pxt pad18pxb">
 
 				{block beforeContent}{/block}
 
-<!--				<div id="content" class="marg8pxt pad18pxt">-->
 				<div id="content" class="pad8pxt">
 					{block body}{/block}
 				</div>

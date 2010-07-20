@@ -32,7 +32,7 @@
 }
 
 .article:nth-child(even) {
-	background:#f2f2f2; /* .lightGray */
+	background:#cfcfcf; /* .darkGray */
 }
 
 .borderimage .article:nth-child(even) {
@@ -99,19 +99,19 @@ DISQUS
 }
 
  .dsq-button, .dsq-button-small {
-	font-family: 'LithoAntique', 'Times New Roman';
+	font-family: Arial, Helvetica, sans-serif; /* .serif */
 	padding:.1em  !important;
 	text-transform:uppercase  !important;
 	cursor:pointer  !important; /* for buttons */
-	color:#ffe400 !important; /* important for links */
-	background: #000;
+	color:#000 !important; /* important for links */
+	background: #ff7;
 }
 
 .borderimage .dsq-button, .borderimage .dsq-button-small {
 	background:transparent  !important;
-	-moz-border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
-	-webkit-border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
-	border-image: url("../../img/border-arrow-right.png") 6 17 6 5  !important;
+	-moz-border-image: url("../../img/border-arrow-right_v2.png") 6 17 6 6  !important;
+	-webkit-border-image: url("../../img/border-arrow-right_v2.png") 6 17 6 6  !important;
+	border-image: url("../../img/border-arrow-right_v2.png") 6 17 6 6  !important;
 	border-width: 6px 17px 6px 5px  !important;
 }
 
@@ -127,15 +127,7 @@ Number of comments
 	overflow:hidden;
 	width:3em;
 	padding:0.1em 0 0.1em 0.5em;
-/*	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
-	background-color:#e5cd00*/
 }
-
-/*.article:nth-child(even) .commentsCount {
-	background-color:#ffe400
-}*/
 
 .commentsCount:before {
 	content:url("../../img/blog/comments-2.png")" ";
@@ -145,7 +137,14 @@ Number of comments
 	top:0;
 }
 
-#article_content img {border:1px solid #ac9500}
+#article_content img {
+	/*classicImgBorder*/
+	border:1px solid #555;
+	/*.classicShadow*/
+	box-shadow:0 0 4px #555;
+	-webkit-box-shadow:0 0 4px #555;
+	-moz-box-shadow:0 0 4px #555;
+}
 
 #article_navigation {
 	padding:.2em;
@@ -163,7 +162,3 @@ Number of comments
 	height:11px;
 	overflow:hidden;
 }
-
-/*#blogContent .textContent p, #blogContent .textContent ul, #blogContent .textContent ol {
-	font-size:108%;
-}*/

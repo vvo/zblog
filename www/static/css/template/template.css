@@ -6,9 +6,14 @@
        common css for all pages
 */
 
-.sansRounded {font-family: 'FrankfurterComMedium', 'Comic Sans Ms';/* font-size-adjust:0.472*/}
-.serif {font-family: Arial, Helvetica, sans-serif;}
-/*.arial {font-family: Arial, Helvetica, sans-serif;}*/
+.sansRounded {
+	font-family: 'FrankfurterComMedium', Arial;
+	/* font-size-adjust:0.472*/
+}
+.serif {
+	font-family: Arial, Helvetica, sans-serif;
+	text-shadow:none;
+}
 
 /*html {
 	background: black url("gradient-bg.png") repeat-y left;
@@ -32,7 +37,10 @@
 	);
 }*/
 
-body {overflow-y:scroll}
+body {
+	overflow-y:scroll;
+	font-family: Arial, Helvetica, sans-serif;
+}
 
 #header {
 	-moz-box-shadow: 0 1px 0 #797979, 0 2px 0 #8e8e8e, 0 3px 0 #a2a2a2, 0 4px 0 #c5c5c5, 0 5px 0 #d3d3d3;
@@ -40,15 +48,20 @@ body {overflow-y:scroll}
 	box-shadow: 0 1px 0 #797979, 0 2px 0 #8e8e8e, 0 3px 0 #a2a2a2, 0 4px 0 #c5c5c5, 0 5px 0 #d3d3d3;
 }
 
+#logo {
+	bottom: 7px;
+}
+
 /**
 Menu
 */
 #menu a {
 	display:block;
+	padding-top:7px;
 	float:left;
 	text-align:center;
 	width:119px; /* -1px border */
-	line-height:34px;
+	line-height:27px;
 	color:#ff0;
 }
 
@@ -82,6 +95,7 @@ h1, h2, h3 {
 	font-family: 'FrankfurterComMedium';
 	font-weight:normal;
 	text-transform: uppercase;
+	text-shadow:0 0 3px #aaa; /* classicTextShadow */
 }
 
 h1, h2, h3 {
@@ -107,14 +121,41 @@ h1, h2, h3 {
 Content Links
 */
 a {text-decoration: none}
-a:link {color: #555;}
+a:link, .novisited a:visited {color: #000;}
 a:visited {color: #000;}
-a:hover {color: #e8d600}
+a:hover {color: #000}
 /*a:active {text-shadow: 0 2px 0 #fef28f}*/
 
-.textContent a:link {border-bottom:1px dotted #555}
+.textContent a:link {border-bottom:1px dotted #000}
 .textContent a:visited {color:#aaa;border-bottom:1px dotted #aaa;}
-.textContent a:hover {border:none}
+.textContent a:hover, .novisited a:hover, .novisited a:active {border:none;color:#000;background:#ff7}
+
+.shadow_links a {
+	padding:1px 2px;
+	color:#000;
+	-moz-box-shadow: 0 0 3px #000;
+	border:0;
+}
+
+.shadow_links a:link {
+	border:0;
+	background:#ff0;
+}
+
+.shadow_links a:visited {
+	color: #000;
+	background:#d7d7d7;
+	border:0;
+}
+
+.shadow_links a:hover {
+	background:#000;
+	color:#ff0;
+	border:0;
+}
+/**
+end links
+*/
 
 .textContent h1, .textContent h2, .textContent h3 {
 	margin:.5em 0;
@@ -134,10 +175,6 @@ a:hover {color: #e8d600}
 	font-size: 123.1%;
 	text-indent: 2em;
 }
-
-/*.textContent p, .textContent ul, .textContent ol {
-	font-size: 108%;
-}*/
 
 .textContent p {
 	margin-bottom:.5em;

@@ -9,27 +9,28 @@
 			$loader = $('.loader'),
 			timer, /* next slide */
 			timer2, /* load event OR 2500ms */
-			timer3, /* mouseleave / enter */
+//			timer3, /* mouseleave / enter */
 			nextLink,
 			currentSlide = 0,
-			timelapse = 2500,
+			timelapse = 10000,
 			nbSlides = $liens.length;
 
 		$slider.bind('mouseenter', function(){
-			clearTimeout(timer3);
+//			clearTimeout(timer3);
 			clearTimeout(timer);
 			$slides.eq(currentSlide).stop(true, true).show().siblings().hide();
 		});
 
 		$slider.bind('mouseleave', function() {
-			timer3 = setTimeout(function(){
+			timer = setTimeout(function(){
 				nextLink((currentSlide < (nbSlides-1) ? currentSlide+1 : 0));
-			}, 200);
+			}, timelapse-2000);
 		});
 
 
 		$liens.click(function(e){
 			var slideNumber = $liens.index(this);
+			currentSlide = slideNumber;
 			$(this)
 				.removeClass(normalClass)
 				.addClass(selectedClasses)
@@ -45,7 +46,7 @@
 			$loader.fadeOut(function(){
 				$(this).remove();
 			});
-		}, 2500);
+		}, 800);
 
 		$(window).load(function(){
 			$loader.fadeOut(function(){

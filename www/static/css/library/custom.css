@@ -39,6 +39,7 @@ letter space
 */
 .letterSpace0p05em {letter-spacing: 0.05em}
 .letterSpace0p07em {letter-spacing: 0.07em}
+.letterSpace0p08em {letter-spacing: 0.08em}
 .font08 {font-size:61%}
 .font09 {font-size:69%}
 .font10 {font-size:77%}
@@ -211,15 +212,12 @@ Paddings
 /**
 backgrounds
 */
-.bgYellow {background-color: #ffe400}
-.bgLightOrange {background-color:#e5cd00}
+.bgYellow {background-color: #ff0}
+.bgLightYellow {background-color:#ff7}
 .bgBlack {background-color:#000}
-.bgPureYellow {background-color:#ff0}
 .bgWhite {background-color:#fff}
-.bgNearWhite {background-color:#F8F8F8}
-.bgGray {background-color:#cfcfcf}
-.bgLightGray {background-color:#f2f2f2}
-.bgDarkGrey {background-color:#e6e6e6}
+.darkGray {background-color:#cfcfcf}
+.bgLightGray {background-color:#e6e6e6}
 
 /**
 forms
@@ -228,7 +226,7 @@ forms
 .classicInput.w240 {width:230px !important}
 .classicButton {
 /*	padding:.15em .2em .05em .2em;*/
-	padding:.45em .3em .25em .3em;
+	padding:.35em .2em .15em .2em;
 	text-transform:uppercase;
 	background: #ff0;
 	cursor:pointer; /* for buttons */
@@ -357,15 +355,15 @@ Borders : this could be lazy loaded as this is not mandatory for the website to 
 
 /*.classicBorderLeft.w180 {width:176px !important}*/
 
-.classicImgBorder {border:1px solid #ac9500}
+.classicImgBorder {border:1px solid #555}
 
 /**
 Shadows
 */
 .classicShadow {
-	-moz-box-shadow:0 0 4px #aaa;
-	-webkit-box-shadow:0 0 4px #aaa;
-	box-shadow:0 0 4px #aaa;
+	-moz-box-shadow:0 0 4px #555;
+	-webkit-box-shadow:0 0 4px #555;
+	box-shadow:0 0 4px #555;
 }
 
 /**
@@ -377,12 +375,11 @@ Links
 Colors
 */
 .black, a.black, a:link.black, a:visited.black, a:hover.black, a:active.black {color:#000;}
-.yellow, a.yellow, a:link.yellow, a:visited.yellow, a:hover.yellow, a:active.yellow {color:#ffe400}
-.orange, a.orange, a:link.orange, a:visited.orange, a:hover.orange, a:active.orange {color:#d7c000}
-.gray, a.gray, a:link.gray, a:visited.gray, a:hover.gray, a:active.gray {color:#cfcfcf}
-.lightGray, a.lightGray, a:link.lightGray, a:visited.lightGray, a:hover.lightGray, a:active.lightGray {color:#f2f2f2}
-.lightOrange, a.lightOrange, a:link.lightOrange, a:visited.lightOrange, a:hover.lightOrange, a:active.lightOrange {color:#f5db00}
-.orangev2, a.orangev2, a:link.orangev2, a:visited.orangev2, a:hover.orangev2, a:active.orangev2 {color: #e8d600}
+.yellow, a.yellow, a:link.yellow, a:visited.yellow, a:hover.yellow, a:active.yellow {color:#ff0}
+/* .gray is different from bgGray, otherwise we wouldn't see anything .. :) */
+.gray, a.gray, a:link.gray, a:visited.gray, a:hover.gray, a:active.gray {color:#888}
+/* also .lightGray is different from .bgLightGray, same reason */
+.lightGray, a.lightGray, a:link.lightGray, a:visited.lightGray, a:hover.lightGray, a:active.lightGray {color:#cfcfcf}
 
 .resetList {margin:0}
 .resetList li {list-style: none}
@@ -397,7 +394,8 @@ Colors
 }
 
 .active, .active:visited, .active:link {
-	color:#d7c000;
+	color:#000 !important;
+	background:#ff7 !important;
 }
 
 .breakwords {
@@ -406,4 +404,8 @@ Colors
 
 .pointer {
 	cursor:pointer;
+}
+
+.classicTextShadow {
+	text-shadow:0 0 3px #aaa;
 }
