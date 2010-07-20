@@ -234,14 +234,18 @@ forms
 }
 
 .classicButton:hover {
-	background: #ff7;
+	background: #000;
 }
 
 /* sometimes buttons are in .textContent divs that makes them behave like classic links, they're not ! */
-.textContent .classicButton:link, .textContent .classicButton:visited, .textContent .classicButton:hover,
-.classicButton:link, .classicButton:visited, .classicButton:hover {
+.textContent .classicButton:link, .textContent .classicButton:visited,
+.classicButton:link, .classicButton:visited {
 	 /* important for links */
 	 color:#000;
+}
+
+.classicButton:hover, .textContent .classicButton:hover {
+	color: #ff0;
 }
 
 .borderimage .classicButton, .borderimage .classicButton:hover {

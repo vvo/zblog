@@ -1,29 +1,44 @@
 TODO :
-	MAPPY PASOK, en cours 1/2 ok
+	- modifier adresses default et mini mappy blog post en prod
+	- nouvelle méthode affichage commentaires
+	- changer méthode fonts
+	- page 404
+	- nouvelle photo a propos (+modifier sur les sites linkedin, twitter, viadeo)
+	- nouveau favicon ?
+	- afficher twitter sur page d'accueil
+	- faire un sitemap
 	page de test d'un post dans design normal même si draft => écriture des posts directement en prod
 
-	FOOTMERCATO Pierre-Marie Papineschi : papineschi@gmail.com (mettre le pdf sur le site web ?) PASOK
+	FOOTMERCATO Pierre-Marie Papineschi : papineschi@gmail.com (mettre le pdf sur le site web ?) PASOK,
+		mail envoyé, en attente
 	Ma-bimbo.com PASOK
 	Billet installation webpagetest.org
 	Billet technologie zeroload PASOK
 	Billet expliquer méthode développement avec virtualbox
+
+	mini audits
+	technologies zeroload.net :
+	border image
+	text shadow
+	balises html5
+	box shadow
+	résumé velocity 2010
+	détail chiffres business performance
+	migration serveur complet dedibox
+
+	mini audits
+	reprendre la liste sur mail zeroload
+	presse-citron.net
 
 	problème avec ' dans url ...
 	$db->esc génère des ? pour les ' sur dedibox
 
 	méthode google pour inclusion fonts / méthode maison (création css à la volée avec labJS ou requireJS)
 
-	mettre à jour css-js-booster
-
-	virer les <span class="block"
-
-	rediriger /feed.xml vers /blog/feed.xml
-
-vérifier mise a jour js ...
-
 async ne conserve pas l'orde d'éxecution, solution pour lancer le gros javascript en asynchrone :
 ajouter les scripts twitter-json et delicious-json directement dans une classe en fonction de l'url ?
 => possibilité d'utiliser async + defer partout
+=> utiliser labjs
 
 installer petit système navigation article
 modifier navigation pour l'inclure comme sur quirksmode a droite du contenu toujours collé et par dessus le reste
@@ -33,12 +48,8 @@ calendrier : mettre en cache un calendrier spécifique pour jour/mois/année dan
 actuellement pour chaque page on recalcule le calendrier du jour PASOK
 
 nettoyer les CSS, utiliser extension
-tester feuilles de styles annexes PASOK
-corriger derniers bugs PASOK
 
 afficher calendrier disponibilité
-
-
 
 Plus tard :
 tester IE6 PASOK
@@ -56,18 +67,17 @@ Idées / divers :
 mise en place déploiement js et css data uris et mhtml PASOK, EN ATTENTE
 
 Pourquoi on envoit connection close au php ? problème pluf, retenter une explication sur les forums
-site test web site speedup alexa top 100
-	on optimize directement avec webo site speedup la plupart des gros sites web
-	on calcule combien on gagne avec webpagetest.org api
-	avec le top 1 million : general statistics on site performance
+
 écrire un bugzilla avec mes tests sur les deux fontes quand on utilise uppercase entre firefox et safari PASOK
+
 problème FOUC sur font-face : problème de modernizr, bug posté sur github PASOK
 	(chercher ce qui provoque fouc : utiliser webfont loader quand disponible) PASOK
 	modifié modernizr en attendant
 
 installer une extension SEO PASOK
 https://addons.mozilla.org/fr/firefox/search?q=seo&cat=all
-vincent-voyer.fr : fermer et tout déplacer sur zeroload.net, faire une rédirection 301 depuis la page développeur jquery, laisser ouvert le chat (avec avertissement), fermer tout le reste
+vincent-voyer.fr : fermer et tout déplacer sur zeroload.net, faire une rédirection 301
+depuis la page développeur jquery, laisser ouvert le chat (avec avertissement), fermer tout le reste
 
 script nodejs qui trouve tous les js/css et créé des versions optimisées (tout simple pour l'instant)
 	programme nodejs pour optimiser les css et js avec des paramètres de configuration de groupes
@@ -78,27 +88,18 @@ script nodejs qui trouve tous les js/css et créé des versions optimisées (tou
 
 experiences avec moz gradient, au clic souris on fait des jolis ronds qui grandissent etc..
 
-css js booster : does not work in a symbolic link env
+css js booster : does not work in a symbolic link env ? retester
 
-attention à l'utilisation resetList non sémantique
+attention à l'utilisation resetList non sémantique > utiliser d'autres balises
 
 deploy-prod et deploy-beta
-
 deploy-prod avec paramètre = lien symbolique et vidage cache pluf
 
-vérifier si css js booster met a jour l'url si js mis a jour ...
+vérifier si css js booster met a jour l'url si js mis a jour ... OK mais pas le fichier, bug posté
 
-positionner sur developpeur web, developpeur web freelance, developpeur web paris
-
-placer le cache de pluf à un autre endroit
+placer le cache de pluf (templates) à un autre endroit
 
 afficher nombre de commentaire + lien à côté du titre sur l'affichage d'un blog post
 
-
-faire mini app qui prends une url et automatise directement le site web, avec webositespeedup
-
-au fait sur la page Blog ce serait bien d'aligner à droite les boutons "Follow me" et "Add me"
-Éric Le Tutour: vu la forme de flèche ça serait plus naturel
-
-text-shadow sur les titres ?
-
+Organize :
+générer faux traffic vers freelance info pour se retrouver souvent en première position, changer de box pour ça, easy

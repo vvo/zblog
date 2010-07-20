@@ -9,14 +9,12 @@
 			$loader = $('.loader'),
 			timer, /* next slide */
 			timer2, /* load event OR 2500ms */
-//			timer3, /* mouseleave / enter */
 			nextLink,
 			currentSlide = 0,
 			timelapse = 10000,
 			nbSlides = $liens.length;
 
 		$slider.bind('mouseenter', function(){
-//			clearTimeout(timer3);
 			clearTimeout(timer);
 			$slides.eq(currentSlide).stop(true, true).show().siblings().hide();
 		});

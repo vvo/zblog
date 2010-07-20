@@ -178,6 +178,10 @@ end links
 	text-indent: 2em;
 }
 
+.textContent p, .textContent ul, .textContent ol {
+	font-size:108%;
+}
+
 .textContent p {
 	margin-bottom:.5em;
 }

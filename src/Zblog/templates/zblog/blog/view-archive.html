@@ -1,6 +1,6 @@
 {extends 'zblog/blog/base.html'}
 {block leftCol}
-<h1 class="marg0t classicBorderBottom marg18pxb font18">Archives du mois de {$month_name} {$year}</h1>
+<h1 class="marg0t lineHeight1 classicBorderBottom marg18pxb font18">Archives du mois de {$month_name} {$year}</h1>
 <ul class="font14">
 	{foreach $posts as $post}
 	<li><a href="{url 'blog_post', rawurlencode(strtolower($post.title))}"
