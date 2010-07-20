@@ -131,9 +131,11 @@ a:hover {color: #000}
 .textContent a:hover, .novisited a:hover, .novisited a:active {border:none;color:#000;background:#ff7}
 
 .shadow_links a {
-	padding:1px 2px;
+	padding:0 2px;
 	color:#000;
+	box-shadow: 0 0 3px #000;
 	-moz-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;
 	border:0;
 }
 
