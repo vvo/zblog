@@ -58,16 +58,13 @@ http://www.pluf.org/doc/template.html#link12*}
 
 	{literal}
 
-	(function() {
-		var links = document.getElementsByTagName('a');
-		var query = '?';
-		for(var i = 0; i < links.length; i++) {
-			if(links[i].href.indexOf('#disqus_thread') >= 0) {
-				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-			}
-		}
-		document.write('<script async defer charset="utf-8" type="text/javascript" src="http://disqus.com/forums/zeroload/get_num_replies.js' + query + '"></' + 'script>');
-	})();
+	var disqus_shortname = 'zeroload'; // Put your website's shortname here
+    (function () {
+		var s = document.createElement('script'); s.async = true; s.defer = true;
+		s.type = 'text/javascript';
+		s.src = 'http://disqus.com/forums/' + disqus_shortname + '/count.js'; // And here
+		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
 </script>
 {/literal}
 {/block}

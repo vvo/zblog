@@ -9,7 +9,10 @@
 			{$post.post_date|date:"%d/%m/%Y"}
 		</time>
 		<div class="floatLeft w420">
-			<h1 class="marg0 font18 lineHeight1">{$post.title}</h1>
+			<h1 class="marg0 lineHeight1">
+				{comments_permalink $post}
+				<span class="font18 marg18pxr">{$post.title}</span>
+			</h1>
 			<div class="tags pad2pxb lineHeight1 textContent absolute posBottom">
 				{tags $post.tags}
 			</div>
@@ -45,18 +48,15 @@
 					<div id="disqus_thread"></div>
 					
 					<script type="text/javascript" defer>
+
+						var disqus_identifier = '{$post.getDisqusId()}';
 						{if $cfg_debug === true || $cfg_is_beta === true}
 							var disqus_developer = 1;
-							var disqus_identifier = "{cfg 'disqus_prefix'}DEV-"+{$post.id};
 						{else}
 							var disqus_url = "http://zeroload.net{url 'blog_post', rawurlencode(strtolower($post.title))}";
-							var disqus_identifier = "{cfg 'disqus_prefix'}"+{$post.id};
 						{/if}
 
 						{literal}
-						/**
-						 * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
-						 */
 						(function() {
 							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.defer = true;
 							dsq.src = 'http://zeroload.disqus.com/embed.js';

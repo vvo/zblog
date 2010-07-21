@@ -10,6 +10,7 @@ Pluf::loadFunction('Pluf_Shortcuts_GetFormForModel');
 class Zblog_Blog {
 
 	private $nb_posts_per_page = 3;
+
 //	private $disqus_api_key = 'oygAMeE83ouctpsnBkQS7cvZXNRPtPPFxp1WdIQHCe1rjCj3obPD4YhcZSNpQsJE';
 //	private $disqus_forum = 376164; // id of the zeroload website in disqus
 

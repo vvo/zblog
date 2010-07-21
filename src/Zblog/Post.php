@@ -61,6 +61,14 @@ class Zblog_Post extends Pluf_Model {
 		$this->_a['views'] = array();
 	}
 
+	public function getDisqusId() {
+		if (Pluf::f('debug') === true || Pluf::f('is_beta') === true) {
+			return Pluf::f('disqus_prefix').'DEV'.$this->id;
+		} else {
+			return Pluf::f('disqus_prefix').$this->id;
+		}
+	}
+
 	function __toString() {
 		return $this->title;
 	}
