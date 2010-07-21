@@ -60,7 +60,20 @@
 }
 
 .sliderLink {
-	background:url(../../img/homepage/stats.png) bottom left no-repeat;
+	background-position: bottom left;
+	background-repeat: no-repeat;
+}
+
+#slides .wrapper > div:nth-child(1) .sliderLink {
+	background-image:url(../../img/homepage/stats-1.jpg);
+}
+
+#slides .wrapper > div:nth-child(2) .sliderLink {
+	background-image:url(../../img/homepage/stats-2.jpg);
+}
+
+#slides .wrapper > div:nth-child(3) .sliderLink {
+	background-image:url(../../img/homepage/stats-3.jpg);
 }
 
 #homepage ul li {

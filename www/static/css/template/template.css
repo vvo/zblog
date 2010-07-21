@@ -131,11 +131,12 @@ a:hover {color: #000}
 .textContent a:hover, .novisited a:hover, .novisited a:active {border:none;color:#000;background:#ff7}
 
 .shadow_links a {
-	padding:0 2px;
+	padding:1px 2px;
 	color:#000;
+/*	Does not render well
 	box-shadow: 0 0 3px #000;
 	-moz-box-shadow: 0 0 3px #000;
-	-webkit-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;*/
 	border:0;
 }
 
@@ -152,7 +153,7 @@ a:hover {color: #000}
 
 .shadow_links a:hover {
 	background:#000;
-	color:#ff0;
+	color:#e6e6e6;
 	border:0;
 }
 /**
@@ -176,10 +177,6 @@ end links
 .textContent h3 {
 	font-size: 123.1%;
 	text-indent: 2em;
-}
-
-.textContent p, .textContent ul, .textContent ol {
-	font-size:108%;
 }
 
 .textContent p {

@@ -226,7 +226,7 @@ forms
 .classicInput.w240 {width:230px !important}
 .classicButton {
 /*	padding:.15em .2em .05em .2em;*/
-	padding:.35em .2em .15em .2em;
+	padding:.30em .2em .20em .2em;
 	text-transform:uppercase;
 	background: #ff0;
 	cursor:pointer; /* for buttons */
@@ -245,7 +245,7 @@ forms
 }
 
 .classicButton:hover, .textContent .classicButton:hover {
-	color: #ff0;
+	color: #e6e6e6;
 }
 
 .borderimage .classicButton, .borderimage .classicButton:hover {
