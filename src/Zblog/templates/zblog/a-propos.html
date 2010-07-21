@@ -11,67 +11,68 @@
 <div class="relative fauxColumn fauxColumn2ColFirst240">
 	<div class="clearfix">
 		<div class="w240 floatLeft">
-			<div class="font20 lineHeight1 sansRounded caps">à propos...</div>
+			<div class="font20 lineHeight1 sansRounded caps classicTextShadow">à propos...</div>
 			<div class="font20 lineHeight1 gray sansRounded caps">qui est Zeroload</div>
-			<a href="{url 'contact'}" title="Lien vers la page de contact" class="inlineBlock marg18pxt classicButton font11">Contactez-nous</a>
 		</div>
 		<div class="w480 floatLeft">
 			<div class="noPlainBorderLeftIfBorderImage plainBorderLeft">
 				<div class="marg8pxb pad18pxlr classicBorderRight">
 					<h1 class="classicBorderBottom font19 marg0tb lineHeight1">Zeroload
 						<span class="gray"><br/>optimisation du temps de chargement</span></h1>
-						<div class="textContent">
+						<div class="textContent shadowLinks">
 							{$text|safe}
 						</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	<div class="floatLeft w240">
+		<div class="pad18pxl">
+			<h1 class="classicBorderBottom font19 marg0tb lineHeight1">Références
+						<span class="gray"><br/>témoignages clients</span></h1>
 
-	<div class="absolute posTop posRight">
-		<img src="{mediaurl '/img/moi_v2.jpg'}" alt="Moi avec un joli polo :)" title="Bouge ta souris de mon nez !" />
-		<div class="textContent marg8pxt">
-			<ul>
-				<li><a href="{mediaurl '/pdf/cv.vv.pdf'}" title="Cv développeur web freelance front-end">CV français</a> [PDF]</li>
-				<li><a href="{mediaurl '/pdf/cv.vv.en.pdf'}" title="Freelance front-end web developer">CV anglais</a> [PDF]<br/><br/></li>
-				<li><a class="linkedin-profileinsider-popup" href="http://www.linkedin.com/in/vvoyer">Vincent Voyer</a></li>
-				<li><a href="http://careers.stackoverflow.com/developpeur-web-freelance-paris" title="profil stackoverflow">CV stackoverflow</a></li>
-				<li><a href="http://www.webworkerclub.com/societes/295,zeroload.html" title="profil société sur web worker club">Profil webworkerclub</a></li>
-			</ul>
+			<div class="textContent">
+				<p class="marg18pxt">“Qualités de Vincent : force de proposition - méticuleux - remise en question / auto-critique - compétences très haut niveau xhtml / css / js.”</p>
+				<p class="right">Jean-Philippe Tessier, <a href="http://beemoov.com" title="Startup de jeux en ligne">Beemoov</a></p>
+				<p class="marg18pxt">“Pour avoir déjà travaillé avec Vincent, et sous traité un audit de performances web, je recommande.”</p>
+				<p class="right">Olivier Bonvalet, <a href="http://fr.linkedin.com/in/daevel" title="Infogérance">Beemoov</a></p>
+			</div>
+<a href="{url 'contact'}" title="Lien vers la page de contact" class="marg18pxt inlineBlock classicButton font11">Contactez-nous</a>
 		</div>
 	</div>
+	</div>
+
 </div>
 
 <div class="marg18pxt classicBorderTop pad18pxt clearfix">
 	<div class="w240 floatLeft sansRounded caps">
-		<span class="font20">coordonnées</span>
+		<span class="classicTextShadow font20">coordonnées</span>
 	</div>
 	<div class="w720 floatLeft">
 		<div class="classicBorderLeft pad18pxl textContent">
 			<p>Email : <a href="mailto:info@zeroload.net">info@zeroload.net</a>
-			<br/>Skype : v.voyer
-			<br/>Mobile : 06/13/92/69/96</p>
+				<br/>Téléphone : (+33)6/13/92/69/96 (<a href="skype://v.voyer">Skype</a>)</p>
 		</div>
 	</div>
 </div>
 
 <div class="marg18pxt classicBorderTop pad18pxt clearfix">
 	<div class="w240 floatLeft sansRounded caps">
-		<span class="font20">divers</span>
+		<span class="classicTextShadow font20">divers</span>
 	</div>
 	<div class="w720 floatLeft">
 		<div class="classicBorderLeft pad18pxl textContent">
-<p>Notre site Zeroload est listé dans la catégorie <a href="http://www.webrankinfo.com/annuaire/cat-4-internet.htm">
+<p>Consultez notre profil société sur <a href="http://www.webworkerclub.com/societes/295,zeroload.html" title="profil société sur web worker club">webworkerclub</a>.
+			<br/>Notre site Zeroload est listé dans la catégorie <a href="http://www.webrankinfo.com/annuaire/cat-4-internet.htm">
 Internet</a> :
 <a href="http://www.webrankinfo.com/annuaire/cat-154-conseil-internet.htm">
-Conseil Internet</a> de l'annuaire <a href="http://www.webrankinfo.com/"><img src="http://www.webrankinfo.com/images/wri/webrankinfo-80-15.png" title="WebRankInfo" width="80" height="15" alt="Guide du référencement" /></a></p>
+Conseil Internet</a> de l'annuaire <a href="http://www.webrankinfo.com/"><img src="http://www.webrankinfo.com/images/wri/webrankinfo-80-15.png" title="WebRankInfo" width="80" height="15" alt="Guide du référencement" /></a>.</p>
 		</div>
 	</div>
 </div>
 
 {/block}
 
-{block footer_scripts}<script defer="defer" async="async" type="text/javascript" src="http://www.linkedin.com/js/public-profile/widget-os.js"></script>{/block}
+
 
 {block footer}
 {include 'zblog/inc/footer-normal.html'}

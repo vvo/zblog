@@ -98,6 +98,10 @@ h1, h2, h3 {
 	text-shadow:0 0 3px #aaa; /* classicTextShadow */
 }
 
+h1 > .gray, h2 > .gray, h3 > .gray {
+	text-shadow:none;
+}
+
 h1, h2, h3 {
 	font-size:100%;
 }
@@ -130,28 +134,28 @@ a:hover {color: #000}
 .textContent a:visited {color:#aaa;border-bottom:1px dotted #aaa;}
 .textContent a:hover, .novisited a:hover, .novisited a:active {border:none;color:#000;background:#ff7}
 
-.shadow_links a {
+.shadowLinks a {
 	padding:1px 2px;
 	color:#000;
-/*	Does not render well
+/*	Does not render well*/
 	box-shadow: 0 0 3px #000;
 	-moz-box-shadow: 0 0 3px #000;
-	-webkit-box-shadow: 0 0 3px #000;*/
+	-webkit-box-shadow: 0 0 3px #000;
 	border:0;
 }
 
-.shadow_links a:link {
+.shadowLinks a:link {
 	border:0;
-	background:#ff0;
+	background:#ff7;
 }
 
-.shadow_links a:visited {
+.shadowLinks a:visited {
 	color: #000;
 	background:#d7d7d7;
 	border:0;
 }
 
-.shadow_links a:hover {
+.shadowLinks a:hover {
 	background:#000;
 	color:#e6e6e6;
 	border:0;

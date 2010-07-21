@@ -27,18 +27,6 @@
 	width:56px; /* -4px part of border */
 }
 
-.article:nth-child(even) .w600 {
-	width:599px !important; /* let the border visible, in the background*/
-}
-
-.article:nth-child(even) {
-	background:#cfcfcf; /* .darkGray */
-}
-
-.borderimage .article:nth-child(even) {
-	margin-right:1px;
-}
-
 .borderimage #brevesWrapper.plainBorderLeft {
 	border:0;
 }

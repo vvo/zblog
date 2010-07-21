@@ -1,10 +1,10 @@
-Zeroload est une entreprise créée par Vincent Voyer,
-développeur web spécialisé en performance web (performance technique).
+Zeroload est l'activité créée par **Vincent Voyer**,
+développeur web freelance spécialisé en performance web et optimisation du temps de chargement.
 
 Services
 ----
-Zeroload aide les entreprises du web dans leurs démarches d'optimisation des pages web. Nous analysons, priorisons et
-développons avec vous les solutions qui feront de votre site web un site rapide et fiable.
+Zeroload aide les entreprises du web dans leurs démarches d'optimisation. Nous analysons, priorisons et
+développons avec vous les solutions qui feront de votre site web **un site rapide et fiable**.
 
 N'hésitez pas à [nous contacter](/contact) si :
 
@@ -18,7 +18,7 @@ N'hésitez pas à [nous contacter](/contact) si :
 L'entreprise
 ----
 Vincent Voyer a créé Zeroload début 2010 après avoir travaillé pendant plusieurs années sur des sites web
- à fort trafic.
+ à fort trafic pour des sociétés comme [Mappy](http://fr.mappy.com) ou [Beemoov](http://beemoov.com).
 
 Pour en savoir plus à son sujet,
-[lisez l'article du blog](/blog/vincent%20voyer,%20d%C3%A9veloppeur%20web%20paris/ "développeur web paris").
+[lisez l'article du blog](/blog/vincent%20voyer,%20d%C3%A9veloppeur%20web%20paris/ "développeur web freelance").
