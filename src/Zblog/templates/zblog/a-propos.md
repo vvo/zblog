@@ -21,4 +21,5 @@ Vincent Voyer a créé Zeroload début 2010 après avoir travaillé pendant plus
  à fort trafic pour des sociétés comme [Mappy](http://fr.mappy.com) ou [Beemoov](http://beemoov.com).
 
 Pour en savoir plus à son sujet,
-[lisez l'article du blog](/blog/vincent%20voyer,%20d%C3%A9veloppeur%20web%20paris/ "développeur web freelance").
+[lisez l'article du blog](/blog/vincent%20voyer,%20d%C3%A9veloppeur%20web%20paris/ "développeur web freelance") détaillant
+son parcours.

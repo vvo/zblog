@@ -221,3 +221,11 @@ ul ul li {
 #fonttest {
 	display:none !important;
 }
+
+blockquote[lang-=fr] { quotes: “\201C” “\201D” }
+
+blockquote > p:before { content: open-quote }
+
+blockquote > p:after { content: close-quote }
+
+blockquote {font-style:italic;background:#cfcfcf;padding:.5em;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}
