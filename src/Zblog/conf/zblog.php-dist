@@ -73,6 +73,7 @@ $cfg['template_tags'] = array(
 $cfg['cache_engine'] = 'Pluf_Cache_File';
 $cfg['cache_timeout'] = 7200;
 
-$cfg['cache_file_folder'] = realpath(dirname(__FILE__).'/../../../cache');
+$cfg['cache_file_folder'] = realpath(dirname(__FILE__).'/../../../cache/file');
+$cfg['tmp_folder'] = realpath(dirname(__FILE__).'/../../../cache/tpl');
 
 return $cfg;

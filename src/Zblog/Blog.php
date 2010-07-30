@@ -398,7 +398,7 @@ class Zblog_Blog {
 	}
 
 	public function get_classic_page($posts, $calendar, $prev_link=null, $next_link=null, 
-			$title = 'blog performance & développement web', $show_title_in_page = false) {
+			$title = 'blog performance web & développement front-end', $show_title_in_page = false) {
 
 		$tags = array();
 		foreach($posts as $post) {

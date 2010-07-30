@@ -1,9 +1,11 @@
 TODO :
-	- date de maj
+	- date de maj dans flux rss
 	- probleme de listes sous opéra
 	- page prestations à revoir
+	- organiser les tags par noms
+	- bouger le cache tpl de pluf
+	- interdire aux robots l'accès a betawtf
 	- changer méthode fonts
-	- nouvelle photo a propos (+modifier sur les sites linkedin, twitter, viadeo)
 	- nouveau favicon ?
 	- afficher twitter sur page d'accueil
 	- faire un sitemap
@@ -16,19 +18,27 @@ TODO :
 	Billet technologie zeroload PASOK
 	Billet expliquer méthode développement avec virtualbox
 
-	mini audits
+	mini audits :
+		opensubtitles
+		greenit.fr
+		leshoraires
+		20minutes
+		lemonde
+		homelidays
+		jobijoba
+		splyce
+		pages jaunes
+		owlient
+		presse-citron.net
+
 	technologies zeroload.net :
-	border image
-	text shadow
-	balises html5
-	box shadow
+		border image
+		text shadow
+		balises html5
+		box shadow
 	résumé velocity 2010
 	détail chiffres business performance
 	migration serveur complet dedibox
-
-	mini audits
-	reprendre la liste sur mail zeroload
-	presse-citron.net
 
 	problème avec ' dans url ...
 	$db->esc génère des ? pour les ' sur dedibox
@@ -94,8 +104,6 @@ attention à l'utilisation resetList non sémantique > utiliser d'autres balises
 
 deploy-prod et deploy-beta
 deploy-prod avec paramètre = lien symbolique et vidage cache pluf
-
-vérifier si css js booster met a jour l'url si js mis a jour ... OK mais pas le fichier, bug posté
 
 placer le cache de pluf (templates) à un autre endroit
 
