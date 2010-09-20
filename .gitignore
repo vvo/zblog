@@ -2,8 +2,7 @@
 *~
 *.swp
 www/CSS-JS-Booster
-cache/tpl/*
-cache/file/*
+cache/
 www/compiler.jar
 src/Zblog/conf/zblog.php
 www/path.php
