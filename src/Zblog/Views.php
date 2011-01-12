@@ -15,8 +15,19 @@ class Zblog_Views {
 		return new Pluf_HTTP_Response($tmpl->render($context));
 	}
 
-	public function prestations($request, $match) {
-		$context = new Pluf_Template_Context(array('page_title' => 'amélioration du temps de chargement de votre site'));
+	public function main2($request, $match) {
+		$context = new Pluf_Template_Context(array('page_title' => 'consulting en performance web et optimisation front-end'));
+		$tmpl = new Pluf_Template('zblog/homepage2.html');
+		return new Pluf_HTTP_Response($tmpl->render($context));
+	}
+
+	public function slider($request, $match) {
+		$tmpl = new Pluf_Template('zblog/inc/slider.html');
+		return new Pluf_HTTP_Response($tmpl->render());
+	}
+
+	public function services($request, $match) {
+		$context = new Pluf_Template_Context(array('page_title' => 'audit des performance web front-end'));
 		$tmpl = new Pluf_Template('zblog/prestations.html');
 		return new Pluf_HTTP_Response($tmpl->render($context));
 	}
@@ -25,12 +36,12 @@ class Zblog_Views {
 		Pluf::loadFunction('Pluf_Text_MarkDown_parse');
 		$tpl_path = Pluf::f('template_folders');
 		$tpl_path = realpath($tpl_path[0]);
-		$text = Pluf_Text_MarkDown_parse(file_get_contents($tpl_path.'/zblog/a-propos.md'));
+		$text = Pluf_Text_MarkDown_parse(file_get_contents($tpl_path . '/zblog/a-propos.md'));
 		$context = new Pluf_Template_Context(
-				array(
-					'page_title' => 'à propos',
-					'text' => $text
-					)
+						array(
+							'page_title' => 'à propos',
+							'text' => $text
+						)
 		);
 		$tmpl = new Pluf_Template('zblog/a-propos.html');
 		return new Pluf_HTTP_Response($tmpl->render($context));
@@ -40,16 +51,16 @@ class Zblog_Views {
 		if ($request->method == 'POST') {
 			$form = new Zblog_Form_Contact($request->POST);
 //			var_dump($form->errors);
-			if($form->isValid()) {
+			if ($form->isValid()) {
 				$email = new Pluf_Mail($form->cleaned_data['email'],
-						Pluf::f('mail_to'),
-						'Message depuis zeroload.net');
+								Pluf::f('mail_to'),
+								'Message depuis zeroload.net');
 				$email->addTextMessage(
-						"Message de : ".$form->cleaned_data['name']." ".$form->cleaned_data['email']."
+						"Message de : " . $form->cleaned_data['name'] . " " . $form->cleaned_data['email'] . "
 
 Texte du message :
 
-".$form->cleaned_data['message']."
+" . $form->cleaned_data['message'] . "
 
 Vous pouvez utiliser la fonction répondre de votre lecteur de mail");
 				$email->sendMail();
@@ -68,4 +79,5 @@ Vous pouvez utiliser la fonction répondre de votre lecteur de mail");
 		return Pluf_Shortcuts_RenderToResponse('zblog/contact-sent.html',
 				array('page_title' => 'Merci'));
 	}
+
 }

@@ -5,15 +5,37 @@
     Description:
        css of the homepage
 */
-.borderimage #slider {
-	margin-bottom:-4px;
-	position:relative;
-	z-index:10;
+
+#homepage ul li {
+	margin-bottom: 4px;
+}
+
+.base2 #homepage li {
+	margin-bottom:0;
+}
+
+#mainContent {
+	margin-top:181px;
 }
 
 #imgAudit {
 	position:relative;
 	top:-8px;
+}
+
+/**
+Slider styling
+*/
+.base.borderimage #slider {
+	margin-bottom:-4px;
+	position:relative;
+	z-index:10;
+}
+
+.base2 #slider {
+	position:absolute;
+	top:-181px;
+	width:960px;
 }
 
 #sliderMenu {
@@ -30,8 +52,8 @@
 	height:18px;
 	line-height:18px;
 	background:#000;
-	box-shadow:0 0 3px #000;
 	margin:1px;
+	box-shadow:0 0 3px #000;
 	-moz-box-shadow:0 0 3px #000;
 	-webkit-box-shadow:0 0 3px #000;
 }
@@ -64,6 +86,21 @@
 	background-repeat: no-repeat;
 }
 
+.base2 .sliderLink {
+	background-position: left 120%;
+}
+
+.base2 #sliderMenu {
+	bottom:-10px;
+	left:5px;
+}
+
+.base2 #sliderMenu a {
+	padding:1px;
+	background:#e6e6e6;
+	color:#000;
+}
+
 #slides .wrapper > div:nth-child(1) .sliderLink {
 	background-image:url(../../img/homepage/stats-1.jpg);
 }
@@ -75,13 +112,3 @@
 #slides .wrapper > div:nth-child(3) .sliderLink {
 	background-image:url(../../img/homepage/stats-3.jpg);
 }
-
-#homepage ul li {
-	margin-bottom: 4px;
-}
-
-/*.loader {
-	background-image:url(../../img/ajax-loader.gif);
-	background-repeat:no-repeat;
-	background-position:center center;
-}*/

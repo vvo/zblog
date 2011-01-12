@@ -6,10 +6,11 @@ class Zblog_Template_Booster_Css extends Pluf_Template_Tag {
 //	Pluf::f('mail_to')
 	function start($css_files, $params=array(), $get_params=array()) {
 		$booster = new Booster();
-		if (Pluf::f('debug') !== TRUE) {
+		if (Pluf::f('booster') === TRUE) {
 			$css_files = explode(',', $css_files);
 			$css_files = implode(',../../', $css_files);
 			$css_files = '../../'.$css_files;
+//			$booster->invert_datauri_mode = TRUE;
 			$booster->css_hosted_minifier = TRUE;
 			$booster->css_totalparts = 1;
 			$booster->css_source = $css_files;

@@ -11,14 +11,30 @@ $ctl[] = array('regex' => '#^/$#',
 		'name' => 'homepage',
 		'method' => 'main');
 
-$ctl[] = array('regex' => '#^/prestations/$#',
+// A/B testing new page
+$ctl[] = array('regex' => '#^/2$#',
+		'priority' => 4,
+		'base' => Pluf::f('zblog_base'),
+		'model' => 'Zblog_Views',
+		'name' => 'homepage2',
+		'minifyHTML' => true,
+		'method' => 'main2');
+
+$ctl[] = array('regex' => '#^/slider$#',
+		'priority' => 4,
+		'base' => Pluf::f('zblog_base'),
+		'model' => 'Zblog_Views',
+		'name' => 'slider',
+		'method' => 'slider');
+
+$ctl[] = array('regex' => '#^/services/$#',
 		'priority' => 4,
 		'base' => Pluf::f('zblog_base'),
 		'model' => 'Zblog_Views',
 		'name' => 'services',
-		'method' => 'prestations');
+		'method' => 'services');
 
-$ctl[] = array('regex' => '#^/à-propos/$#',
+$ctl[] = array('regex' => '#^/références/$#',
 		'priority' => 4,
 		'base' => Pluf::f('zblog_base'),
 		'model' => 'Zblog_Views',

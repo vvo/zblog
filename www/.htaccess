@@ -25,6 +25,8 @@ ExpiresByType application/atom+xml "access plus 30 minutes"
 RewriteEngine on
 
 RewriteRule ^blog/blalblablalba\ ééé\ lol/$ http://zeroload.net/blog/mappy.com,\ optimiser\ un\ site\ grand\ public\ :\ analyse/ [R=301,L]
+RewriteRule ^prestations/$ /services [R=301,L]
+RewriteRule ^à-propos/$ /références [R=301,L]
 RewriteRule ^feed.xml$ /blog/feed.xml [R=301,L]
 RewriteRule ^feed$ /blog/feed.xml [R=301,L]
 

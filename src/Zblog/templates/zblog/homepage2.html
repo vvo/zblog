@@ -1,0 +1,80 @@
+{extends 'zblog/base2.html'}
+
+{block header_scripts}
+<meta name="description" content="Audit et conseil en performance web. Refonte de vos applications html/css/javascript. Accélération de l'affichage des pages web." />
+{/block}
+
+{block beforeContent}{include 'zblog/inc/freetest.html'}{/block}
+
+{block body}
+<div id="homepage" class="relative">
+	<div id="mainContent" class="clearfix classicBorderTop pad18pxt">
+		<div class="w300 floatLeft">
+			<div class="pad18pxr">
+				<h2 class="font18 marg0 pad4pxb">Zeroload = performance web</h2>
+				<p>Zeroload est l'entreprise de conseil de <em>Vincent Voyer</em>, consultant web <strong>spécialisé en performance web et optimisation front-end</strong>.</p>
+
+				<p>Vous souhaitez optimiser votre site web et améliorer ses performances ? Spécialiste des langages du web, je peux vous
+					conseiller et vous guider dans vos développements.</p>
+			</div>
+		</div>
+		<div class="w300 floatLeft">
+			<div class="classicBorderLeft pad18pxl pad8pxr">
+				<h2 class="marg0 font18 pad4pxb">audit et développement</h2>
+
+				<p>Le but d'un <strong>audit de la performance web</strong> est de vous donner les éléments clés pour optimiser
+					votre site.</p>
+
+				<p>Mon expérience des sites web à fort trafic me permet de vous proposer des solutions efficaces
+					pour <strong>optimiser vos fichiers html, css & javascript</strong>.</p>
+			</div>
+		</div>
+		<div class="w360 floatLeft">
+			<div class="classicBorderLeft pad18pxl">
+				<h2 class="marg0 font18 pad4pxb">Clients & références</h2>
+				<p>Sites grand public, sites spécialisés, mes clients ont un point commun : du traffic.</p>
+				<ul class="arrowList marg0 marg1eml textContent">
+					<li>lequipe.fr</li>
+					<li>mappy.com</li>
+					<li>footmercato.net</li>
+					<li>trefle.com</li>
+					<li>ma-bimbo.com</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	{/block}
+
+	{block footer}
+	<div>
+		<a class="block"
+		   href="{url 'blog_post', rawurlencode(strtolower('Mappy.com : un start render divisé par deux'))}"
+		   title="Découvrez comment nous avons optimisé la performance web de Mappy">
+			<div class="floatLeft w240" id="imgAudit">
+				<img src="{mediaurl '/img/homepage/audit-mappy_v2.png'}" />
+			</div>
+			<div class="floatLeft w360">
+				<div class="pad18pxl">
+
+					<div class="font15 sansRounded caps block lineHeight1">étude de cas : Mappy.com</div>
+					<div class="font13">Résumé de nos optimisations</div>
+
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="font11 caps sansRounded">
+	{include 'zblog/inc/footer-right.html'}
+	</div>
+
+	<div class="clearLeft textContent"><a href="http://www.freelance-info.fr/" target="_blank">Emploi Freelance</a></div>
+</div>
+{/block}
+
+{block footer_scripts}
+<script type="text/cjs" data-cjssrc="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+{jsbooster "static/js/slider2.js", array("cjs" => TRUE, "defer" => TRUE)}
+{include 'zblog/webfonts.html'}
+{/block}

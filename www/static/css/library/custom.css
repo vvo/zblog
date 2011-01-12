@@ -104,6 +104,8 @@ Blocks widths
 .w780 {width:780px !important}
 .w960 {width:960px}
 
+.w100pc {width:100%}
+
 /**
 Z-index
 */
@@ -225,11 +227,10 @@ forms
 .classicInput {background-color:#f2f2f2;border:1px solid #000;padding:2px 4px}
 .classicInput.w240 {width:230px !important}
 .classicButton {
-/*	padding:.15em .2em .05em .2em;*/
 	padding:.30em .2em .20em .2em;
 	text-transform:uppercase;
 	background: #ff0;
-	cursor:pointer; /* for buttons */
+	cursor:pointer; /* for <button> */
 	color:#000;
 }
 
@@ -253,26 +254,26 @@ forms
 }
 
 .borderimage .classicButton {
-	-moz-border-image: url("../../img/border-arrow-right_v2.png") 6 17 6 6;
-	-webkit-border-image: url("../../img/border-arrow-right_v2.png") 6 17 6 6;
-	border-image: url("../../img/border-arrow-right_v2.png") 6 17 6 6;
+	-moz-border-image: url(../../img/arrows/right.png) 6 17 6 6;
+	-webkit-border-image: url(../../img/arrows/right.png) 6 17 6 6;
+	border-image: url(../../img/arrows/right.png) 6 17 6 6;
 	border-width: 6px 17px 6px 5px;
 }
 .borderimage .classicButton:hover {
-	-moz-border-image: url("../../img/border-arrow-right-hover_v2.png") 6 17 6 6;
-	-webkit-border-image: url("../../img/border-arrow-right-hover_v2.png") 6 17 6 6;
-	border-image: url("../../img/border-arrow-right-hover_v2.png") 6 17 6 6;
+	-moz-border-image: url(../../img/arrows/right-hover.png) 6 17 6 6;
+	-webkit-border-image: url(../../img/arrows/right-hover.png) 6 17 6 6;
+	border-image: url(../../img/arrows/right-hover.png) 6 17 6 6;
 }
 .borderimage .classicButton.arrowLeft {
-	-moz-border-image: url("../../img/border-arrow-left_v2.png") 6 6 6 17;
-	-webkit-border-image: url("../../img/border-arrow-left_v2.png") 6 6 6 17;
-	border-image: url("../../img/border-arrow-left_v2.png") 6 6 6 17;
+	-moz-border-image: url(../../img/arrows/left.png) 6 6 6 17;
+	-webkit-border-image: url(../../img/arrows/left.png) 6 6 6 17;
+	border-image: url(../../img/arrows/left.png) 6 6 6 17;
 	border-width: 6px 5px 6px 17px;
 }
 .borderimage .classicButton.arrowLeft:hover {
-	-moz-border-image: url("../../img/border-arrow-left-hover_v2.png") 6 6 6 17;
-	-webkit-border-image: url("../../img/border-arrow-left-hover_v2.png") 6 6 6 17;
-	border-image: url("../../img/border-arrow-left-hover_v2.png") 6 6 6 17;
+	-moz-border-image: url(../../img/arrows/left-hover.png) 6 6 6 17;
+	-webkit-border-image: url(../../img/arrows/left-hover.png) 6 6 6 17;
+	border-image: url(../../img/arrows/left-hover.png) 6 6 6 17;
 }
 
 /*a.classicButton:active {
@@ -297,35 +298,34 @@ Borders : this could be lazy loaded as this is not mandatory for the website to 
 /* now border images for browsers that handle it */
 .borderimage .classicBorderTop {
 	border-top:0;
-	-moz-border-image:url(../../img/border-horizontal.png) 9 0 0 0;
-	-webkit-border-image:url(../../img/border-horizontal.png) 9 0 0 0;
-	border-image:url(../../img/border-horizontal.png) 9 0 0 0;
+	-moz-border-image:url(../../img/borders/horizontal.png) 9 0 0 0;
+	-webkit-border-image:url(../../img/borders/horizontal.png) 9 0 0 0;
+	border-image:url(../../img/borders/horizontal.png) 9 0 0 0;
 	border-width: 9px 0 0 0;
 }
 .borderimage .classicBorderBottom {
-	border-top:0;
-	-moz-border-image:url(../../img/border-horizontal.png) 0 0 9 0;
-	-webkit-border-image:url(../../img/border-horizontal.png) 0 0 9 0;
-	border-image:url(../../img/border-horizontal.png) 0 0 9 0;
-	border-width: 0 0 9px 0;
+	border-bottom:0;
+	-moz-border-image:url(../../img/borders/horizontal.png) 0 0 9 0;
+	-webkit-border-image:url(../../img/borders/horizontal.png) 0 0 9 0;
+	border-image:url(../../img/borders/horizontal.png) 0 0 9 0;
+	border-width:0 0 9px 0;
 }
 
+.borderimage .classicBorderRight,
 .borderimage .classicBorderLeft {
 	border-left:0;
-	-moz-border-image:url(../../img/border-vertical.png) 0 0 0 9;
-	-webkit-border-image:url(../../img/border-vertical.png) 0 0 0 9;
-	border-image:url(../../img/border-vertical.png) 0 0 0 9px;
+	-moz-border-image:url(../../img/borders/vertical.png) 0 0 0 9;
+	-webkit-border-image:url(../../img/borders/vertical.png) 0 0 0 9;
+	border-image:url(../../img/borders/vertical.png) 0 0 0 9px;
 	border-width: 0 0 0 9px;
 	margin-left:-5px;
-/*	position:relative;
-	left:-5px;  we're forced to move the element 5px from left since the border is 9px wide */
 }
 
 .borderimage .classicBorderRight {
 	border-right:0;
-	-moz-border-image:url(../../img/border-vertical.png) 0 9 0 0;
-	-webkit-border-image:url(../../img/border-vertical.png) 0 9 0 0;
-	border-image:url(../../img/border-vertical.png) 0 9 0 0;
+	-moz-border-image:url(../../img/borders/vertical.png) 0 9 0 0;
+	-webkit-border-image:url(../../img/borders/vertical.png) 0 9 0 0;
+	border-image:url(../../img/borders/vertical.png) 0 9 0 0;
 	border-width: 0 9px 0 0;
 	position:relative;
 	right:-5px; /* we're forced to move the element 5px from left since the border is 9px wide */
@@ -379,6 +379,7 @@ Links
 Colors
 */
 .black, a.black, a:link.black, a:visited.black, a:hover.black, a:active.black {color:#000;}
+.white, a.white, a:link.white, a:visited.white, a:hover.white, a:active.white {color:#fff;}
 .yellow, a.yellow, a:link.yellow, a:visited.yellow, a:hover.yellow, a:active.yellow {color:#ff0}
 /* .gray is different from bgGray, otherwise we wouldn't see anything .. :) */
 .gray, a.gray, a:link.gray, a:visited.gray, a:hover.gray, a:active.gray {color:#888}
@@ -389,11 +390,11 @@ Colors
 .resetList li {list-style: none}
 
 .arrowList li {
-	list-style: url('../../img/homepage/list-arrow.png');
+	list-style: url(../../img/homepage/list-arrow.png);
 }
 
 .borderimage .fauxColumn {
-	background-image:url(../../img/border-vertical.png);
+	background-image:url(../../img/borders/vertical.png);
 	background-repeat:repeat-y;
 }
 

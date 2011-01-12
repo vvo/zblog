@@ -1,9 +1,9 @@
 /*
-    Document   : homepage
+    Document   : template
     Created on : 14 avr. 2010, 11:00:01
     Author     : vincent
     Description:
-       common css for all pages
+       base css for all pages
 */
 
 .sansRounded {
@@ -14,28 +14,6 @@
 	font-family: Arial, Helvetica, sans-serif;
 	text-shadow:none;
 }
-
-/*html {
-	background: black url("gradient-bg.png") repeat-y left;
-	-o-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	background: -moz-linear-gradient(
-		left,
-		#D1BB00,
-		#ffe400 15%,
-		#ffe400 85%,
-		#D1BB00
-	);
-	background: -webkit-gradient(
-		linear,
-		left top, right top,
-		from(#D1BB00),
-		to(#D1BB00),
-		color-stop(0.1, #ffe400),
-		color-stop(0.9, #ffe400)
-	);
-}*/
 
 body {
 	overflow-y:scroll;
@@ -50,6 +28,16 @@ body {
 
 #logo {
 	bottom: 7px;
+	background:url(../../img/logo_v2.png);
+	text-indent:-5000px;
+	overflow:hidden;
+	width: 60px;
+	height: 55px;
+}
+
+.base2 #logo {
+	bottom:10px;
+	left:10px;
 }
 
 /**
@@ -137,8 +125,8 @@ a:hover {color: #000}
 .shadowLinks a {
 	padding:0 2px;
 	color:#000;
-/*	Does not render well*/
-/*	box-shadow: 0 0 3px #000;
+	/*	Does not render well*/
+	/*	box-shadow: 0 0 3px #000;
 	-moz-box-shadow: 0 0 3px #000;
 	-webkit-box-shadow: 0 0 3px #000;*/
 	border:0;
@@ -202,10 +190,6 @@ prestations
 	background-position:775px 0;
 }
 
-.borderimage .noPlainBorderLeftIfBorderImage.plainBorderLeft {
-	border:0;
-}
-
 #maface {
 	display:block;
 	position:absolute;
@@ -224,8 +208,34 @@ ul ul li {
 
 blockquote[lang-=fr] { quotes: “\201C” “\201D” }
 
-blockquote > p:before { content: open-quote }
+blockquote:before, blockquote:after {
+	color: #69c;
+	display: block;
+	position:absolute;
+	line-height: 0;
+	font-size: 700%;
+	color:#444;
+}
 
-blockquote > p:after { content: close-quote }
+blockquote:after {
+	content: close-quote;
+	bottom:0;
+	right:0;
+}
 
-blockquote {font-style:italic;background:#cfcfcf;padding:.5em;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}
+blockquote:before {
+	content: open-quote;
+	top:30px;
+	left:-25px;
+}
+
+blockquote {
+	position:relative;
+	font-style:italic;
+	background:#cfcfcf;
+/*	padding:0 60px;*/
+	padding:1em;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px
+}

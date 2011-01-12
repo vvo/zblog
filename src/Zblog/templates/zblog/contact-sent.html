@@ -7,21 +7,14 @@
 {block beforeContent}{include 'zblog/inc/freetest.html'}{/block}
 
 {block body}
-<div class="relative fauxColumn fauxColumn2ColFirst240">
-	<div class="clearfix">
-		<div class="w240 floatLeft">
-			<div class="font20 lineHeight1 sansRounded caps classicTextShadow">contact</div>
-		</div>
-		<div class="w480 floatLeft">
-			<div class="noPlainBorderLeftIfBorderImage plainBorderLeft">
-				<div class="marg8pxb pad18pxlr">
-					<p class="serif">Merci, nous vous recontacterons rapidement.</p>
-				</div>
-			</div>
-		</div>
-		{include 'zblog/inc/contact-right.html'}
+<div class="relative fauxColumn fauxColumn2ColFirst240 clearfix">
+	<h1 class="w240 floatLeft font20 lineHeight1 sansRounded caps classicTextShadow">
+		contact
+	</h1>
+	<div class="w480 floatLeft">
+		<p class="marg8pxb pad18pxlr serif">Merci, nous vous recontacterons rapidement.</p>
 	</div>
-
+	{include 'zblog/inc/contact-right.html'}
 </div>
 
 {include 'zblog/inc/contact-coordonnees.html'}

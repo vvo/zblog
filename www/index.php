@@ -1,4 +1,5 @@
 <?php
+ob_implicit_flush(true);
 require dirname(__FILE__).'/path.php';
 require 'Pluf.php';
 
@@ -20,9 +21,11 @@ if (count($_POST) === 0 && Pluf::f('debug') === false) {
 		Pluf_Dispatcher::dispatch(Pluf_HTTP_URL::getAction());
 		$foo = ob_get_contents();
 		ob_end_clean();
+
+		// store in cache
 		$cache->set(Pluf_HTTP_URL::getAction(), $foo);
 	}
-	ob_implicit_flush(true);
+	
 	echo $foo;
 } else {
 	Pluf_Dispatcher::loadControllers(Pluf::f('zblog_urls'));

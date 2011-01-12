@@ -2,7 +2,7 @@
 {cfg 'debug', false, false}
 {cfg 'is_beta', false, false}
 <!DOCTYPE html>
-<html lang="fr" class="bgLightGray no-js">
+<html lang="fr" class="bgLightGray no-js base">
 	<head>
 		<title>Zeroload : {$page_title}</title>
 		<meta charset="utf-8">
@@ -13,9 +13,10 @@
 		<![endif]-->
 
 		{cssbooster "static/css/yui,static/css/library,static/css/template"}
-		
+
 		{block header_scripts}{/block}
 	</head>
+
 	<body id="top">
 		<div id="container">
 
@@ -33,8 +34,9 @@
 							<a href="{url 'blog_homepage'}" class="classicBorderLeftYellow" title="Lisez notre blog performance & développement web">blog</a>
 							<a href="{url 'about'}" class="classicBorderLeftYellow" title="Qui est aux commandes de Zeroload ?">à propos</a>
 							<a href="{url 'contact'}" class="classicBorderLeftYellow" title="Contactez-nous pour obtenir un devis gratuit !">contact</a>
+
 					</nav>
-					
+
 				</div>
 			</header>
 
@@ -76,6 +78,7 @@
 		  })();
 		  {/literal}
 		</script>
+
 		{/if}
 	</body>
 </html>

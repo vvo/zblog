@@ -5,6 +5,9 @@ $cfg = array();
 $cfg['debug'] = true;
 //$cfg['debug'] = false;
 
+$cfg['booster'] = false;
+//$cfg['booster'] = true;
+
 // we need to know if we're on the beta website when displaying disqus comments
 $cfg['is_beta'] = (strpos($_SERVER['SERVER_NAME'], 'betawtf.zeroload') === false ? false : true);
 
@@ -25,8 +28,7 @@ $cfg['admin_password'] = 'yourpassword';
 
 $cfg['tmp_folder'] = '/tmp';
 
-
-$cfg['middleware_classes'] = array('Pluf_Middleware_Debug');
+$cfg['middleware_classes'] = array('Pluf_Middleware_Debug', 'Zblog_Middleware_MinifyHTML');
 
 // database configuration
 $cfg['db_login'] = 'vincent';

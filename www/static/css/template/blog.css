@@ -49,7 +49,7 @@ DISQUS
 }
 
 .dsq-pagination, .dsq-request-user-info {
-	background:url(../../img/border-horizontal.png) repeat-x !important;
+	background:url(../../img/borders/horizontal.png) repeat-x !important;
 }
 
 .dsq-pagination {
@@ -97,9 +97,9 @@ DISQUS
 
 .borderimage .dsq-button, .borderimage .dsq-button-small {
 	background:transparent  !important;
-	-moz-border-image: url("../../img/border-arrow-right_v2.png") 6 17 6 6  !important;
-	-webkit-border-image: url("../../img/border-arrow-right_v2.png") 6 17 6 6  !important;
-	border-image: url("../../img/border-arrow-right_v2.png") 6 17 6 6  !important;
+	-moz-border-image: url(../../img/arrows/right.png) 6 17 6 6  !important;
+	-webkit-border-image: url(../../img/arrows/right.png) 6 17 6 6  !important;
+	border-image: url(../../img/arrows/right.png) 6 17 6 6  !important;
 	border-width: 6px 17px 6px 5px  !important;
 }
 
