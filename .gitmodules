@@ -1,0 +1,3 @@
+[submodule "tools/html-minifier"]
+	path = tools/html-minifier
+	url = git@github.com:vvo/html-minifier.git
