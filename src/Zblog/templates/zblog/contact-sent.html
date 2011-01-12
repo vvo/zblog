@@ -1,0 +1,27 @@
+{extends 'zblog/base.html'}
+
+{block header_scripts}
+{include 'zblog/webfonts.html'}
+{/block}
+
+{block beforeContent}{include 'zblog/inc/freetest.html'}{/block}
+
+{block body}
+<div class="relative fauxColumn fauxColumn2ColFirst240 clearfix">
+	<h1 class="w240 floatLeft font20 lineHeight1 sansRounded caps classicTextShadow">
+		contact
+	</h1>
+	<div class="w480 floatLeft">
+		<p class="marg8pxb pad18pxlr serif">Merci, nous vous recontacterons rapidement.</p>
+	</div>
+	{include 'zblog/inc/contact-right.html'}
+</div>
+
+{include 'zblog/inc/contact-coordonnees.html'}
+
+
+{/block}
+
+{block footer}
+{include 'zblog/inc/footer-normal.html'}
+{/block}

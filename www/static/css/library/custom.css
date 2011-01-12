@@ -1,0 +1,416 @@
+/*
+    Document   : custom
+    Created on : 14 avr. 2010, 11:00:01
+    Author     : vincent
+    Description:
+       this is the standard library for Zeroload, use it as much as you can
+*/
+
+/**
+Text
+*/
+.bold {font-weight: bold}
+.italic {font-style: italic}
+.caps {text-transform: uppercase}
+.smallCaps {font-variant: small-caps}
+.center {text-align:center}
+.right {text-align:right}
+.left {text-align:left}
+.justify {text-align:justify}
+.fontWeight100 {font-weight:100}
+.fontWeight200 {font-weight:200}
+.fontWeight300 {font-weight:300}
+.fontWeight400 {font-weight:400}
+.fontWeight500 {font-weight:500}
+.lineHeight08 {line-height: .8}
+.lineHeight1 {line-height: 1}
+.lineHeight1p1 {line-height: 1.1}
+.lineHeight1p2 {line-height: 1.2}
+.lineHeight1p5 {line-height: 1.5}
+.lineHeight2 {line-height: 2}
+.lineHeight21px {line-height: 21px}
+.lineHeight25px {line-height:25px}
+.lineHeight18px {line-height:18px}
+.lineHeight16px {line-height:16px}
+.lineHeight12px {line-height:12px}
+
+/**
+letter space
+*/
+.letterSpace0p05em {letter-spacing: 0.05em}
+.letterSpace0p07em {letter-spacing: 0.07em}
+.letterSpace0p08em {letter-spacing: 0.08em}
+.font08 {font-size:61%}
+.font09 {font-size:69%}
+.font10 {font-size:77%}
+.font11 {font-size:85%}
+.font12 {font-size:93%}
+.font13 {font-size:100%}
+.font14 {font-size:108%}
+.font15 {font-size:116%}
+.font16 {font-size:123.1%}
+.font17 {font-size:131%}
+.font18 {font-size:138.5%}
+.font19 {font-size:146.5%}
+.font20 {font-size:153.9%}
+.font21 {font-size:161.6%}
+.font22 {font-size:167%}
+.font23 {font-size:174%}
+.font24 {font-size:182%}
+.font25 {font-size:190%}
+.font26 {font-size:198%}
+.font27 {font-size:206%}
+.font28 {font-size:214%}
+.font29 {font-size:222%}
+.font30 {font-size:230%}
+.font31 {font-size:238%}
+.font32 {font-size:246%}
+.font33 {font-size:254%}
+.font34 {font-size:262%}
+.font35 {font-size:270%}
+.font39 {font-size:302%}
+.font40 {font-size:310%}
+.font45 {font-size:350%}
+.font46 {font-size:358%}
+.font47 {font-size:376%}
+.font50 {font-size:390%}
+.font52 {font-size:406%}
+
+/**
+Blocks widths
+!important needed beacuse some widths are set by yui-base
+*/
+.w60 {width:60px !important}
+.w90 {width:90px !important}
+.w120 {width:120px !important}
+.w140 {width:140px !important}
+.w150 {width:150px !important}
+.w175 {width:175px !important}
+.w180 {width:180px !important}
+.w220 {width:220px !important}
+.w240 {width:240px !important}
+.w300 {width:300px !important}
+.w330 {width:330px !important}
+.w350 {width:350px !important}
+.w360 {width:360px !important}
+.w420 {width:420px !important}
+.w480 {width:480px !important}
+.w540 {width:540px !important}
+.w560 {width:560px !important}
+.w600 {width:600px !important}
+.w630 {width:630px !important}
+.w660 {width:660px !important}
+.w720 {width:720px !important}
+.w780 {width:780px !important}
+.w960 {width:960px}
+
+.w100pc {width:100%}
+
+/**
+Z-index
+*/
+.z5 {z-index:5}
+
+/**
+Blocks heights
+*/
+.h70 {height:70px}
+.h100 {height:100px}
+.h250 {height:250px}
+.h200 {height:200px}
+.h165 {height:165px}
+.h185 {height:185px}
+
+/**
+Blocks properties
+*/
+.block {display:block}
+.inlineBlock {display:inline-block} /* see support on http://www.quirksmode.org/css/display.html#inlineblock */
+.tableCell {display:table-cell}
+.relative {position:relative}
+.absolute {position:absolute}
+.hide {display:none}
+.posTop {top:0}
+.posRight {right:0}
+.posLeft {left:0}
+.posBottom {bottom:0}
+.centerBlock {margin-left:auto;margin-right:auto;display:block}
+.zindex10 {position:relative;z-index:10}
+
+/* When using display:table-cell, sometimes the width parameter is useless when there's long long words,
+just clean that with max-width */
+.tableCell.w180 {max-width:180px}
+.tableCell.w600 {max-width:600px}
+.tableCell.w780 {max-width:780px}
+
+.valignTop {vertical-align: top}
+
+/**
+Floats, clearing etc
+*/
+.floatLeft {float:left}
+.floatRight {float:right}
+.clearLeft {clear:left}
+.clearRight {clear:right}
+.clearfix {overflow:hidden}
+
+/* just to be more specific, overflow hidden is not always used for clearfix, sometimes just to hide smth */
+.oHidden {overflow:hidden}
+
+/**
+Margins
+*/
+.marg8pxt {margin-top:8px}
+.marg8pxb {margin-bottom:8px}
+.marg8pxtb {margin-top:8px;margin-bottom:8px}
+.marg8pxr {margin-right:8px}
+.marg4pxb {margin-bottom:4px}
+.marg4pxr {margin-right:4px}
+.marg360l {margin-left:360px}
+.marg4pxt {margin-top:4px}
+.marg5pxr {margin-right:5px}
+.marg18pxt {margin-top:18px}
+.marg18pxb {margin-bottom:18px}
+.marg18pxl {margin-left:18px}
+.marg18pxlr {margin-left:18px; margin-right:18px}
+.marg18pxr {margin-right:18px}
+.marg90r {margin-right:90px}
+.marg9pxr {margin-right:9px}
+.marg0t {margin-top:0}
+.marg0tb {margin-top:0;margin-bottom:0}
+.marg0 {margin:0}
+.marg0b {margin-bottom:0}
+.marg1eml {margin-left:1em}
+.marg0p5em {margin:.5em}
+
+/**
+Paddings
+*/
+.pad1pxb {padding-bottom:1px}
+.pad2pxb {padding-bottom:2px}
+.pad8pxt {padding-top:8px}
+.pad8pxtb {padding-top:8px;padding-bottom:8px}
+.pad8pxl {padding-left:8px}
+.pad8pxr {padding-right:8px}
+.pad8pxlr {padding-left:8px;padding-right:8px}
+.pad8pxb {padding-bottom:8px}
+.pad4pxb {padding-bottom:4px}
+.pad4pxt {padding-top:4px}
+.pad18pxt {padding-top:18px}
+.pad18pxb {padding-bottom:18px}
+.pad18pxl {padding-left:18px}
+.pad18pxlr {padding-left:18px;padding-right:18px}
+.pad18pxr {padding-right:18px}
+.pad2pxtb {padding-top:2px;padding-bottom:2px}
+.pad4px {padding:4px}
+.pad4pxtb {padding-top:4px;padding-bottom:4px}
+.pad4pxl {padding-left:4px}
+.pad4pxlr {padding-left:4px;padding-right:4px}
+.pad15pxl {padding-left:15px}
+.pad15pxt {padding-top:15px}
+.pad90r {padding-right:90px}
+.pad0 {padding:0}
+
+/**
+backgrounds
+*/
+.bgYellow {background-color: #ff0}
+.bgLightYellow {background-color:#ff7}
+.bgBlack {background-color:#000}
+.bgWhite {background-color:#fff}
+.ngDarkGray {background-color:#cfcfcf}
+.bgLightGray {background-color:#e6e6e6}
+
+/**
+forms
+*/
+.classicInput {background-color:#f2f2f2;border:1px solid #000;padding:2px 4px}
+.classicInput.w240 {width:230px !important}
+.classicButton {
+	padding:.30em .2em .20em .2em;
+	text-transform:uppercase;
+	background: #ff0;
+	cursor:pointer; /* for <button> */
+	color:#000;
+}
+
+.classicButton:hover {
+	background: #000;
+}
+
+/* sometimes buttons are in .textContent divs that makes them behave like classic links, they're not ! */
+.textContent .classicButton:link, .textContent .classicButton:visited,
+.classicButton:link, .classicButton:visited {
+	 /* important for links */
+	 color:#000;
+}
+
+.classicButton:hover, .textContent .classicButton:hover {
+	color: #e6e6e6;
+}
+
+.borderimage .classicButton, .borderimage .classicButton:hover {
+	background: transparent;
+}
+
+.borderimage .classicButton {
+	-moz-border-image: url(../../img/arrows/right.png) 6 17 6 6;
+	-webkit-border-image: url(../../img/arrows/right.png) 6 17 6 6;
+	border-image: url(../../img/arrows/right.png) 6 17 6 6;
+	border-width: 6px 17px 6px 5px;
+}
+.borderimage .classicButton:hover {
+	-moz-border-image: url(../../img/arrows/right-hover.png) 6 17 6 6;
+	-webkit-border-image: url(../../img/arrows/right-hover.png) 6 17 6 6;
+	border-image: url(../../img/arrows/right-hover.png) 6 17 6 6;
+}
+.borderimage .classicButton.arrowLeft {
+	-moz-border-image: url(../../img/arrows/left.png) 6 6 6 17;
+	-webkit-border-image: url(../../img/arrows/left.png) 6 6 6 17;
+	border-image: url(../../img/arrows/left.png) 6 6 6 17;
+	border-width: 6px 5px 6px 17px;
+}
+.borderimage .classicButton.arrowLeft:hover {
+	-moz-border-image: url(../../img/arrows/left-hover.png) 6 6 6 17;
+	-webkit-border-image: url(../../img/arrows/left-hover.png) 6 6 6 17;
+	border-image: url(../../img/arrows/left-hover.png) 6 6 6 17;
+}
+
+/*a.classicButton:active {
+	position:relative;
+	bottom:-2px;
+}*/
+
+/**
+Borders : this could be lazy loaded as this is not mandatory for the website to work ! :)
+*/
+.classicBorderLeftYellow {border-left:1px solid #ff0}
+
+.classicBorderTop {border-top:1px solid #000}
+.classicBorderBottom {border-bottom:1px solid #000}
+.classicBorderLeft {border-left:1px solid #000}
+.plainBorderLeft {border-left:1px solid #000} /* THIS particular rule is wehn we need a classicBorder that will not be turned into a border image */
+.classicBorderRight {border-right:1px solid #000}
+.borderBlack {border-color:#000}
+.border0 {border:0}
+.border0Important {border:0 !important}
+
+/* now border images for browsers that handle it */
+.borderimage .classicBorderTop {
+	border-top:0;
+	-moz-border-image:url(../../img/borders/horizontal.png) 9 0 0 0;
+	-webkit-border-image:url(../../img/borders/horizontal.png) 9 0 0 0;
+	border-image:url(../../img/borders/horizontal.png) 9 0 0 0;
+	border-width: 9px 0 0 0;
+}
+.borderimage .classicBorderBottom {
+	border-bottom:0;
+	-moz-border-image:url(../../img/borders/horizontal.png) 0 0 9 0;
+	-webkit-border-image:url(../../img/borders/horizontal.png) 0 0 9 0;
+	border-image:url(../../img/borders/horizontal.png) 0 0 9 0;
+	border-width:0 0 9px 0;
+}
+
+.borderimage .classicBorderRight,
+.borderimage .classicBorderLeft {
+	border-left:0;
+	-moz-border-image:url(../../img/borders/vertical.png) 0 0 0 9;
+	-webkit-border-image:url(../../img/borders/vertical.png) 0 0 0 9;
+	border-image:url(../../img/borders/vertical.png) 0 0 0 9px;
+	border-width: 0 0 0 9px;
+	margin-left:-5px;
+}
+
+.borderimage .classicBorderRight {
+	border-right:0;
+	-moz-border-image:url(../../img/borders/vertical.png) 0 9 0 0;
+	-webkit-border-image:url(../../img/borders/vertical.png) 0 9 0 0;
+	border-image:url(../../img/borders/vertical.png) 0 9 0 0;
+	border-width: 0 9px 0 0;
+	position:relative;
+	right:-5px; /* we're forced to move the element 5px from left since the border is 9px wide */
+}
+
+/* to handle border images we need to re-set margins and paddings */
+.borderimage .classicBorderTop.marg8pxt {margin-top:4px}
+.borderimage .classicBorderBottom.marg8pxb {margin-bottom:4px}
+.borderimage .classicBorderBottom.marg18pxb {margin-bottom:14px}
+.borderimage .classicBorderBottom.pad8pxb {padding-bottom:4px}
+.borderimage .classicBorderBottom.marg4pxb {margin-bottom:0}
+.borderimage .classicBorderTop.marg4pxt {margin-top:0}
+.borderimage .classicBorderBottom.pad4pxb {padding-bottom:0}
+.borderimage .classicBorderTop.pad4pxt {padding-top:0}
+.borderimage .classicBorderTop.marg18pxt {margin-top:14px}
+.borderimage .classicBorderTop.marg18pxb {margin-bottom:14px}
+.borderimage .classicBorderLeft.marg18pxl {margin-left:14px}
+.borderimage .classicBorderRight.marg18pxr {margin-right:14px}
+.borderimage .classicBorderTop.pad8pxt, .borderimage .classicBorderTop.pad8pxtb {padding-top:4px}
+.borderimage .classicBorderLeft.pad18pxl {padding-left:14px}
+.borderimage .classicBorderLeft.pad8pxl {padding-left:4px}
+.borderimage .classicBorderLeft.pad8pxlr {padding-left:4px;padding-right:4px}
+.borderimage .classicBorderLeft.pad18pxlr {padding-left:14px;padding-right:14px}
+.borderimage .classicBorderTop.pad18pxt {padding-top:14px}
+.borderimage .classicBorderBottom.pad18pxb {padding-bottom:14px}
+
+.borderimage .classicBorderBottom.h70 {height:67px}
+
+
+.borderimage .classicBorderLeft.pad15pxl {padding-left:11px}
+
+/*.classicBorderLeft.w180 {width:176px !important}*/
+
+.classicImgBorder {border:1px solid #555}
+
+/**
+Shadows
+*/
+.classicShadow {
+	-moz-box-shadow:0 0 4px #555;
+	-webkit-box-shadow:0 0 4px #555;
+	box-shadow:0 0 4px #555;
+}
+
+/**
+Links
+*/
+.noUnderline, .noUnderline a {text-decoration: none;}
+
+/**
+Colors
+*/
+.black, a.black, a:link.black, a:visited.black, a:hover.black, a:active.black {color:#000;}
+.white, a.white, a:link.white, a:visited.white, a:hover.white, a:active.white {color:#fff;}
+.yellow, a.yellow, a:link.yellow, a:visited.yellow, a:hover.yellow, a:active.yellow {color:#ff0}
+/* .gray is different from bgGray, otherwise we wouldn't see anything .. :) */
+.gray, a.gray, a:link.gray, a:visited.gray, a:hover.gray, a:active.gray {color:#888}
+/* also .lightGray is different from .bgLightGray, same reason */
+.lightGray, a.lightGray, a:link.lightGray, a:visited.lightGray, a:hover.lightGray, a:active.lightGray {color:#cfcfcf}
+
+.resetList {margin:0}
+.resetList li {list-style: none}
+
+.arrowList li {
+	list-style: url(../../img/homepage/list-arrow.png);
+}
+
+.borderimage .fauxColumn {
+	background-image:url(../../img/borders/vertical.png);
+	background-repeat:repeat-y;
+}
+
+.active, .active:visited, .active:link {
+	color:#000 !important;
+	background:#ff7 !important;
+}
+
+.breakwords {
+	word-wrap:break-word;
+}
+
+.pointer {
+	cursor:pointer;
+}
+
+.classicTextShadow {
+	text-shadow:0 0 3px #aaa;
+}

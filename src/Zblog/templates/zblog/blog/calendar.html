@@ -1,0 +1,68 @@
+<div id="calendar" class="novisited sansRounded clearfix clearLeft caps">
+	<div class="w180 font45 floatLeft lineHeight08">
+		<a class="block classicTextShadow" href="{url 'blog_homepage'}" title="Blog performance & développement web">
+			blog
+			<br/>zero
+			<br/>load
+		</a>
+	</div>
+	<div class="w120 floatLeft">
+	{* months list, two columns *}
+		<ul class="classicBorderLeft resetList font15 month gray pad18pxl">
+			{foreach $months as $month_id => $month}
+				{if $month_id === 7}
+		</ul></div><div class="w180 floatLeft"><ul class="classicBorderLeft resetList font15 month gray pad18pxl">
+				{/if}
+
+				{* handle future months *}
+			<li{if $month_id > $current_month} class="lightGray"{/if}>
+				<span class="relative">
+				{* handle active month *}
+					{if $month.nb_posts !== null}
+						{assign $month_pad = str_pad($month_id, 2, '0', STR_PAD_LEFT)}
+				<a href="{url 'blog_month', array($A_year, $month_pad)}"
+			   title="Billets de {$month.name|capitalize} {$A_year}"
+			   {* handle active month *}
+			   {if $A_month == $month_id} class="active"{/if}>
+						   {$month.name}
+			</a>
+					{else}
+						{$month.name}
+					{/if}
+						{* always show the current month *}
+				{if $current_month && $current_month == $month_id}<sup class="arial absolute currentBullet black">•</sup>{/if}
+					</span>
+		</li>
+			{/foreach}
+	</ul>
+</div>
+<div class="w480 floatLeft">
+	<ul class="resetList font28 center lineHeight1 day gray">
+			{* days list *}
+			{foreach $days as $day_id => $day}
+				{assign $day_pad = str_pad($day_id, 2, '0', STR_PAD_LEFT)}
+				{if $current_day && $current_day == $day_id}
+					{assign $current_bullet = '<sup class="floatRight absolute currentBullet arial black">•</sup>'}
+				{else}
+					{assign $current_bullet = ''}
+				{/if}
+
+		<li class="classicBorderLeft{if $current_day && $day_id > $current_day} lightGray{/if}">
+			<span class="relative">
+			{if $A_day == $day_id}<span class="activeAday">{/if}
+					{if isset($day->nb_posts)}
+			<a href="{url 'blog_day', array($A_year, $A_month, $day_pad)}"
+			   title="Billets du {$day_pad}/{$A_month}/{$A_year}"
+			   {* handle asked day *}
+			   {if $A_day == $day_id} class="active"{/if}>{$day_pad}{$current_bullet|safe}</a>
+					{else}
+						{$day_pad}{$current_bullet|safe}
+					{/if}
+			{if $A_day == $day_id}</span>{/if}
+			</span>
+		</li>
+			{/foreach}
+
+	</ul>
+</div>
+</div>

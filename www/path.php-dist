@@ -1,0 +1,12 @@
+<?php
+
+$path_to_Pluf = realpath(dirname(__FILE__).'/../../pluf/src');
+$path_to_CSSJSBooster = realpath(dirname(__FILE__).'/../www/CSS-JS-Booster');
+// admin specified because we want to use it and be installed when we start the website but this is not mandatory
+// at all
+$path_to_Admin = realpath(dirname(__FILE__).'/../../admin/src');
+$path_to_Zblog = realpath(dirname(__FILE__).'/../src');
+
+set_include_path(get_include_path().
+		PATH_SEPARATOR.$path_to_Pluf.PATH_SEPARATOR.$path_to_Zblog
+		.PATH_SEPARATOR.$path_to_Admin.PATH_SEPARATOR.$path_to_CSSJSBooster);

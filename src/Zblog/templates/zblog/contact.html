@@ -1,0 +1,73 @@
+{extends 'zblog/base.html'}
+
+{block header_scripts}
+{include 'zblog/webfonts.html'}
+{/block}
+
+{block beforeContent}{include 'zblog/inc/freetest.html'}{/block}
+
+{block body}
+<div class="relative fauxColumn fauxColumn2ColFirst240">
+	<div class="clearfix">
+		<div class="w240 floatLeft">
+			<div class="font20 lineHeight1 sansRounded caps classicTextShadow">écrivez-nous</div>
+		</div>
+		<div class="w480 floatLeft">
+				<div class="marg8pxb pad18pxlr">
+					<form id="contact" action="{url 'Zblog_Views::contact'}" method="post" class="pad8pxt font13 serif">
+						<input type="text" name="name" value="" class="serif marg8pxr classicInput w150 classicShadow" />
+						<input type="text" name="email" value="" class="serif marg8pxr classicInput w150 classicShadow" />
+						<input type="text" name="phone" value="" class="serif classicInput w90 classicShadow" />
+						<textarea name="message" style="width:432px;height:185px;" class="serif marg8pxt classicInput classicShadow"></textarea>
+						<input type="submit" class="classicButton font11 marg8pxt serif" value="Envoyer" />
+					</form>
+				</div>
+		</div>
+		{include 'zblog/inc/contact-right.html'}
+	</div>
+
+</div>
+
+{include 'zblog/inc/contact-coordonnees.html'}
+
+{/block}
+
+{block footer_scripts}
+<script type="text/javascript" defer>
+	{literal}
+	window.onload = function() {
+	(function() {
+		var defaultText = ["Nom/Prénom", "Adresse email", "[Téléphone]"];
+		var $inputs = $('input[type=text]');
+		$inputs.each(function(i){
+			var $this = $(this);
+			if($this.val() === '') {
+				$this.val(defaultText[i]);
+			}
+		});
+
+		$inputs.focus(function(){
+			var $this = $(this);
+			var i = $inputs.index(this);
+			if($this.val() === defaultText[i]) {
+				$this.val('');
+			}
+		});
+
+		$inputs.blur(function(){
+			var $this = $(this);
+			var i = $inputs.index(this);
+			if($this.val() === '') {
+				$this.val(defaultText[i]);
+			}
+		});
+	})();
+	};
+	{/literal}
+</script>
+<script defer="defer" async="async" type="text/javascript" src="http://www.linkedin.com/js/public-profile/widget-os.js"></script>	
+{/block}
+
+{block footer}
+{include 'zblog/inc/footer-normal.html'}
+{/block}

@@ -1,0 +1,241 @@
+/*
+    Document   : template
+    Created on : 14 avr. 2010, 11:00:01
+    Author     : vincent
+    Description:
+       base css for all pages
+*/
+
+.sansRounded {
+	font-family: 'FrankfurterComMedium', Arial;
+	/* font-size-adjust:0.472*/
+}
+.serif {
+	font-family: Arial, Helvetica, sans-serif;
+	text-shadow:none;
+}
+
+body {
+	overflow-y:scroll;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#header {
+	-moz-box-shadow: 0 1px 0 #797979, 0 2px 0 #8e8e8e, 0 3px 0 #a2a2a2, 0 4px 0 #c5c5c5, 0 5px 0 #d3d3d3;
+	-webkit-box-shadow: 0 1px 0 #797979, 0 2px 0 #8e8e8e, 0 3px 0 #a2a2a2, 0 4px 0 #c5c5c5, 0 5px 0 #d3d3d3;
+	box-shadow: 0 1px 0 #797979, 0 2px 0 #8e8e8e, 0 3px 0 #a2a2a2, 0 4px 0 #c5c5c5, 0 5px 0 #d3d3d3;
+}
+
+#logo {
+	bottom: 7px;
+	background:url(../../img/logo_v2.png);
+	text-indent:-5000px;
+	overflow:hidden;
+	width: 60px;
+	height: 55px;
+}
+
+.base2 #logo {
+	bottom:10px;
+	left:10px;
+}
+
+/**
+Menu
+*/
+#menu a {
+	display:block;
+	padding-top:7px;
+	float:left;
+	text-align:center;
+	width:119px; /* -1px border */
+	line-height:27px;
+	color:#ff0;
+}
+
+#menu .first {
+	border-left:1px solid transparent;
+}
+/**
+end menu
+*/
+
+/**
+freetest bar, firefox sucks on submits, shared accross multiple pages
+* Very very strange behavior with borderimage and buttons..
+this is confirmed to be a firefox bug so do not try to get rid of it, firefox mac only
+*/
+.borderimage .classicButtonFix {
+	height:35px;
+	margin-top:-5px;
+	width:80%;
+	padding-bottom:1px;
+}
+
+/**
+Headings
+*/
+/*h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}*/
+
+h1, h2, h3 {
+	font-family: 'FrankfurterComMedium';
+	font-weight:normal;
+	text-transform: uppercase;
+	text-shadow:0 0 3px #aaa; /* classicTextShadow */
+}
+
+h1 > .gray, h2 > .gray, h3 > .gray {
+	text-shadow:none;
+}
+
+h1, h2, h3 {
+	font-size:100%;
+}
+
+#twitter {
+	background:url(../../img/twitter.png) no-repeat;
+	height:37px;
+}
+
+#twitterLink {
+	left:54px;
+	top:9px;
+	opacity:.2;
+}
+
+#gotoTop:before {
+	content:url(../../img/top.png)" ";
+}
+
+/**
+Content Links
+*/
+a {text-decoration: none}
+a:link, .novisited a:visited {color: #000;}
+a:visited {color: #000;}
+a:hover {color: #000}
+/*a:active {text-shadow: 0 2px 0 #fef28f}*/
+
+.textContent a:link {border-bottom:1px dotted #000}
+.textContent a:visited {color:#aaa;border-bottom:1px dotted #aaa;}
+.textContent a:hover, .novisited a:hover, .novisited a:active {border:none;color:#000;background:#ff7}
+
+.shadowLinks a {
+	padding:0 2px;
+	color:#000;
+	/*	Does not render well*/
+	/*	box-shadow: 0 0 3px #000;
+	-moz-box-shadow: 0 0 3px #000;
+	-webkit-box-shadow: 0 0 3px #000;*/
+	border:0;
+}
+
+.shadowLinks a:link {
+	border:0;
+	background:#ff7;
+}
+
+.shadowLinks a:visited {
+	color: #000;
+	background:#d7d7d7;
+	border:0;
+}
+
+.shadowLinks a:hover {
+	background:#000;
+	color:#e6e6e6;
+	border:0;
+}
+/**
+end links
+*/
+
+.textContent h1, .textContent h2, .textContent h3 {
+	margin:.5em 0;
+}
+
+.textContent h1 {
+	font-size: 153.9%;
+	text-indent:.5em;
+}
+
+.textContent h2 {
+	font-size: 138.5%;
+	text-indent: 1em;
+}
+
+.textContent h3 {
+	font-size: 123.1%;
+	text-indent: 2em;
+}
+
+.textContent p {
+	margin-bottom:.5em;
+}
+
+/**
+prestations
+*/
+.borderimage .fauxColumn2ColFirst240.fauxColumn {
+	background-position:235px 0;
+}
+
+.borderimage .fauxColumn2ColFirst180.fauxColumn {
+	background-position:175px 0;
+}
+
+.borderimage .fauxColumn2ColFirst780.fauxColumn {
+	background-position:775px 0;
+}
+
+#maface {
+	display:block;
+	position:absolute;
+	right:0;
+	top:0;
+}
+
+ul ul li {
+	list-style:circle;
+}
+
+/* modernizr */
+#fonttest {
+	display:none !important;
+}
+
+blockquote[lang-=fr] { quotes: “\201C” “\201D” }
+
+blockquote:before, blockquote:after {
+	color: #69c;
+	display: block;
+	position:absolute;
+	line-height: 0;
+	font-size: 700%;
+	color:#444;
+}
+
+blockquote:after {
+	content: close-quote;
+	bottom:0;
+	right:0;
+}
+
+blockquote:before {
+	content: open-quote;
+	top:30px;
+	left:-25px;
+}
+
+blockquote {
+	position:relative;
+	font-style:italic;
+	background:#cfcfcf;
+/*	padding:0 60px;*/
+	padding:1em;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px
+}

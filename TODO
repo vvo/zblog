@@ -1,0 +1,113 @@
+TODO :
+	- date de maj dans flux rss
+	- probleme de listes sous opéra
+	- page prestations à revoir
+	- organiser les tags par noms
+	- bouger le cache tpl de pluf
+	- interdire aux robots l'accès a betawtf
+	- changer méthode fonts
+	- nouveau favicon ?
+	- afficher twitter sur page d'accueil
+	- faire un sitemap
+	page de test d'un post dans design normal même si draft => écriture des posts directement en prod
+
+	FOOTMERCATO Pierre-Marie Papineschi : papineschi@gmail.com (mettre le pdf sur le site web ?) PASOK,
+		mail envoyé, en attente
+	Ma-bimbo.com PASOK
+	Billet installation webpagetest.org
+	Billet technologie zeroload PASOK
+	Billet expliquer méthode développement avec virtualbox
+
+	mini audits :
+		opensubtitles
+		greenit.fr
+		leshoraires
+		20minutes
+		lemonde
+		homelidays
+		jobijoba
+		splyce
+		pages jaunes
+		owlient
+		presse-citron.net
+
+	technologies zeroload.net :
+		border image
+		text shadow
+		balises html5
+		box shadow
+	résumé velocity 2010
+	détail chiffres business performance
+	migration serveur complet dedibox
+
+	problème avec ' dans url ...
+	$db->esc génère des ? pour les ' sur dedibox
+
+	méthode google pour inclusion fonts / méthode maison (création css à la volée avec labJS ou requireJS)
+
+async ne conserve pas l'orde d'éxecution, solution pour lancer le gros javascript en asynchrone :
+ajouter les scripts twitter-json et delicious-json directement dans une classe en fonction de l'url ?
+=> possibilité d'utiliser async + defer partout
+=> utiliser labjs
+
+installer petit système navigation article
+modifier navigation pour l'inclure comme sur quirksmode a droite du contenu toujours collé et par dessus le reste
+ajouter un lien vers top, harmoniser JS
+
+calendrier : mettre en cache un calendrier spécifique pour jour/mois/année dans le cache fichier et récupérer la donnée ensuite
+actuellement pour chaque page on recalcule le calendrier du jour PASOK
+
+nettoyer les CSS, utiliser extension
+
+afficher calendrier disponibilité
+
+Plus tard :
+tester IE6 PASOK
+incorporer la bulle twitter PASOK
+incorporer la recherche PASOK
+incorporer le test PASOK
+bulle twitter -> lien vers twitter PASOK
+year archive PASOK
+merge pagination calculations between tag and blog page PASOK
+commentaires sur archives de l'année PASOK
+Markdown extras ?
+Traductions en anglais, automatique ou manuel ?
+
+Idées / divers :
+mise en place déploiement js et css data uris et mhtml PASOK, EN ATTENTE
+
+Pourquoi on envoit connection close au php ? problème pluf, retenter une explication sur les forums
+
+écrire un bugzilla avec mes tests sur les deux fontes quand on utilise uppercase entre firefox et safari PASOK
+
+problème FOUC sur font-face : problème de modernizr, bug posté sur github PASOK
+	(chercher ce qui provoque fouc : utiliser webfont loader quand disponible) PASOK
+	modifié modernizr en attendant
+
+installer une extension SEO PASOK
+https://addons.mozilla.org/fr/firefox/search?q=seo&cat=all
+vincent-voyer.fr : fermer et tout déplacer sur zeroload.net, faire une rédirection 301
+depuis la page développeur jquery, laisser ouvert le chat (avec avertissement), fermer tout le reste
+
+script nodejs qui trouve tous les js/css et créé des versions optimisées (tout simple pour l'instant)
+	programme nodejs pour optimiser les css et js avec des paramètres de configuration de groupes
+	génération data uris
+	génération mhtml
+	cssembed?
+	optimisation d'images
+
+experiences avec moz gradient, au clic souris on fait des jolis ronds qui grandissent etc..
+
+css js booster : does not work in a symbolic link env ? retester
+
+attention à l'utilisation resetList non sémantique > utiliser d'autres balises
+
+deploy-prod et deploy-beta
+deploy-prod avec paramètre = lien symbolique et vidage cache pluf
+
+placer le cache de pluf (templates) à un autre endroit
+
+afficher nombre de commentaire + lien à côté du titre sur l'affichage d'un blog post
+
+Organize :
+générer faux traffic vers freelance info pour se retrouver souvent en première position, changer de box pour ça, easy
