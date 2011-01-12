@@ -1,3 +1,6 @@
 [submodule "tools/html-minifier"]
 	path = tools/html-minifier
 	url = git@github.com:vvo/html-minifier.git
+[submodule "www/CSS-JS-Booster-old"]
+	path = www/CSS-JS-Booster-old
+	url = https://github.com/Schepp/CSS-JS-Booster.git
