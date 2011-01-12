@@ -3,8 +3,8 @@ require('./html-minifier/src/htmlparser.js');
 var     stdin = process.openStdin(),
         minifier = require('./html-minifier/src/htmlminifier.js'),
         options = {
-                removeComments: true,
-                removeCommentsFromCDATA: true,
+//                removeComments: true,
+//                removeCommentsFromCDATA: true,
                 removeCDATASectionsFromCDATA: true,
 				lint: false,
                 //collapseWhitespace: true,
