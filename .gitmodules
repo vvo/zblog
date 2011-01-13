@@ -4,3 +4,6 @@
 [submodule "www/CSS-JS-Booster-old"]
 	path = www/CSS-JS-Booster-old
 	url = https://github.com/Schepp/CSS-JS-Booster.git
+[submodule "www/CSS-JS-Booster"]
+	path = www/CSS-JS-Booster
+	url = git@github.com:vvo/CSS-JS-Booster.git

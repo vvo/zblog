@@ -1,0 +1,31 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+	  <!-- new HP -->
+	  {jsbooster "static/js/slider2.js"}
+	  <!-- blog page -->
+	  {jsbooster "static/js/latest-tweets.js,static/js/latest-delicious.js"}
+	  <!-- old template for all pages -->
+	  {jsbooster "static/js/modernizr-1.5.js,static/js/jquery,static/js/slider.js,static/js/latest-tweets.js,static/js/latest-delicious.js"}
+	  <!-- all css for all pages all versions -->
+	  {cssbooster "static/css/yui,static/css/library,static/css/template", array("clean_markup" => TRUE)}
+    <title>This file is used for deploying and generating cache of all minified/aggregated/datauri/mhtml content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body class="font20">
+	  <p>This file is used for deploying and generating cache of all minified/aggregated/datauri/mhtml content</p>
+	  <p>For good use, in your deployment script just do this :</p>
+	  <pre>
+		cd /tmp/deploy-tmp
+		wget --user-agent="SPECIALWGETZBLOG" -nd -nH -p http://betawtf.zeroload.net/deploy/
+		rm -rf /tmp/deploy-tmp/*
+	  </pre>
+	  <p>Then all your CSS & JS will be pre-generated</p>
+	  <p>You must use wget 1.12</p>
+	  <p>Adapt to your environment</p>
+  </body>
+</html>

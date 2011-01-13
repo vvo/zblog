@@ -80,4 +80,7 @@ Vous pouvez utiliser la fonction répondre de votre lecteur de mail");
 				array('page_title' => 'Merci'));
 	}
 
+	public function deploy($request, $match) {
+		return Pluf_Shortcuts_RenderToResponse('zblog/deploy.html', array());
+	}
 }

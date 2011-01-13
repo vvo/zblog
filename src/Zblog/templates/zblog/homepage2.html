@@ -1,6 +1,7 @@
 {extends 'zblog/base2.html'}
 
 {block header_scripts}
+{if $cfg_debug !== true}
 {literal}
 <!-- Google Website Optimizer Tracking Script -->
 <script type="text/javascript">
@@ -15,6 +16,7 @@
 </script>
 <!-- End of Google Website Optimizer Tracking Script -->
 {/literal}
+{/if}
 <meta name="description" content="Audit et conseil en performance web. Refonte de vos applications html/css/javascript. Accélération de l'affichage des pages web." />
 {/block}
 

@@ -3,19 +3,31 @@
 require_once('booster/booster_inc.php');
 
 class Zblog_Template_Booster_Css extends Pluf_Template_Tag {
-//	Pluf::f('mail_to')
 	function start($css_files, $params=array(), $get_params=array()) {
 		$booster = new Booster();
 		if (Pluf::f('booster') === TRUE) {
 			$css_files = explode(',', $css_files);
 			$css_files = implode(',../../', $css_files);
 			$css_files = '../../'.$css_files;
+			// for this to work I will have to pass it to GET parameters
 //			$booster->invert_datauri_mode = TRUE;
 			$booster->css_hosted_minifier = TRUE;
 			$booster->css_totalparts = 1;
 			$booster->css_source = $css_files;
 			$booster->booster_cachedir_autocleanup = FALSE;
-			echo $booster->css_markup();
+			$markup = $booster->css_markup();
+
+			// this params can remove all the conditionnal comments used by CSS-JS-Booster
+			// mostly used for deployment feature
+			// because we use wget, it will not try to download the IE CSS that is in conditionnal comments!
+			// this should be updated when CSS-JS-Booster changes, too bad
+			if($params["clean_markup"] === TRUE) {
+				$replace_array = array("<!--[if IE]><![endif]-->", "<!--[if (gte IE 8)|!(IE)]><!-->", "<!--<![endif]-->",
+					"<!--[if lte IE 7 ]>", "<![endif]-->");
+				$markup = str_replace($replace_array, "", $markup);
+			}
+
+			echo $markup;
 		}
 		else {
 			$sources = split(',', $css_files);
