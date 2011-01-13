@@ -1,7 +1,7 @@
 {extends 'zblog/base.html'}
 
 {block header_scripts}
-{if $cfg_debug !== true}
+{if $cfg_debug !== true && $cfg_beta !== true}
 {literal}
 <!-- Google Website Optimizer Control Script -->
 <script>

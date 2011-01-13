@@ -28,7 +28,7 @@ class Zblog_Views {
 
 	public function services($request, $match) {
 		$context = new Pluf_Template_Context(array('page_title' => 'audit des performance web front-end'));
-		$tmpl = new Pluf_Template('zblog/prestations.html');
+		$tmpl = new Pluf_Template('zblog/services.html');
 		return new Pluf_HTTP_Response($tmpl->render($context));
 	}
 
