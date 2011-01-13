@@ -9,7 +9,7 @@
 		<meta charset="utf-8">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-		{if $cfg_debug !== true && $is_beta !== true}
+		{if $cfg_debug !== true && $cfg_is_beta !== true}
 		<script type="text/javascript">document.write(unescape("%3Cscript src='" + (("https:" == document.location.protocol) ? "https" : "http") + "://a.mouseflow.com/projects/02009929-136b-45ca-995b-9dff1bdd662b.js' type='text/javascript'%3E%3C/script%3E"));</script>
 		{/if}
 
@@ -17,7 +17,7 @@
 
 		{block header_scripts}{/block}
 
-		{if $cfg_debug !== true && $is_beta !== true}
+		{if $cfg_debug !== true && $cfg_is_beta !== true}
 		<script>
 			{literal}
 			var _gaq = _gaq || [];
