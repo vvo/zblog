@@ -53,7 +53,7 @@
 						{if $cfg_debug === true || $cfg_is_beta === true}
 							var disqus_developer = 1;
 						{else}
-							var disqus_url = "http://zeroload.net{url 'blog_post', rawurlencode(strtolower($post.title))}";
+							var disqus_url = "http://zeroload.net{$post.getFriendlyUrl()}";
 						{/if}
 
 						{literal}

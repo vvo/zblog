@@ -43,7 +43,7 @@ class Zblog_Views {
 							'text' => $text
 						)
 		);
-		$tmpl = new Pluf_Template('zblog/a-propos.html');
+		$tmpl = new Pluf_Template('zblog/references.html');
 		return new Pluf_HTTP_Response($tmpl->render($context));
 	}
 

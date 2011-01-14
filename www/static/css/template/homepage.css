@@ -112,3 +112,113 @@ Slider styling
 #slides .wrapper > div:nth-child(3) .sliderLink {
 	background-image:url(../../img/homepage/stats-3.jpg);
 }
+
+#minireferences {
+	padding-bottom: 13px;
+}
+
+#minireferences blockquote {
+	border-radius:2px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	background:#FAF2CE;
+	border:1px solid #cdcdcc;
+	margin:0;
+	min-height:112px;
+	padding:10px 10px 0 10px;
+	font-style: normal;
+}
+
+#minireferences blockquote:before, #minireferences blockquote:after {
+	font-size: 350%;
+	color:#444;
+}
+
+#minireferences blockquote:after {
+	bottom:-10px;
+	right:-8px;
+}
+
+#minireferences blockquote:before {
+	top:14px;
+	left:-8px;
+}
+
+.auteurCite {
+	position:absolute;
+	left:0;
+	bottom:-23px;
+}
+
+#minireferences p {
+	margin-bottom:8px;
+}
+
+.minilogoRef {
+	display:block;
+	float:left;
+	height:23px;
+	background:url(../../img/homepage/logos-hp.png);
+	cursor:pointer;
+}
+
+#lequipefr {
+	width:95px;
+	/* standard background already done by previous rule, default position top left */
+	*background-position:0 -100%;
+}
+
+#mappycom {
+	width:68px;
+	background-position:-95px 0;
+	*background-position:-95px -100%; /*IE6/7 does not support :hover so just show the default logo */
+}
+
+#beemoovcom {
+	width:100px;
+	background-position:-163px 0;
+	*background-position:-163px -100%;
+}
+
+#footmercatonet {
+	width:79px;
+	background-position:-263px 0;
+	*background-position:-263px -100%;
+}
+
+#lequipefr:hover, #lequipefr.active {
+	background-position:0 -100%;
+}
+
+#mappycom:hover, #mappycom.active {
+	background-position:-95px -100%; /*IE6/7 does not support :hover so just show the default logo */
+}
+
+#beemoovcom:hover, #beemoovcom.active {
+	background-position:-163px -100%;
+}
+
+#footmercatonet:hover, #footmercatonet.active {
+	background-position:-263px -100%;
+}
+
+.minirefArrow {
+	width:14px;
+	height:11px;
+	background:url(../../img/homepage/bubble-arrow.gif);
+	position:absolute;
+	top:-11px;
+	left:30px; /* lequipe.fr */
+}
+
+#mappycomB .minirefArrow {
+	left:115px;
+}
+
+#beemoovcomB .minirefArrow {
+	left:205px
+}
+
+#footmercatonetB .minirefArrow {
+	left:295px
+}

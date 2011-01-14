@@ -22,13 +22,13 @@
 		<div class="pad18pxl">
 			<h1 class="novisited pad4pxb marg4pxb lineHeight1 classicBorderBottom marg90r marg0t">
 				{comments_permalink $post}
-				<a href="{url 'blog_post', rawurlencode(strtolower($post.title))}"
+				<a href="{$post.getFriendlyUrl()}"
 				   title="Voir le billet {$post.title}" class="font18">{$post.title}</a>
 			</h1>
 			<div class="pad18pxr textContent">
 				{$post.summary|markdown|safe}
 			</div>
-			<a href="{url 'blog_post', rawurlencode(strtolower($post.title))}"
+			<a href="{$post.getFriendlyUrl()}"
 			   title="Voir le billet {$post.title}" class="font11 inlineBlock classicButton">lire la suite</a>
 		</div>
 	</div>

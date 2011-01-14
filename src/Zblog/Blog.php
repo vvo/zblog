@@ -9,7 +9,7 @@ Pluf::loadFunction('Pluf_Shortcuts_GetFormForModel');
 
 class Zblog_Blog {
 
-	private $nb_posts_per_page = 3;
+	private $nb_posts_per_page = 5;
 
 //	private $disqus_api_key = 'oygAMeE83ouctpsnBkQS7cvZXNRPtPPFxp1WdIQHCe1rjCj3obPD4YhcZSNpQsJE';
 //	private $disqus_forum = 376164; // id of the zeroload website in disqus
@@ -29,8 +29,7 @@ class Zblog_Blog {
 //		return 	$disqus->getPosts();
 //	}
 
-	// next prev arrows show next prev post (no day/month indication in the url)
-	public function view_post($request, $match) {
+	public function view_post_old($request, $match) {
 		$db = Pluf::db();
 
 		$post = Pluf::factory('Zblog_Post')
@@ -38,6 +37,26 @@ class Zblog_Blog {
 
 		// no post or url has upper characters and we do not want this
 		if ($post === null || strtolower($post->title) !== $match[1]) {
+			throw new Pluf_HTTP_Error404();
+		}
+
+		// redirect to new url
+		return new Pluf_HTTP_Response_Redirect($post->getFriendlyUrl(), 301);
+	}
+
+	// next prev arrows show next prev post (no day/month indication in the url)
+	public function view_post($request, $match) {
+		$db = Pluf::db();
+
+		$post = Pluf::factory('Zblog_Post')
+				->getOne(array('filter' => array('draft=0', 'id='.(int)$match[1])));
+
+//		echo Zblog_Post::urlize($post->title);
+//		echo $match[2];
+//		exit;
+
+		// no post or url has upper characters and we do not want this
+		if ($post === null || Zblog_Post::urlize($post->title) !== $match[2]) {
 			throw new Pluf_HTTP_Error404();
 		}
 

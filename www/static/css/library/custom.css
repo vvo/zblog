@@ -169,6 +169,7 @@ Margins
 .marg360l {margin-left:360px}
 .marg4pxt {margin-top:4px}
 .marg5pxr {margin-right:5px}
+.marg12pxb {margin-bottom:12px}
 .marg18pxt {margin-top:18px}
 .marg18pxb {margin-bottom:18px}
 .marg18pxl {margin-left:18px}
@@ -399,8 +400,8 @@ Colors
 }
 
 .active, .active:visited, .active:link {
-	color:#000 !important;
-	background:#ff7 !important;
+	color:#000;
+	background:#ff7;
 }
 
 .breakwords {

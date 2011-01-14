@@ -3,7 +3,7 @@
 <h1 class="marg0t lineHeight1 classicBorderBottom marg18pxb font18">Archives du mois de {$month_name} {$year}</h1>
 <ul class="font14">
 	{foreach $posts as $post}
-	<li><a href="{url 'blog_post', rawurlencode(strtolower($post.title))}"
+	<li><a href="{$post.getFriendlyUrl()}"
 		   title="Voir le billet {$post.title}">{$post.title}</a> -
 		<span class="gray">{$post.post_date|date:"%d/%m/%Y"}</span></li>
 	{/foreach}

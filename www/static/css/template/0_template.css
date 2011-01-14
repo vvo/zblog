@@ -27,16 +27,10 @@ body {
 }
 
 #logo {
-	bottom: 7px;
-	background:url(../../img/logo_v2.png);
-	text-indent:-5000px;
-	overflow:hidden;
-	width: 60px;
-	height: 55px;
+	bottom: 3px;
 }
 
 .base2 #logo {
-	bottom:10px;
 	left:10px;
 }
 
