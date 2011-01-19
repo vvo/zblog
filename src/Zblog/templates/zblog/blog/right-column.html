@@ -1,28 +1,30 @@
-<h1 class="font18 marg0 lineHeight1 classicBorderBottom">derniers articles</h1>
+<aside>
+	<div class="font18 sansRounded caps classicTextShadow marg0 lineHeight1 classicBorderBottom">derniers articles</div>
 
-{foreach $last_posts as $post}
-<div class="classicBorderBottom textContent pad8pxb marg8pxb lineHeight1p2">
-	<span class="gray sansRounded">{$post.post_date|date: "%d/%m"}</span>
-	<a href="{$post.getFriendlyUrl()}" title="Voir le billet {$post.title}">{$post.title}</a>
-</div>
-{/foreach}
+	{foreach $last_posts as $post}
+	<div class="classicBorderBottom textContent pad8pxb marg8pxb lineHeight1p2">
+		<span class="gray sansRounded">{$post.post_date|date: "%d/%m"}</span>
+		<a href="{$post.getFriendlyUrl()}" title="Voir le billet {$post.title}">{$post.title}</a>
+	</div>
+	{/foreach}
 
-{* faire mon propre js
-<h1 class="marg0t classicBorderBottom pad4pxb marg8pxb font18 lineHeight1">Derniers commentaires</h1>
-<div id="recentcomments" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/zeroload/recent_comments_widget.js?num_items=3&hide_avatars=0&avatar_size=24&excerpt_length=200"></script></div>
-*}
+	{* faire mon propre js
+	<div class="marg0t sansRounded caps classicTextShadow classicBorderBottom pad4pxb marg8pxb font18 lineHeight1">Derniers commentaires</div>
+	<div id="recentcomments" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/zeroload/recent_comments_widget.js?num_items=3&hide_avatars=0&avatar_size=24&excerpt_length=200"></script></div>
+	*}
 
-<h1 class="marg0t classicBorderBottom pad4pxb marg8pxb font18 lineHeight1">@zeroload</h1>
-<div id="twitter_div" class="breakwords lineHeight1p2"></div>
+	<div class="marg0t sansRounded caps classicTextShadow classicBorderBottom pad4pxb marg8pxb font18 lineHeight1">@zeroload</div>
+	<div id="twitter_div" class="breakwords lineHeight1p2"></div>
 
-<div class="classicBorderTop pad8pxt right">
-	<a href="http://twitter.com/zeroload" class="classicButton font09">follow me</a>
-</div>
+	<div class="classicBorderTop pad8pxt right">
+		<a href="http://twitter.com/zeroload" class="classicButton font12">mon twitter</a>
+	</div>
 
-<h1 class="font18 marg0 lineHeight1 classicBorderTop pad8pxt">Delicious</h1>
-<div class="classicBorderTop"></div>
-<div id="delicious_div"></div>
+	<div class="font18 sansRounded caps classicTextShadow marg0 lineHeight1 marg8pxt classicBorderTop pad8pxt">Delicious</div>
+	<div class="classicBorderTop"></div>
+	<div id="delicious_div"></div>
 
-<div class="pad4pxt right">
-	<a href="http://delicious.com/network?add=wouaren" class="classicButton font09">add me</a>
-</div>
+	<div class="pad4pxt right">
+		<a href="http://delicious.com/network?add=wouaren" class="classicButton font12">Mes liens</a>
+	</div>
+</aside>

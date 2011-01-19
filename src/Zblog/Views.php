@@ -10,14 +10,8 @@ Pluf::loadFunction('Pluf_Shortcuts_GetFormForModel');
 class Zblog_Views {
 
 	public function main($request, $match) {
-		$context = new Pluf_Template_Context(array('page_title' => 'Réduisez le temps de chargement, gagnez de nouveaux clients'));
+		$context = new Pluf_Template_Context(array('page_title' => 'Consulting en performance web et optimisation front-end'));
 		$tmpl = new Pluf_Template('zblog/homepage.html');
-		return new Pluf_HTTP_Response($tmpl->render($context));
-	}
-
-	public function main2($request, $match) {
-		$context = new Pluf_Template_Context(array('page_title' => 'consulting en performance web et optimisation front-end'));
-		$tmpl = new Pluf_Template('zblog/homepage2.html');
 		return new Pluf_HTTP_Response($tmpl->render($context));
 	}
 
@@ -27,20 +21,20 @@ class Zblog_Views {
 	}
 
 	public function services($request, $match) {
-		$context = new Pluf_Template_Context(array('page_title' => 'audit des performance web front-end'));
+		$context = new Pluf_Template_Context(array('page_title' => 'Audit des performances web front-end'));
 		$tmpl = new Pluf_Template('zblog/services.html');
 		return new Pluf_HTTP_Response($tmpl->render($context));
 	}
 
-	public function about($request, $match) {
+	public function references($request, $match) {
 		Pluf::loadFunction('Pluf_Text_MarkDown_parse');
 		$tpl_path = Pluf::f('template_folders');
 		$tpl_path = realpath($tpl_path[0]);
 		$text = Pluf_Text_MarkDown_parse(file_get_contents($tpl_path . '/zblog/a-propos.md'));
 		$context = new Pluf_Template_Context(
 						array(
-							'page_title' => 'à propos',
-							'text' => $text
+							'page_title' => 'Références',
+							'text' => "$text"
 						)
 		);
 		$tmpl = new Pluf_Template('zblog/references.html');
@@ -49,6 +43,24 @@ class Zblog_Views {
 
 	public function contact($request, $match) {
 		if ($request->method == 'POST') {
+			if ($_POST['email2'] != '') {
+				$variables = print_r($GLOBALS['HTTP_SERVER_VARS'], true);
+
+				$email = new Pluf_Mail("robot@zeroload.net",
+								Pluf::f('mail_to'),
+								'zeroload.net > SPAM');
+				$email->addTextMessage(
+						"Message de : " . $form->cleaned_data['name'] . " " . $form->cleaned_data['email'] . "
+
+Texte du message :
+
+" . $form->cleaned_data['message'] . "
+
+" . $variables);
+				$email->sendMail();
+				exit;
+			}
+
 			$form = new Zblog_Form_Contact($request->POST);
 //			var_dump($form->errors);
 			if ($form->isValid()) {
@@ -70,7 +82,7 @@ Vous pouvez utiliser la fonction répondre de votre lecteur de mail");
 			}
 		}
 
-		$context = new Pluf_Template_Context(array('page_title' => 'devis performance gratuit'));
+		$context = new Pluf_Template_Context(array('page_title' => 'Contactez-moi'));
 		$tmpl = new Pluf_Template('zblog/contact.html');
 		return new Pluf_HTTP_Response($tmpl->render($context));
 	}
@@ -83,4 +95,5 @@ Vous pouvez utiliser la fonction répondre de votre lecteur de mail");
 	public function deploy($request, $match) {
 		return Pluf_Shortcuts_RenderToResponse('zblog/deploy.html', array());
 	}
+
 }

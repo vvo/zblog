@@ -56,7 +56,7 @@ class Zblog_Blog {
 //		exit;
 
 		// no post or url has upper characters and we do not want this
-		if ($post === null || Zblog_Post::urlize($post->title) !== $match[2]) {
+		if ($post === null || urlize($post->title) !== $match[2]) {
 			throw new Pluf_HTTP_Error404();
 		}
 
@@ -84,12 +84,12 @@ class Zblog_Blog {
 		// Z for GMT
 		if($prev_post != null) {
 			$prev_link = array("text" => $prev_post->title,
-					"href" => Pluf_HTTP_URL_urlForView('blog_post', rawurlencode(strtolower($prev_post->title))));
+					"href" => $prev_post->getFriendlyUrl());
 		}
 
 		if($next_post != null) {
 			$next_link = array("text" => $next_post->title,
-					"href" => Pluf_HTTP_URL_urlForView('blog_post', rawurlencode(strtolower($next_post->title))));
+					"href" => $next_post->getFriendlyUrl());
 		}
 
 		// control if post exists then 404
@@ -284,18 +284,50 @@ class Zblog_Blog {
 
 	}
 
+	public function view_by_tag_old($request, $match) {
+		$db = Pluf::db();
+
+		$tag = Pluf::factory('Zblog_Tag')
+				->getOne(array('filter' => array('name='.$db->esc($match[1]))));
+
+		// no post or url has upper characters and we do not want this
+		if ($tag === null || strtolower($tag->name) !== $match[1]) {
+			throw new Pluf_HTTP_Error404();
+		}
+
+		// redirect to new url
+		return new Pluf_HTTP_Response_Redirect($tag->getFriendlyUrl(), 301);
+	}
+
+	public function view_by_tag_page_old($request, $match) {
+		$db = Pluf::db();
+
+		$tag = Pluf::factory('Zblog_Tag')
+				->getOne(array('filter' => array('name='.$db->esc($match[1]))));
+
+		// no post or url has upper characters and we do not want this
+		if ($tag === null || strtolower($tag->name) !== $match[1]) {
+			throw new Pluf_HTTP_Error404();
+		}
+
+		// redirect to new url
+		return new Pluf_HTTP_Response_Redirect($tag->getFriendlyUrl(array($match[3])), 301);
+	}
+
 	public function view_by_tag($request, $match) {
 		$db = Pluf::db();
 
 		$prev_link = array("text" => "articles précédents");
 		$next_link = array("text" => "articles suivants");
 
-		$tag = Pluf::factory('Zblog_Tag')->getOne(array('filter' => array('name='.$db->esc($match[1]))));
+		$tag = Pluf::factory('Zblog_Tag')->getOne(array('filter' => array('id='.(int)$match[1])));
 
-		// no tag or tag name in uppercase
-		if ($tag == null || strtolower($tag->name) !== $match[1]) {
+		// no tag
+		if ($tag == null || urlize($tag->name) !== $match[2]) {
 			throw new Pluf_HTTP_Error404();
 		}
+
+		// Old tags needs redirect
 
 		$now = gmdate('Y-m-d H:i:s');
 
@@ -309,9 +341,9 @@ class Zblog_Blog {
 			throw new Pluf_HTTP_Error404();
 		}
 
-		$num_page = (int)$match[2];
+		$num_page = (int)$match[3];
 
-		$last_post_for_page = $match[2]*$this->nb_posts_per_page+$this->nb_posts_per_page;
+		$last_post_for_page = $num_page*$this->nb_posts_per_page+$this->nb_posts_per_page;
 
 		if ($num_page > 0) {
 			// specific page asked
@@ -319,20 +351,20 @@ class Zblog_Blog {
 			$start_at = $this->nb_posts_per_page*$num_page;
 
 			if($num_page == 1) {
-				$next_link["href"] = Pluf_HTTP_URL_urlForView('blog_tag', array($match[1]));
+				$next_link["href"] = $tag->getFriendlyUrl();
 			} else {
-				$next_link["href"] = Pluf_HTTP_URL_urlForView('blog_tag_page', array($match[1], $num_page-1));
+				$next_link["href"] = $tag->getFriendlyUrl(array($num_page-1));
 			}
 
 			if($last_post_for_page < $total_posts_available) {
-				$prev_link["href"] = Pluf_HTTP_URL_urlForView('blog_tag_page', array($match[1], $num_page+1));
+				$prev_link["href"] = $tag->getFriendlyUrl(array($num_page+1));
 			} else {
 				$prev_link["href"] = null; // last page
 			}
 		} else {
 			$start_at = 0; // homepage
 			if($last_post_for_page < $total_posts_available) {
-				$prev_link["href"] = Pluf_HTTP_URL_urlForView('blog_tag_page', array($match[1], 1));
+				$prev_link["href"] = $tag->getFriendlyUrl(array(1));
 			} else {
 				$prev_link["href"] = null;
 			}
@@ -578,7 +610,9 @@ class Zblog_Blog {
 		header('Content-type: application/atom+xml; charset=utf-8');
 		echo '<?xml version="1.0" encoding="utf-8"?>';
 		echo "\n";
-		echo $tmpl->render($context);
+		$render = $tmpl->render($context);
+		$render = str_replace('src="/', 'src="http://zeroload.net/', $render);
+		echo $render;
 		exit;
 
 /*		

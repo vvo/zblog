@@ -28,9 +28,6 @@ body {
 
 #logo {
 	bottom: 3px;
-}
-
-.base2 #logo {
 	left:10px;
 }
 
@@ -225,11 +222,15 @@ blockquote:before {
 
 blockquote {
 	position:relative;
-	font-style:italic;
+/*	font-style:italic;*/
 	background:#cfcfcf;
 /*	padding:0 60px;*/
 	padding:1em;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px
+}
+
+blockquote.reference:target {
+	background:#fff
 }

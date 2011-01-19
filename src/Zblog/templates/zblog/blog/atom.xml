@@ -14,8 +14,8 @@
 		<uri>http://zeroload.net/about/</uri>
 	</author>
 	<id>http://zeroload.net/blog/</id>
-	<icon>{mediaurl '/img/blog/icon-feed.png'}</icon>
-	<logo>{mediaurl '/img/blog/logo-feed.png'}</logo>
+	<icon>http://zeroload.net{mediaurl '/img/blog/icon-feed.png'}</icon>
+	<logo>http://zeroload.net{mediaurl '/img/blog/logo-feed.png'}</logo>
 
 	{foreach $posts as $post}
 	<entry>
@@ -30,7 +30,7 @@
 				{$post.content|markdown|safe}
 			</div>
 		</content>
-		<link rel="alternate" href="{url 'blog_post', strtolower(rawurlencode($post.title))}"/>
+		<link rel="alternate" href="{$post.getFriendlyUrl()}"/>
 		<summary type="xhtml">
 			<div xmlns="http://www.w3.org/1999/xhtml">
 				{$post.summary|markdown|safe}

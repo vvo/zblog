@@ -1,67 +1,61 @@
 (function(window, undefined){
-
 	$(function(){
-		var $slider = $('#slider'),
+
+		$.get("/slider", function(data) {
+			$('#homepage').append(data);
+			$('#slider').fadeIn("normal")
+			init();
+		});
+
+		function init() {
+			var $slider = $('#slider'),
 			$liens = $('#sliderMenu a'),
 			$slides = $('#slides > .wrapper > div'),
 			selectedClasses = 'selected black',
 			normalClass = 'yellow',
-			$loader = $('.loader'),
 			timer, /* next slide */
-			timer2, /* load event OR 2500ms */
 			nextLink,
 			currentSlide = 0,
-			timelapse = 10000,
+			timelapse = 7000,
 			nbSlides = $liens.length;
 
-		$slider.bind('mouseenter', function(){
-			clearTimeout(timer);
-			$slides.eq(currentSlide).stop(true, true).show().siblings().hide();
-		});
+			$slider.bind('mouseenter', function(){
+				clearTimeout(timer);
+				$slides.eq(currentSlide).stop(true, true).show().siblings().hide();
+			});
 
-		$slider.bind('mouseleave', function() {
-			timer = setTimeout(function(){
-				nextLink((currentSlide < (nbSlides-1) ? currentSlide+1 : 0));
-			}, timelapse-2000);
-		});
+			$slider.bind('mouseleave', function() {
+				timer = setTimeout(function(){
+					nextLink((currentSlide < (nbSlides-1) ? currentSlide+1 : 0));
+				}, timelapse-2000);
+			});
 
 
-		$liens.click(function(e){
-			var slideNumber = $liens.index(this);
-			currentSlide = slideNumber;
-			$(this)
+			$liens.click(function(e){
+				var slideNumber = $liens.index(this);
+				currentSlide = slideNumber;
+				$(this)
 				.removeClass(normalClass)
 				.addClass(selectedClasses)
 				.siblings().removeClass(selectedClasses)
 				.addClass(normalClass);
 
-			$slides.eq(slideNumber).fadeIn().siblings().fadeOut();
-			this.blur();
-			return false;
-		});
-
-		timer2 = setTimeout(function(){
-			$loader.fadeOut(function(){
-				$(this).remove();
+				$slides.eq(slideNumber).fadeIn().siblings().fadeOut();
+				this.blur();
+				return false;
 			});
-		}, 800);
 
-		$(window).load(function(){
-			$loader.fadeOut(function(){
-				clearTimeout(timer2);
-				$(this).remove();
-			});
-		});
+			nextLink = function(i) {
+				currentSlide = i;
+				$liens.eq(i).trigger('click');
+				timer = setTimeout(function(){
+					nextLink((i < (nbSlides-1) ? i+1 : 0));
+				}, timelapse);
+			}
 
-		nextLink = function(i) {
-			currentSlide = i;
-			$liens.eq(i).trigger('click');
-			timer = setTimeout(function(){
-				nextLink((i < (nbSlides-1) ? i+1 : 0));
-			}, timelapse);
+			nextLink(currentSlide);
+
 		}
-
-		nextLink(currentSlide);
 
 	});
 

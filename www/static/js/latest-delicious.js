@@ -1,5 +1,5 @@
 /* closure compiler compatible */
-(function(){
+(function(w){
 	var latest_delicious = function(links) {
 		var $delicious = $('#delicious_div'), html = '<div class="textContent">';
 		$.each(links, function(i, el) {
@@ -8,5 +8,5 @@
 		$delicious.html(html+'</div>');
 	};
 
-	window['latest_delicious'] = latest_delicious;
-})();
+	w['latest_delicious'] = latest_delicious;
+})(this);

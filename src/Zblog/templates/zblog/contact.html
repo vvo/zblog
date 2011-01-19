@@ -10,32 +10,38 @@
 <div class="relative fauxColumn fauxColumn2ColFirst240">
 	<div class="clearfix">
 		<div class="w240 floatLeft">
-			<div class="font20 lineHeight1 sansRounded caps classicTextShadow">écrivez-nous</div>
+			<h1 class="marg0t font20 lineHeight1 sansRounded caps classicTextShadow">intéressé ?</h1>
 		</div>
 		<div class="w480 floatLeft">
-				<div class="marg8pxb pad18pxlr">
-					<form id="contact" action="{url 'Zblog_Views::contact'}" method="post" class="pad8pxt font13 serif">
-						<input type="text" name="name" value="" class="serif marg8pxr classicInput w150 classicShadow" />
-						<input type="text" name="email" value="" class="serif marg8pxr classicInput w150 classicShadow" />
-						<input type="text" name="phone" value="" class="serif classicInput w90 classicShadow" />
-						<textarea name="message" style="width:432px;height:185px;" class="serif marg8pxt classicInput classicShadow"></textarea>
-						<input type="submit" class="classicButton font11 marg8pxt serif" value="Envoyer" />
-					</form>
-				</div>
+			<div class="marg8pxb pad18pxlr">
+				<form id="contact" action="{url 'Zblog_Views::contact'}" method="post" class="pad8pxt font13 serif">
+					<input type="text" name="name" value="" class="serif marg8pxr classicInput w150 classicShadow" />
+					<input type="text" name="email" value="" class="serif marg8pxr classicInput w150 classicShadow" />
+					<input type="text" name="phone" value="" class="serif classicInput w90 classicShadow" />
+					<div class="hide">
+						<div style="border:10px solid #000">
+							Si vous êtes un humain, ne remplissez pas ces champs
+							<input type="radio" name="human" value="yes" class="serif classicInput w90 classicShadow" />
+							<input type="radio" name="human" value="no" class="serif classicInput w90 classicShadow" />
+							<input type="text" name="email2" value=""  class="serif classicInput w90 classicShadow" />
+						</div>
+					</div>
+					<textarea name="message" style="width:432px;height:185px;" class="serif marg8pxt classicInput classicShadow"></textarea>
+					<input type="submit" class="classicButton font11 marg8pxt serif" value="Envoyer" />
+				</form>
+			</div>
 		</div>
 		{include 'zblog/inc/contact-right.html'}
 	</div>
 
 </div>
 
-{include 'zblog/inc/contact-coordonnees.html'}
-
 {/block}
 
 {block footer_scripts}
-<script type="text/javascript" defer>
+<script type="text/cjs" data-cjssrc="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/cjs">
 	{literal}
-	window.onload = function() {
 	(function() {
 		var defaultText = ["Nom/Prénom", "Adresse email", "[Téléphone]"];
 		var $inputs = $('input[type=text]');
@@ -62,10 +68,9 @@
 			}
 		});
 	})();
-	};
 	{/literal}
 </script>
-<script defer="defer" async="async" type="text/javascript" src="http://www.linkedin.com/js/public-profile/widget-os.js"></script>	
+<script defer async type="text/javascript" src="http://www.linkedin.com/js/public-profile/widget-os.js"></script>
 {/block}
 
 {block footer}

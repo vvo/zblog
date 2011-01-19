@@ -69,18 +69,8 @@ class Zblog_Post extends Pluf_Model {
 		}
 	}
 
-	static function urlize($string) {
-		$string = preg_replace("`\[.*\]`U","", $string);
-		$string = preg_replace('`&(amp;)?#?[a-z0-9]+;`i','-',$string);
-		$string = htmlentities($string, ENT_COMPAT, 'utf-8');
-		$string = preg_replace( "`&([a-z])(acute|uml|circ|grave|ring|cedil|slash|tilde|caron|lig|quot|rsquo);`i","\\1", $string );
-		$string = preg_replace( array("`[^a-z0-9]`i","`[-]+`") , "-", $string);
-		$string = strtolower(trim($string, '-'));
-		return $string;
-	}
-
 	public function getFriendlyUrl() {
-		$string = $this->urlize($this->title);
+		$string = urlize($this->title);
 		$url = Pluf_HTTP_URL_urlForView('blog_post', array($this->id, $string));
 		return $url;
 	}

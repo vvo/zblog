@@ -1,5 +1,5 @@
 /* closure compiler compatible */
-(function(){
+(function(w){
 	var twitterCallback2 = function(twitters) {
 		var statusHTML = [];
 		for (var i=0; i<twitters.length; i++){
@@ -21,5 +21,5 @@
 		document.getElementById('twitter_div').innerHTML = statusHTML.join('');
 	};
 
-	window['twitterCallback2'] = twitterCallback2;
-})();
+	w['twitterCallback2'] = twitterCallback2;
+})(this);

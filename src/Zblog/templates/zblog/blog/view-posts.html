@@ -9,7 +9,7 @@
 {if $posts && count($posts) > 0}
 				{foreach $posts as $key => $post}
 <article class="article block clearfix marg8pxb pad18pxb">
-	<div class="floatLeft w180">
+	<aside class="block floatLeft w180">
 		<time class="right block marg4pxb font18 lineHeight1 gray sansRounded"
 			  datetime="{$post.post_date|date:"%s"|time:DateTime::W3C}">{$post.post_date|date:"%d/%m/%Y"}</time>
 		<img src="{if $post.image !== ''} {mediaurl '/img/blog/posts/'~$post.image}{else}{mediaurl '/img/blog/posts/default_v2.jpg'}{/if}"
@@ -17,14 +17,16 @@
 		<div class="tags lineHeight1 pad2pxb textContent">
 			{tags $post.tags}
 		</div>
-	</div>
+	</aside>
 	<div class="w600 floatLeft">
 		<div class="pad18pxl">
-			<h1 class="novisited pad4pxb marg4pxb lineHeight1 classicBorderBottom marg90r marg0t">
-				{comments_permalink $post}
-				<a href="{$post.getFriendlyUrl()}"
-				   title="Voir le billet {$post.title}" class="font18">{$post.title}</a>
-			</h1>
+			<header>
+				<h1 class="novisited pad4pxb marg4pxb lineHeight1 classicBorderBottom marg90r marg0t">
+					{comments_permalink $post}
+					<a href="{$post.getFriendlyUrl()}"
+					   title="Voir le billet {$post.title}" class="font18">{$post.title}</a>
+				</h1>
+			</header>
 			<div class="pad18pxr textContent">
 				{$post.summary|markdown|safe}
 			</div>

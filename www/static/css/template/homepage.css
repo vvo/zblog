@@ -5,15 +5,6 @@
     Description:
        css of the homepage
 */
-
-#homepage ul li {
-	margin-bottom: 4px;
-}
-
-.base2 #homepage li {
-	margin-bottom:0;
-}
-
 #mainContent {
 	margin-top:181px;
 }
@@ -26,13 +17,7 @@
 /**
 Slider styling
 */
-.base.borderimage #slider {
-	margin-bottom:-4px;
-	position:relative;
-	z-index:10;
-}
-
-.base2 #slider {
+#slider {
 	position:absolute;
 	top:-181px;
 	width:960px;
@@ -40,18 +25,20 @@ Slider styling
 
 #sliderMenu {
 	position:absolute;
-	bottom:2px;
-	left:2px;
+	bottom:-10px;
+	left:5px;
 }
 
 #sliderMenu a {
+	padding:1px;
+	background:#e6e6e6;
+	color:#000;
 	display:inline-block;
 	text-align: center;
 	border:none;
 	width:18px;
 	height:18px;
 	line-height:18px;
-	background:#000;
 	margin:1px;
 	box-shadow:0 0 3px #000;
 	-moz-box-shadow:0 0 3px #000;
@@ -82,23 +69,8 @@ Slider styling
 }
 
 .sliderLink {
-	background-position: bottom left;
 	background-repeat: no-repeat;
-}
-
-.base2 .sliderLink {
 	background-position: left 120%;
-}
-
-.base2 #sliderMenu {
-	bottom:-10px;
-	left:5px;
-}
-
-.base2 #sliderMenu a {
-	padding:1px;
-	background:#e6e6e6;
-	color:#000;
 }
 
 #slides .wrapper > div:nth-child(1) .sliderLink {

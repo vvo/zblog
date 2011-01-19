@@ -1,22 +1,6 @@
 {extends 'zblog/base.html'}
 
 {block header_scripts}
-{if $cfg_debug !== true && $cfg_is_beta !== true}
-{literal}
-<!-- Google Website Optimizer Tracking Script -->
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['gwo._setAccount', 'UA-12667483-4']);
-  _gaq.push(['gwo._trackPageview', '/3897756227/goal']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-<!-- End of Google Website Optimizer Tracking Script -->
-{/literal}
-{/if}
 {include 'zblog/webfonts.html'}
 {/block}
 
@@ -25,55 +9,55 @@
 {block body}
 <div class="clearfix fauxColumn fauxColumn2ColFirst240">
 	<div class="w240 floatLeft lineHeight1">
-		<div class="font20 sansRounded caps">prestations</div>
-		<div class="font20 gray sansRounded caps">comment pouvons nous vous aider ?</div>
-		<a href="{url 'contact'}" title="Contactez-nous pour optimiser votre site internet"	class="inlineBlock classicButton marg18pxt font11">Demandez un devis gratuit</a>
+		<h1 class="marg0 font20 sansRounded caps">services en performance web</h1>
+		<div class="font20 gray sansRounded caps">travaillons ensemble</div>
 	</div>
 	<div class="w720 floatLeft">
 		<div class="pad18pxl">
-			<div class="classicBorderBottom marg18pxb">
-				<img src="{mediaurl '/img/prestations/splash_v2.jpg'}" class="classicImgBorder" />
-				<h1 class="font22 marg0tb lineHeight1">la performance de votre site internet impacte votre business
-					<span class="gray">revenus publicitaires, transformations, expérience utilisateur, bande passante ...</span></h1>
+			<div class="classicBorderBottom marg18pxb pad8pxb">
+				<h2 class="font30 marg0tb lineHeight1">la performance web de vos pages <br/>impacte votre busine$$</h2>
 			</div>
 		</div>
 
-		<div class="clearfix center serif">
+		<div class="clearfix center serif font15">
 			<div class="floatLeft w180">
 				<div class="pad18pxlr classicBorderRight">
 					<img src="{mediaurl '/img/prestations/1_v2.png'}" />
-					<p class="marg0b">Le temps de chargement de vos pages augmente constamment ?</p>
+					<p class="marg8pxt marg0b">Le temps de chargement de vos pages augmente constamment ?</p>
 				</div>
 			</div>
 			<div class="floatLeft w180">
 				<div class="classicBorderRight pad18pxlr">
 					<img src="{mediaurl '/img/prestations/2_v2.png'}" />
-					<p class="marg0b">Tout semble pourtant bien configuré sur vos serveurs !</p>
+					<p class="marg8pxt marg0b">Tout semble pourtant bien configuré sur vos serveurs !</p>
 				</div>
 			</div>
 			<div class="floatLeft w180">
 				<div class="classicBorderRight pad18pxlr">
 					<img src="{mediaurl '/img/prestations/3_v2.png'}" />
-					<p class="marg0b">Vous souhaitez savoir pourquoi votre site est lent et comment y remédier.</p>
+					<p class="marg8pxt marg0b">Vous souhaitez savoir pourquoi votre site est lent et comment y remédier.</p>
 				</div>
 			</div>
 			<div>
 				<div class="pad18pxr">
 					<img src="{mediaurl '/img/prestations/4_v2.png'}" />
-					<p class="marg0b">Nous pouvons auditer, analyser et optimiser votre site web.</p>
+					<p class="marg8pxt marg0b">Nous pouvons auditer, analyser et optimiser votre site web ... <a href="{url 'contact'}" title="Contactez-moi pour optimiser votre site internet"
+		   class="inlineBlock classicButton font11">... maintenant</a></p>
 				</div>
 			</div>
 		</div>
 
-		<div class="classicBorderTop pad18pxt marg18pxt marg18pxl"></div>
+		<div class="classicBorderTop pad18pxt marg18pxt marg18pxl">
+			<img src="{mediaurl '/img/prestations/splash_v2.jpg'}" class="classicImgBorder" />
+		</div>
 
-		<div class="clearfix">
+		<div class="clearfix marg18pxt">
 			<div class="floatLeft w360">
 				<div class="pad18pxl">
 					<div class="pad18pxlr">
 						<h1 class="font20 marg0tb lineHeight1">Audit & Analyse
 							<br/><span class="gray">Pourquoi votre site est-il lent ?</span></h1>
-						<ul class="marg0p5em">
+						<ul class="marg0p5em arrowList font14">
 							<li>Nous évaluons la performance de votre site par rapport à vos concurrents selon la connexion des internautes</li>
 							<li>Plus qu'un test automatisé notre audit vous permettra d'obtenir une liste d'optimisations classées par ordre d'importance</li>
 							<li>Chaque optimisation est accompagnée d'un fichier test qui représente votre future page optimisée</li>
@@ -86,7 +70,7 @@
 				<div class="classicBorderLeft pad18pxl">
 					<h1 class="font20 marg0tb lineHeight1">Optimisation & développement
 						<br/><span class="gray">Accélerez votre site, maintenant !</span></h1>
-					<ul class="marg0p5em">
+					<ul class="marg0p5em arrowList font14">
 						<li>Selon la complexité de votre projet et vos besoins, nous pouvons installer des solutions clés en main ou bien
 							réaliser des développements spécifiques.</li>
 						<li>Nous vous aidons dans le développement et la mise en place d'optimisations pour votre site web :
@@ -109,21 +93,8 @@
 		</div>
 
 		<div class="classicBorderTop pad8pxtb marg8pxt marg18pxl">
-			<a href="{url 'contact'}" title="Contactez-nous si vous souhaitez accélerer votre site web" class="classicButton font11">Demandez un devis gratuit</a>
-		</div>
-	</div>
-</div>
-<div class="marg18pxt classicBorderTop pad18pxt clearfix sansRounded caps">
-	<div class="w240 floatLeft">
-		<span class="font20">derniers clients</span>
-	</div>
-	<div class="w720 floatLeft">
-		<div class="classicBorderLeft pad18pxl">
-			<ul class="resetList font13">
-				<li>ma-bimbo.com <span class="gray">réduction de 44% de la bande passante</span></li>
-				<li>mappy.com <span class="gray">optimiser un portail grand public</span></li>
-				<li>footmercato.net <span class="gray">audit complet d'un site web 100% foot</span></li>
-			</ul>
+			<a href="{url 'contact'}" title="Contactez-moi pour optimiser votre site internet"
+		   class="inlineBlock classicButton font14">contacter zeroload</a>
 		</div>
 	</div>
 </div>

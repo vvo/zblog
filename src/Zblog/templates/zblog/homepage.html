@@ -1,190 +1,117 @@
 {extends 'zblog/base.html'}
 
 {block header_scripts}
-{if $cfg_debug !== true && $cfg_is_beta !== true}
-{literal}
-<!-- Google Website Optimizer Control Script -->
-<script>
-function utmx_section(){}function utmx(){}
-(function(){var k='3897756227',d=document,l=d.location,c=d.cookie;function f(n){
-if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.indexOf(';',i);return escape(c.substring(i+n.
-length+1,j<0?c.length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;
-d.write('<sc'+'ript src="'+
-'http'+(l.protocol=='https:'?'s://ssl':'://www')+'.google-analytics.com'
-+'/siteopt.js?v=1&utmxkey='+k+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='
-+new Date().valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"></sc'+'ript>')})();
-</script><script>utmx("url",'A/B');</script>
-<!-- End of Google Website Optimizer Control Script -->
-<!-- Google Website Optimizer Tracking Script -->
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['gwo._setAccount', 'UA-12667483-4']);
-  _gaq.push(['gwo._trackPageview', '/3897756227/test']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-<!-- End of Google Website Optimizer Tracking Script -->
-{/literal}
-{/if}
-<meta name="description" content="Maîtrisez la performance web. Votre site tourne au ralenti ? Optimisez le temps de chargement de vos pages avec nos solutions." />
+<meta name="description" content="Audit et conseil en performance web. Refonte de vos applications html/css/javascript. Accélération de l'affichage des pages web." />
 {/block}
 
 {block beforeContent}{include 'zblog/inc/freetest.html'}{/block}
 
 {block body}
-<div id="homepage">
-	<div id="slider" class="sansRounded relative h185">
-		<div id="slides" class="lineHeight1">
-
-			<div class="loader h185 absolute posTop posLeft bgDarkGray w630 z5"></div>
-
-			<div class="wrapper">
-				<div id="slide1" class="h185 absolute posTop posLeft w960">
-					<img src="{mediaurl '/img/homepage/slide-mappy.jpg'}" width="630" height="185"
-						 alt="Photo de l'intérieur d'un tunnel" />
-
-					<div class="w330 absolute posTop posRight">
-						<div class="sliderLink h185 pad8pxl caps">
-							<div class="font16 pad4pxt classicTextShadow">affichage progressif et start render</div>
-							<div class="font24 classicTextShadow">méthodes d'accélération</div>
-							<a href="{url 'blog_post', rawurlencode(strtolower('Mappy.com : un start render divisé par deux'))}"
-							   title="Comment j'ai optimisé le temps de chargement des pages sur Mappy.com"
-							   class="font12 inlineBlock classicButton serif floatRight">cliquez pour lire l'article</a>
-						</div>
-					</div>
-
-					<a href="http://www.flickr.com/photos/themonnie/2495892146"
-					   class="block absolute posLeft serif font10 gray" target="_blank">
-					photo : http://www.flickr.com/photos/themonnie/2495892146
-					</a>
-				</div>
-
-				<div id="slide2" class="h185 hide absolute posTop posLeft w960">
-					<img src="{mediaurl '/img/homepage/slide-pourquoi-optimiser.jpg'}" width="630" height="185"
-						 alt="Photo à l'intérieur d'une voiture" />
-					<div class="w330 absolute posTop posRight">
-						<div class="sliderLink h185 pad8pxl caps">
-							<div class="font28 pad4pxt classicTextShadow">pourquoi optimiser ?</div>
-
-							<div class="font25 classicTextShadow">le temps de chargement</div>
-							<a href="{url 'blog_post', rawurlencode(strtolower('pourquoi optimiser le temps de chargement de vos pages'))}"
-							   class="font12 inlineBlock classicButton serif floatRight" title="Optimiser le temps de chargement, quelle utilité ?">cliquez pour lire l'article</a>
-						</div>
-					</div>
-					<a href="http://www.flickr.com/photos/viernest/3380560365"
-					   class="block absolute posLeft serif font10 gray" target="_blank">
-					photo : http://www.flickr.com/photos/viernest/3380560365
-					</a>
-				</div>
-
-				<div id="slide3" class="h185 hide absolute posTop posLeft w960">
-					<img src="{mediaurl '/img/homepage/slide-prestations.jpg'}" width="630" height="185"
-						 alt="Photo d'avions cascadeurs" />
-					<div class="w330 absolute posTop posRight">
-						<div class="sliderLink h185 pad8pxl caps">
-							<div class="font22 pad4pxt classicTextShadow">accélérer votre site web :</div>
-							<div class="font39 classicTextShadow">nos solutions</div>
-							<a href="{url 'services'}"
-							   title="Optimisez le temps de chargement de votre site web, maintenant !"
-							   class="font12 inlineBlock classicButton serif floatRight">cliquez pour plus d'informations</a>
-
-						</div>
-					</div>
-					<a href="http://www.flickr.com/photos/damo1977/3684814319"
-					   class="block absolute posLeft serif font10 gray" target="_blank">
-					photo : http://www.flickr.com/photos/damo1977/3684814319
-					</a>
-				</div>
-
-			</div>
-		</div>
-
-		<div id="sliderMenu" class="absolute font12">
-			<a href="#slide1">1</a>
-			<a href="#slide2" class="yellow">2</a>
-			<a href="#slide3" class="yellow">3</a>
-		</div>
-	</div>
-
-	<div class="pad18pxt classicBorderTop clearfix">
-
+<div id="homepage" class="relative">
+	<div id="mainContent" class="classicBorderTop pad18pxt">
 		<div class="w300 floatLeft">
 			<div class="pad18pxr">
-				<h1 class="font18 marg0 pad4pxb">Votre site est lent ?</h1>
-				<ul class="arrowList marg0 marg1eml lineHeight16px textContent">
-					<li>Votre page d'accueil <strong>rame</strong>.</li>
-					<li>Certaines zones de votre site mettent entre 5 & 10 secondes (ou plus) à charger.</li>
+				<h1 class="font20 marg0 pad8pxb">La performance web</h1>
+				<p class="font14">Zeroload est l'entreprise de conseil de <em>Vincent Voyer</em>, consultant web <strong>spécialisé en performance web et optimisation front-end</strong>.</p>
 
-					<li>Vos clients <strong>se plaignent</strong> de l'instabilité de votre site.</li>
-					<li>Les éléments (scripts, feuilles de styles, images ...) sont trop nombreux et trop lourds.</li>
-					<li>Plusieurs régions du site restent souvent ignorées par les visiteurs.</li>
-				</ul>
+				<p class="font14">Vous souhaitez optimiser votre site web et améliorer ses performances ? Spécialiste des langages du web, je peux vous
+					conseiller et vous guider dans vos développements.</p>
 			</div>
 		</div>
-
 		<div class="w300 floatLeft">
-			<div class="classicBorderLeft pad18pxl">
-				<h1 class="marg0 font18 pad4pxb">Nous l'optimisons ! ...</h1>
-				<ul class="arrowList marg0 marg1eml lineHeight16px textContent">
-					<li>Nous pouvons <strong>optimiser le temps de chargement</strong> de vos pages...</li>
-					<li>...tout en réduisant la charge de vos serveurs et la bande passante utilisée.</li>
+			<div class="classicBorderLeft pad18pxl pad8pxr">
+				<h2 class="marg0 font20 pad8pxb">audit et développement</h2>
 
-					<li class="shadowLinks">Découvrez <a href="{url 'services'}" title="Nos services pour optimiser le temps de chargement">nos services</a> :</li>
-					<li>Nous vous <strong>conseillons</strong> dans l'optimisation de votre site et <strong>installons</strong> les
-				solutions adéquates.</li>
-					<li>Gzip, cache, bande passante, minification, agrégation, optimisation d'images, affichage et rendu progressif...</li>
+				<p class="font14">Le but d'un <strong>audit de la performance web</strong> est de vous donner les éléments clés pour optimiser
+					votre site.</p>
 
-				</ul>
+				<p class="font14">Mon expérience des sites web à fort trafic me permet de vous proposer des solutions efficaces
+					pour <strong>optimiser vos fichiers html, css & javascript</strong>.</p>
 			</div>
 		</div>
 		<div class="w360 floatLeft">
-			<div class="classicBorderLeft pad18pxl">
-				<h1 class="marg0 font18 pad4pxb">...afin d'augmenter vos revenus.</h1>
-				<ul class="arrowList marg0 marg1eml lineHeight16px textContent">
-					<li>La rapidité de votre site web impactera le nombre de ventes (ou de transformations) que vous réaliserez.</li>
+			<div class="classicBorderLeft pad18pxl relative" id ="minireferences">
+				<h2 class="marg0 font20 pad8pxb">Paroles de clients</h2>
 
-					<li>Exemple : la page d'accueil de firefox : <strong>2s en moins = 60 millions de téléchargements en +</strong> <a href="http://blog.mozilla.com/metrics/2010/04/05/firefox-page-load-speed-%E2%80%93-part-ii/" title="Lien vers le billet officiel de Mozilla">chaque année</a>.</li>
-					<li>Le temps de chargement influe aussi désormais légèrement sur <a href="http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html" title="Lien vers l'article officiel de google">votre positionnement dans Google</a>.</li>
-					<li class="shadowLinks"><a href="{url 'contact'}">Contactez-nous</a> pour plus d'informations !</li>
+				<nav title="navigation des mini citations clients" class="block clearfix marg12pxb">
+					<div href="#lequipefrB" id="lequipefr" class="minilogoRef active" title="Audit performance web de lequipe.fr"></div>
+					<div href="#mappycomB" id="mappycom" class="minilogoRef" title="Développement optimisations front-end pour mappy.com"></div>
+					<div href="#beemoovcomB" id="beemoovcom" class="minilogoRef" title="Développement solution optimisation d'images pour ma-bimbo.com"></div>
+					<div href="#footmercatonetB" id="footmercatonet" class="minilogoRef" title="Audit performance web et développement optimisation front-end pour footmercato.net"></div>
+				</nav>
 
-				</ul>
+				<section>
+					<blockquote cite="{url 'references'}#ref-lequipefr" class="textContent" id="lequipefrB">
+						<p>à venir</p>
+						<a href="{url 'references'}#ref-lequipefr" title="suite de la référence">[...]</a></p>
+						<p class="auteurCite font10 italic">François Boury, directeur technique,
+							<a href="http://www.lequipe.fr" title="Site web de lequipe.fr">Lequipe.fr</a></p>
+						<div class="minirefArrow"></div>
+					</blockquote>
+
+					<blockquote cite="{url 'references'}#ref-mappycom" class="hide textContent" id="mappycomB">
+						<p>Vincent est un <strong>expert en développement web en général</strong>, en javascript
+							et optimisation des performances en particulier.</p>
+						<p>Il maîtrise les outils permettant de mesurer les temps d'affichage des pages ainsi que
+							les <strong>techniques d'optimisation de ces temps</strong>.
+						<a href="{url 'references'}#ref-mappycom" title="suite de la référence">[...]</a></p>
+						<p class="auteurCite font10 italic">Guillaume Pungeot, manager,
+							<a href="http://www.mappy.com" title="Site web optimisé de mappy">Mappy</a></p>
+						<div class="minirefArrow"></div>
+					</blockquote>
+
+					<blockquote cite="{url 'references'}#ref-beemoovcom" class="hide textContent" id="beemoovcomB">
+						<p>Vincent a développé pour l'un de nos jeux, un système automatisé d'<strong>optimisation d'images</strong>.</p>
+						<p>Depuis, le poids des pages a baissé d'environ 40% en moyenne. C'est un excellent résultat
+							<b>auquel on ne s'attendait pas</b>.
+						<a href="{url 'references'}#ref-beemoovcom" title="suite de la référence">[...]</a></p>
+						<p class="auteurCite font10 italic">Benoit Guihard, gérant,
+							<a href="http://www.ma-bimbo.com" title="Bande passante divisée par 2 sur ma-bimbo.com">Ma-bimbo</a></p>
+						<div class="minirefArrow"></div>
+					</blockquote>
+
+					<blockquote cite="{url 'references'}#ref-footmercatonet" class="hide textContent" id="footmercatonetB">
+						<p>Vincent nous a proposé des optimisations et s'est chargé de <b>les réaliser</b>.</p>
+						<p>Force est de constater que l'affichage des pages du site <b>n'a jamais été aussi rapide</b>.
+						<a href="{url 'references'}#ref-footmercatonet" title="suite de la référence">[...]</a></p>
+						<p class="auteurCite font10 italic">Pierre-Marie Papineschi, responsable projet,
+							<a href="http://www.footmercato.net" title="Site web de Footmercato optimisé par Zeroload">Footmercato</a></p>
+						<div class="minirefArrow"></div>
+					</blockquote>
+				</section>
 			</div>
 		</div>
 	</div>
+
+
 	{/block}
 
 	{block footer}
 	<div>
 		<a class="block"
-		   href="{url 'blog_post', rawurlencode(strtolower('Mappy.com : un start render divisé par deux'))}"
-		   title="Découvrez comment nous avons optimisé la performance web de Mappy">
+		   href="{url 'blog_post', array(urlize('Mappy.com : un start render divisé par deux'), 6)}"
+		   title="Découvrez comment j'ai optimisé la performance web de Mappy">
 			<div class="floatLeft w240" id="imgAudit">
 				<img src="{mediaurl '/img/homepage/audit-mappy_v2.png'}" />
-
 			</div>
 			<div class="floatLeft w360">
 				<div class="pad18pxl">
 
 					<div class="font15 sansRounded caps block lineHeight1">étude de cas : Mappy.com</div>
-					<div class="font13">Résumé de nos optimisations</div>
+					<div class="font13">diminution du start render</div>
 
 				</div>
 			</div>
-
 		</a>
 	</div>
-	<div class="font11 caps sansRounded">
+	<div class="font12 caps sansRounded">
 	{include 'zblog/inc/footer-right.html'}
 	</div>
-
-	<div class="clearLeft textContent"><a href="http://www.freelance-info.fr/" target="_blank">Emploi Freelance</a></div>
 </div>
 {/block}
 
 {block footer_scripts}
+<script type="text/cjs" data-cjssrc="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+{jsbooster "static/js/slider.js,static/js/miniref.js", array("cjs" => TRUE, "defer" => TRUE)}
 {include 'zblog/webfonts.html'}
 {/block}

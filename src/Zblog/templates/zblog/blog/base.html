@@ -49,21 +49,27 @@
 http://www.pluf.org/doc/template.html#link12*}
 
 {block footer_scripts}
-{jsbooster "static/js/latest-tweets.js,static/js/latest-delicious.js"}
-<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/zeroload.json?callback=twitterCallback2&amp;count=5" defer></script>
-<script type="text/javascript" src="http://feeds.delicious.com/v2/json/wouaren?count=5&callback=latest_delicious" defer></script>
-<script type="text/javascript" defer>
+<script type="text/cjs" data-cjssrc="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+{jsbooster "static/js/latest-delicious.js", array("cjs" => TRUE, "defer" => TRUE)}
+<script>
+	{literal}
+(function(h){h.twitterCallback2=function(b){for(var e=[],a=0;a<b.length;a++){var i=b[a].user.screen_name,f=b[a].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g,function(c){return'<a href="'+c+'">'+c+"</a>"}).replace(/\B@([_a-z0-9]+)/ig,function(c){return c.charAt(0)+'<a href="http://twitter.com/'+c.substring(1)+'">'+c.substring(1)+"</a>"}),d=new Date(b[a].created_at),g=d.getDate();d=d.getMonth();e.push('<div><a class="font12 gray sansRounded" href="http://twitter.com/'+ i+"/statuses/"+b[a].id+'">'+(g<10?"0"+g:g)+"/"+(d<9?"0"+(d+1):d+1)+'</a> <span class="textContent">'+f+"</span></div>");a<b.length-1&&e.push('<div class="classicBorderTop pad8pxt marg8pxt"></div>')}document.getElementById("twitter_div").innerHTML=e.join("")};h.latest_delicious=function(b){var e=$("#delicious_div"),a='<div class="textContent">';$.b(b,function(i,f){a+='<div class="classicBorderBottom pad4pxt pad8pxb"><a href="'+f.d+'">'+f.a+"</a></div>"});e.c(a+"</div>")}})(this);
+{/literal}
+</script>
+<script defer async src="http://twitter.com/statuses/user_timeline/zeroload.json?callback=twitterCallback2&count=5"></script>
+<script type="text/cjs" data-cjssrc="http://feeds.delicious.com/v2/json/wouaren?count=5&callback=latest_delicious"></script>
+<script type="text/cjs">
 	{if $cfg_debug === true || $cfg_is_beta === true}
 	var disqus_developer = 1;
 	{/if}
 
 	{literal}
 
-	var disqus_shortname = 'zeroload'; // Put your website's shortname here
+	var disqus_shortname = 'zeroload';
     (function () {
 		var s = document.createElement('script'); s.async = true; s.defer = true;
 		s.type = 'text/javascript';
-		s.src = 'http://disqus.com/forums/' + disqus_shortname + '/count.js'; // And here
+		s.src = 'http://disqus.com/forums/' + disqus_shortname + '/count.js';
 		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>

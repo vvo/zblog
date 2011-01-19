@@ -26,6 +26,7 @@ Text
 .lineHeight1 {line-height: 1}
 .lineHeight1p1 {line-height: 1.1}
 .lineHeight1p2 {line-height: 1.2}
+.lineHeight1p4 {line-height: 1.4}
 .lineHeight1p5 {line-height: 1.5}
 .lineHeight2 {line-height: 2}
 .lineHeight21px {line-height: 21px}
@@ -207,6 +208,7 @@ Paddings
 .pad4pxtb {padding-top:4px;padding-bottom:4px}
 .pad4pxl {padding-left:4px}
 .pad4pxlr {padding-left:4px;padding-right:4px}
+.pad4pxr {padding-right:4px}
 .pad15pxl {padding-left:15px}
 .pad15pxt {padding-top:15px}
 .pad90r {padding-right:90px}

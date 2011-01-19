@@ -28,6 +28,22 @@ class Zblog_Tag extends Pluf_Model {
 		$this->_a['views'] = array();
 	}
 
+	public function getFriendlyUrl($more_params=array()) {
+		$string = urlize($this->name);
+		$base_params = array($this->id, $string);
+		$params = array_merge($base_params, $more_params);
+//		echo "</div></div></div></div></div>";
+//		var_dump($params);
+//		exit;
+		if(count($params) === 3) {
+			$url = 'blog_tag_page';
+		} else {
+			$url = 'blog_tag';
+		}
+		$url = Pluf_HTTP_URL_urlForView($url, $params);
+		return $url;
+	}
+
 	function __toString() {
 		return $this->name;
 	}

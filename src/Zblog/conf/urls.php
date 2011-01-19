@@ -8,15 +8,8 @@ $ctl[] = array('regex' => '#^/$#',
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Views',
 	'name' => 'homepage',
-	'method' => 'main');
-
-// A/B testing new page
-$ctl[] = array('regex' => '#^/2$#',
-	'base' => Pluf::f('zblog_base'),
-	'model' => 'Zblog_Views',
-	'name' => 'homepage2',
 	'minifyHTML' => true,
-	'method' => 'main2');
+	'method' => 'main');
 
 $ctl[] = array('regex' => '#^/slider$#',
 	'base' => Pluf::f('zblog_base'),
@@ -34,8 +27,8 @@ $ctl[] = array('regex' => '#^/services/$#',
 $ctl[] = array('regex' => '#^/références/$#',
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Views',
-	'name' => 'about',
-	'method' => 'about');
+	'name' => 'references',
+	'method' => 'references');
 
 $ctl[] = array('regex' => '#^/contact/$#',
 	'base' => Pluf::f('zblog_base'),
@@ -51,6 +44,7 @@ $ctl[] = array('regex' => '#^/contact/sent/$#',
 $ctl[] = array('regex' => '#^/blog/$#',
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
+//	'minifyHTML' => true,
 	'name' => 'blog_homepage',
 	'method' => 'blog');
 
@@ -61,7 +55,14 @@ $ctl[] = array('regex' => '#^/blog/feed.xml$#',
 	'name' => 'blog_feed',
 	'method' => 'atom_feed');
 
-$ctl[] = array('regex' => '#^/blog/tag/(.+)/$#',
+// nouveau tag/page + spécifique = plus en haut dans la priorité
+$ctl[] = array('regex' => '#^/blog/tag/(\d+)/(.+)/page/(\d+)/$#',
+	'base' => Pluf::f('zblog_base'),
+	'model' => 'Zblog_Blog',
+	'name' => 'blog_tag_page',
+	'method' => 'view_by_tag');
+
+$ctl[] = array('regex' => '#^/blog/tag/(\d+)/(.+)/$#',
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
 	'name' => 'blog_tag',
@@ -70,8 +71,14 @@ $ctl[] = array('regex' => '#^/blog/tag/(.+)/$#',
 $ctl[] = array('regex' => '#^/blog/tag/(.+)/page/(\d+)/$#',
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
-	'name' => 'blog_tag_page',
-	'method' => 'view_by_tag');
+	'name' => 'blog_tag_page_old',
+	'method' => 'view_by_tag_page_old');
+
+$ctl[] = array('regex' => '#^/blog/tag/(.+)/$#',
+	'base' => Pluf::f('zblog_base'),
+	'model' => 'Zblog_Blog',
+	'name' => 'blog_tag_old',
+	'method' => 'view_by_tag_old');
 
 $ctl[] = array('regex' => '#^/blog/page/(\d+)$#',
 	'base' => Pluf::f('zblog_base'),

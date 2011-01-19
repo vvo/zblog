@@ -2,75 +2,85 @@
 
 {block leftCol}
 
-<div class="clearfix">
-	<div class="clearfix relative classicBorderBottom floatLeft w560 h70">
-		<time class="w140 floatLeft block font18 lineHeight1 gray sansRounded"
-			  datetime="{$post.post_date|date:"%s"|time:DateTime::W3C}">
-			{$post.post_date|date:"%d/%m/%Y"}
-		</time>
-		<div class="floatLeft w420">
-			<h1 class="marg0 lineHeight1">
-				{comments_permalink $post}
-				<span class="font18 marg18pxr">{$post.title}</span>
-			</h1>
-			<div class="tags pad2pxb lineHeight1 textContent absolute posBottom">
-				{tags $post.tags}
-			</div>
-		</div>
-	</div>
-	<div class="w220 floatLeft">
-		<div class="w180 centerBlock">
-			<div class="classicImgBorder h70 oHidden">
-				<img src="{if $post.image !== ''} {mediaurl '/img/blog/posts/'~$post.image}{else}{mediaurl '/img/blog/posts/default_v2.jpg'}{/if}" />
-			</div>
-		</div>
-	</div>
-
-</div>
-
-<div class="marg8pxt pad18pxr textContent shadowLinks" id="article_content">
-	{$post.content|markdown|safe}
-</div>
-
-{include 'zblog/blog/back-next-links.html'}
-
-<div class="classicBorderTop pad8pxt" id="comments">
-	<div class="fauxColumn fauxColumn2ColFirst180">
-
-		<div class="clearfix">
-			<div class="w180 floatLeft"><div class="pad8pxr breakwords">
-					<h1 class="marg0 lineHeight1"><span class="font18">Réactions</span>
-					{comments_permalink $post}</h1>
+<article>
+	<div class="clearfix">
+		<div class="clearfix relative classicBorderBottom floatLeft w560 h70">
+			<aside>
+			<time class="w140 floatLeft block font18 lineHeight1 gray sansRounded"
+				  datetime="{$post.post_date|date:"%s"|time:DateTime::W3C}">
+				{$post.post_date|date:"%d/%m/%Y"}
+			</time>
+			</aside>
+			<div class="floatLeft w420">
+				<header>
+					<h1 class="marg0 lineHeight1">
+						{comments_permalink $post}
+						<span class="font18 marg18pxr">{$post.title}</span>
+					</h1>
+				</header>
+				<aside>
+				<div class="tags pad2pxb lineHeight1 textContent absolute posBottom">
+					{tags $post.tags}
 				</div>
+				</aside>
 			</div>
-			<div class="w600 floatLeft">
-				<div class="pad18pxlr textContent">
-					<div id="disqus_thread"></div>
-					
-					<script type="text/javascript" defer>
-
-						var disqus_identifier = '{$post.getDisqusId()}';
-						{if $cfg_debug === true || $cfg_is_beta === true}
-							var disqus_developer = 1;
-						{else}
-							var disqus_url = "http://zeroload.net{$post.getFriendlyUrl()}";
-						{/if}
-
-						{literal}
-						(function() {
-							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.defer = true;
-							dsq.src = 'http://zeroload.disqus.com/embed.js';
-							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-						})();
-					</script>
-
-					<noscript>Les commentaires sont visibles uniquement avec javascript activé, bienvenue dans une nouvelle ère ! :(</noscript>
-					{/literal}
+		</div>
+		<div class="w220 floatLeft">
+			<div class="w180 centerBlock">
+				<div class="classicImgBorder h70 oHidden">
+					<img src="{if $post.image !== ''} {mediaurl '/img/blog/posts/'~$post.image}{else}{mediaurl '/img/blog/posts/default_v2.jpg'}{/if}" />
 				</div>
 			</div>
 		</div>
 
 	</div>
-</div>
+
+	<div class="marg8pxt pad18pxr textContent shadowLinks" id="article_content">
+		{$post.content|markdown|safe}
+	</div>
+
+	{include 'zblog/blog/back-next-links.html'}
+
+	<aside>
+	<div class="classicBorderTop pad8pxt" id="comments">
+		<div class="fauxColumn fauxColumn2ColFirst180">
+
+			<div class="clearfix">
+				<div class="w180 floatLeft"><div class="pad8pxr breakwords">
+						<div class="marg0 lineHeight1"><span class="font18">Réactions</span>
+						{comments_permalink $post}</div>
+					</div>
+				</div>
+				<div class="w600 floatLeft">
+					<div class="pad18pxlr textContent">
+						<div id="disqus_thread"></div>
+
+						<script type="text/javascript" defer>
+
+							var disqus_identifier = '{$post.getDisqusId()}';
+							{if $cfg_debug === true || $cfg_is_beta === true}
+								var disqus_developer = 1;
+							{else}
+								var disqus_url = "http://zeroload.net{$post.getFriendlyUrl()}";
+							{/if}
+
+							{literal}
+							(function() {
+								var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.defer = true;
+								dsq.src = 'http://zeroload.disqus.com/embed.js';
+								(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+							})();
+						</script>
+
+						<noscript>Les commentaires sont visibles uniquement avec javascript activé, bienvenue dans une nouvelle ère ! :(</noscript>
+						{/literal}
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</aside>
+</article>
 
 {/block}
