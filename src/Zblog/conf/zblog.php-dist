@@ -39,6 +39,8 @@ $cfg['db_table_prefix'] = '';
 $cfg['db_version'] = '';
 $cfg['db_engine'] = 'MySQL';
 
+$cfg['admin_password'] = 'whatyawant';
+
 
 // i use disqus for the comments, you must specify a unique name
 //$cfg['disqus_prefix'] = 'ZL-COMMENTS-PROD-';
