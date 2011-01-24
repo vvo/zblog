@@ -11,24 +11,6 @@ class Zblog_Blog {
 
 	private $nb_posts_per_page = 5;
 
-//	private $disqus_api_key = 'oygAMeE83ouctpsnBkQS7cvZXNRPtPPFxp1WdIQHCe1rjCj3obPD4YhcZSNpQsJE';
-//	private $disqus_forum = 376164; // id of the zeroload website in disqus
-
-	// from disqus website, can count on multiple threads at a time, try it !!
-//	public function get_comment_count($post) {
-//		$disqus = new Zblog_Disqus($this->disqus_api_key);
-//		$disqus->setForumKey($this->disqus_forum);
-//		$disqus->setThreadByIdentifier('BLOGPOSTDEV-'.$post->id, $post->title);
-//		return $disqus->getNumPosts();
-//	}
-
-//	public function get_comments($post) {
-//		$disqus = new Zblog_Disqus($this->disqus_api_key);
-//		$disqus->setForumKey($this->disqus_forum);
-//		$disqus->setThreadByIdentifier('BLOGPOSTDEV-'.$post->id, $post->title);
-//		return 	$disqus->getPosts();
-//	}
-
 	public function view_post_old($request, $match) {
 		$db = Pluf::db();
 
@@ -50,10 +32,6 @@ class Zblog_Blog {
 
 		$post = Pluf::factory('Zblog_Post')
 				->getOne(array('filter' => array('draft=0', 'id='.(int)$match[1])));
-
-//		echo Zblog_Post::urlize($post->title);
-//		echo $match[2];
-//		exit;
 
 		// no post or url has upper characters and we do not want this
 		if ($post === null || urlize($post->title) !== $match[2]) {
@@ -94,13 +72,6 @@ class Zblog_Blog {
 
 		// control if post exists then 404
 		$post->tags = $post->get_tags_list();
-
-//		$post->nbComments = $this->get_comment_count($post);
-//		$post->comments = $this->get_comments($post);
-//
-//		var_dump($post->nbComments);
-//		var_dump($post->comments);
-//		exit;
 
 		$time = strtotime($post->post_date.'Z');
 		$year = date('Y', $time);

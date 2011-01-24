@@ -204,20 +204,20 @@ blockquote:before, blockquote:after {
 	display: block;
 	position:absolute;
 	line-height: 0;
-	font-size: 700%;
+	font-size: 500%;
 	color:#444;
-}
-
-blockquote:after {
-	content: close-quote;
-	bottom:0;
-	right:0;
 }
 
 blockquote:before {
 	content: open-quote;
-	top:30px;
-	left:-25px;
+	top:18px;
+	left:-10px;
+}
+
+blockquote:after {
+	content: close-quote;
+	bottom:-15px;
+	right:-12px;
 }
 
 blockquote {
