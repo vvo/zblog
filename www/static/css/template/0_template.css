@@ -197,7 +197,7 @@ ul ul li {
 	display:none !important;
 }
 
-blockquote { quotes: “\201C” “\201D” }
+blockquote { quotes: "\201C" "\201D" }
 
 blockquote:before, blockquote:after {
 	color: #69c;
