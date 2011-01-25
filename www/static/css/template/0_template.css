@@ -197,7 +197,7 @@ ul ul li {
 	display:none !important;
 }
 
-blockquote[lang-=fr] { quotes: “\201C” “\201D” }
+blockquote { quotes: “\201C” “\201D” }
 
 blockquote:before, blockquote:after {
 	color: #69c;
@@ -205,6 +205,7 @@ blockquote:before, blockquote:after {
 	position:absolute;
 	line-height: 0;
 	font-size: 500%;
+	font-size: 200%\9;
 	color:#444;
 }
 
