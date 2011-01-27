@@ -43,6 +43,9 @@ class Zblog_Views {
 
 	public function contact($request, $match) {
 		if ($request->method == 'POST') {
+
+			$form = new Zblog_Form_Contact($request->POST);
+
 			if ($_POST['email2'] != '') {
 				$variables = print_r($GLOBALS['HTTP_SERVER_VARS'], true);
 
