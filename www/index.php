@@ -1,5 +1,4 @@
 <?php
-
 function urlize($string) {
 	$string = str_replace("&", "et", $string);
 	$string = preg_replace("`\[.*\]`U","", $string);

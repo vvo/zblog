@@ -42,6 +42,7 @@ $ctl[] = array('regex' => '#^/contact/sent/$#',
 	'method' => 'contact_sent');
 
 $ctl[] = array('regex' => '#^/blog/$#',
+	'cache_timeout' => 3600*2,
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
 //	'minifyHTML' => true,
@@ -57,30 +58,35 @@ $ctl[] = array('regex' => '#^/blog/feed.xml$#',
 
 // nouveau tag/page + spécifique = plus en haut dans la priorité
 $ctl[] = array('regex' => '#^/blog/tag/(\d+)/(.+)/page/(\d+)/$#',
+	'cache_timeout' => 3600*2,
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
 	'name' => 'blog_tag_page',
 	'method' => 'view_by_tag');
 
 $ctl[] = array('regex' => '#^/blog/tag/(\d+)/(.+)/$#',
+	'cache_timeout' => 3600*2,
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
 	'name' => 'blog_tag',
 	'method' => 'view_by_tag');
 
 $ctl[] = array('regex' => '#^/blog/tag/(.+)/page/(\d+)/$#',
+	'cache_timeout' => 3600*2,
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
 	'name' => 'blog_tag_page_old',
 	'method' => 'view_by_tag_page_old');
 
 $ctl[] = array('regex' => '#^/blog/tag/(.+)/$#',
+	'cache_timeout' => 3600*2,
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
 	'name' => 'blog_tag_old',
 	'method' => 'view_by_tag_old');
 
 $ctl[] = array('regex' => '#^/blog/page/(\d+)$#',
+	'cache_timeout' => 3600*2,
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
 	'name' => 'blog_page',
@@ -95,6 +101,7 @@ $ctl[] = array('regex' => '#^/blog/page/(\d+)$#',
 
 // month archives
 $ctl[] = array('regex' => '#^/blog/month/(\d{4})/(\d{2})/$#',
+	'cache_timeout' => 3600*2,
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
 	'name' => 'blog_month',
@@ -102,13 +109,15 @@ $ctl[] = array('regex' => '#^/blog/month/(\d{4})/(\d{2})/$#',
 
 // day archives
 $ctl[] = array('regex' => '#^/blog/day/(\d{4})/(\d{2})/(\d{2})/$#',
+	'cache_timeout' => 3600*2,
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
 	'name' => 'blog_day',
 	'method' => 'view_day');
 
 // specific post new version
-$ctl[] = array('regex' => '#^/blog/(\d)/(.+)/$#',
+$ctl[] = array('regex' => '#^/blog/(\d+)/(.+)/$#',
+	'cache_timeout' => 3600*2,
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
 	'name' => 'blog_post',
@@ -116,6 +125,7 @@ $ctl[] = array('regex' => '#^/blog/(\d)/(.+)/$#',
 
 // specific post old version
 $ctl[] = array('regex' => '#^/blog/(.+)/$#',
+	'cache_timeout' => 3600*2,
 	'base' => Pluf::f('zblog_base'),
 	'model' => 'Zblog_Blog',
 	'name' => 'blog_post_old',

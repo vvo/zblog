@@ -1,0 +1,158 @@
+Résumé :
+Un article assez complet qui explique le fonctionnement d'un grand site Français : Mappy.com.
+
+Après une présentation rapide de l'entreprise, puis du code et des technologies utilisées, on termine par une description de la méthode utilisée pour savoir quoi optimiser pour accélérer le chargement du site.
+
+Article :
+Si vous avez lu mon [parcours de développeur web](/blog/vincent%20voyer%2C%20d%C3%A9veloppeur%20web%20paris/ "Quoi vous ne l'avez pas lu ce billet ? :)") alors vous savez déjà que ma dernière expérience en entreprise était **chez [Mappy](http://fr.mappy.com)**.
+
+![http://www.flickr.com/photos/mashleymorgan/3863850440/sizes/l/in/photostream/](/static/img/blog/posts/05-01.jpg "Faisons décoller ce blog, ajoute moi dans ton agrégateur rss !")
+
+En tant que **développeur web front-end** j'y ai donc réalisé des intégrations, écrit du code [javascript événementiel](http://en.wikipedia.org/wiki/Event-driven_programming) et réalisé des modules [Drupal](http://drupal.org/) puisque **Mappy utilise Drupal** pour le front-end.
+
+En plus d'emmerder tout au long de l'année mes collègues avec la performance web parce qu'une balise script inline a la ligne 500 bloquait le chargement de l'image ligne 610, j'ai consacré les derniers mois de mon activité salariée à **l'amélioration de la performance web du site**.
+
+Voici un résumé de **ma démarche**, des optimisations réalisées ou proposées et des bénéfices obtenus.
+
+# La société Mappy
+
+Mappy est une **référence du web Français**, je vous met au défi de trouver quelqu'un qui n'est jamais allé sur ce site au moins une fois (et qui a plus de 13 ans...).
+
+![image homepage nouveau site web](/static/img/blog/posts/05-02.jpg "La homepage du nouveau site web")
+
+Mappy appartient aujourd'hui à la société [Pages Jaunes Groupe](http://www.pagesjaunesgroupe.com/) qui faisait partie jusqu'en 2006 du groupe France Télécom.
+
+La société créée en 1987 s'appelait **iti** et était disponible sur minitel (la grande classe).
+
+Le site web fut ensuite disponible dès 1997 sur internet à l'adresse <http://www.iti.fr>.
+
+La société a ses locaux au [47 rue de Charonne 75011 à Paris](http://fr.mappy.com/#d=47+rue+de+Charonne,+Paris&p=map) environ **80 personnes** travaillent sur 3 étages divisés en openspaces.
+Vous pouvez voir une grande bannière Mappy à l'angle de la rue Ledru Rollin et Charonne.
+
+Pour en savoir plus sur les services et évolutions du site, consultez [la page wikipédia](http://fr.wikipedia.org/wiki/Mappy) qui est très bien renseignée.
+
+# Le site Mappy
+
+Mon embauche chez Mappy était dans le cadre d'une refonte du site web. Dans la suite de l'article j'appellerai donc l'ancien site [Mappy v2](http://old.mappy.fr/ "Testez-le, il est toujours en ligne") et le nouveau (l'actuel), [Mappy v3](http://fr.mappy.com). C'est aussi les noms que nous leur donnions en interne.
+
+Voici une image comparative de la nouvelle et de l'ancienne homepage du site :
+![image comparative homepage v2 et homepage v3](/static/img/blog/posts/05-03.jpg "La nouvelle et l'ancienne homepage")
+
+La structure du site Mappy.com n'est pas classique, plus qu'un site internet c'est surtout une **application internet** car son but principal est d'afficher des cartes dynamiquement.
+
+Mais dans la refonte du site web, il a aussi été prévu de faire de Mappy un véritable **portail web** (avec mise en avant de la réservation d'hôtels, du compte utilisateur Mappy, des partenaires ...).
+
+Il est important de prendre en compte ces deux aspects pour comprendre la quantité de code nécessaire pour afficher un site web de cette envergure.
+
+# Technologies utilisées
+
+## Architecture du site
+
+La logique applicative, comprenez comment on affiche les cartes et les dalles, de Mappy v2 était principalement codée côté serveur, l'orientation choisie pour Mappy v3 fut inverse, la logique applicative est **désormais côté client**.
+
+### Chargement d'une page
+
+Plus concrètement, sur Mappy v2 on remplissait le formulaire de plan, la page appelait les serveurs avec des paramètres GET. Puis les serveurs communiquaient entre eux pour récupérer la position du plan et les dalles (= les images qui composent le plan) du plan et enfin la page se chargeait avec toutes les données déjà prêtes.
+
+Mappy v2 utilisait XSLT pour l'affichage des pages et Mappy.exe (oui !) pour la communication entre les serveurs et la récupération des plans et itinéraires.
+
+Sur Mappy v3, un client déjà sur une page demande un plan et l'**API Javascript** (disponible sur <http://connect.mappy.com/fr/ajax>) s'occupe d'interroger les différents serveurs (serveur de géolocalisation, serveur de dalles, serveur de POIs ...) pour récupérer les éléments au fur et à mesure et les afficher dans la page. Tout se fait en ajax.
+
+### Serveurs utilisés
+
+Le principal avantage d'avoir une logique applicative côté client est la réduction du nombre de serveurs nécessaires pour afficher les pages web : **3 fois moins** que sur l'ancienne version.
+
+Aujourd'hui les serveurs frontaux sont principalement des serveurs apache couplés à des nginx pour les serveurs statiques. Les bases de données sont en MySQL et memcache est utilisé pour .. le cache !
+
+Anciennement, pour le front, Mappy utilisait un serveur web appelé "serverlib", un custom serveur de chez Mappy codé en C++. Ce serveur **sert toujours** de socle pour développer les applications métiers chez Mappy (plan, itinéraire, localisation ...).
+
+Une surcouche XSLT était ensuite utilisée pour l'affichage du site web.
+
+IIS était aussi utilisé pour les fichiers statiques.
+
+## Code du site
+
+Côté code je ne parlerai que du code de l'équipe web : le front-end et un peu de php. Tout ce qui concerne le calcul d'itinéraire, la géolocalisation et la génération de dalles (bouts de plans) est géré par d'autres équipes.
+
+Quelques classes PHP existent et fournissent au site un framework (**Mappy framework**) de base pour réaliser des **accès CURL** aux autres serveurs si besoin.
+
+Le site tourne sur un **[Drupal](http://drupal.org)** pour lequel l'équipe web a codé plusieurs modules spécifiques (fichiers statiques, rubriques complexes, publicités ...).
+
+Le gros du code se situe côté Javascript, Mappy utilise [jquery](http://jquery.com), [jquery UI](http://jqueryui.com/), [jquery hashchange](http://benalman.com/projects/jquery-hashchange-plugin/) pour gérer la navigation au hash (lorsque je suis arrivé on utilisait [RSH](http://code.google.com/p/reallysimplehistory/)) et quelques autres plugins jQuery.
+
+Puis viennent tous nos modules et classes Javascript qui occupent une bonne partie du code. Mappy repose énormément sur la [programmation événementielle](http://fr.wikipedia.org/wiki/Programmation_%C3%A9v%C3%A9nementielle), c'est extrêmement pratique mais cela nécessite une bonne documentation.
+
+Je détaille rapidement deux particularités du code :
+
+### La gestion du hash
+
+Quelques informations supplémentaires sur la **gestion du hash** : au début on avait essayé une méthode exotique pour conserver des états de page entre les différentes actions (très important dans une application web 100% ajax), on stockait des **chaînes json directement dans le hash**.
+
+C'était très pratique mais les urls étaient vraiment **trop longues** et passaient très mal dans les mails, sur les réseaux sociaux et dans certains navigateurs.
+Après un gros refactoring (moi et un autre membre de l'équipe : Frédéric L.M.) on a réussi à avoir des urls courtes du style : <http://fr.mappy.com/#d=47+rue+de+Charonne,+Paris&p=map>.
+
+Un exemple de hash :
+![image homepage nouveau site web](/static/img/blog/posts/05-04.jpg "Ce hash dit : page itinéraire, de Paris à Nantes avec affichage de la feuille de route")
+
+### La construction des pages
+
+Sur la **construction des pages** : la plupart des pages sont construites après réception des données ajax en Javascript à l'aide de templates html stockés dans des objets json qui seront ensuite remplis à la volée avec des regex javascript.
+
+En clair il existe un énorme objet json (oui ok les objets JSON [ça n'existe pas](http://benalman.com/news/2010/03/theres-no-such-thing-as-a-json/)) dans lequel sont stockés énormément de templates, ce gros fichier est chargé dès la homepage et c'est ainsi que les autres pages sont affichées ensuite.
+
+C'est très rapide une fois que tout est chargé mais c'est aussi dangereux car : toutes vos pages ne sont pas référençables et le site n'est pas accessible sans Javascript.
+
+Google proposera bientôt une méthode pour faire référencer les pages ajax et pourrait donc "sauver" énormément de sites web qui sont construits entièrement en Javascript sans solution de fallback.
+
+# État de l'optimisation sur Mappy
+
+Le développement côté client implique un code Javascript bien plus important que sur la v2.
+
+Environ **200 fichiers Javascript représentant 2,5mo de données** s'occupent des principales fonctionnalités du site.
+
+Drupal ne possède pas de module pour agréger et minifier les fichiers css et Javascript. Des modules existent mais nous avions besoin de faire des actions très spécifiques.
+
+Avant la sortie de la version beta de Mappy v3, un membre de l'équipe (Jérôme B.) à écrit un module Drupal qui comportait ces actions :
+
+* Lecture de fichiers de configurations yaml listant les différents Javascript organisés par groupes (avec exclusion de répertoires/fichiers afin d'éviter les doublons),
+* agrégation et minification de tous les fichiers Javascript et css dans plusieurs fichiers (en fonction du nombre de groupes écris) à l'aide de yui compressor.
+
+Avec la compression gzip activée cela représente 256ko de Javascript à télécharger pour l'internaute sur la homepage et 2,5mo pour tous ceux qui ne supportent pas le gzip (soit 15% environ selon <http://www.stevesouders.com/blog/2009/11/11/whos-not-getting-gzip/>).
+
+Partant de ce constat (256ko de Javascript), nous avons souhaité réduire la quantité de code nécessaire pour afficher au plus vite le site web.
+
+# Démarche
+
+## Ce que l'on voulait faire
+
+1. Accélérer l'affichage du site, toutes pages confondues,
+2. réaliser des chargements à la volée de fichiers Javascript en fonction des modules utilisés,
+3. créer des packages Javascript côté serveur que l'on chargerait dynamiquement pour optimiser complètement les chargements en fonction de la page demandée.
+
+Là vous pouvez vous calmer parce qu'on a pas du tout fait ça. Ça aurait pris vraiment trop de temps et demandé trop d'efforts pour un résultat pas forcément optimal.
+
+## Ce que l'on a choisi de faire <small>parce que y a toujours un problème</small>
+
+1. Accélérer l'affichage de la homepage puisque c'est le point d'entrée le plus utilisé,
+2. identifier ce qui est indispensable du superflu pour l'affichage de la homepage,
+3. séparer le fichier Javascript principal en deux : core & addons car il semble suffire de 50% du code pour afficher la homepage,
+4. réduire le nombre de requêtes effectuées pour afficher la homepage.
+
+## Et pourquoi ?
+
+1. Parce que le code Javascript de Mappy n'était pas assez orienté objet (mais très/trop orienté événementiel peut être) pour qu'on puisse avancer « cette classe JS requiert cette autre classe pour fonctionner »,
+2. parce que le code Javascript n'était pas assez documenté dans son ensemble et que trop de hacks on étés réalisés pour corriger / réaliser rapidement des modifications (tous les développeurs connaissent ça),
+3. parce qu'on a jamais eu de stratégie de chargement des Javascripts (à part tout charger d'un coup), surtout parce que il y a encore quelques mois personne ne s'intéressait de savoir comment on charge un javascript,
+4. parce que le gain apporté par ce que l'on a choisi de faire apporte déjà des performances accrues sans que cela prenne 3 mois.
+
+# Conclusion
+
+Si je n'ai pas vraiment développé sur l'utilisation de Drupal c'est principalement parce que **c'est un logiciel que je ne conseillerai pas** dans le cadre du développement d'une **application web** mais plutôt si vous devez construire un portail web d'information de moyenne envergure (je dis de moyenne envergure parce que franchement, le code de Drupal ...).
+
+Les critiques sur le code ou les choix pourraient très certainement êtres appliqués sur énormément de sites web, gros ou petits.
+
+La suite de cet article sera **centrée sur le choix et la réalisation des optimisations** pour principalement accélérer l'affichage progressif du site.
+
+N'hésitez pas à laisser des commentaires bien sûr surtout si c'est pour critiquer ! Que je m'améliore dans la rédaction des articles.
+
+Rendez-vous après demain 12h00.

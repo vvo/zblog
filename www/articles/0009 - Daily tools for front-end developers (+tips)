@@ -1,0 +1,110 @@
+Résumé :
+Having a perfect development environment is not necessary (and you'll loose a lot of time doing it) but **having the right tools** to do your job is essential.
+
+Here's a list of tools and programs I use **daily**.
+
+All theses tools are 100% free so there's no excuse !
+
+Article :
+Having a perfect development environment is not necessary (and you'll loose a lot of time doing it) but **having the right tools** to do your job is essential.
+
+Here's a list of tools and programs I use **daily**.
+
+All theses tools are 100% free so there's no excuse !
+
+# JavaScript advanced debugging, on every browser
+
+It seems not a lot of people know **how to debug JavaScript applications**, what most people do is writing alerts everywhere with funny messages in them.
+
+This is why JavaScript is often called the worst programming language, people tend to think that it can't be debugged the right way.
+
+But there's a top feature that will help you a lot if you're writing alerts everywhere, "debugger", this keyword (put it in your JavaScript) will stop the current JavaScript execution (breakpoint) and let you get information on the precise state/value of local and global variables.
+
+## Firebug
+
+When I started to use **Firebug**, I knew there's was a lot of features I was not using.
+
+Then someone told me about the JavaScript console, the console.log() command, the network tab ..
+
+But the real power of Firebug lies in the **Script pannel**, using the debugger keyword you'll learn to debug your application the right way.
+
+![Using all the power of Firebug](/static/img/blog/posts/09-01.jpg "Do you find this bubble useless ? Comment on ! :)")
+
+After putting it in your scripts, Firebug will switch to the Script panel and let you use all the power of JavaScript debugging exactly where the script execution is.
+
+[Learn how to use it](http://getFirebug.com/javascript "JavaScript debugging with Firebug"), start putting debugger in you development code and master watch expressions, dom inspection, stack traces ..
+
+## Microsoft script debugger
+
+Not a lot of developers are aware that using debugger keyword is also possible into your favourite browser : Internet Explorer and the best version of it : 6 & 7 (didn't tested 5.x, hey its 2010, using IE6 is already against nature!).
+
+With help of the Microsoft Script debugger you'll be able to debug JavaScript into the most stable browser of the history and soon you'll laugh at errors like "Your mummy is null or not an object".
+
+For all Internet Explorer flavours, you'll first have to enable script debugging (Advanced parameters > disable "disable script debugging").
+
+![Microsoft Script debugger in action](/static/img/blog/posts/09-02.jpg "OMG! Debugging on IE6, really ?")
+
+For IE8 there's already a script debugger, just use the debugger keyword and watch.
+
+## Conclusion
+
+I guess there's also debuggers into Chrome, Safari, Opera, etc... Choose your favourite tool but please stop putting alerts everywhere, you'll save a lot of time.
+
+# Keyboard shortcuts
+
+If you want to be efficient at what you're doing, **learn how to use shortcuts** in your daily tools. When working for clients, sometimes I still see people being impressed because I commented out lines with a keyboard shortcut : "How did you do that !".
+
+IDES/Browsers/OS are powerful and there are a lot of keyboard shortcuts to learn.
+I only listed the essentials for a web developer.
+There's of course dedicated blog posts with the best shortcuts for each tool but this is not the goal of this list :
+
+* [Firefox](http://support.mozilla.com/en-us/kb/keyboard+shortcuts "shortcuts, windows, mac, linux") :
+    * next/previous tab : ctrl+tab/ctrl+shift+tab
+    * re-open nth closed tab : ctrl+shift+t
+    * show clear history widget (web performance shortcut, check cache and active connections!) : ctrl+shift+del
+    * show source : ctrl+u
+    * open close Firebug : f12
+    * open delicious tab : ctrl+b
+
+* Netbeans/Eclipse (go to preferences > keys) :
+    * [open file fast](http://sickill.net/blog/tag/off "netbeans plugin similar to open resource")/open resource
+    * Comment/Uncomment lines
+    * Select/Delete word
+    * Go to line
+    * Delete line
+    * Go to funciton declaration (yes even for JavaScript)
+
+* File Explorer : on all your system, when you have lots of files/folders on your window, if you're searching for a particular folder, just start to type
+the first letters of the file/folder, your file system will highlight it automatically, very handy.
+
+# VirtualPC/Virtual Box
+
+Testing a website for the **all the major browsers** can be hard but it is necessary. And it has to be done by each developer who's not
+sure about the code he has just written.
+
+I have already heard in team spaces sentences like "Who have IE6 ? Who have IE7 ? Someone have opera ?".
+Really this is annoying, **set up a complete test system** on every developer machine, this is not that hard !
+
+Do you test your html/css/JavaScript on all version of IE ? You should, otherwise someone will do it for you but if you're conscientious, do it yourself.
+
+Use VirtualPC for windows and the [VPC images from msdn](http://www.microsoft.com/downloads/en/details.aspx?familyid=21EABB90-958F-4B64-B5F1-73D0A413C8EF&displaylang=en "all ie versions, all systems"), they have all the possible combination of IE6-7-8 for various versions of Windows.
+
+For mac users, this is a bit tricky, yes you can use VirtualBox but it's nearly impossible to use the VPC images with VirtualBox on Mac, they expire as soon as you first turn on Windows. But you can use your real Windows CD to get your favourite browser running.
+
+# Clipboard managers - Clipx (even for Mac users!)
+
+![Showcase of clipx](/static/img/blog/posts/09-03.jpg "Yes it also record images in history")
+
+The first time I read about [Clipx ](http://bluemars.org/clipx/ "clipboard manager") was on [Coding Horror Blog](http://www.codinghorror.com/blog/2008/01/reinventing-the-clipboard.html "blog post on clipboard manager"), now this is the second tool (after Firefox) I install when I set up a new environment.
+
+Did you already said to yourself :
+> If I copy this line, I will loose the other line I have in my clipboard now. Let's just open notepad and put my current line in it, brilliant!?
+If not, I suspect you're lying. Please use a clipboard manager (Clipx is the best you can find although there's a lot of clipboard managers) gain some productivity, you'll never regret !
+
+**For mac users** : I have searched for a long time for a tool that is as cool as clipx and I have nearly found it : [clipmenu](http://www.clipmenu.com/ "clipboard manager for mac"). It's not as easy to use it as clipx but it's quite good.
+
+# Final note
+
+As a **web performance consultant** I also use a lot of tools aimed at finding Key Performance Improvements and bottlenecks in web applications. So the next blog post will be focused on how to get the maximum from web performance tools, stay tuned !
+
+Also, I know the website is broken on all versions of Internet Explorer, will fix this soon.

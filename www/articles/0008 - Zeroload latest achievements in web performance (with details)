@@ -1,0 +1,141 @@
+Résumé :
+This is my first blog post in English, so I'll explain a bit about Zeroload before going into the core of the post.
+
+My English writing can be bad so please be kind enough to not comment and say "This is 100% sh** English talking"!
+
+Welcome English talking readers !
+
+Article :
+This is my first blog post in English, so I'll explain a bit about Zeroload before going into the core of the post.
+
+Welcome English talking readers !
+
+My English writing can be bad so please be kind enough to not comment and say "This is 100% sh** English talking".
+
+# Who's Zeroload ?
+Zeroload is a freelance activity founded by Vincent Voyer, I'm providing website consulting focused on web performance.
+
+Almost every day I'm thinking about how to make websites faster for various companies.
+
+# Which websites did you already optimize ?
+
+- <http://mappy.com> (alexa top 2500 world, top 100 France)
+- <http://footmercato.net> (alexa top 2000 world, top 100 France)
+- <http://ma-bimbo.com> (alexa top 4000 world, top 150 France)
+
+I have worked on many other websites but for theses three particular **high traffic, highly visited websites**, I also have been done web performance consulting, and that was awesome.
+
+The traffic for a month was between 2M unique visitors (<http://ma-bimbo.com>), to 8M (<http://fr.mappy.com>) and between 66M (<http://footmercato.net>) page views to 410M (<http://ma-bimbo.com>).
+
+All theses statistics comes from google's [adplanner](https://www.google.com/accounts/ServiceLogin?service=branding&ltmpl=adplanner&continue=https%3A//www.google.com/adplanner/ "checkout the website's stats") service.
+
+All theses websites had (and have) web performance issues, either web page load time, too much bandwidth usage or too large images.
+
+Now I'll detail what I have done for each.
+
+#Ma-bimbo.com
+
+##Some info
+
+I put this one in first position because the work I have done was not what you can expect from a web performance consultant...
+
+Ma-bimbo is a browser-based game (from <http://beemoov.com> studios), this was my first job in a **start-up** back in 2007.
+
+It is a life game aimed at teenage girls and it is **very popular**. This was one of the first browser-based game aimed at girls (because there is not a lot of teenage girls who wants to play <http://ogame.de>).
+
+This website (no flash) is HUGE, trust me in the good days it could have 10 000 new players registering for an account, at the traffic peeks there was 20000 simultaneous players updating their avatars every 2 seconds ...
+
+After being two years in this start-up as **first employee** (now they are 20), I quit for various reasons. But then when I started my web performance consulting job they became my first client (how handy!).
+
+## What I've done
+
+As a browser-based game where you can dress your avatar (and change eye colour, hair colour ...), they had **a lot of PNGS, 45000 to be precise**. All PNG24 with transparency.
+
+Some pages would take ages to load because a single avatar would have 50 background images all being select-able ...
+
+I was very interested in image optimization, I started to look at how the images would render **if they were in PNG8** (256 colours).
+
+I took a player profile page with wget (downloading all other resources with wget 1.2 and this command : _wget -E -H -k -K -nd -nH -p url_), then converted all images to PNG8 with transparency using <http://pngnq.sourceforge.net/>.
+
+The results were very good except for some highly coloured images. After having this proof of concept they agreed on doing it for the whole website.
+
+So I did a **nodejs script** able to optimize 45000 PNGS this way (summary) : find all the new PNGS int he project, guess the number of colours (with <http://linux.about.com/library/cmd/blcmdl1_identify.htm>), if the number of colours is < 3000 then make a new PNG8 image file and keep the PNG24 one.
+
+Why using nodejs ? Because it's fast, allows to make **async system calls** and because it's fun to write javascript for the server !
+
+## Results
+
+The nodejs script was able to deal with 45000 images in less than 4 hours. Then each time they had images to the project, when deploying to production environment there's a diff done and only the new ones get optimized (using dark linux system commands in a shell script!).
+
+The results are astonishing, the average size of the 45000 images was reduced by 44%. Reducing the page load time by two on every pages.
+
+One last note, to find the highest resources asked on the server, I used an apache log for one hour of website usage that I injected in <http://www.steve.org.uk/Software/asql/> and then I was able to do sql queries on apache logs, very easy and fun !
+
+# Mappy.com
+
+## Some info
+
+Mappy is a google maps alternative, it was one of the first web-services in France to allow users to browse maps and ask for itineraries.
+
+It is a very well known website because it's part of the France's internet history (it was first available on our beloved and most wanted invention in the world : [le minitel](http://www.blog-agri.com/ticagri/wp-content/minitel.jpg "3615 click it")).
+
+## What I've done
+
+The first steps were to fix the classics : optimize javascript minification/merging, reduce inlines, reduce externals javascript in head tag, reduce css size, minify html.
+
+Then when all this work was done, the web page wasn't a lot faster, just a little bit, why ?
+
+This website has a huge homepage with lot of widgets (ads, statistics, tagging, partners).
+
+When you have so much widgets with code you can't touch, can't control, the best you can do is reorganize your code, change your code (html and javascript) so **your content get downloaded and executed first**, before all theses widgets.
+
+This is what I did, before my changes the main javascript initialization was done on the document.ready fake javascript event jQuery triggers. But all of the widgets were just downloaded and executed as soon as possible, so I did the same for the main javascript initialisation of the website content and voilà!
+
+# Results
+
+No more blank page waiting for widget's resources to be created and downloaded, website content first, then widgets loading.
+
+This resulted in Better progressive rendering also, because website's content do not need a lot of resources to show something to the user (a lot is already available : sprites, css).
+
+Widgets often come from an inline scripts that downloads another external javascript which creates a lot of DOM elements with background images. All this time your website rendering is blocked by the resource's downloading and rendering.
+
+This was a very tricky optimization and I've done the same for another client some months later : <http://footmercato.net>.
+
+# Footmercato.net
+
+##Some info
+
+Footmercato is a smaller site but still, it has a lot of traffic. This is my latest client.
+
+I already did web performance consulting for this website some months ago, I wrote 20 pages on how the website could be faster (with test files and videos from webpagetest).
+
+Then in august I got a call from the owner asking for me to do the programming part of what I wrote the paper.
+
+## What I've done
+
+Using cutting edge web performance techniques : data uris, mhtml, ads replacing, iframe  lazy loading, css splitting (one in the head with core "above the fold" backgrounds, one before body end tag with all other backgrounds).
+
+Priority to the website content ! Again, I reorganised the website's html tree to maximise progressive rendering.
+
+I "delayed the ads" to have the website's content downloaded in priority but finally the ads (the banner) get displayed earlier than before because I also reduced the number of requests to display the content above the fold, using data uris and css splitting.
+
+I've been using the magic of <http://github.com/Schepp/CSS-JS-Booster>, a very nice PHP script that can handle the hassle of using data uris and mhtml for you.
+
+I'm active in development and ideas for this project and will soon add data uris ignore ability so you can use data uris only certain images, the ones above the fold of your page for example, to maximise progressive rendering for what the user is seeing when the page loads.
+
+## Results
+
+Progressive rendering and start render received a large boost resulting in better user experience.
+**
+I've managed to make this website the fastest sport website in France**, check out the [webpagetest proof](http://www.webpagetest.org/video/compare.php?tests=100901_3ZQ2%2C100901_3ZQ3%2C100901_3ZQ6%2C100901_3ZQB%2C100901_3ZQ7%2C100901_3ZQC%2C100901_3ZQJ%2C100901_3ZQK&thumbSize=100&ival=500 "My clients is "mon client" labellled").
+
+I also managed to reduce the number of requests (and bandwidth usage) from 71 (233Kb downloaded) to 49 (193Kb downloaded).
+
+# Conclusion
+
+As you can see, i'm not talking about reducing final page load from 10 seconds to 7 because this do not means a lot on a website with 5 externals ads that can be loaded in 3 seconds, but alos in 10...
+
+The best proof of a good optimized website is the level of progressive rendering it has, not the number of seconds needed to load it. This do not apply to webapps with no ads, they can do precise measurements on the page final load time.
+
+# Working with me ?
+Just [contact me](/contact/ "") when you're ready or if you want more information on my skills.

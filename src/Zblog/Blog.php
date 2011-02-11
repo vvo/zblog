@@ -12,6 +12,7 @@ class Zblog_Blog {
 	private $nb_posts_per_page = 5;
 
 	public function view_post_old($request, $match) {
+
 		$db = Pluf::db();
 
 		$post = Pluf::factory('Zblog_Post')
@@ -28,6 +29,7 @@ class Zblog_Blog {
 
 	// next prev arrows show next prev post (no day/month indication in the url)
 	public function view_post($request, $match) {
+
 		$db = Pluf::db();
 
 		$post = Pluf::factory('Zblog_Post')
@@ -35,6 +37,7 @@ class Zblog_Blog {
 
 		// no post or url has upper characters and we do not want this
 		if ($post === null || urlize($post->title) !== $match[2]) {
+			
 			throw new Pluf_HTTP_Error404();
 		}
 

@@ -1,0 +1,41 @@
+Résumé :
+Enfin une mini conférence en France sur la performance web.
+
+Qui d'autre qu'Éric Daspet pouvait l'organiser ?
+
+Article :
+Bien que les inscriptions [soient bientôt closes](http://twitter.com/edasfr/status/17329678516) je vous fais un petit résumé de la soirée de l'année sur la performance web en France pour tous les développeurs passionnés par ce sujet.
+
+[Éric Daspet](http://eric.daspet.name/) organise en partenariat avec la société [Octo](http://www.octo.com/) une soirée sur le thème de la performance web le 21 juillet 2010 à partir de 19h.
+
+Programme de la conférence
+--------------------------
+* Apéritif de 19 h 00 à 19 h 45,
+* 19 h 45 présentation (par Éric Daspet ?) synthétique sur les bénéfices liés à l'optimisation des performances web (voir aussi [mon article](/blog/pourquoi optimiser le temps de chargement de vos pages/ "pourquoi optimiser le temps de chargement d'un site web") à ce sujet),
+* à 20 h 10 on aura le droit à une présentation de [Stoyan Stefanov](http://phpied.com), une des références du monde de la performance web. La présentation sera normalement assez poussée techniquement,
+* Puis vers 21 h 10 les invités pourront échanger sur la performance web avec des questions réponses,
+* "enfin" 22 h 00 extinction des feux (on y croit ! ;)).
+
+Mon avis
+--------
+La venue de Stoyan est un véritable événement pour moi puisque ce sera la première fois que j'assiste à une de ses présentations. Stoyan a déjà écrit [plusieurs livres](http://www.amazon.fr/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.fr%2Fs%3Fie%3DUTF8%26search-alias%3Dbooks-fr-intl-us%26field-author%3DStoyan%2520Stefanov&tag=httpvincentvo-21&linkCode=ur2&camp=1642&creative=19458) sur javascript, la performance web, php ou encore phpBB (!!).
+
+Il prépare aussi actuellement un livre résumant pourquoi il est important d'optimiser votre site web et quels sont les avantages financiers.
+
+Concernant sa présentation, le contenu semble être un résumé des dernières techniques d'optimisation ([pré-charger des CSS et JS sans les exécuter](http://www.phpied.com/preload-cssjavascript-without-execution/), rendu progressif) et des dernières découvertes des spécificités de certains browsers (favicon bloquant, [commentaires conditionnels bloquants](http://www.phpied.com/conditional-comments-block-downloads/)).
+
+[Le programme](https://sites.google.com/a/survol.fr/webperf-user-group/evenements/21-juillet-2010) est donc vraiment intéressant et le timing très serré, j'espère que tout se déroulera comme prévu.
+
+Côté Zeroload, j'attends de cette mini conférence des échanges intéressants avec d'autres développeurs passionnés par la performance web et pourquoi pas de futurs contacts professionnels.
+
+Notes
+-----
+Éric Daspet est l'auteur du [blog le plus connu](http://performance.survol.fr) en France sur la performance web.
+
+Il est aussi l'auteur de [plusieurs livres](http://www.amazon.fr/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.fr%2Fs%3Fie%3DUTF8%26search-alias%3Dbooks-fr%26field-author%3DEric%2520Daspet&tag=httpvincentvo-21&linkCode=ur2&camp=1642&creative=19458) sur PHP et prépare actuellement un livre en Français sur la performance web.
+
+* [page explicative sur la soirée](https://sites.google.com/a/survol.fr/webperf-user-group/evenements/21-juillet-2010),
+* [twitter Éric Daspet](http://twitter.com/edasfr),
+* [twitter Stoyan Stefanov](http://twitter.com/stoyanstefanov).
+
+Je suis un peu en retard sur ce coup, car l'actualité est déjà parue chez [pixellboy](http://www.pixelboy.fr/evenement/soiree-performance-web-21-juillet-2010/) et [Maurice Svay](http://svay.com/blog/index/post/2010/06/24/Soir%C3%A9e-Performance-Web-le-21-juillet-2010-chez-Octo).

@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /2
-Disallow: /blog/page/*
 Disallow: /blog/tag/*/page/*
 Disallow: /blog/day/*
 Disallow: *_test/

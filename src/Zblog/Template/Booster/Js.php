@@ -33,7 +33,7 @@ class Zblog_Template_Booster_Js extends Pluf_Template_Tag {
 			echo $markup;
 		}
 		else {
-			$sources = split(',', $js_files);
+			$sources = explode(',', $js_files);
 			$sources_full_path = array();
 			foreach($sources as $key => $source) {
 				$sources_full_path[$key] = $_SERVER['DOCUMENT_ROOT'].'/'.$source;

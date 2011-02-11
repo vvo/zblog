@@ -125,6 +125,10 @@ Number of comments
 	top:0;
 }
 
+#article_content p, #article_content li {
+	font-size:108%; /* 14 px */
+}
+
 #article_content img {
 	/*classicImgBorder*/
 	border:1px solid #555;
@@ -132,6 +136,11 @@ Number of comments
 	box-shadow:0 0 4px #555;
 	-webkit-box-shadow:0 0 4px #555;
 	-moz-box-shadow:0 0 4px #555;
+	margin:.5em 0;
+}
+
+#article_content .floatRight img {
+	margin-left:.5em;
 }
 
 #article_navigation {

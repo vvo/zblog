@@ -1,0 +1,165 @@
+Résumé :
+Cet article est une étude de la performance web de 5 pages différentes, présentant sensiblement le même contenu.
+
+On y parle de start render, vidéo comparative, d'affichage progressif et de l'importance du front-end dans l'optimisation web.
+
+Article :
+Le matin j'adore préparer du **jus de pamplemousse**. C'est très bon, ça donne la pêche et surtout : ça change des oranges.
+
+Le mieux c'est d'acheter soit même les pamplemousses et de faire son jus, il est frais chaque matin et moins acide que celui
+qu'on peut acheter en magasin.
+
+Si je parle de pamplemousses c'est que ce billet sera orienté **étude et analyse du temps de chargement**
+de différents sites web de cuisine (désolé pour les fanatiques du pamplemousse).
+
+![Photo de préparation d'un jus de pamplemousse](/static/img/blog/posts/10-01.jpg "Mhhh. pamm.. ple.. mousse...")
+
+# Choix des sites à étudier
+
+<div markdown="1" class="floatRight">
+![Recherche google pour "recette pamplemousse"](/static/img/blog/posts/10-02.png "Les 5 sites étudiés, trouvés avec google")
+</div>
+
+J'ai donc recherché "recette pamplemousse" sur google et j'ai choisi cinq sites et pages :
+
+* [750g.com](http://www.750g.com/recettes_pamplemousse.htm)
+* [recettesdecuisine.tv](http://www.recettesdecuisine.tv/recette-i162-f2/pamplemousse/recette+pamplemousse.html)
+* [une-recette.com](http://www.une-recette.com/pamplemousse.html)
+* [linternaute.com](http://www.linternaute.com/femmes/cuisine/recette-pamplemousse/)
+* [marmiton.org](http://www.marmiton.org/recettes/recette_salade-de-pates-aux-crevettes-et-pamplemousse_71108.aspx)
+
+On étudie directement la performance web des pages profondes du site et **pas la homepage**.
+
+En effet j'imagine, sans pouvoir le confirmer, qu'un grand nombre d'internautes ne sont pas forcément fidélisés à un site de recettes de
+cuisine en particulier mais qu'ils font plutôt des recherches de recettes sur des moteurs comme google.
+
+Une fois ces cinq pages web choisies, je les ai testées à l'aide de
+[Webpagetest, mesure de la performance web](http://webpagetest.org), outil de mesure de la performance web incontournable.
+
+Tous les tests sont réalisés avec **IE7 et une connexion ADSL 3360/684/70ms de ping**
+(soit une connexion [ADSL classique Français](http://royal.pingdom.com/2010/11/12/real-connection-speeds-for-internet-users-across-the-world).
+
+# étude comparative du chargement
+
+L'affichage d'une page web peut se faire **progressivement** pendant cinq secondes **ou bien d'un seul bloc** au bout
+de quatre secondes.
+
+Le niveau d'optimisation web peut être identifié avec ces métriques :
+
+* **temps de chargement total** : toutes les ressources sont téléchargées, y compris la publicité et les widgets
+* **temps start render** : fin de la page blanche et début d'un affichage significatif pour l'utilisateur ("ça fonctionne")
+* **niveau d'affichage progressif** : la page se charge-t-elle d'un bloc (souvent mauvais) ou au fur et à mesure (meilleur dans la plupart des cas) ?
+
+Afin de comprendre comment se charge un site web, il est nécessaire d'avoir des outils (comme Webpagetest)
+qui permettent d'observer le chargement progressif des pages web.
+
+## à l'aide d'une vidéo
+
+Utilisez le slider de la vidéo afin d'observer les différents moments clés.
+
+<video class="centerBlock" preload="auto" controls="" width="456" height="272">
+<source src="/static/video/10/pamplemousse.mp4"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+<source src="/static/video/10/pamplemousse.webm" type='video/webm; codecs="vp8, vorbis"' />
+<source src="/static/video/10/pamplemousse.ogv"  type='video/ogg; codecs="theora, vorbis"' />
+<object width="560" height="349"><param name="movie" value="http://www.youtube-nocookie.com/v/MDxFpnzBlrs?fs=1&hl=fr_FR&rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/MDxFpnzBlrs?fs=1&hl=fr_FR&rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="349"></embed></object>
+</video>
+
+Étudions en détail les moments clés du chargement avec un schéma.
+
+## à l'aide d'un schéma
+
+Ce schéma permet d'identifier clairement à quel moment intervient le start render.
+
+<div markdown="1">
+![Comparatif start render : recettesdecuisine : 1.1s, marmiton.org : 2.8s, une-recette.com : 3.2s, 750g.com : 3.7s et linternaute.com : 4.9s](/static/img/blog/posts/10-04.jpg "Les start render sont identifiés par ")
+</div>
+
+On peut maintenant classer ces sites selon leur **rapidité et qualité** de temps de chargement :
+
+1. recettesdecuisine.tv
+2. marmiton.org
+3. une-recette.com
+4. 750g.com
+5. linternaute.com
+
+## résultats
+
+Le start render moyen est de **3.24s** (moyenne du schéma).
+Le temps de chargement total moyen est de **12s** (moyenne corrigée des tests WPT).
+
+**Ces résultats ne sont pas bons**, des [études récentes](http://blog.alertsite.com/2009/10/5-10-15-seconds-how-long-will-you-wait-for-a-web-page-to-load/)
+montrent que le taux d'abandon d'un site web devient très important dès que le temps de chargement
+dépasse les trois ou quatre secondes. Si vous faites de la vente en ligne, les abandons (donc les pertes) commencent à deux secondes.
+
+**Plus le secteur est [concurrentiel](http://www.google.com/insights/search/?hl=fr#q=recette&cmpt=q)**, plus les internautes
+s'attendront à un niveau élevé de performance car l'offre est grande et **la bascule d'un site à l'autre facile**. Il suffit
+de faire retour ou de fermer l'onglet.
+
+# Pourquoi de telles différences ?
+
+Avec le schéma précédent, on voit bien que plusieurs sites web proposant du contenu similaire ont des temps de chargement qui
+varient du simple au double, voire triple.
+
+## Un problème côté serveur, back-end ou réseau ?
+
+On pourrait imaginer que ces problèmes de temps de chargement sont principalement reliés à l'architecture serveur, à la programmation
+PHP, asp, ruby, python, au cache ou encore aux éléments réseau.
+
+La plupart du temps ce n'est pas le cas et il suffit pour valider ou non cette hypothèse d'étudier le temps passé côté serveur pour notre ensemble de sites.
+
+En mesurant le temps de chargement du fichier HTML de base on a déjà un bon indicateur :
+
+<div markdown="1">
+![Comparatif temps de chargement HTML et début de start render](/static/img/blog/posts/10-03.png "Il n y a pas de relation forte entre le chargement du HTML et le start render")
+</div>
+
+Constats :
+* les temps de chargement du HTML sont tous compris entre 500 et 1000ms ce qui justifie difficilement des différents aussi
+importantes lors de l'affichage final de la page web
+* le temps de chargement du HTML n'est pas lié au temps start render (pas directement)
+
+## L'importance du front-end
+
+Si votre site est lent, ne perdez pas de temps à essayer d'optimiser une boucle de votre script PHP ou bien votre cache
+car ce n'est souvent pas là qu'est le **goulot d'étranglement**.
+
+Dans le meilleur des cas, vous ferez baisser la charge sur vos serveurs (ce qui est déjà une bonne chose). Mais le temps de chargement final
+sera toujours le même pour l'utilisateur.
+
+<div markdown="1" class="floatRight">
+![Extrait d'une waterfall de chargement](/static/img/blog/posts/10-05.png "Le temps de chargement du HTML n'est qu'une petite partie du temps total")
+</div>
+
+En effet, lors du chargement d'une page web, le téléchargement du ficier HTML d'origine **n'influe que très peu** sur la rapidité
+d'affichage de votre site. Sauf si bien sûr votre HTML met 30 secondes à se charger.
+
+**En moyenne, le temps de chargement du HTML de base représente [entre cinq et 20%](http://developer.yahoo.com/blogs/ydn/posts/2007/03/high_performanc/)
+ du temps total de chargement.**
+
+# Comment accélérer le temps de chargement
+
+Nous avons vu que :
+* le temps de chargement n'est pas une simple mesure, vous devez vérifier visuellement le comportement de vos pages
+* le code serveur, le cache, n'influeront que dans très peu de cas sur le temps de chargement total
+
+**Alors comment optimiser vos sites web ?**
+
+Il faut travailler sur la construction de votre page web, sur l'organisation front-end (si vous en avez une).
+
+Il faut nettoyer, optimiser, réorganiser les ressources qui composent votre page web : JavaScript, CSS, images, widgets, iframes ...
+
+Lorsqu'on construit une application côté serveur, on réfléchit à sa structure, à ne charger que l'essentiel, à optimiser les classes et les appels à la base de donnée. Cette réflexion
+doit aujourd'hui s'appliquer à la construction HTML, CSS et JavaScript de vos pages.
+
+Si cette réflexion n'est pas mise en place, vous risquez de vous retrouver avec une page web lente et des utilisateurs frustrés.
+
+# Audit de la performance web
+
+Vous avez maintenant un aperçu de ce qu'est un audit de la performance web (analyse initiale).
+
+Les audits que j'écris contiennent des informations précises sur les leviers possibles pour accélérer sensiblement les performances web de
+vos applications.
+
+J'interviens dans votre entreprise pour présenter l'audit et répondre à vos questions.
+
+Vous souhaitez en savoir plus ? [Contactez-moi](/contact) et voyons comment nous pouvons travailler ensemble.

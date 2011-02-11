@@ -1,0 +1,90 @@
+Résumé :
+Résumé des différentes interventions et discussions autour de la soirée performance web du 21 Juillet.
+
+Article :
+La conférence sur les performances web s'est déroulée le 21 juillet dans les locaux du cabinet de conseil [Octo](http://www.octo.com/).
+
+C'était pour moi l'occasion de voir en vrai des gens avec qui je discute régulièrement (ou non) sur twitter ou sur leurs blogs (dans le désordre) : [@pixxelboy](http://twitter.com/pixxelboy), [@edasfr](http://twitter.com/edasfr), [@nhoizey](http://twitter.com/nhoizey), [@theystolemynick (jpvincent)](http://twitter.com/theystolemynick), et [@fauveauarmel](http://twitter.com/fauveauarmel).
+
+La plupart des gens ont pu présenter ce qu'ils faisaient et pourquoi ils étaient venus. En majorité les participants étaient **développeurs** (employés ou indépendants), un seul [designer](http://www.svay.com/), des curieux, des étudiants, des administrateurs systèmes et quelques dirigeants techniques.
+
+# Éric Daspet, pourquoi la performance web
+Éric, présentateur de choc de cette conférence performance web, nous a fait une présentation générale des performances web et plus particulièrement des arguments en faveur de l'investissement dans l'optimisation du temps de chargement.
+
+## Infographies en faveur de la performance web
+Éric a présenté plusieurs infographies destinées à convaincre les administrateurs de sites web de travailler sur la rapidité d'affichage de leurs pages.
+
+En effet, en tant que développeurs, nous sommes tous _convaincus_ qu'il est important, pour une entreprise dont les résultats dépendent directement du web, d'investir dans la performance web.
+
+Si nous sommes _convaincus_, c'est aussi parce que souvent notre intérêt pour la performance web est d'abord technologique. La plupart des développeurs (web ou non) seront toujours intéressés par les techniques qui permettront à leurs programmes de s'exécuter une fois, ou deux fois plus vite.
+
+Reste encore à prouver aux **dirigeants, aux non développeurs ou non spécialistes**, que cet investissement aura un impact sur les ventes. C'est grâce aux études de grands sites web comme Google, Bing, Amazon, Shopzilla et Firefox qu'a présenté Éric que l'on peut aujourd'hui _tenter_ de convaincre les dirigeants de sites web en France.
+
+Ces études montrent que la performance web aura un impact sur : les ventes, les pages vues, le nombre de clics, la fidélité ...
+
+Je dis _tenter_ de convaincre car, comme l'a fait remarquer Éric, ce n'est pas forcément ces arguments là qui vont convaincre les dirigeants. D'autres, **plus médiatiques**, comme l'influence de la performance web sur [le positionnement dans Google](http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html) auront un impact bien plus fort sur la plupart des gens non spécialistes.
+
+Même si l'influence est minime pour le moment : 1 % des requêtes prennent en compte la performance des sites web, l'argument a bénéficié d'[un énorme buzz](http://www.google.com/insights/search/#q=speed%20google%20ranking&cmpt=q) et est donc bien mieux compris par la plupart des dirigeants d'entreprise.
+
+### Le groupe performance web
+Éric a aussi parlé du [groupe performance web](https://sites.google.com/a/survol.fr/webperf-user-group/) (Webperf User Group).
+
+Il a insisté sur le fait que c'était aussi **à nous**, acteurs ou passionnés de la performance web, de faire vivre ce groupe en proposant des événements, des ressources (documentation, slides, traduction de slides et billets ...) et des idées : trouver un **nouveau nom pour le groupe**, construire un site web adapté.
+
+Une bonne première idée pour moi serait déjà de **compiler et de regrouper les différentes infographies** présentées par Éric Daspet (plus toutes celles non présentes) sur un mini site web sur lequel on pourrait commenter chaque infographie : discuter des biais, de l'impact des données sur des sites plus petits, ...
+
+L'objectif principal serait d'avoir rapidement sous la main des arguments percutants face à vos dirigeants et directeurs technique (ou bien pour vous convaincre vous, actuel dirigeant technique) afin de faire intervenir Zeroload sur vos sites web.
+
+## Stoyan Stefanov, progressive downloads and rendering
+
+Ce dont Stoyan a parlé est à peu près ce que j'avais prévu lorsque j'ai écris le [billet d'annonce](http://zeroload.net/blog/soir%C3%A9e%20performance%20web%20avec%20stoyan%20stefanov) de la soirée :
+
+> Concernant sa présentation, le contenu semble être un résumé des dernières techniques d'optimisation (pré-charger des CSS et JS sans les exécuter, rendu progressif) et des dernières découvertes des spécificités de certains browsers (favicon bloquant, commentaires conditionnels bloquants).
+
+Même si Stoyan n'a pas une voix qui porte, son discours est toujours très clair et posé.
+
+La présentation fut **assez technique** et je ne suis pas certain que tout le monde ai bien compris la partie sur les data URIs et les différences d'implémentation dans IE6-7-8 avec notamment le MHTML.
+
+Je ne dis pas que la présentation était trop technique mais j'ai la conviction qu'aujourd'hui la majorité des sites web ont surtout besoin de savoir **comment implémenter** l'agrégation, la minification, le gzip et d'une manière générale de formation dans les bonnes pratiques de l'intégration web.
+
+l'implémentation des data URIs et MHTML reste un sujet que peu de sites ont véritablement besoin d'aborder et ce ne doit pas être dans les priorités lors de l'optimisation d'un site web **classique**, je pense qu'on a plus de chance de les noyer sous des techninques vraiment complexes alors qu'ils ont souvent besoin de bonnes pratiques.
+
+## Anthony Ricaud, Firefox, améliorer son site sans coder
+
+Cette présentation ala [@paulrouget](http://twitter.com/paulrouget) (normal ils sont tous les deux dans la team d'évangélisation de Mozilla) était destinée à nous montrer les récentes ou prochaines fonctionnalités de Firefox.
+
+Dès le début on remarque que [rik24d](http://twitter.com/rik24d) contrôle sa présentation avec un drôle d'engin : son téléphone portable connecté à Firefox grâce aux websockets (c'est aussi l'inventeur de cette technique un peu folle). Manque de chance il a dû abandonner ce gadget au bout d'un petit moment, car ça ne fonctionnait plus très bien.
+
+Il a plusieurs fois insisté sur le fait qu'il était important d'utiliser les propriétés CSS3 pour réaliser : des boutons arrondis, des dégradés, des ombres, ...
+
+"_Si vous pensez que vous pouvez le faire en CSS3 alors essayez et testez_", ce n'est pas exactement ce qu'il a dit, mais ça s'en rapproche.
+
+Je suis entièrement d'accord avec ce genre de phrases et les ai toujours répétées à mes collègues/patrons, car **autant prendre les bonnes habitudes CSS maintenant**.
+
+Cette pratique est valable même sur les sites grand public. Souvent l'argument des designers ou des gens du marketing est que _"Oui mais les CSS3, tu sais, nous on a xx % de IE alors non, ça ne va pas"_.
+
+**Preuve du contraire**, Anthony a donné l'exemple parfait : lorsqu'il travaillait chez Skyrock les utilisateurs sous IE n'avaient pas les bords arrondis et personne ne s'en plaignait. (reste à savoir si c'est toujours le cas, même sur la page d'accueil ?).
+
+En résumé une présentation originale et comme toujours chez Mozilla très détendue, ils ont ce virus les évangélistes, ils savent être à l'aise et mettre l'assistance dans leur poche avec des démos percutantes.
+
+Enfin sachez que toute la présentation était réalisée sous forme de page HTML en utilisant les transitions CSS.
+
+## Jean-Pierre Vincent, inclusion performante de javascript
+
+Cette première conférence (j'imagine ?) de Jean-Pierre était sûrement en vue de se préparer pour Paris Web, mais aussi de présenter ses différentes trouvailles en matière d'inclusion de JS.
+
+Voici un extrait du commentaire que j'ai laissé sur [son billet](http://jpv.typepad.com/blog/2010/07/inclusion-performante-de-javascript-la-miniconf%C3%A9rence.html) :
+
+> Au début de la présentation je me suis dit "tout ça, je connais" oui mais ... En créant des règles (poids du html, du js, ..) pour savoir quelle méthode d'inclusion utiliser, tu es allé plus loin que simplement énoncer les techniques. Bon bien sûr les règles il faudra les tester davantage peut-être.
+
+[Une présentation](http://bit.ly/jpv_inclure_js_perf) vraiment intéressante agrémentée d'études de cas précises.
+
+# Conclusion
+
+Cette soirée performance web était **une réussite** et encore une fois merci à Éric Daspet de l'avoir organisée. Maintenant à nous, à moi, de participer à ce Webperf User Group.
+
+Bon weekend.
+
+Autres retours :
+
+* <http://blog.johanbleuzen.fr/retour-soiree-webperfs-paris-1>

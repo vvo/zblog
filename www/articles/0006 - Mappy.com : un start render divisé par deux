@@ -1,0 +1,237 @@
+Résumé :
+Après avoir détaillé l'architecture du site Mappy, voici les optimisations que j'ai pu effectuer durant mes derniers mois en tant que développeur web dans l'entreprise.
+
+L'essentiel de l'article se concentre sur l'impact qu'ont les modules tiers sur la performance de vos sites web.
+
+Article :
+Cet article fait suite à [Mappy.com : présentation & exploration d'un top site France](/blog/mappy.com%252C%20optimiser%20un%20site%20grand%20public%20%253A%20analyse/).
+
+Pour rappel je vous remet le détail du choix des optimisations :
+
+1. Accélérer l'affichage de la homepage puisque c'est le point d'entrée le plus utilisé,
+2. **identifier ce qui est indispensable du superflu** pour l'affichage de la homepage,
+3. séparer le fichier JavaScript principal en deux : **core & addons** car il semble suffire de 50% du code (core) pour afficher la homepage,
+4. réduire le nombre de requêtes effectuées pour afficher la homepage.
+
+![http://www.flickr.com/photos/viernest/3446775864/](/static/img/blog/posts/06-01.jpg "Rouler vite est dangereux pour la santé")
+
+Le but premier de l'optimisation du site Mappy était donc de **réduire le nombre d'éléments** dans la page. Mais après avoir diminué considérablement le nombre de fichiers téléchargés, on s'est aperçus que ce n'était pas la cause principale de la lenteur d'affichage.
+
+Pour bien comprendre pourquoi certains sites semblent lents et d'autres rapides il faut aussi prendre en compte le niveau de l'affichage progressif du site le [progressive rendering](http://www.phpied.com/progressive-rendering-via-multiple-flushes/ "Billet de Stoyan Stefanov sur les méthodes de flush de page").
+
+Deux sites qui se chargent en cinq secondes peuvent provoquer des **expériences utilisateurs** très différentes en fonction du niveau de l'affichage progressif de la page.
+
+Je précise : si le premier site se charge d'un bloc au bout de cinq secondes et le second affiche des éléments au fur et a mesure à l'utilisateur le tout en cinq secondes. L'**impression de lenteur** sera bien plus flagrante sur le premier, vous vous en doutiez petits champions.
+
+Histoire de vous convaincre que l'optimisation des sites web ça fonctionne **voici une vidéo** qui résume les optimisations effectuées sur Mappy.
+
+<video class="centerBlock" preload="auto" controls="" width="400" height="336">
+<source src="/static/video/06/mappy-1.mp4"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+<source src="/static/video/06/mappy-1.webm" type='video/webm; codecs="vp8, vorbis"' />
+<source src="/static/video/06/mappy-1.ogv"  type='video/ogg; codecs="theora, vorbis"' />
+</video>
+
+C'est une vidéo HTML5, n'hésitez pas à indiquer dans les commentaires si ça ne fonctionne pas bien (si vous êtes sur IE, c'est normal...).
+
+**Utilisez les contrôles vidéo** pour bien observer le chargement de la page dans les premiers instants.
+
+# Ordre des téléchargements
+
+Sur un site grand public on est toujours obligé de dealer avec des éléments que l'on ne maîtrise pas, je parle des **widgets JavaScripts** aussi appelés [third party content](http://www.stevesouders.com/blog/2010/02/17/performance-of-3rd-party-content/ "Billet de Steve Souders à ce sujet") qui modifient votre page et son chargement : publicités, modules de sondages tierces, modules de statistiques.
+
+Voici un exemple de waterfall webpagetest pour la homepage de Mappy. On peut voir l'un des widget occuper les premières requêtes.
+
+![image waterfall webpagetest](/static/img/blog/posts/06-02.jpg "On arrive même à lire le nom des fichiers de ce screenshot, pratique")
+
+Ces modules sont généralement composés d'images, de fichiers JavaScript et CSS. Il effectuent ainsi des requêtes pour récupérer ces éléments, en clair ils occupent le navigateur du client.
+
+Le code de ces modules peut parfois être bon mais le plus souvent ils est bâclé et/ou très ancien (je dirais pas de nom, n'insistez pas!).
+
+Leur code utilise des vieilleries du style [document.write](https://developer.mozilla.org/En/DOM/Document.write) pour créer des éléments HTML et il devient donc très difficile de les charger dynamiquement (impossible serait plus juste).
+
+Pourtant **dès 2005** [Peter-Paul Koch](http://www.quirksmode.org/about/) prévenait qu'il n'existait qu'une seule [utilisation justifiée de document.write](http://www.quirksmode.org/blog/archives/2005/06/three_javascrip_1.html#link4).
+
+Si vous voulez réduire l'impression de lenteur sur votre site web vous devez donc **maitriser l'ordre de chargement** des éléments de votre page web.
+
+## Le cas Mappy
+
+Lorsque j'ai commencé à étudier la performance du site Mappy, j'ai remarqué que **le chargement progressif était mauvais** justement sans pour autant prévoir de l'améliorer, nous souhaitions surtout réduire le nombre d'éléments.
+
+Après avoir réalisé plusieurs optimisations, en observant l'ordre de chargement je me suis rendu compte que nos formulaires de recherche et nos cartes (la partie utile du site web) **s'affichaient en dernier**, pendant que d'autres modules qui n'étaient pas même requis pour l'affichage, chargeaient des éléments et occupaient toutes les connexions du navigateur.
+
+Ce comportement était classique, parce qu'en bons développeurs on avait appliqué à la lettre les recommandations lorsqu'on programme en JavaScript (et surtout avec jQuery) : initialisez votre code sur l'événement [DOMContentLoaded](https://developer.mozilla.org/en/Gecko-Specific_DOM_Events#DOMContentLoaded) ou plutôt si vous êtes adeptes de jQuery : $(document).ready().
+
+Sauf que, vous pouvez être certain que tous les scripts de publicités, modules et widgets actuels n'attendent pas ce bel événement pour télécharger et s'installer sur votre page, dès que leur JavaScript est téléchargé ils bloquent le parsing du DOM avec des dizaines d'appels à document.write et s'installent confortablement dans votre page, bloquant le navigateur et faisant reculer le moment ou votre DOM sera "ready" !
+
+En clair votre contenu passe après tout le monde, par défaut.
+
+# Vérification des optimisations avec webpagetest
+
+Toutes les optimisations ont étés vérifiées à l'aide du logiciel [webpagetest](http://www.webpagetest.org) que j'ai installé en interne chez Mappy.
+
+Installer webpagetest dans votre société vous permet de tester les différentes branches/versions de tous vos projets. Avec les dernières releases de webpagetest il est possible de simuler des connexions adsl ou même modem 56k au sein de l'entreprise afin d'éviter les tests faussés par vos connexions de barbares en interne.
+
+Webpagetest propose un mode d'affichage des résultats très intéressant : il est capable de vous montrer le chargement de vos pages sous forme de "filmstrips".
+
+Ces frises de copies d'écrans du navigateur au cours du temps de chargement (intervalles : 100, 500 ou 1000 millisecondes) sont un très bon moyen de contrôler le bon déroulement des optimisations. La cerise sur le gâteau c'est que vous pouvez comparer très simplement les timelines de différents chargements comme sur [cette page d'exemple](http://www.webpagetest.org/video/compare.php?tests=100707_10TZ,100707_10TX,100707_10TW,100707_10TV "Zeroload a un très mauvais affichage progressif et j'y travaille").
+
+Voici par exemple la timeline de chargement comparative entre la 2eme optimisation et la homepage de base. La différence de chargement progressif est flagrante.
+
+![exemple de timeline webpagetest](/static/img/blog/posts/06-03.jpg "Cette timeline compare la 2eme optimisation avec la page de base")
+
+Un autre indicateur de l'amélioration de l'affichage progressif est le temps **start render**, comprenez le temps écoulé avant que la page commence à être modifiée graphiquement.
+
+Plus ce temps est court plus l'impression de vitesse est grande mais il faut aussi que les autres éléments s'affichent rapidement au fur et à mesure sinon la mesure ne vaut pas grand chose.
+
+# Optimisations effectuées
+
+Voici quelques détails sur les différentes optimisations réalisées.
+
+Notez bien que durant toute cette optimisation, le temps de chargement global n'a pas changé car le nombre et la taille des éléments a finalement peu évoluée.
+
+Par contre **l'affichage progressif du site est bien meilleur** et permet de réduire la sensation de lenteur du chargement comme vous avez pu le voir dans la vidéo de début d'article.
+
+## Split des fichiers JavaScript
+
+Le gros du travail a d'abord été d'**isoler les scripts essentiels** pour la homepage (core) de tout le reste (addons).
+
+C'est tout simplement en enlevant tous les scripts et en les rajoutant au fur et à mesure sur mon site de développement que j'ai pu identifier ce qui était indispensable du superflu.
+
+Ayant connaissance du code j'avais déjà mon idée sur la question et j'ai donc pu **retirer des scripts supplémentaires** en modifiant légèrement le code, par exemple la gestion des comptes utilisateurs (carnet d'adresses, itinéraires enregistrés ...), il n'est pas nécessaire de charger cet élément pour commencer à afficher une carte.
+
+Il a fallu ensuite réorganiser les différentes balises scripts.
+
+## Réorganisation des balises script
+
+**Deux widgets** effectuaient des requêtes avant nos cartes : un module de sondage et google adsense, bien que ces deux modules ne soient pas visibles dès le début (le module de sondage s'active pour 1% des gens et adsense est en bas du site, soit invisible en premier lieu), il étaient tout de même chargés avant nos éléments.
+
+Il a donc fallu les descendre dans l'arborescence HTML.
+
+Cela a déjà eu pour effet de faire baisser le temps avant premier affichage (start render) mais pas de façon suffisante car l'événement principal du site attendait toujours l'événement dom ready.
+
+Par rapport à la vidéo, après avoir splitté et réorganisé les fichiers JavaScript le label correspondant est "**1ere optimisation**".
+
+## Initialisation du site avant le dom ready
+
+Je parle de l'événement "dom ready" parce que c'est le nom que jQuery lui donne.
+
+En réalité [il n y a pas d'événement dom ready en JavaScript](http://www.subprint.com/blog/demystifying-the-dom-ready-event-method/) (bon en fait maintenant [il y en a un](http://www.whatwg.org/specs/web-apps/current-work/multipage/the-end.HTML) qui y ressemble fortement), simplement des **méthodes** (ensemble de fonctions) pour connaitre le moment ou le navigateur a terminé de parser le DOM dans différents navigateurs.
+
+Après avoir observé que **nous attendions l'événement dom ready** pour initialiser notre site et qu'en retour nos éléments étaient chargés en derniers, nous avons décidé de ne plus attendre cet événement et d'initialiser tout le site dès l'inclusion d'une balise script inline avec le code requis.
+
+Cette modification a eu pour effet de faire baisser le start render de façon significative : **0,323s au lieu de 0,738s**. Ces temps sont abstrait car je n'ai plus le détail de la connexion simulée pour les tests, un adsl 2048kbps probablement.
+
+Cette optimisation correspond au chargement **"2eme optimisation"** de la vidéo de début d'article.
+
+## Suppression de ressources bloquantes
+
+Les ressources bloquantes pour le contenu de votre page (la balise body) sont celles qui sont placées dans **la balise head**. Tout se qui s'y trouve bloquera à sa façon le chargement du contenu intéressant de votre page pour l'internaute : les images et le texte.
+
+Un exemple simple : [cette page](http://stevesouders.com/cuzillion/?c0=hj1hfff8_0_f&c1=bi1hfff2_0_f&c2=bi1hfff2_0_f&c3=bi1hfff2_0_f&c4=bi1hfff2_0_f&c5=bi1hfff2_0_f&c6=bi1hfff2_0_f&c7=bi1hfff2_0_f&t=1278495855520) a un script JS dans la balise head qui prends 8 secondes à télécharger et plusieurs images dans la balise body qui prennent 2 secondes à télécharger.
+
+Les **images ne s'affichent pas**, même si elles sont téléchargées (ouvrez firebug).
+
+Afin d'accélérer le premier affichage (start render, vous suivez oui !?) il est donc très important de réduire le nombre de ressources dans cette balise.
+
+Avant optimisation la balise head comprenait :
+
+* deux fichiers CSS (un screen et un print), votre navigateur téléchargera les deux même si vous n'imprimez rien (sûrement pour éviter d'avoir un lag lorsque vous essaierez d'imprimer !)
+* deux fichiers JavaScript externes
+* plusieurs balises script inline
+
+Après optimisation : **un seul fichier CSS et une balise script inline**.
+
+Pour regrouper les deux fichiers CSS j'ai simpleent utilisé la règle @media.
+
+Pour les fichiers JavaScript, j'ai pu retoucher le code et profiter du refactoring du module de référencement qui nécessitait d'avoir des fichiers JavaScript dans le head pour rediriger les utilisateurs venant des moteurs de recherche (oui, tordu).
+
+J'ai donc pu éliminer trois requêtes bloquantes et le **start render** est passé de **0,323s à 0,250s**, soit presque 100ms de gagné.
+
+Cette optimisation correspond au label **"3eme optimisation"** de la vidéo.
+
+## Micro optimisations
+
+En plus de ces optimisations, j'ai réalisé de minis actions comme :
+
+* Nettoyage des fichiers CSS et JavaScript pour éliminer les portions de codes inutiles,
+* minifcation du HTML,
+* modification du module Drupal de génération des fichiers statiques, après quelques modifications de l'algorithme de création des fichiers j'ai pu **diviser par 6** le temps de génération et accélérer sensiblement le temps de déploiement d'une nouvelle release du site web.
+
+# Pistes d'optimisation supplémentaires
+
+Avant de partir j'ai tenu à indiquer aux futurs développeurs quelles étaient les **principales pistes d'optimisation** pour le site Mappy.
+
+## Modifier la gestion des sprites
+
+![un bout d'un des sprites mappy](/static/img/blog/posts/06-04.jpg "Cette image ne représente pas le sprite en entier")
+
+Mappy utilise abondamment le système de **sprites CSS**, c'est une technique classique en performance web. Elle permet de regrouper plusieurs images utilisées en background-image afin de réduire considérablement le nombre de requêtes effectuées.
+
+Gérer une grande collection de sprites est un travail compliqué et chronophage et très vite on peut se retrouver avec des doublons ou des aberrations.
+
+Mappy n'échappe pas à la règle.
+
+### Sprites avec doublons
+
+Au fur et à mesure des développements, certains sprites ont étés « négligés » et contiennent maintenant des images en double.
+
+* <http://fr.mappy.com/sites/all/themes/mappy_v3/images/sprite-all-8.24.png>
+* <http://fr.mappy.com/sites/all/themes/mappy_v3/images/sprite-all-24.24.png>
+
+### Sprites pouvant êtres fusionnés
+
+Il est préférable de télécharger un sprite de 100ko plutôt que 4 sprites de 25ko
+
+* <http://fr.mappy.com/sites/all/themes/mappy_v3/images/sprite-all-8.24.png>
+* <http://fr.mappy.com/sites/all/themes/mappy_v3/images/sprite-all-24.24.png>
+
+### Utiliser la technique data URI + MHTML
+
+[Cette méthode](http://www.phpied.com/mhtml-when-you-need-data-uris-in-ie7-and-under/) permet de réduire le nombre de requêtes en incluant la version base64 des images directement dans un fichier CSS, particulièrement intéressante pour les images de très faible taille. (< 1ko)
+
+* <http://fr.mappy.com/sites/all/themes/mappy_v3/images/sprite-horizontal-24.24.png>
+* <http://fr.mappy.com/sites/all/themes/mappy_v3/images/sprite-vertical-24.24.png>
+
+### Remplacer certains sprites par des CSS3
+
+Une des expression à la mode dans le développement web est [progressive enhancement](http://en.wikipedia.org/wiki/Progressive_enhancement) : si vous souhaitez avoir des formulaires aux coins arrondis, des textes ombrés, des blocs ombrés alors faites le en CSS3 plutôt qu'avec des images.
+
+Alors non les utilisateurs de IE6, IE7 et IE8 ne verront rien mais sincèrement ils ne le remarqueront même pas la plupart du temps...
+
+Styliser des éléments de formulaire à l'aide d'images reste un luxe qui se paye cher !
+
+En effet cela nécessite beaucoup de balises supplémentaires et modifie la sémantique du code, pour un effet graphique franchement léger que la plupart des gens ne remarqueront pas.
+
+Utiliser des CSS3 pour faire les bords arrondis et les ombrages est la meilleure des solutions dans la plupart des cas.
+
+* <http://fr.mappy.com/sites/all/modules/mappy/address_forms/images/sprite-all-8.png>
+
+### Conclusion
+
+Il est possible d'éliminer un grand nombre des requêtes de sprites et d'images sur mappy en combinant ces 4 techniques.
+Actuellement 11 requêtes de sprites sont effectuées avant de télécharger la première dalle (bout de plan).
+
+L'optimisation de ces sprites améliorerait grandement la performance du site. C'est l'optimisation a privilégier sur Mappy.
+
+## Supprimer tous les JavaScripts inlines situés dans la balise body
+
+Il n y a aucune justification à avoir des JavaScripts inlines dans la balise body sauf publicités et autres third party content.
+
+Les JavaScripts inlines [bloquent le chargement](http://www.stevesouders.com/blog/2009/05/06/positioning-inline-scripts/) de tous les autres éléments dans la page tant que leur code n'est pas complètement terminé d'être exécuté.
+De plus ils compliquent énormément la parallélisation des chargements de fichiers JavaScript externes. (voir « Forcer la parallélisation du chargement des fichier JavaScript » plus bas)
+
+## Forcer la parallélisation du chargement des JavaScript
+
+Certains navigateurs [ne parallélisent pas](http://www.browserscope.org/?category=network&v=top&ua=IE%207,IE%208,Opera%2010.53,Safari%203.2) les chargements de fichiers JavaScript avec les autres ressources de la page.
+
+En utilisant l'attribut defer il est possible de forcer la parallélisation dans ces navigateurs.
+
+C'est très simple à mettre en place sauf si votre site est truffé de balises script inline dépendantes des chargement de fichiers JavaScripts externes. L'ordre de chargement n'est pas toujours conservé entre les externe et les inlines et [il est difficile de le prévoir](http://hacks.mozilla.org/2009/06/defer/).
+
+# Conclusion
+
+Comme vous avez pu le voir, optimiser un site web ne se résume pas à "faire baisser le temps de chargement", tout est histoire de jugement et d'organisation de vos ressources.
+
+En espérant que vous n'avez pas trop mal à la tête et que cet article vous a plu !
+
+Les prochains articles seront plus concis, je m'égare souvent pour le moment.
