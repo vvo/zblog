@@ -38,9 +38,12 @@ class Zblog_Middleware_MinifyHTML {
 			$return = str_replace("  ", "", $return); // remove double space
 
 			$response->content = $return;
-		} else {
-			$response->content = str_replace("CSS-JS-Booster/", "CSS-JS-Booster-old/", $response->content);
 		}
+
+		/*else {
+			$response->content = str_replace("CSS-JS-Booster/", "CSS-JS-Booster-old/", $response->content);
+		}*/
+
 		return $response;
 	}
 }
