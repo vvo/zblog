@@ -43,6 +43,10 @@ class Zblog_Views {
 
 	public function contact($request, $match) {
 		if ($request->method == 'POST') {
+
+			$form = new Zblog_Form_Contact($request->POST);
+if ($form->isValid()) {
+
 			if ($_POST['email2'] != '') {
 				$variables = print_r($GLOBALS['HTTP_SERVER_VARS'], true);
 
@@ -61,9 +65,6 @@ Texte du message :
 				exit;
 			}
 
-			$form = new Zblog_Form_Contact($request->POST);
-//			var_dump($form->errors);
-			if ($form->isValid()) {
 				$email = new Pluf_Mail($form->cleaned_data['email'],
 								Pluf::f('mail_to'),
 								'Message depuis zeroload.net');
