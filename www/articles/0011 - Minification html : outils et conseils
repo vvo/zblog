@@ -1,0 +1,99 @@
+Résumé :
+Suite à une [demande](http://zeroload.net/blog/9/daily-tools-for-front-end-developers-tips/#comment-145228472) d'un lecteur, je
+vous livre ici une liste d'outils pour minifier le code HTML de vos pages.
+
+Article :
+# Optimiser le html en le minifiant
+
+Les minifier HTML sont des outils capables de réduire le code HTML de votre page.
+
+Ils suppriment les espaces blancs, les attributs inutiles, les commentaires et d'une manière générale tout ce qui est superflu pour
+l'affichage et la lecture de votre page web par un internaute.
+
+![Photo de rondins de bois](/static/img/blog/posts/11-01.jpg)
+
+La **minification** ne doit pas être confondue avec la [compression](http://performance.survol.fr/2008/04/compression-avant-transfert/)
+qui est assurée par votre serveur web.
+La compression s'occupe d'envoyer des ressources compressées comme un fichier ZIP.
+
+La minification est un **sujet sensible**. Minifier le code HTML peut être dangereux si vous n'étudiez pas ce que va réaliser
+effectivement la minification.
+
+Les principales zones à **vérifier** après la minification sont :
+
+- L'affichage est-il sensiblement le même, sur tous les navigateurs
+- Est-ce que toutes les balises et optimisations SEO sont toujours présentes
+- Les widgets et publicités fonctionnent
+- Les balises `<pre>` fonctionnent et s'affichent bien
+- Votre serveur web ne souffre pas trop de la minification
+
+Un point important, si vous utilisez fréquemment les espaces blancs pour certaines de vos mises en page
+(surtout combiné avec `white-space:pre`), cela ne fonctionnera plus sauf si vous utilisez une **balise `<pre>`**. La plupart des minifier tiennent compte de ce cas.
+
+Les **gains** offerts par la minification du HTML sont surtout appréciables soit :
+
+- Si vous avez un trafic vraiment très (très) important et que vous souhaitez économiser de la bande passante
+- Si votre page web a un poids (compressée par gzip) trop gros (> 100ko)
+
+Enfin, couplez toujours votre minification avec **un cache** (fichier, memcache, ...), sinon vous risquez de faire
+cramer votre serveur rapidement et d'augmenter considérablement vos temps de chargement.
+
+<div markdown="1" class="floatRight" style="float:right">
+!["Exemple de code html minifié"](/static/img/blog/posts/11-02.png)
+</div>
+
+# Outils
+
+J'ai organisé les outils selon le langage utilisé, pour permettre une intégration facile dans vos environnements.
+
+## JavaScript
+
+Le [kangax html minifier](https://github.com/kangax/html-minifier) est assez connu dans le monde de la performance web.
+
+Réalisé en JavaScript, fonctionne bien [côté navigateur](http://kangax.github.com/html-minifier/)
+ou côté serveur (avec [node.js](http://nodejs.org/) par exemple).
+
+**Je l'utilise** actuellement sur la homepage de [zeroload.net](http://zeroload.net) (regardez la source).
+
+**Particularités**
+
+- Impossible d'écrire du code non valide HTML4 (il utilise le
+[parser HTML](https://github.com/kangax/html-minifier/blob/gh-pages/src/htmlparser.js) de John Resig)
+- Supprime TOUS les espaces, y compris dans ce cas : `<p>Minification, <a>html</a></p>` devient
+`<p>Minification,<a>html</a></p>` et l'affichage est mauvais. Vous devez utiliser `&nbsp;` (ce qui revient à alourdir le code).
+Ce bug sera corrigé
+- Supprime les commentaires mais seulement les commentaires HTML, pas ceux des balises `<style>` ou `<script>`
+("logique" mais important de le souligner)
+- Capable de minifier toute la page sur une seule ligne
+
+## PHP
+
+Deux outils assez similaires en PHP, massivement utilisés dans d'autres projets et plugins pour CMS :
+
+- La [classe Minify_HTML](http://code.google.com/p/minify/source/browse/trunk/min/lib/Minify/HTML.php) du projet
+[minify](http://code.google.com/p/minify/source/browse/trunk/min/lib/Minify/HTML.php)
+- [Le code](http://code.google.com/p/web-optimizator/source/browse/trunk/controller/compressor.php#2488)
+qui concerne la minification HTML du projet [web-optimizator](http://code.google.com/p/web-optimizator)
+(de la société [webogroup](http://www.webogroup.com/))
+
+Ces deux outils sont très complets et fonctionnent bien. Je les ai déjà utilisés dans des projets.
+
+Le premier est actuellement en production sur le site SPIP d'un client : [footmercato](http://footmercato.net) (regardez la source).
+
+## JAVA
+
+[Htmlcompressor](http://code.google.com/p/htmlcompressor/), recommandé par kangax, l'auteur du minifier HTML en JavaScript.
+
+## C et Apache : mod_pagespeed
+
+Google a développé un minifier puissant qui est celui utilisé lorsque vous analysez votre page avec le plugin pagespeed,
+[le code est disponible](http://code.google.com/p/modpagespeed/source/browse/trunk/src/net/instaweb/rewriter/html_minifier_main.cc).
+
+Vous pouvez aussi utiliser directement [mod_pagespeed](http://code.google.com/p/modpagespeed/)
+
+Et vous ? Des retours ou des questions sur ces outils, sur la minification HTML en général ?
+
+# Ressources :
+
+- [l'article](http://perfectionkills.com/optimizing-html/) de kangax sur la minification et l'optimisation du HTML
+- [mes liens](http://www.delicious.com/wouaren/minifier+html) delicious concernant la minification HTML

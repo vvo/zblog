@@ -1,9 +1,3 @@
-Résumé :
-Cet article est une étude de la performance web de 5 pages différentes, présentant sensiblement le même contenu.
-
-On y parle de start render, vidéo comparative, d'affichage progressif et de l'importance du front-end dans l'optimisation web.
-
-Article :
 Le matin j'adore préparer du **jus de pamplemousse**. C'est très bon, ça donne la pêche et surtout : ça change des oranges.
 
 Le mieux c'est d'acheter soit même les pamplemousses et de faire son jus, il est frais chaque matin et moins acide que celui
@@ -16,7 +10,7 @@ de différents sites web de cuisine (désolé pour les fanatiques du pamplemouss
 
 # Choix des sites à étudier
 
-<div markdown="1" class="floatRight">
+<div markdown="1" class="floatRight" style="float:right">
 ![Recherche google pour "recette pamplemousse"](/static/img/blog/posts/10-02.png "Les 5 sites étudiés, trouvés avec google")
 </div>
 
@@ -39,7 +33,7 @@ Une fois ces cinq pages web choisies, je les ai testées à l'aide de
 Tous les tests sont réalisés avec **IE7 et une connexion ADSL 3360/684/70ms de ping**
 (soit une connexion [ADSL classique Français](http://royal.pingdom.com/2010/11/12/real-connection-speeds-for-internet-users-across-the-world).
 
-# étude comparative du chargement
+# Étude comparative du chargement
 
 L'affichage d'une page web peut se faire **progressivement** pendant cinq secondes **ou bien d'un seul bloc** au bout
 de quatre secondes.
@@ -61,17 +55,17 @@ Utilisez le slider de la vidéo afin d'observer les différents moments clés.
 <source src="/static/video/10/pamplemousse.mp4"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
 <source src="/static/video/10/pamplemousse.webm" type='video/webm; codecs="vp8, vorbis"' />
 <source src="/static/video/10/pamplemousse.ogv"  type='video/ogg; codecs="theora, vorbis"' />
-<object width="560" height="349"><param name="movie" value="http://www.youtube-nocookie.com/v/MDxFpnzBlrs?fs=1&hl=fr_FR&rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/MDxFpnzBlrs?fs=1&hl=fr_FR&rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="349"></embed></object>
+<object width="560" height="349"><param name="movie" value="http://www.youtube-nocookie.com/v/MDxFpnzBlrs?fs=1&amp;hl=fr_FR&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube-nocookie.com/v/MDxFpnzBlrs?fs=1&amp;hl=fr_FR&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="349"></embed></object>
 </video>
 
 Étudions en détail les moments clés du chargement avec un schéma.
 
-## à l'aide d'un schéma
+## À l'aide d'un schéma
 
 Ce schéma permet d'identifier clairement à quel moment intervient le start render.
 
 <div markdown="1">
-![Comparatif start render : recettesdecuisine : 1.1s, marmiton.org : 2.8s, une-recette.com : 3.2s, 750g.com : 3.7s et linternaute.com : 4.9s](/static/img/blog/posts/10-04.jpg "Les start render sont identifiés par ")
+![Comparatif start render : recettesdecuisine : 1.1s, marmiton.org : 2.8s, une-recette.com : 3.2s, 750g.com : 3.7s et linternaute.com : 4.9s](/static/img/blog/posts/10-04.jpg "Chaque start render est bien identifié sur l'image")
 </div>
 
 On peut maintenant classer ces sites selon leur **rapidité et qualité** de temps de chargement :
@@ -82,7 +76,7 @@ On peut maintenant classer ces sites selon leur **rapidité et qualité** de tem
 4. 750g.com
 5. linternaute.com
 
-## résultats
+## Résultats
 
 Le start render moyen est de **3.24s** (moyenne du schéma).
 Le temps de chargement total moyen est de **12s** (moyenne corrigée des tests WPT).
@@ -126,7 +120,7 @@ car ce n'est souvent pas là qu'est le **goulot d'étranglement**.
 Dans le meilleur des cas, vous ferez baisser la charge sur vos serveurs (ce qui est déjà une bonne chose). Mais le temps de chargement final
 sera toujours le même pour l'utilisateur.
 
-<div markdown="1" class="floatRight">
+<div markdown="1" class="floatRight" style="float:right">
 ![Extrait d'une waterfall de chargement](/static/img/blog/posts/10-05.png "Le temps de chargement du HTML n'est qu'une petite partie du temps total")
 </div>
 
