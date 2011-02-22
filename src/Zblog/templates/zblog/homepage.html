@@ -1,6 +1,10 @@
 {extends 'zblog/base.html'}
 
 {block header_scripts}
+{if $cfg_is_beta === true}
+	<!-- balise meta vérification betawtf.zeroload.net -->
+	<meta name="google-site-verification" content="hyAkTJHbsxU4atLPIFfCKxPcXXvima5K-a7PbWw8VAk" />
+{/if}
 <meta name="description" content="Audit et conseil en performance web. Refonte de vos applications html/css/javascript. Accélération de l'affichage des pages web." />
 {/block}
 
