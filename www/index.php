@@ -10,7 +10,9 @@ function urlize($string) {
 	return $string;
 }
 
+// chunked encoding
 ob_implicit_flush(true);
+
 require dirname(__FILE__) . '/path.php';
 require 'Pluf.php';
 
@@ -18,10 +20,18 @@ require 'Pluf.php';
 define('ADMIN_CONFIG_FILE', $path_to_Zblog . '/Zblog/conf/zblog.php');
 Pluf::start(ADMIN_CONFIG_FILE);
 
+if (Pluf::f('is_beta') === true) {
+	$cache_suffix = "beta";
+} else {
+	$cache_suffix = "prod";
+}
+
+$cache_suffix = "-CACHESUFFIX".$cache_suffix;
+
 if (count($_POST) === 0 && Pluf::f('debug') === false) {
-	// production environment
+	// production ou beta environment
 	$cache = Pluf_Cache::factory();
-	if (null === ($foo = $cache->get(Pluf_HTTP_URL::getAction()))) {
+	if (null === ($foo = $cache->get(Pluf_HTTP_URL::getAction().$cache_suffix))) {
 		ob_start();
 		// As we are using a dispatcher, we need to load the corresponding
 		// view controllers. The controllers are just a mapping between the query
@@ -44,7 +54,7 @@ if (count($_POST) === 0 && Pluf::f('debug') === false) {
 			}
 
 			// store in cache
-			$cache->set(Pluf_HTTP_URL::getAction(), $foo, $cache_timeout);
+			$cache->set(Pluf_HTTP_URL::getAction().$cache_suffix, $foo, $cache_timeout);
 		}
 	}
 
